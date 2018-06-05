@@ -124,7 +124,7 @@ To register your plugin you have to listen for the `offline.gdpr::cleanup.regist
                     [
                         'label'   => 'SPAM-Messages',
                         'comment' => 'Delete blocked SPAM messages',
-                        'job'     => function(Carbon $deadline, int $keepDays) {
+                        'job'     => function (Carbon $deadline, int $keepDays) {
                             // Delete your old data here
                         },
                     ],
@@ -162,15 +162,22 @@ signature:
 ```php
     public function gdprCleanup(Carbon $deadline, int $keepDays)
     {
-        self::where('created_at', '<', $deadline)->each(function (self $message) {
-            $message->delete();
+        self::where('created_at', '<', $deadline)->each(function (self $item) {
+            $item->delete();
         });
         // or
         // self::where('created_at', '<', $deadline)->delete();
     }
 ```
 
-This method is called whenever the cleanup job is run. `$deadline` contains a `Carbon` instance. All data older than 
-this date has to be deleted. `$keepDays` contains the number of days that `$deadline` is in the past.
+This method is called whenever the cleanup job is run. `$deadline` contains a `Carbon` instance.
+All data older than this date has to be deleted. `$keepDays` contains the number of days
+that `$deadline` is in the past.
 
 Make sure to use an `each/delete` loop if your model makes use of `deleting/deleted` model events.
+
+#### Cleanup command
+
+You can trigger the cleanup on demand via 
+
+> php artisan gdpr:cleanup
