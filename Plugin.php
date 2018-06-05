@@ -1,6 +1,6 @@
 <?php namespace OFFLINE\GDPR;
 
-use Offline\GDPR\Components\ConsentManager;
+use OFFLINE\GDPR\Components\ConsentManager;
 use OFFLINE\GDPR\Models\CookieConsentSettings;
 use System\Classes\PluginBase;
 
