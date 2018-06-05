@@ -61,7 +61,7 @@
                     ],
                     'application_state' => [
                         'label'   => 'Standardmässig aktiv',
-                        'comment' => 'Ob diese App standardmässig aktiviert sein soll. Diese Option übersteuert die globale Einstellung.',
+                        'comment' => 'Ob diese App standardmässig aktiviert sein soll. Diese Option überschreibt die globale Einstellung.',
                     ],
                     'required'          => [
                         'label'   => 'Zustimmung erzwungen',
