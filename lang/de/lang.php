@@ -32,7 +32,7 @@
             ],
             'must_consent'              => [
                 'label'   => 'Zustimmung erzwingen',
-                'comment' => 'Zeige den Consent Manager direkt nach dem ersten Seitenaufruf an um eine Zustimmung zu forcieren',
+                'comment' => 'Zeige den Consent Manager direkt nach dem ersten Seitenaufruf an um eine Zustimmung zu erzwingen',
             ],
             'lang'                      => [
                 'label'   => 'Zweistelliger Sprachcode',
