@@ -1,11 +1,4 @@
-// @see https://klaro.kiprotect.com/config.js
-//
-// By default, Klaro will load the config from  a global "klaroConfig" variable.
-// You can change this by specifying the "data-config" attribute on your
-// script take, e.g. like this:
-// <script src="klaro.js" data-config="myConfigVariableName" />
-// You can also disable auto-loading of the consent notice by adding
-// data-no-auto-load=true to the script tag.
+{# @see https://klaro.kiprotect.com/config.js #}
 var klaroConfig = {
     elementID: 'oc-gdpr-klaro',
     cookieName: 'oc-gdpr-klaro',
@@ -20,7 +13,5 @@ var klaroConfig = {
             {% if not loop.last %},{% endif %}
         {% endfor %}
     },
-
-    // This is a list of third-party apps that Klaro will manage for you.
     apps: {% partial __SELF__ ~ '::apps.js' apps=s.apps %}
 }
