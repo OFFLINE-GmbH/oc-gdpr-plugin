@@ -32,7 +32,7 @@
             ],
             'must_consent'              => [
                 'label'   => 'Zustimmung erzwingen',
-                'comment' => 'Zeige den Consent Manager direkt nach dem ersten Seitenaufruf an um eine Zustimmung zu forcieren',
+                'comment' => 'Zeige den Consent Manager direkt nach dem ersten Seitenaufruf an um eine Zustimmung zu erzwingen',
             ],
             'lang'                      => [
                 'label'   => 'Zweistelliger Sprachcode',
@@ -61,7 +61,7 @@
                     ],
                     'application_state' => [
                         'label'   => 'Standardmässig aktiv',
-                        'comment' => 'Ob diese App standardmässig aktiviert sein soll. Diese Option übersteuert die globale Einstellung.',
+                        'comment' => 'Ob diese App standardmässig aktiviert sein soll. Diese Option überschreibt die globale Einstellung.',
                     ],
                     'required'          => [
                         'label'   => 'Zustimmung erzwungen',
