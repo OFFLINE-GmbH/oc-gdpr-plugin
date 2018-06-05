@@ -1,4 +1,4 @@
-<?php namespace Offline\GDPR\Components;
+<?php namespace OFFLINE\GDPR\Components;
 
 use Cms\Classes\ComponentBase;
 use OFFLINE\GDPR\Models\CookieConsentSettings;
