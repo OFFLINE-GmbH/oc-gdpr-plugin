@@ -8,6 +8,8 @@ This plugin provides an easy integration of [Klaro! A Simple Consent Manager](ht
 The Klaro! Consent Manager displays a GDPR compliant cookie message and allows the customization of the 
 usage of third-party applications by a website visitor.
 
+![Klaro PopUp](https://i.imgur.com/n74yA20.png)
+
 All Klaro! settings can be managed via October's backend.
 
 Information on how to use Klaro! can be found on the official website
