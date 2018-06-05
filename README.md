@@ -124,7 +124,7 @@ To register your plugin you have to listen for the `offline.gdpr::cleanup.regist
                     [
                         'label'   => 'SPAM-Messages',
                         'comment' => 'Delete blocked SPAM messages',
-                        'closure'     => function (Carbon $deadline, int $keepDays) {
+                        'closure' => function (Carbon $deadline, int $keepDays) {
                             // Delete your old data here
                         },
                     ],
