@@ -70,7 +70,11 @@ You can find all possible translation keys in [Klaro's example config file](http
 
 ### `consentManager` component
 
-Place this component on your layout file to display the Klaro! Consent Manager.
+Place this component on your layout, page or partial file to display the Klaro! Consent Manager.
+
+```twig
+{% component 'consentManager' %}
+```
 
 #### Properties
 
