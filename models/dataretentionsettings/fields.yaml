@@ -1,0 +1,13 @@
+fields:
+    enabled:
+        label: 'offline.gdpr::lang.settings.data_retention.enabled.label'
+        span: auto
+        default: 0
+        type: switch
+        comment: 'offline.gdpr::lang.settings.data_retention.enabled.comment'
+    default_keep_days:
+        label: 'offline.gdpr::lang.settings.data_retention.default_keep_days.label'
+        span: auto
+        default: 365
+        type: number
+        comment: 'offline.gdpr::lang.settings.data_retention.default_keep_days.comment'

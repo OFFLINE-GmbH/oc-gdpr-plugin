@@ -8,3 +8,6 @@ permissions:
     offline.gdpr.manage_cookie_consent:
         tab: 'offline.gdpr::lang.plugin.name'
         label: 'offline.gdpr::lang.permissions.manage_cookie_consent'
+    offline.gdpr.manage_data_retention:
+        tab: 'offline.gdpr::lang.plugin.name'
+        label: 'offline.gdpr::lang.permissions.manage_data_retention'

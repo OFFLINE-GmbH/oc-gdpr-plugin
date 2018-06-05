@@ -1,11 +1,25 @@
 <?php namespace OFFLINE\GDPR;
 
 use OFFLINE\GDPR\Components\ConsentManager;
+use OFFLINE\GDPR\Console\CleanUp;
 use OFFLINE\GDPR\Models\CookieConsentSettings;
+use OFFLINE\GDPR\Models\DataRetentionSettings;
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
 {
+    const EVENT_CLEANUP_REGISTER = 'offline.gdpr::cleanup.register';
+
+    public function boot()
+    {
+        $this->registerConsoleCommand('gdpr.cleanup', CleanUp::class);
+    }
+
+    public function registerSchedule($schedule)
+    {
+        $schedule->call('gdpr:cleanup')->daily();
+    }
+
     public function registerComponents()
     {
         return [
@@ -25,6 +39,16 @@ class Plugin extends PluginBase
                 'order'       => 200,
                 'keywords'    => 'gdpr',
                 'permissions' => ['offline.gdpr.manage_cookie_consent'],
+            ],
+            'gdpr_data_retention' => [
+                'label'       => trans('offline.gdpr::lang.settings.data_retention.label'),
+                'description' => trans('offline.gdpr::lang.settings.data_retention.description'),
+                'category'    => 'GDPR',
+                'icon'        => 'oc-icon-trash',
+                'class'       => DataRetentionSettings::class,
+                'order'       => 200,
+                'keywords'    => 'gdpr',
+                'permissions' => ['offline.gdpr.manage_data_retention'],
             ],
         ];
     }

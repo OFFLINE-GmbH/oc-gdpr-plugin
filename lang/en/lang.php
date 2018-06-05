@@ -94,8 +94,24 @@
                 ],
             ],
         ],
+        'data_retention' => [
+            'label' => 'Data retention',
+            'description' => 'Configure your data retention policies',
+            'enabled' => [
+                'label' => 'Cleanup enabled',
+                'comment' => 'Delete old data automatically after it has expired',
+            ],
+            'default_keep_days' => [
+                'label' => 'Delete data after days',
+                'comment' => 'Valid for all registered plugins if nothing else is specified below',
+            ],
+            'keep_days' => [
+                'label' => 'Delete data after days',
+            ],
+        ],
     ],
     'permissions' => [
         'manage_cookie_consent' => 'Can manage cookie consent settings',
+        'manage_data_retention' => 'Can manage data retention policies',
     ],
 ];
