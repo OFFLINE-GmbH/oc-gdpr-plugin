@@ -124,7 +124,7 @@ To register your plugin you have to listen for the `offline.gdpr::cleanup.regist
                     [
                         'label'   => 'SPAM-Messages',
                         'comment' => 'Delete blocked SPAM messages',
-                        'job'     => function (Carbon $deadline, int $keepDays) {
+                        'closure'     => function (Carbon $deadline, int $keepDays) {
                             // Delete your old data here
                         },
                     ],
@@ -148,15 +148,15 @@ As `models` you have to specify an array with the following data:
 |---|---|
 | label  | A human readable label for the backend switch form widget |
 | comment  | A human readable comment for the backend switch form widget   |
-| job  | A closure that is called when the cleanup job is run  |
+| closure  | A closure that is called when the cleanup job is run  |
 | class  | A model class that defines a `gdprCleanup` method |
 
 
-You have to specify either a `job` or a `class` value. If both are specified the `job` value will be used.
+You have to specify either a `closure` or a `class` value. If both are specified the `closure` value will be used.
 
 #### Cleanup method
 
-You can either specify a `job` closure or a model class that defines a `gdprCleanup` method. Both have the same 
+You can either specify a `closure` or a model class that defines a `gdprCleanup` method. Both have the same 
 signature:
 
 ```php

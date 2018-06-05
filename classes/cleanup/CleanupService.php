@@ -65,9 +65,9 @@ class CleanupService
         $keepDays = $config['keep_days'] ?? $this->settings['default_keep_days'];
         $deadline = Carbon::now()->subDays($keepDays);
 
-        if (isset($model['job']) && $model['job'] instanceof \Closure) {
+        if (isset($model['closure']) && $model['closure'] instanceof \Closure) {
             return $this->cleanup(function () use ($model, $deadline, $keepDays) {
-                return $model['job']($deadline, $keepDays);
+                return $model['closure']($deadline, $keepDays);
             }, $model);
         }
 
