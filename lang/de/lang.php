@@ -31,7 +31,7 @@
                 'comment' => 'Ob alle aufgelisteten Applikationen standardmässig aktiv oder inaktiv sind',
             ],
             'must_consent'              => [
-                'label'   => 'Forciere Zustimmung',
+                'label'   => 'Zustimmung erzwingen',
                 'comment' => 'Zeige den Consent Manager direkt nach dem ersten Seitenaufruf an um eine Zustimmung zu forcieren',
             ],
             'lang'                      => [
