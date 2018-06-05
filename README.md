@@ -28,7 +28,7 @@ A configuration example is hosted on
 You can add custom translation strings via the backend settings page. Create a new translation, give it a 2-char 
 language code (`de`, `en`, etc.) and paste and modify the following json code in the code editor:
 
-```json
+```js
 {
     consentModal: {
         description: 'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln. Einträge die als "Beispiel" gekennzeichnet sind dienen lediglich zu Demonstrationszwecken und werden nicht wirklich verwendet.',
