@@ -1,9 +1,12 @@
 # oc-gdpr-plugin
 October CMS plugin to make websites GDPR compliant.
 
-## Cookie constent
+## Cookie consent
 
 This plugin provides an easy integration of [Klaro! A Simple Consent Manager](https://github.com/KIProtect/klaro). 
+
+The Klaro! Consent Manager displays a GDPR compliant cookie message and allows the customization of the 
+usage of third-party applications by a website visitor.
 
 All Klaro! settings can be managed via October's backend.
 
@@ -19,14 +22,14 @@ via your theme and use your own configuration file instead.
 
 If you only want to define your applications manually you can overwrite the `apps.js` partial via your theme.
 
-A configuration example is hosted on
+A configuration example is availabe at
 [https://klaro.kiprotect.com/config.js](https://klaro.kiprotect.com/config.js).
 
 
 #### Translations
 
 You can add custom translation strings via the backend settings page. Create a new translation, give it a 2-char 
-language code (`de`, `en`, etc.) and paste and modify the following json code in the code editor:
+language code (ex. `de`, `en`) and paste and modify the following json code into the code editor:
 
 ```js
 {
@@ -70,7 +73,7 @@ You can find all possible translation keys in [Klaro's example config file](http
 
 ### `consentManager` component
 
-Place this component on your layout, page or partial file to display the Klaro! Consent Manager.
+Place this component on your layout, page or partial to display the Klaro! Consent Manager.
 
 ```twig
 {% component 'consentManager' %}
@@ -82,3 +85,8 @@ Place this component on your layout, page or partial file to display the Klaro! 
 
 Enable this option to automatically include the klaro.js file.
 You can disable this option if you want to take full control over how the script is included.
+
+#### `style_prefix`
+
+Define a custom css class to be used in the Klaro! HTML markup. If this option is set all default styles will be 
+removed completely. 
