@@ -54,6 +54,11 @@ class ConsentManager extends ComponentBase
             CookieConsentSettings::where('item', 'offline_gdpr_cookie_consent_settings')->first()
         )->value;
 
+
+        if ( ! is_array($settings)) {
+            return $this->settings = $this->defaults;
+        }
+        
         $this->settings = array_merge($this->defaults, $settings);
     }
 

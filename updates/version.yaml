@@ -2,3 +2,5 @@
     - Initialize plugin.
 1.0.2:
     - Fixed translation string.
+1.0.3:
+    - Fixed loading of ConsentManager component if no settings have been defined yet
