@@ -9,7 +9,7 @@ fields:
         label: 'offline.gdpr::lang.settings.cookie_consent.default_application_state.label'
         comment: 'offline.gdpr::lang.settings.cookie_consent.default_application_state.comment'
         span: auto
-        default: 1
+        default: 0
         type: switch
 tabs:
     fields:
