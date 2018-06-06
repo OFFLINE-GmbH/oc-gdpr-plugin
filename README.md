@@ -1,6 +1,10 @@
 # oc-gdpr-plugin
 October CMS plugin to make websites GDPR compliant.
 
+This plugin is available on the October Marketplace: https://octobercms.com/plugin/offline-gdpr
+
+## Features
+
 * [Cookie consent](#cookie-consent)
 * [Data retention](#data-retention)
 
