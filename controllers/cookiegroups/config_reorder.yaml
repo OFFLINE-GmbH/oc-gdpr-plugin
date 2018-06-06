@@ -1,0 +1,5 @@
+title: CookieGroups
+modelClass: OFFLINE\GDPR\Models\CookieGroup
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

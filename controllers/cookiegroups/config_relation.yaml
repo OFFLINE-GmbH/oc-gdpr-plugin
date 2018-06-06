@@ -1,0 +1,8 @@
+cookies:
+    label: offline.gdpr::lang.settings.cookies.label
+    view:
+        list: $/offline/gdpr/models/cookie/columns.yaml
+        toolbarButtons: create|delete
+    manage:
+        form: $/offline/gdpr/models/cookie/fields.yaml
+        recordsPerPage: 10

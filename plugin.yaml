@@ -11,3 +11,6 @@ permissions:
     offline.gdpr.manage_data_retention:
         tab: 'offline.gdpr::lang.plugin.name'
         label: 'offline.gdpr::lang.permissions.manage_data_retention'
+    offline.gdpr.manage_cookie_groups:
+        tab: 'eoffline.gdpr::lang.cookie_group.fields.name'
+        label: 'offline.gdpr::lang.permissions.manage_cookie_groups'

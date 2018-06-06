@@ -1,6 +1,10 @@
 1.0.1:
-    - Initialize plugin.
+    - 'Initialize plugin.'
 1.0.2:
-    - Fixed translation string.
+    - 'Fixed translation string.'
 1.0.3:
-    - Fixed loading of ConsentManager component if no settings have been defined yet
+    - 'Fixed loading of ConsentManager component if no settings have been defined yet'
+1.0.4:
+    - 'Implemented new cookie manager'
+    - create_offline_gdpr_cookie_groups.php
+    - create_offline_gdpr_cookies.php

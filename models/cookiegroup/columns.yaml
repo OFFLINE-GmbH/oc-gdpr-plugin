@@ -1,0 +1,13 @@
+columns:
+    slug:
+        label: 'offline.gdpr::lang.cookie_group.fields.slug'
+        type: text
+    name:
+        label: 'offline.gdpr::lang.cookie_group.fields.name'
+        type: text
+    description:
+        label: 'offline.gdpr::lang.cookie_group.tabs.description'
+        type: text
+    initial_status:
+        label: 'offline.gdpr::lang.cookie_group.fields.initial_status'
+        type: text

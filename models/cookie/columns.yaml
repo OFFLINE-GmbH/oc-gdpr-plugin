@@ -1,0 +1,18 @@
+columns:
+    code:
+        label: 'offline.gdpr::lang.cookie.fields.code'
+        type: text
+    name:
+        label: 'offline.gdpr::lang.settings.cookie_consent.apps.repeater.name.label'
+        type: text
+    description:
+        label: 'offline.gdpr::lang.cookie_group.tabs.description'
+        type: text
+    initial_status:
+        label: 'offline.gdpr::lang.cookie_group.fields.initial_status'
+        type: text
+    cookie_group_id:
+        label: 'offline.gdpr::lang.cookie_group.fields.name'
+        type: text
+        select: name
+        relation: group

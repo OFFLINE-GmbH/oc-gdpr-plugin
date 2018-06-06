@@ -1,0 +1,24 @@
+fields:
+    name:
+        label: 'offline.gdpr::lang.cookie_group.fields.name'
+        span: auto
+        type: text
+    initial_status:
+        label: 'offline.gdpr::lang.cookie_group.fields.initial_status'
+        span: auto
+        type: switch
+        default: 1
+        comment: 'offline.gdpr::lang.cookie_group.fields.initial_status_comment'
+tabs:
+    fields:
+        1:
+            span: full
+            type: partial
+            path: cookies
+            tab: 'offline.gdpr::lang.settings.cookies.label'
+        description:
+            label: 'offline.gdpr::lang.cookie_group.tabs.description'
+            size: large
+            span: full
+            type: richeditor
+            tab: 'offline.gdpr::lang.cookie_group.tabs.description'
