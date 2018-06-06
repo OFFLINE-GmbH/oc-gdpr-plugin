@@ -49,7 +49,7 @@ tabs:
                         span: right
                         default: 0
                         type: checkbox
-                        comment: 'offline.gdpr::lang.settings.cookie_consent.apps.repeater.application_state .comment'
+                        comment: 'offline.gdpr::lang.settings.cookie_consent.apps.repeater.application_state.comment'
                     required:
                         label: 'offline.gdpr::lang.settings.cookie_consent.apps.repeater.required.label'
                         span: right
