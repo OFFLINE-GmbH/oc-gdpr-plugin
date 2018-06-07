@@ -4,3 +4,5 @@
     - Fixed translation string.
 1.0.3:
     - Fixed loading of ConsentManager component if no settings have been defined yet
+1.0.4:
+    - Added french translations (thanks to damsfx)
