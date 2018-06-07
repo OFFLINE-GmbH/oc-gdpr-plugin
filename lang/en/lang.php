@@ -4,7 +4,7 @@
         'description' => 'Make your website GDPR compliant',
     ],
     'consent_manager' => [
-        'description' => 'Includes the Klaro! Constent Manager',
+        'description' => 'Includes the Klaro! Consent Manager',
         'include_assets' => [
             'title' => 'Include assets',
             'description' => 'Includes all needed JS files automatically',
@@ -32,7 +32,7 @@
             ],
             'must_consent' => [
                 'label' => 'Must consent',
-                'comment' => 'Display the consent manager directly on the first page view to force a desicion by the user',
+                'comment' => 'Display the consent manager directly on the first page view to force a decision by the user',
             ],
             'lang' => [
                 'label' => 'Language code',
