@@ -2,7 +2,7 @@
     {% for app in apps %}
         {
             name: '{{ app.name }}',
-            default: {{ app.default ? 'true' : 'false' }},
+            default: {{ app.application_state ? 'true' : 'false' }},
             title: '{{ app.title }}',
             purposes: [
                 {% for purpose in app.purposes %}

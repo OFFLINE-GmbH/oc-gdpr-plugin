@@ -6,3 +6,5 @@
     - Fixed loading of ConsentManager component if no settings have been defined yet
 1.0.4:
     - Added french translations (thanks to damsfx)
+1.0.5:
+    - Fixed bug in consent manager configuration
