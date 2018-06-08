@@ -5,10 +5,177 @@ This plugin is available on the October Marketplace: https://octobercms.com/plug
 
 ## Features
 
-* [Cookie consent](#cookie-consent)
+* [Cookie Consent Manager](#cookie-consent-manager)
 * [Data retention](#data-retention)
+* [Klaro! Consent Manager](#klaro-consent-manager)
 
-## Cookie consent
+## Cookie Consent Manager
+
+This plugin provides two simple components to make your October installation GDPR compliant.
+
+### cookieBanner
+
+The `cookieBanner` component displays a cookie banner on the first page view. There the user has the possibility to 
+enable and disable cookies that your website uses (defined via October's backend settings).
+
+These settings are stored and made available in your partials using the `gdprCookieAllowed` helper. With this helper 
+you can check for the user's consent and optionally include your resources.
+
+#### Installation
+
+1. Define your cookie groups and cookies via the Backend settings
+1. Add the `cookieBanner` component to your layout (if you don't need the default css you can also add it to a page 
+or partial)
+
+#### Properties
+
+If you don't want to include the default css use `include_css = 0` when including your component.
+
+##### Hard vs. soft reload
+
+If the user accepts some cookies you have to options to proceed:
+
+1. Enable the option `hard_reload` to fully refresh the page. This is the easiest way to load your dependencies after
+ the user made his decision.
+ 1. Disable the option `hard_reload` and provide a `update_partial` and `update_selector`. If the user makes a 
+ decision your partial will be loaded into the element defined by your selector.
+ 
+ ```
+ [cookieBanner]
+include_css = 1
+hard_reload = 0
+update_selector = "#gdpr-reload"
+update_partial = "gdpr-scripts"
+==
+<div id="gdpr-reload">
+    {% partial 'gdpr-scripts' %}
+</div>    
+```
+
+And in your `gdpr-scripts` partial you can use:
+
+```twig
+{% if gdprCookieAllowed('google-analytics') %}
+    <!-- Include Analytics Code here -->
+{% endif %}
+```
+
+#### Twig Helpers
+
+##### `gdprCookieAllowed($code, $minLevel = 0)`
+
+Check if a certain cookie is allowed to be indluded. You can optionally pass a cookie level to check if the user has 
+accepted the required level of this cookie.
+
+```twig
+{% if gdprCookieAllowed('google-analytics') %}
+    <!-- Include Analytics Code here -->
+{% endif %}
+
+{% if gdprCookieAllowed('google-analytics', 3) %}
+    <!-- Include advanced Level 3 Analtics Code here -->
+{% endif %}
+```
+
+##### `gdprAllowedCookieLevel($code)`
+
+Get the max allowed level for a certain cookie. A return value of `-1` means the cookie is not allowed at all. A 
+value of `0` or higher means the cookie is allowed with the returned level value. 
+
+```twig
+{% if gdprAllowedCookieLevel('google-analytics') >= 3 %}
+    <!-- Include advanced Level 3 Analtics Code here -->
+{% endif %}
+```
+
+## Data retention
+
+The data retention functionality enables you to delete old plugin data after a specified amount of days.
+
+You can specify the data retention policy for each plugin via October's backend settings.
+
+> **Important**: To automatically delete old data [make sure you have set up the Task Scheduler](http://octobercms.com/docs/setup/installation#crontab-setup) correctly.
+
+### Register your plugin
+
+To register your plugin you have to listen for the `offline.gdpr::cleanup.register` event in your Plugin's boot method.
+
+```php
+    public function boot()
+    {
+        \Event::listen('offline.gdpr::cleanup.register', function () {
+            return [
+                'id'     => 'your-contact-form-plugin',
+                'label'  => 'Custom Contact Form Plugin',
+                'models' => [
+                    [
+                        'label'   => 'Contact form messages',
+                        'comment' => 'Delete logged contact form messages',
+                        'class'   => MessageLog::class,
+                    ],
+                    [
+                        'label'   => 'SPAM-Messages',
+                        'comment' => 'Delete blocked SPAM messages',
+                        'closure' => function (Carbon $deadline, int $keepDays) {
+                            // Delete your old data here
+                        },
+                    ],
+                ],
+            ];
+        });
+    }
+```
+
+You have to specify the following data:
+
+|  key | information  |   
+|---|---|
+| id  | A unique identifier of your plugin   |
+| label  | A human readable label for your plugin   |
+| models  | An array of all your data collecting models |
+
+As `models` you have to specify an array with the following data:
+
+|  key | information  |   
+|---|---|
+| label  | A human readable label for the backend switch form widget |
+| comment  | A human readable comment for the backend switch form widget   |
+| closure  | A closure that is called when the cleanup job is run  |
+| class  | A model class that defines a `gdprCleanup` method |
+
+
+You have to specify either a `closure` or a `class` value. If both are specified the `closure` value will be used.
+
+#### Cleanup method
+
+You can either specify a `closure` or a model class that defines a `gdprCleanup` method. Both have the same 
+signature:
+
+```php
+    public function gdprCleanup(Carbon $deadline, int $keepDays)
+    {
+        self::where('created_at', '<', $deadline)->each(function (self $item) {
+            $item->delete();
+        });
+        // or
+        // self::where('created_at', '<', $deadline)->delete();
+    }
+```
+
+This method is called whenever the cleanup job is run. `$deadline` contains a `Carbon` instance.
+All data older than this date has to be deleted. `$keepDays` contains the number of days
+that `$deadline` is in the past.
+
+Make sure to use an `each/delete` loop if your model makes use of `deleting/deleted` model events.
+
+#### Cleanup command
+
+You can trigger the cleanup on demand via 
+
+> php artisan gdpr:cleanup
+
+
+## Klaro! Consent Manager
 
 This plugin provides an easy integration of [Klaro! A Simple Consent Manager](https://github.com/KIProtect/klaro). 
 
@@ -99,89 +266,3 @@ You can disable this option if you want to take full control over how the script
 
 Define a custom css class to be used in the Klaro! HTML markup. If this option is set all default styles will be 
 removed completely. 
-
-## Data retention
-
-The data retention functionality enables you to delete old plugin data after a specified amount of days.
-
-You can specify the data retention policy for each plugin via October's backend settings.
-
-> **Important**: To automatically delete old data [make sure you have set up the Task Scheduler](http://octobercms.com/docs/setup/installation#crontab-setup) correctly.
-
-### Register your plugin
-
-To register your plugin you have to listen for the `offline.gdpr::cleanup.register` event in your Plugin's boot method.
-
-```php
-    public function boot()
-    {
-        \Event::listen('offline.gdpr::cleanup.register', function () {
-            return [
-                'id'     => 'your-contact-form-plugin',
-                'label'  => 'Custom Contact Form Plugin',
-                'models' => [
-                    [
-                        'label'   => 'Contact form messages',
-                        'comment' => 'Delete logged contact form messages',
-                        'class'   => MessageLog::class,
-                    ],
-                    [
-                        'label'   => 'SPAM-Messages',
-                        'comment' => 'Delete blocked SPAM messages',
-                        'closure' => function (Carbon $deadline, int $keepDays) {
-                            // Delete your old data here
-                        },
-                    ],
-                ],
-            ];
-        });
-    }
-```
-
-You have to specify the following data:
-
-|  key | information  |   
-|---|---|
-| id  | A unique identifier of your plugin   |
-| label  | A human readable label for your plugin   |
-| models  | An array of all your data collecting models |
-
-As `models` you have to specify an array with the following data:
-
-|  key | information  |   
-|---|---|
-| label  | A human readable label for the backend switch form widget |
-| comment  | A human readable comment for the backend switch form widget   |
-| closure  | A closure that is called when the cleanup job is run  |
-| class  | A model class that defines a `gdprCleanup` method |
-
-
-You have to specify either a `closure` or a `class` value. If both are specified the `closure` value will be used.
-
-#### Cleanup method
-
-You can either specify a `closure` or a model class that defines a `gdprCleanup` method. Both have the same 
-signature:
-
-```php
-    public function gdprCleanup(Carbon $deadline, int $keepDays)
-    {
-        self::where('created_at', '<', $deadline)->each(function (self $item) {
-            $item->delete();
-        });
-        // or
-        // self::where('created_at', '<', $deadline)->delete();
-    }
-```
-
-This method is called whenever the cleanup job is run. `$deadline` contains a `Carbon` instance.
-All data older than this date has to be deleted. `$keepDays` contains the number of days
-that `$deadline` is in the past.
-
-Make sure to use an `each/delete` loop if your model makes use of `deleting/deleted` model events.
-
-#### Cleanup command
-
-You can trigger the cleanup on demand via 
-
-> php artisan gdpr:cleanup

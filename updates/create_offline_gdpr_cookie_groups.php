@@ -15,6 +15,7 @@ class CreateOfflineGdprCookieGroups extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->boolean('initial_status')->default(1);
+            $table->boolean('required')->default(0);
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

@@ -3,6 +3,25 @@
         'name' => 'GDPR',
         'description' => 'Mache deine Website GDPR konform',
     ],
+    'cookie_banner' => [
+        'description' => 'Zeigt ein Cookie-Banner an',
+        'include_css' => [
+            'title' => 'Abhängigkeiten laden',
+            'description' => 'Binde alle benötigten JS-Abhängigeiten automatisch ein',
+        ],
+        'hard_reload' => [
+            'title' => 'Hard-Reload nach Akzeptieren',
+            'description' => 'Seite nach Akzeptieren komplett neu laden um alle JS-Scripts korrekt einzubinden',
+        ],
+        'update_partial' => [
+            'title' => 'Partial für Soft-Reload',
+            'description' => 'Dieses Partial wird nach dem Akzeptieren automatisch neu geladen.',
+        ],
+        'update_selector' => [
+            'title' => 'CSS-Selector für Soft-Reload',
+            'description' => 'Das Partial wird nach dem Akzeptieren in diesem Element neu geladen.',
+        ],
+    ],
     'consent_manager' => [
         'description' => 'Bindet den Klaro! Constent Manager ein',
         'include_assets' => [
@@ -119,6 +138,8 @@
             'name' => 'Gruppenname',
             'initial_status' => 'Initialzustand',
             'initial_status_comment' => 'Die Cookies in dieser Gruppe sind standardmässig aktiv',
+            'required' => 'Zustimmung erzwungen',
+            'required_comment' => 'Die Cookies dieser Gruppe werden für die Funktionalität der Website benötigt und können nicht deaktiviert werden',
             'slug' => 'Slug',
         ],
         'tabs' => [

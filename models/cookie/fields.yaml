@@ -16,6 +16,7 @@ tabs:
             label: 'offline.gdpr::lang.cookie_group.fields.initial_status'
             span: full
             type: switch
+            default: 1
             comment: 'offline.gdpr::lang.cookie.fields.intial_status'
             tab: 'offline.gdpr::lang.cookie_group.tabs.description'
         description:

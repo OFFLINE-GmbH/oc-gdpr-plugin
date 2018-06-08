@@ -3,22 +3,31 @@ fields:
         label: 'offline.gdpr::lang.cookie_group.fields.name'
         span: auto
         type: text
-    initial_status:
-        label: 'offline.gdpr::lang.cookie_group.fields.initial_status'
-        span: auto
-        type: switch
-        default: 1
-        comment: 'offline.gdpr::lang.cookie_group.fields.initial_status_comment'
 tabs:
     fields:
-        1:
+        cookies:
             span: full
             type: partial
             path: cookies
             tab: 'offline.gdpr::lang.settings.cookies.label'
+            context: update
         description:
             label: 'offline.gdpr::lang.cookie_group.tabs.description'
             size: large
-            span: full
+            span: left
             type: richeditor
+            tab: 'offline.gdpr::lang.cookie_group.tabs.description'
+        initial_status:
+            label: 'offline.gdpr::lang.cookie_group.fields.initial_status'
+            span: right
+            type: switch
+            default: 1
+            comment: 'offline.gdpr::lang.cookie_group.fields.initial_status_comment'
+            tab: 'offline.gdpr::lang.cookie_group.tabs.description'
+        required:
+            label: 'offline.gdpr::lang.cookie_group.fields.required'
+            span: right
+            type: switch
+            default: 0
+            comment: 'offline.gdpr::lang.cookie_group.fields.required_comment'
             tab: 'offline.gdpr::lang.cookie_group.tabs.description'

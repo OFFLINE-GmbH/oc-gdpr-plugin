@@ -26,4 +26,9 @@ class Cookie extends Model
     public $belongsTo = [
         'group' => [CookieGroup::class, 'key' => 'cookie_group_id']
     ];
+
+    public function getMaxLevelAttribute()
+    {
+        return count($this->levels);
+    }
 }

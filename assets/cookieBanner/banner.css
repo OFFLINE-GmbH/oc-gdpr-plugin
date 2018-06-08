@@ -1,0 +1,81 @@
+.gdpr-banner {
+    position: fixed;
+    font-weight: normal;
+    bottom: 0;
+    z-index: 10000;
+    width: 100%;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+.gdpr-banner,
+.gdpr-banner .gdpr-banner__label {
+    font-size: .9rem;
+}
+.gdpr-banner__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+.gdpr-banner__column {
+    align-items: center;
+}
+.gdpr-banner__column--1 {
+    flex: 1;
+}
+.gdpr-banner__column--2 {
+    display: flex;
+}
+.gdpr-banner__message {
+    flex: 1;
+}
+.gdpr-banner__settings {
+    margin: 0 2rem;
+}
+.gdpr-banner__settings a {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    display: inline-block;
+    padding: 1px 0;
+}
+.gdpr-banner__button {
+    box-shadow: 0 2px 1px rgba(0, 0, 0, .1);
+    padding: .3em 1em;
+    cursor: pointer;
+    border-radius: 2px;
+    border: none;
+}
+.gdpr-banner__button--opt-in {
+    color: #fff;
+    background: green;
+    margin-left: 1rem;
+}
+.gdpr-banner__button--opt-out {
+    color: #333;
+    background: #aaa;
+}
+.gdpr-banner__cookie-groups {
+    display: flex;
+    flex-wrap: wrap;
+}
+.gdpr-banner__cookie-group:not(:last-child) {
+    margin-right: 2rem;
+}
+.gdpr-banner__cookie-group--required {
+    opacity: .8;
+}
+.gdpr-banner__cookie-group .gdpr-banner__label {
+    font-weight: normal;
+    cursor: pointer;
+    line-height: 1;
+    margin-bottom: 0;
+}
+.gdpr-banner__cookie-group .gdpr-banner__checkbox {
+    font-weight: normal;
+    font-size: inherit;
+    line-height: 1;
+    margin-bottom: 0;
+    margin-right: .6rem;
+    position: relative;
+    top: 4px;
+}
