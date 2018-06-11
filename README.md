@@ -24,12 +24,18 @@ you can check for the user's consent and optionally include your resources.
 #### Installation
 
 1. Define your cookie groups and cookies via the Backend settings
-1. Add the `cookieBanner` component to your layout (if you don't need the default css you can also add it to a page 
-or partial)
+1. Add the `cookieBanner` component to all of your **layouts**.
 
 #### Properties
 
 If you don't want to include the default css use `include_css = 0` when including your component.
+
+##### `cookieManager` page
+
+Set the property `cookie_manager_page` to the page that contains the `cookieManager` component. 
+
+A `Advanced Settings` link will be placed on the `cookieBar` that links to this page. This enables the user to 
+further define what cookies are allowed.
 
 ##### Hard vs. soft reload
 

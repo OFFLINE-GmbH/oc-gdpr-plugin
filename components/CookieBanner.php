@@ -1,12 +1,11 @@
 <?php namespace OFFLINE\GDPR\Components;
 
-use Carbon\Carbon;
 use Cms\Classes\ComponentBase;
-use Cms\Classes\ThemeManager;
-use Illuminate\Http\Request;
+use Cms\Classes\Page;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 use OFFLINE\GDPR\Models\CookieGroup;
+use Symfony\Component\HttpFoundation\Cookie as CookieFoundation;
 
 class CookieBanner extends ComponentBase
 {
@@ -15,13 +14,14 @@ class CookieBanner extends ComponentBase
     public $hardReload = false;
     public $updatePartial = '';
     public $updateSelector = '';
+    public $cookieManagerPage;
 
     const MINUTES_PER_YEAR = 24 * 60 * 365;
 
     public function componentDetails()
     {
         return [
-            'name'        => 'Cookie Bannner',
+            'name'        => 'Cookie Banner',
             'description' => trans('offline.gdpr::lang.cookie_banner.description'),
         ];
     }
@@ -29,37 +29,43 @@ class CookieBanner extends ComponentBase
     public function defineProperties()
     {
         return [
-            'include_css'     => [
+            'include_css'         => [
                 'title'       => trans('offline.gdpr::lang.cookie_banner.include_css.title'),
                 'description' => trans('offline.gdpr::lang.cookie_banner.include_css.description'),
                 'default'     => 1,
                 'type'        => 'checkbox',
             ],
-            'hard_reload'     => [
+            'hard_reload'         => [
                 'title'       => trans('offline.gdpr::lang.cookie_banner.hard_reload.title'),
                 'description' => trans('offline.gdpr::lang.cookie_banner.hard_reload.description'),
                 'default'     => 0,
                 'type'        => 'checkbox',
             ],
-            'update_partial'  => [
+            'update_partial'      => [
                 'title'       => trans('offline.gdpr::lang.cookie_banner.update_partial.title'),
                 'description' => trans('offline.gdpr::lang.cookie_banner.update_partial.description'),
                 'type'        => 'text',
             ],
-            'update_selector' => [
+            'update_selector'     => [
                 'title'       => trans('offline.gdpr::lang.cookie_banner.update_selector.title'),
                 'description' => trans('offline.gdpr::lang.cookie_banner.update_selector.description'),
                 'default'     => '#gdpr-reload',
                 'type'        => 'text',
+            ],
+            'cookie_manager_page' => [
+                'title'       => trans('offline.gdpr::lang.cookie_banner.cookie_manager_page.title'),
+                'description' => trans('offline.gdpr::lang.cookie_banner.cookie_manager_page.description'),
+                'type'        => 'dropdown',
             ],
         ];
     }
 
     public function init()
     {
-        $this->hardReload     = $this->property('hard_reload', false);
-        $this->updatePartial  = $this->property('update_partial', '');
-        $this->updateSelector = $this->property('update_selector', '#gdpr-reload');
+        $this->hardReload        = $this->property('hard_reload', false);
+        $this->updatePartial     = $this->property('update_partial', '');
+        $this->updateSelector    = $this->property('update_selector', '#gdpr-reload');
+        $this->cookieManagerPage = $this->property('cookie_manager_page');
     }
 
     public function onRun()
@@ -148,11 +154,27 @@ class CookieBanner extends ComponentBase
         // will not be available everywhere until the page is reloaded again.
         Session::flash('gdpr_cookie_consent', $value);
 
-        return Cookie::queue('gdpr_cookie_consent', $value, self::MINUTES_PER_YEAR, null, null, $this->isHttps(), true);
+        return Cookie::queue(
+            'gdpr_cookie_consent',
+            $value,
+            self::MINUTES_PER_YEAR,           // expire
+            '/',                              // path
+            null,                             // domain
+            $this->isHttps(),                 // secure
+            true,                             // httpOnly
+            false,                            // raw
+            CookieFoundation::SAMESITE_STRICT // sameSite
+        );
     }
 
     protected function isHttps()
     {
         return request()->isSecure();
+    }
+
+    public function getCookie_manager_pageOptions()
+    {
+        return [null => '-- ' . trans('offline.gdpr::lang.cookie_banner.cookie_manager_page.empty')]
+            + Page::getNameList();
     }
 }

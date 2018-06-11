@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 use OFFLINE\GDPR\Components\ConsentManager;
 use OFFLINE\GDPR\Components\CookieBanner;
+use OFFLINE\GDPR\Components\CookieManager;
 use OFFLINE\GDPR\Console\CleanUp;
 use OFFLINE\GDPR\Models\CookieConsentSettings;
 use OFFLINE\GDPR\Models\DataRetentionSettings;
@@ -28,6 +29,7 @@ class Plugin extends PluginBase
     {
         return [
             ConsentManager::class => 'consentManager',
+            CookieManager::class  => 'cookieManager',
             CookieBanner::class   => 'cookieBanner',
         ];
     }

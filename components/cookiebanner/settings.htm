@@ -1,3 +1,5 @@
-<div class="gdpr-banner__settings">
-    <a href="#">Advanced Settings</a>
-</div>
+{% if __SELF__.cookieManagerPage %}
+    <div class="gdpr-banner__settings">
+        <a href="{{ __SELF__.cookieManagerPage | page }}">Advanced Settings</a>
+    </div>
+{% endif %}
