@@ -1,0 +1,11 @@
+{% for group in groups %}
+    <div data-group-id="{{ group.id }}"
+         class="gdpr-cookie-manager__cookie-group
+                {{ loop.index0 == 0 ? 'gdpr-cookie-manager__cookie-group--active' : '' }}">
+        <div class="gdpr-cookie-manager__cookies">
+            {% for cookie in group.cookies %}
+                {% partial __SELF__  ~ '::cookie' cookie=cookie group=group %}
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}

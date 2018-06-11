@@ -11,4 +11,5 @@ columns:
         invisible: true
     initial_status:
         label: 'offline.gdpr::lang.cookie_group.fields.initial_status'
-        type: switch
+        type: partial
+        path: $/offline/gdpr/models/cookie/_initial_status.htm

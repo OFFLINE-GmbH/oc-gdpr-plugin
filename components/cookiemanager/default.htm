@@ -1,0 +1,13 @@
+<form action="{{ this.page.url | app }}" method="post">
+    <div class="gdpr-cookie-manager">
+        {% partial __SELF__ ~ '::groups' groups=__SELF__.cookieGroups %}
+        <div class="gdpr-cookie-manager__content">
+            {% partial __SELF__ ~ '::cookies' groups=__SELF__.cookieGroups %}
+        </div>
+    </div>
+</form>
+{% put scripts %}
+    <script>
+        {% partial __SELF__ ~ '::scripts.js' %}
+    </script>
+{% endput %}

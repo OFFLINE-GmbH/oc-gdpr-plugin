@@ -1,0 +1,22 @@
+<div class="gdpr-cookie-manager__groups">
+    <ul class="gdpr-cookie-manager__group-list">
+        {% for group in groups %}
+            <li>
+                <a href="javascript:;"
+                   data-handle-group-id="{{ group.id }}"
+                   class="gdpr-cookie-manager__group-list-entry
+                        {{ loop.index0 == 0 ? 'gdpr-cookie-manager__group-list-entry--active' : '' }}">
+                    <div class="gdpr-cookie-manager__group-list-name">
+                        {{ group.name }}
+                    </div>
+                    <div class="gdpr-cookie-manager__group-list-description">
+                        {{ group.description | raw }}
+                    </div>
+                </a>
+            </li>
+        {% endfor %}
+        <li>
+            {% partial __SELF__ ~ '::submitbutton' %}
+        </li>
+    </ul>
+</div>

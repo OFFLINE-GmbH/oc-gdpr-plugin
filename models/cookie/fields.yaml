@@ -32,12 +32,16 @@ tabs:
             tab: 'offline.gdpr::lang.cookie.fields.levels'
             form:
                 fields:
-                    name:
+                    level_name:
                         label: 'offline.gdpr::lang.settings.cookie_consent.apps.repeater.name.label'
                         span: full
                         type: text
-                    description:
+                    level_description:
                         label: 'offline.gdpr::lang.cookie_group.tabs.description'
                         size: small
                         span: full
                         type: richeditor
+                    is_default_level:
+                        label: 'offline.gdpr::lang.cookie_group.fields.default_level'
+                        span: full
+                        type: checkbox

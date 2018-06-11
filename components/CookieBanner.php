@@ -2,10 +2,8 @@
 
 use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
-use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Facades\Session;
+use OFFLINE\GDPR\Classes\Cookies\ConsentCookie;
 use OFFLINE\GDPR\Models\CookieGroup;
-use Symfony\Component\HttpFoundation\Cookie as CookieFoundation;
 
 class CookieBanner extends ComponentBase
 {
@@ -15,8 +13,10 @@ class CookieBanner extends ComponentBase
     public $updatePartial = '';
     public $updateSelector = '';
     public $cookieManagerPage;
-
-    const MINUTES_PER_YEAR = 24 * 60 * 365;
+    /**
+     * @var ConsentCookie
+     */
+    public $consentCookie;
 
     public function componentDetails()
     {
@@ -62,6 +62,7 @@ class CookieBanner extends ComponentBase
 
     public function init()
     {
+        $this->consentCookie     = new ConsentCookie();
         $this->hardReload        = $this->property('hard_reload', false);
         $this->updatePartial     = $this->property('update_partial', '');
         $this->updateSelector    = $this->property('update_selector', '#gdpr-reload');
@@ -71,10 +72,10 @@ class CookieBanner extends ComponentBase
     public function onRun()
     {
         // We only show te banner on the first page view of every user.
-        if ( ! $this->isFirstPageView()) {
+        if ( ! $this->consentCookie->isFirstPageView()) {
             $this->hide = true;
 
-            if ($this->isUndecided()) {
+            if ($this->consentCookie->isUndecided()) {
                 $this->setDefaultConsent();
             }
 
@@ -87,7 +88,7 @@ class CookieBanner extends ComponentBase
             $this->addCss('assets/cookieBanner/banner.css');
         }
 
-        $this->registerPageView();
+        $this->consentCookie->registerPageView();
     }
 
     public function onSubmit()
@@ -99,12 +100,12 @@ class CookieBanner extends ComponentBase
             return $item->initial_status;
         })->pluck('max_level', 'code')->toArray();
 
-        $this->setCookie($cookies);
+        $this->consentCookie->set($cookies);
     }
 
     public function onDecline()
     {
-        $this->setCookie(false);
+        $this->consentCookie->set(false);
     }
 
     public function onRefresh()
@@ -125,51 +126,7 @@ class CookieBanner extends ComponentBase
             return $item->initial_status;
         })->pluck('max_level', 'code')->toArray();
 
-        return $this->setCookie($cookies);
-    }
-
-    protected function registerPageView()
-    {
-        Session::put('gdpr_first_page_view', time());
-    }
-
-    protected function isFirstPageView(): bool
-    {
-        return Session::get('gdpr_first_page_view') === null && Cookie::get('gdpr_cookie_consent') === null;
-    }
-
-    protected function hasDeclined(): bool
-    {
-        return Cookie::get('gdpr_cookie_consent') === false;
-    }
-
-    protected function isUndecided(): bool
-    {
-        return Cookie::get('gdpr_cookie_consent') === null;
-    }
-
-    protected function setCookie($value)
-    {
-        // Keep the decision for the next request in the session since the cookie
-        // will not be available everywhere until the page is reloaded again.
-        Session::flash('gdpr_cookie_consent', $value);
-
-        return Cookie::queue(
-            'gdpr_cookie_consent',
-            $value,
-            self::MINUTES_PER_YEAR,           // expire
-            '/',                              // path
-            null,                             // domain
-            $this->isHttps(),                 // secure
-            true,                             // httpOnly
-            false,                            // raw
-            CookieFoundation::SAMESITE_STRICT // sameSite
-        );
-    }
-
-    protected function isHttps()
-    {
-        return request()->isSecure();
+        return $this->consentCookie->set($cookies);
     }
 
     public function getCookie_manager_pageOptions()

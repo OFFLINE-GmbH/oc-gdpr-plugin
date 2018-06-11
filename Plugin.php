@@ -3,6 +3,7 @@
 use Backend\Facades\Backend;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
+use OFFLINE\GDPR\Classes\Cookies\ConsentCookie;
 use OFFLINE\GDPR\Components\ConsentManager;
 use OFFLINE\GDPR\Components\CookieBanner;
 use OFFLINE\GDPR\Components\CookieManager;
@@ -39,20 +40,13 @@ class Plugin extends PluginBase
         return [
             'functions' => [
                 'gdprCookieAllowed'      => function ($code, $level = 0) {
-                    $consent = Session::get('gdpr_cookie_consent', Cookie::get('gdpr_cookie_consent'));
-                    if ( ! is_array($consent)) {
-                        return false;
-                    }
-
-                    return array_get($consent, $code, -1) >= $level;
+                    return (new ConsentCookie())->isAllowed($code, $level);
                 },
-                'gdprAllowedCookieLevel' => function ($code, $level = 0) {
-                    $consent = Session::get('gdpr_cookie_consent', Cookie::get('gdpr_cookie_consent'));
-                    if ( ! is_array($consent)) {
-                        return -1;
-                    }
-
-                    return array_get($consent, $code, -1);
+                'gdprAllowedCookieLevel' => function ($code) {
+                    return (new ConsentCookie())->allowedCookieLevel($code);
+                },
+                'gdprIsUndecied' => function () {
+                    return (new ConsentCookie())->isUndecided();
                 },
             ],
         ];

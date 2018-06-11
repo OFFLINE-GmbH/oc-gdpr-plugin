@@ -13,6 +13,37 @@ This plugin is available on the October Marketplace: https://octobercms.com/plug
 
 This plugin provides two simple components to make your October installation GDPR compliant.
 
+### Quick start
+
+1. Define your cookie groups and cookies via the backend settings page.
+1. Place the `cookieManager` component on a `cookies.htm` page
+1. Place the `cookieBanner` component on all of your layouts. Use the configuration listed below
+
+```ini
+[cookieBanner]
+include_css = 1
+hard_reload = 0
+update_partial = "gdpr"
+update_selector = "#gdpr-reload"
+cookie_manager_page = "cookies"
+```
+
+1. Create a new `gdpr.htm` partial. Include the partial in your layouts as shown below.
+
+```twig
+<div id="gdpr-reload">
+    {% partial 'gdpr' %}
+</div>
+```
+
+1. Inside your `gdpr.htm` partial you can now conditionally include your dependencies by querying the cookie's `code`.
+
+```twig
+{% if gdprCookieAllowed('google-analytics') %}
+    <!-- Include analytics code here -->
+{% endif %}
+```
+
 ### cookieBanner
 
 The `cookieBanner` component displays a cookie banner on the first page view. There the user has the possibility to 
@@ -93,6 +124,18 @@ value of `0` or higher means the cookie is allowed with the returned level value
     <!-- Include advanced Level 3 Analtics Code here -->
 {% endif %}
 ```
+
+##### `gdprIsUndecied()`
+
+Check if the user has made a decision about the cookies yet. This will return `true` on the second page view if the 
+user did not interact with the `cookieBanner` (silent opt-in).
+
+### Cookie manager
+
+The `cookieManager` component gives a visitor more control over the cookies you site is allowed to use. 
+
+This component can simply be placed on a page and needs no further configuration.  
+
 
 ## Data retention
 

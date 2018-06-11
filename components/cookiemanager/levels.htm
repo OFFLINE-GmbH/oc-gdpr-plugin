@@ -1,0 +1,22 @@
+<div class="gdpr-cookie-manager__cookie-levels">
+    <input name="cookies[{{ cookie.code }}][level]"
+           type="range"
+           value="{{ selectedLevel }}"
+           min="0"
+           max="{{ (cookie.levels | length) - 1 }}"
+           step="1"
+           data-handle-cookie-slider="{{ cookie.id }}-"
+    >
+    {% for level in cookie.levels %}
+        <div data-cookie-level="{{ cookie.id }}-{{ loop.index0 }}"
+             class="gdpr-cookie-manager__cookie-level
+            {{ selectedLevel == loop.index0 ? 'gdpr-cookie-manager__cookie-level--active' : '' }}">
+            <h4 class="gdpr-cookie-manager__cookie-level-name">
+                {{ level.level_name }}
+            </h4>
+            <div class="gdpr-cookie-manager__cookie-level-description">
+                {{ level.level_description | raw }}
+            </div>
+        </div>
+    {% endfor %}
+</div>

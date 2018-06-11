@@ -3,11 +3,16 @@
         'name'        => 'GDPR',
         'description' => 'Mache deine Website GDPR konform',
     ],
+    'common'          => [
+        'enabled'  => 'Aktiviert',
+        'disabled' => 'Deaktiviert',
+        'sorted'   => 'Reihenfolge aktualisiert',
+    ],
     'cookie_banner'   => [
         'description'         => 'Zeigt ein Cookie-Banner an',
         'include_css'         => [
-            'title'       => 'Abhängigkeiten laden',
-            'description' => 'Binde alle benötigten JS-Abhängigeiten automatisch ein',
+            'title'       => 'Standard CSS einbinden',
+            'description' => 'Lädt die mitgelieferte CSS-Datei',
         ],
         'hard_reload'         => [
             'title'       => 'Hard-Reload nach Akzeptieren',
@@ -27,7 +32,7 @@
             'empty'       => 'Ohne erweiterte Einstellungen',
         ],
     ],
-    'cookie_manager'   => [
+    'cookie_manager'  => [
         'description' => 'Zeigt eine Übersicht aller Cookies mit Bearbeitungsmöglichkeit an',
     ],
     'consent_manager' => [
@@ -145,10 +150,11 @@
         'fields' => [
             'name'                   => 'Gruppenname',
             'initial_status'         => 'Initialzustand',
-            'initial_status_comment' => 'Die Cookies in dieser Gruppe sind standardmässig aktiv',
+            'initial_status_comment' => 'Diese Cookiegruppe ist standardmässig aktiv',
             'required'               => 'Zustimmung erzwungen',
             'required_comment'       => 'Die Cookies dieser Gruppe werden für die Funktionalität der Website benötigt und können nicht deaktiviert werden',
             'slug'                   => 'Slug',
+            'default_level'          => 'Dieses Level ist für den Besucher voreingestellt',
         ],
         'tabs'   => [
             'description' => 'Beschreibung',

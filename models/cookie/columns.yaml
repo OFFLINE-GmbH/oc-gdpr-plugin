@@ -1,16 +1,28 @@
 columns:
-    code:
-        label: 'offline.gdpr::lang.cookie.fields.code'
-        type: text
+    sort_order_handle:
+            label: " "
+            type: partial
+            path: $/offline/gdpr/models/cookie/_reorder_handle.htm
+            sortable: false
+            width: 20px
+    sort_order:
+        invisible: true
+        type: number
+        sortable: true
     name:
         label: 'offline.gdpr::lang.settings.cookie_consent.apps.repeater.name.label'
+        type: text
+    code:
+        label: 'offline.gdpr::lang.cookie.fields.code'
         type: text
     description:
         label: 'offline.gdpr::lang.cookie_group.tabs.description'
         type: text
+        invisible: true
     initial_status:
         label: 'offline.gdpr::lang.cookie_group.fields.initial_status'
-        type: text
+        type: partial
+        path: $/offline/gdpr/models/cookie/_initial_status.htm
     cookie_group_id:
         label: 'offline.gdpr::lang.cookie_group.fields.name'
         type: text

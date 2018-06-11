@@ -16,6 +16,7 @@ class CreateOfflineGdprCookies extends Migration
             $table->text('description')->nullable();
             $table->boolean('initial_status')->default(1);
             $table->text('levels')->nullable();
+            $table->integer('default_level')->unsigned()->default(0);
             $table->integer('cookie_group_id')->unsigned();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();

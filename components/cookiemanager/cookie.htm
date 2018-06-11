@@ -1,0 +1,17 @@
+{% set consent = __SELF__.consent %}
+{% set isChecked = consent ? (cookie.code in consent | keys) : cookie.initial_status %}
+{% set selectedLevel = consent[cookie.code] | default(cookie.default_level | default(0)) %}
+<div class="gdpr-cookie-manager__cookie {{ not isChecked ? 'gdpr-cookie-manager__cookie--disabled' : '' }}">
+    <div class="gdpr-cookie-manager__cookie-toggle">
+        {% partial __SELF__ ~ '::toggle' cookie=cookie isChecked=isChecked isRequired=group.required %}
+    </div>
+    <div class="gdpr-cookie-manager__cookie-details">
+        <h3 class="gdpr-cookie-manager__cookie-name">{{ cookie.name }}</h3>
+        <div class="gdpr-cookie-manager__cookie-description">
+            {{ cookie.description | raw }}
+        </div>
+        {% if cookie.levels %}
+            {% partial __SELF__ ~ '::levels' cookie=cookie selectedLevel=selectedLevel %}
+        {% endif %}
+    </div>
+</div>

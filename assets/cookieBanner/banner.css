@@ -8,6 +8,11 @@
     background-color: #333;
     color: #fff;
 }
+@media screen and (max-width: 900px) {
+    .gdpr-banner {
+        text-align: center;
+    }
+}
 .gdpr-banner,
 .gdpr-banner .gdpr-banner__label {
     font-size: .9rem;
@@ -16,6 +21,11 @@
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
+}
+@media screen and (max-width: 900px) {
+    .gdpr-banner__wrapper {
+        display: block;
+    }
 }
 .gdpr-banner__column {
     align-items: center;
@@ -26,11 +36,22 @@
 .gdpr-banner__column--2 {
     display: flex;
 }
+@media screen and (max-width: 900px) {
+    .gdpr-banner__column--2 {
+        margin-top: 2rem;
+        justify-content: center;
+    }
+}
 .gdpr-banner__message {
     flex: 1;
 }
 .gdpr-banner__settings {
     margin: 0 2rem;
+}
+@media screen and (max-width: 900px) {
+    .gdpr-banner__settings {
+        margin-left: 0;
+    }
 }
 .gdpr-banner__settings a {
     color: #fff;
@@ -57,6 +78,12 @@
 .gdpr-banner__cookie-groups {
     display: flex;
     flex-wrap: wrap;
+}
+@media screen and (max-width: 900px) {
+    .gdpr-banner__cookie-groups {
+        margin-top: 1rem;
+        justify-content: center;
+    }
 }
 .gdpr-banner__cookie-group:not(:last-child) {
     margin-right: 2rem;

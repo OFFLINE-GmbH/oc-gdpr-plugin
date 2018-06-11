@@ -3,6 +3,8 @@
 use Backend\Behaviors\RelationController;
 use Backend\Classes\Controller;
 use BackendMenu;
+use Flash;
+use OFFLINE\GDPR\Models\CookieGroup;
 use System\Classes\SettingsManager;
 use Backend\Behaviors\ListController;
 use Backend\Behaviors\FormController;
@@ -31,5 +33,17 @@ class CookieGroups extends Controller
         parent::__construct();
         BackendMenu::setContext('October.System', 'system', 'settings');
         SettingsManager::setContext('OFFLINE.GDPR', 'gdpr_cookies');
+        $this->addJs('/plugins/offline/gdpr/assets/backend/sortable.js');
+        $this->addJs('/plugins/offline/gdpr/assets/backend/backend.js');
+    }
+
+    public function onReorderRelation()
+    {
+        $records = request()->input('rcd');
+        $model   = CookieGroup::findOrFail($this->params[0]);
+
+        $model->setRelationOrder('cookies', $records, range(1, count($records)));
+
+        Flash::success(trans('offline.gdpr::lang.common.sorted'));
     }
 }
