@@ -2,10 +2,10 @@
 
 namespace OFFLINE\GDPR\Classes\Cookies;
 
-use OFFLINE\GDPR\Models\CookieGroup;
-use Symfony\Component\HttpFoundation\Cookie as CookieFoundation;
-use Session;
 use Illuminate\Support\Facades\Cookie;
+use OFFLINE\GDPR\Models\CookieGroup;
+use Session;
+use Symfony\Component\HttpFoundation\Cookie as CookieFoundation;
 
 class ConsentCookie
 {
@@ -13,6 +13,8 @@ class ConsentCookie
 
     public function set($value)
     {
+        // Required cookies cannot be disabled and are therefore always added
+        // to the consent cookie by default.
         $value = $this->appendRequiredCookies($value);
 
         // Keep the decision for the next request in the session since the cookie
@@ -62,24 +64,24 @@ class ConsentCookie
         return Session::get('gdpr_first_page_view') === null && Cookie::get('gdpr_cookie_consent') === null;
     }
 
-    public function isAllowed($code, $level = 0)
+    public function isAllowed($cookieCode, $level = 0)
     {
         $consent = $this->get();
         if (count($consent) < 1) {
             return false;
         }
 
-        return array_get($consent, $code, -1) >= $level;
+        return array_get($consent, $cookieCode, -1) >= $level;
     }
 
-    public function allowedCookieLevel($code, $level = 0)
+    public function allowedCookieLevel($cookieCode, $level = 0)
     {
         $consent = $this->get();
         if (count($consent) < 1) {
             return -1;
         }
 
-        return array_get($consent, $code, -1);
+        return array_get($consent, $cookieCode, -1);
     }
 
     protected function appendRequiredCookies($value)

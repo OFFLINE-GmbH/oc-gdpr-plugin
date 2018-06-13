@@ -65,23 +65,4 @@ class CookieManager extends ComponentBase
     {
         return CookieGroup::with('cookies')->orderBy('sort_order', 'ASC')->get();
     }
-
-    protected function setCookie($value)
-    {
-        // Keep the decision for the next request in the session since the cookie
-        // will not be available everywhere until the page is reloaded again.
-        Session::flash('gdpr_cookie_consent', $value);
-
-        return Cookie::queue(
-            'gdpr_cookie_consent',
-            $value,
-            self::MINUTES_PER_YEAR,           // expire
-            '/',                              // path
-            null,                             // domain
-            $this->isHttps(),                 // secure
-            true,                             // httpOnly
-            false,                            // raw
-            CookieFoundation::SAMESITE_STRICT // sameSite
-        );
-    }
 }

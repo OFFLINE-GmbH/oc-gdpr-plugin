@@ -71,7 +71,7 @@ class CookieBanner extends ComponentBase
 
     public function onRun()
     {
-        // We only show te banner on the first page view of every user.
+        // We only show the banner on the first page view of every user.
         if ( ! $this->consentCookie->isFirstPageView()) {
             $this->hide = true;
 
