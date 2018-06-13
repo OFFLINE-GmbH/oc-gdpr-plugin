@@ -3,6 +3,38 @@
         'name' => 'GDPR',
         'description' => 'Make your website GDPR compliant',
     ],
+    'common' => [
+        'enabled' => 'Enabled',
+        'disabled' => 'Disabled',
+        'sorted' => 'Order updated successfully',
+    ],
+    'cookie_banner' => [
+        'description' => 'Displays a cookie banner',
+        'include_css' => [
+            'title' => 'Include CSS',
+            'description' => 'Include default styles for this component',
+        ],
+        'hard_reload' => [
+            'title' => 'Hard reload after the user accepted',
+            'description' => 'Do a hard reload after the user made a decision to refresh all your dependencies files',
+        ],
+        'update_partial' => [
+            'title' => 'Partial for soft reload',
+            'description' => 'This partial will be loaded when the user accepts.',
+        ],
+        'update_selector' => [
+            'title' => 'CSS selector for soft reload',
+            'description' => 'The partial will be loaded into this element.',
+        ],
+        'cookie_manager_page' => [
+            'title' => 'Page for advanced settings',
+            'description' => 'Place the cookieManager component on this page',
+            'empty' => 'Without advanced settings',
+        ],
+    ],
+    'cookie_manager' => [
+        'description' => 'Displays an overview and edit form for all the cookies you have defined in the backend settings',
+    ],
     'consent_manager' => [
         'description' => 'Includes the Klaro! Consent Manager',
         'include_assets' => [
@@ -15,6 +47,10 @@
         ],
     ],
     'settings' => [
+        'cookies' => [
+            'label' => 'Cookies',
+            'description' => 'Cookie management',
+        ],
         'cookie_consent' => [
             'label' => 'Cookie Consent',
             'description' => 'Configure Klaro! Manager',
@@ -110,8 +146,31 @@
             ],
         ],
     ],
+    'cookie_group' => [
+        'fields' => [
+            'name' => 'Group name',
+            'initial_status' => 'Initial status',
+            'initial_status_comment' => 'This cookie group is enabled by default',
+            'required' => 'Required',
+            'required_comment' => 'The cookies in this group are needed for the website to work properly and can therefore not be disabled by the user',
+            'slug' => 'Slug',
+            'default_level' => 'This level is preselected for the user',
+        ],
+        'tabs' => [
+            'description' => 'Description',
+            'cookies' => 'Cookies',
+        ],
+    ],
+    'cookie' => [
+        'fields' => [
+            'code' => 'Code',
+            'intial_status' => 'This cookie is enabled by default',
+            'levels' => 'Cookie levels',
+        ],
+    ],
     'permissions' => [
         'manage_cookie_consent' => 'Can manage cookie consent settings',
         'manage_data_retention' => 'Can manage data retention policies',
+        'manage_cookie_groups' => 'Can manage cookie groups',
     ],
 ];

@@ -1,0 +1,11 @@
+name: CookieGroups
+modelClass: OFFLINE\GDPR\Models\CookieGroup
+form: $/offline/gdpr/models/cookiegroup/fields.yaml
+defaultRedirect: offline/gdpr/cookiegroups
+create:
+    redirect: 'offline/gdpr/cookiegroups/update/:id'
+    redirectClose: offline/gdpr/cookiegroups
+update:
+    redirect: offline/gdpr/cookiegroups
+    redirectClose: offline/gdpr/cookiegroups
+preview: {  }

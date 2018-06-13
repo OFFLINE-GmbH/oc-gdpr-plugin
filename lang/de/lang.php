@@ -3,6 +3,38 @@
         'name'        => 'GDPR',
         'description' => 'Mache deine Website GDPR konform',
     ],
+    'common'          => [
+        'enabled'  => 'Aktiviert',
+        'disabled' => 'Deaktiviert',
+        'sorted'   => 'Reihenfolge aktualisiert',
+    ],
+    'cookie_banner'   => [
+        'description'         => 'Zeigt ein Cookie-Banner an',
+        'include_css'         => [
+            'title'       => 'Standard CSS einbinden',
+            'description' => 'Lädt die mitgelieferte CSS-Datei',
+        ],
+        'hard_reload'         => [
+            'title'       => 'Hard-Reload nach Akzeptieren',
+            'description' => 'Seite nach Akzeptieren komplett neu laden um alle JS-Scripts korrekt einzubinden',
+        ],
+        'update_partial'      => [
+            'title'       => 'Partial für Soft-Reload',
+            'description' => 'Dieses Partial wird nach dem Akzeptieren automatisch neu geladen.',
+        ],
+        'update_selector'     => [
+            'title'       => 'CSS-Selector für Soft-Reload',
+            'description' => 'Das Partial wird nach dem Akzeptieren in diesem Element neu geladen.',
+        ],
+        'cookie_manager_page' => [
+            'title'       => 'Seite für erweiterte Einstellungen',
+            'description' => 'Auf dieser Seite muss die cookieManager Komponente platziert werden',
+            'empty'       => 'Ohne erweiterte Einstellungen',
+        ],
+    ],
+    'cookie_manager'  => [
+        'description' => 'Zeigt eine Übersicht aller Cookies mit Bearbeitungsmöglichkeit an',
+    ],
     'consent_manager' => [
         'description'    => 'Bindet den Klaro! Constent Manager ein',
         'include_assets' => [
@@ -15,6 +47,10 @@
         ],
     ],
     'settings'        => [
+        'cookies'        => [
+            'label'       => 'Cookies',
+            'description' => 'Cookie-Verwaltung',
+        ],
         'cookie_consent' => [
             'label'                     => 'Cookie Consent',
             'description'               => 'Einstellungen zum Klaro! Manager',
@@ -110,8 +146,31 @@
             ],
         ],
     ],
+    'cookie_group'    => [
+        'fields' => [
+            'name'                   => 'Gruppenname',
+            'initial_status'         => 'Initialzustand',
+            'initial_status_comment' => 'Diese Cookiegruppe ist standardmässig aktiv',
+            'required'               => 'Zustimmung erzwungen',
+            'required_comment'       => 'Die Cookies dieser Gruppe werden für die Funktionalität der Website benötigt und können nicht deaktiviert werden',
+            'slug'                   => 'Slug',
+            'default_level'          => 'Dieses Level ist für den Besucher voreingestellt',
+        ],
+        'tabs'   => [
+            'description' => 'Beschreibung',
+            'cookies'     => 'Cookies',
+        ],
+    ],
+    'cookie'          => [
+        'fields' => [
+            'code'          => 'Code',
+            'intial_status' => 'Dieses Cookie ist standardmässig aktiviert',
+            'levels'        => 'Cookie-Levels',
+        ],
+    ],
     'permissions'     => [
         'manage_cookie_consent' => 'Verwalte Cookie Consent Einstellungen',
         'manage_data_retention' => 'Verwalte Datenaufbewahrung',
+        'manage_cookie_groups'  => 'Kann Cookie-Gruppen verwalten',
     ],
 ];

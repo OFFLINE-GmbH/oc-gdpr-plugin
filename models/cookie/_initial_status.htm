@@ -1,0 +1,9 @@
+<?php if($value): ?>
+    <span class="oc-icon-circle text-success">
+        <?= e(trans('offline.gdpr::lang.common.enabled')) ?>
+    </span>
+<?php else: ?>
+    <span class="oc-icon-circle text-mute">
+        <?= e(trans('offline.gdpr::lang.common.disabled')) ?>
+    </span>
+<?php endif; ?>

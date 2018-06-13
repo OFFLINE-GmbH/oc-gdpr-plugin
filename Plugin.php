@@ -1,6 +1,12 @@
 <?php namespace OFFLINE\GDPR;
 
+use Backend\Facades\Backend;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Session;
+use OFFLINE\GDPR\Classes\Cookies\ConsentCookie;
 use OFFLINE\GDPR\Components\ConsentManager;
+use OFFLINE\GDPR\Components\CookieBanner;
+use OFFLINE\GDPR\Components\CookieManager;
 use OFFLINE\GDPR\Console\CleanUp;
 use OFFLINE\GDPR\Models\CookieConsentSettings;
 use OFFLINE\GDPR\Models\DataRetentionSettings;
@@ -24,8 +30,28 @@ class Plugin extends PluginBase
     {
         return [
             ConsentManager::class => 'consentManager',
+            CookieManager::class  => 'cookieManager',
+            CookieBanner::class   => 'cookieBanner',
         ];
     }
+
+    public function registerMarkupTags()
+    {
+        return [
+            'functions' => [
+                'gdprCookieAllowed'      => function ($code, $level = 0) {
+                    return (new ConsentCookie())->isAllowed($code, $level);
+                },
+                'gdprAllowedCookieLevel' => function ($code) {
+                    return (new ConsentCookie())->allowedCookieLevel($code);
+                },
+                'gdprIsUndecied' => function () {
+                    return (new ConsentCookie())->isUndecided();
+                },
+            ],
+        ];
+    }
+
 
     public function registerSettings()
     {
@@ -39,6 +65,16 @@ class Plugin extends PluginBase
                 'order'       => 200,
                 'keywords'    => 'gdpr',
                 'permissions' => ['offline.gdpr.manage_cookie_consent'],
+            ],
+            'gdpr_cookies'        => [
+                'label'       => trans('offline.gdpr::lang.settings.cookies.label'),
+                'description' => trans('offline.gdpr::lang.settings.cookies.description'),
+                'category'    => 'GDPR',
+                'icon'        => 'oc-icon-list',
+                'url'         => Backend::url('offline/gdpr/cookiegroups'),
+                'order'       => 200,
+                'keywords'    => 'gdpr',
+                'permissions' => ['offline.gdpr.manage_cookie_groups'],
             ],
             'gdpr_data_retention' => [
                 'label'       => trans('offline.gdpr::lang.settings.data_retention.label'),

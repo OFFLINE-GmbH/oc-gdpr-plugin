@@ -1,0 +1,5 @@
+<div class="gdpr-banner__cookie-groups">
+    {% for group in __SELF__.cookieGroups %}
+        {% partial __SELF__ ~ '::cookiegroup' group=group %}
+    {% endfor %}
+</div>

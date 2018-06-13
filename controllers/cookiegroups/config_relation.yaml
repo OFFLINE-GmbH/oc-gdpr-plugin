@@ -1,0 +1,12 @@
+cookies:
+    label: offline.gdpr::lang.settings.cookies.label
+    showSorting: false
+    view:
+        list: $/offline/gdpr/models/cookie/columns.yaml
+        toolbarButtons: create|delete
+        defaultSort:
+            column: sort_order
+            direction: asc
+    manage:
+        form: $/offline/gdpr/models/cookie/fields.yaml
+        recordsPerPage: 10

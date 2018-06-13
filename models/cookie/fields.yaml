@@ -1,0 +1,47 @@
+fields:
+    name:
+        label: 'offline.gdpr::lang.settings.cookie_consent.apps.repeater.name.label'
+        span: auto
+        type: text
+    code:
+        label: 'offline.gdpr::lang.cookie.fields.code'
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text
+tabs:
+    fields:
+        initial_status:
+            label: 'offline.gdpr::lang.cookie_group.fields.initial_status'
+            span: full
+            type: switch
+            default: 1
+            comment: 'offline.gdpr::lang.cookie.fields.intial_status'
+            tab: 'offline.gdpr::lang.cookie_group.tabs.description'
+        description:
+            label: 'offline.gdpr::lang.cookie_group.tabs.description'
+            size: large
+            span: full
+            type: richeditor
+            tab: 'offline.gdpr::lang.cookie_group.tabs.description'
+        levels:
+            prompt: 'Add new level'
+            span: full
+            type: repeater
+            tab: 'offline.gdpr::lang.cookie.fields.levels'
+            form:
+                fields:
+                    level_name:
+                        label: 'offline.gdpr::lang.settings.cookie_consent.apps.repeater.name.label'
+                        span: full
+                        type: text
+                    level_description:
+                        label: 'offline.gdpr::lang.cookie_group.tabs.description'
+                        size: small
+                        span: full
+                        type: richeditor
+                    is_default_level:
+                        label: 'offline.gdpr::lang.cookie_group.fields.default_level'
+                        span: full
+                        type: checkbox

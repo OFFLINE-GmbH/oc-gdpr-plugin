@@ -1,0 +1,9 @@
+<input name="cookies[{{ cookie.code }}][enabled]"
+       value="1"
+       class="tgl js-cookie-toggle"
+       id="toggle-{{ cookie.id }}"
+       type="checkbox"
+        {{ isChecked ? 'checked' : '' }}
+        {{ group.required ? 'disabled' : '' }}
+/>
+<label class="tgl-btn" for="toggle-{{ cookie.id }}"></label>

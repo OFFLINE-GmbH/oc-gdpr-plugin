@@ -8,3 +8,7 @@
     - Added french translations (thanks to damsfx)
 1.0.5:
     - Fixed bug in consent manager configuration
+1.0.6:
+    - 'Added new cookie manager component'
+    - create_offline_gdpr_cookie_groups.php
+    - create_offline_gdpr_cookies.php

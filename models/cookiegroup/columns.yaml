@@ -1,0 +1,15 @@
+columns:
+    name:
+        label: 'offline.gdpr::lang.cookie_group.fields.name'
+        type: text
+    slug:
+        label: 'offline.gdpr::lang.cookie_group.fields.slug'
+        type: text
+    description:
+        label: 'offline.gdpr::lang.cookie_group.tabs.description'
+        type: text
+        invisible: true
+    initial_status:
+        label: 'offline.gdpr::lang.cookie_group.fields.initial_status'
+        type: partial
+        path: $/offline/gdpr/models/cookie/_initial_status.htm
