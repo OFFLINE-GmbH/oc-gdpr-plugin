@@ -89,7 +89,7 @@ further define what cookies are allowed.
 
 ##### Hard vs. soft reload
 
-If the user accepts some cookies you have to options to proceed:
+If the user accepts some cookies you have two options to proceed:
 
 1. Enable the option `hard_reload` to fully refresh the page. This is the easiest way to load your dependencies after
  the user made his decision.
@@ -101,14 +101,14 @@ If the user accepts some cookies you have to options to proceed:
 include_css = 1
 hard_reload = 0
 update_selector = "#gdpr-reload"
-update_partial = "gdpr-scripts"
+update_partial = "gdpr"
 ==
 <div id="gdpr-reload">
-    {% partial 'gdpr-scripts' %}
+    {% partial 'gdpr' %}
 </div>    
 ```
 
-And in your `gdpr-scripts` partial you can use:
+And in your `gdpr` partial you can use:
 
 ```twig
 {% if gdprCookieAllowed('google-analytics') %}
@@ -120,8 +120,8 @@ And in your `gdpr-scripts` partial you can use:
 
 ##### `gdprCookieAllowed($code, $minLevel = 0)`
 
-Check if a certain cookie is allowed to be indluded. You can optionally pass a cookie level to check if the user has 
-accepted the required level of this cookie.
+Check if a certain cookie is allowed to be included. You can optionally pass a cookie level to check if the user has 
+accepted a specific level of this cookie.
 
 ```twig
 {% if gdprCookieAllowed('google-analytics') %}
@@ -151,10 +151,20 @@ user did not interact with the `cookieBanner` (silent opt-in).
 
 ### Cookie manager
 
-The `cookieManager` component gives a visitor more control over the cookies you site is allowed to use. 
+The `cookieManager` component gives a visitor more control over the cookies your site is using. 
 
 This component can simply be placed on a page and needs no further configuration.  
 
+```twig
+title = "Cookies"
+url = "/cookies"
+layout = "default"
+is_hidden = 0
+
+[cookieManager]
+==
+{% component 'cookieManager' %}
+```
 
 ## Data retention
 
