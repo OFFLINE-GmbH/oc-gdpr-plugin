@@ -13,6 +13,7 @@ class CookieBanner extends ComponentBase
     public $updatePartial = '';
     public $updateSelector = '';
     public $cookieManagerPage;
+    public $ignoreBehaviour = 'nothing';
     /**
      * @var ConsentCookie
      */
@@ -57,12 +58,18 @@ class CookieBanner extends ComponentBase
                 'description' => trans('offline.gdpr::lang.cookie_banner.cookie_manager_page.description'),
                 'type'        => 'dropdown',
             ],
+            'ignore_behaviour'    => [
+                'title'       => trans('offline.gdpr::lang.cookie_banner.ignore_behaviour.title'),
+                'description' => trans('offline.gdpr::lang.cookie_banner.ignore_behaviour.description'),
+                'type'        => 'dropdown',
+            ],
         ];
     }
 
     public function init()
     {
         $this->consentCookie     = new ConsentCookie();
+        $this->ignoreBehaviour   = $this->property('ignore_behaviour', 'nothing');
         $this->hardReload        = $this->property('hard_reload', false);
         $this->updatePartial     = $this->property('update_partial', '');
         $this->updateSelector    = $this->property('update_selector', '#gdpr-reload');
@@ -71,24 +78,37 @@ class CookieBanner extends ComponentBase
 
     public function onRun()
     {
-        // We only show the banner on the first page view of every user.
         if ( ! $this->consentCookie->isFirstPageView()) {
-            $this->hide = true;
-
-            if ($this->consentCookie->isUndecided()) {
-                $this->setDefaultConsent();
-            }
-
-            return;
+            return $this->handleSecondPageView();
         }
-
-        $this->cookieGroups = $this->getCookieGroups();
 
         if ($this->property('include_css')) {
             $this->addCss('assets/cookieBanner/banner.css');
         }
 
-        $this->consentCookie->registerPageView();
+        $this->cookieGroups = $this->getCookieGroups();
+
+        if ($this->ignoreBehaviour !== 'nothing') {
+            // To hide the banner on subsequent page views we have
+            // to keep track of this first page view (if the
+            // ignoreBehaviour is not set to "nothing").
+            $this->consentCookie->registerPageView();
+        }
+    }
+
+    protected function handleSecondPageView()
+    {
+        $this->hide = true;
+
+        if ($this->consentCookie->isDecided()) {
+            return;
+        }
+
+        if ($this->ignoreBehaviour === 'opt-in') {
+            $this->setDefaultConsent();
+        } else {
+            $this->onDecline();
+        }
     }
 
     public function onSubmit()
@@ -133,5 +153,14 @@ class CookieBanner extends ComponentBase
     {
         return [null => '-- ' . trans('offline.gdpr::lang.cookie_banner.cookie_manager_page.empty')]
             + Page::getNameList();
+    }
+
+    public function getIgnore_behaviourOptions()
+    {
+        return [
+            'nothing' => trans('offline.gdpr::lang.cookie_banner.ignore_behaviour.nothing'),
+            'opt-in'  => trans('offline.gdpr::lang.cookie_banner.ignore_behaviour.opt-in'),
+            'opt-out' => trans('offline.gdpr::lang.cookie_banner.ignore_behaviour.opt-out'),
+        ];
     }
 }

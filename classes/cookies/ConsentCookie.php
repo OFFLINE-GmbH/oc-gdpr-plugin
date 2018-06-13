@@ -49,6 +49,11 @@ class ConsentCookie
         return Cookie::get('gdpr_cookie_consent') === null;
     }
 
+    public function isDecided()
+    {
+        return ! $this->isUndecided();
+    }
+
     protected function isHttps()
     {
         return request()->isSecure();

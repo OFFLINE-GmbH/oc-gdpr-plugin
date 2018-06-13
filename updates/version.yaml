@@ -18,3 +18,5 @@
     - Fixed cookie group management permission name
 1.0.9:
     - Changed default cookie banner wording
+1.0.10:
+    - Added `ignore_behaviour` property to `cookieBanner`. You can now decide what happens if the user ignores the banner (show banner again, opt-in, opt-out).
