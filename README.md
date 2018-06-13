@@ -20,7 +20,7 @@ This plugin provides two simple components to make your October installation GDP
 
 1. Define your cookie groups and cookies via the backend settings page.
 1. Place the `cookieManager` component on a `cookies.htm` page
-1. Place the `cookieBanner` component on all of your layouts. Use the configuration listed below
+1. Place the `cookieBanner` component on all of your layouts. Use the configuration listed below.
 
 ```ini
 [cookieBanner]
@@ -60,7 +60,7 @@ you can check for the user's consent and optionally include your resources.
 #### Installation
 
 1. Define your cookie groups and cookies via the Backend settings
-1. Add the `cookieBanner` component to all of your **layouts**.
+1. Add the `cookieBanner` component to all your **layouts**.
 
 ```
 [cookieBanner]
