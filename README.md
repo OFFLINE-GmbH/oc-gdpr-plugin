@@ -113,7 +113,7 @@ accepted the required level of this cookie.
 {% endif %}
 
 {% if gdprCookieAllowed('google-analytics', 3) %}
-    <!-- Include advanced Level 3 Analtics Code here -->
+    <!-- Include advanced Level 3 Analytics Code here -->
 {% endif %}
 ```
 
@@ -124,7 +124,7 @@ value of `0` or higher means the cookie is allowed with the returned level value
 
 ```twig
 {% if gdprAllowedCookieLevel('google-analytics') >= 3 %}
-    <!-- Include advanced Level 3 Analtics Code here -->
+    <!-- Include advanced Level 3 Analytics Code here -->
 {% endif %}
 ```
 
