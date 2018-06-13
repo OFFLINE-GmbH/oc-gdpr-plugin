@@ -29,6 +29,8 @@ hard_reload = 0
 update_partial = "gdpr"
 update_selector = "#gdpr-reload"
 cookie_manager_page = "cookies"
+==
+{% component 'cookieBanner' %}
 ```
 
 1. Create a new `gdpr.htm` partial. Include the partial in your layouts as shown below.
@@ -59,6 +61,17 @@ you can check for the user's consent and optionally include your resources.
 
 1. Define your cookie groups and cookies via the Backend settings
 1. Add the `cookieBanner` component to all of your **layouts**.
+
+```
+[cookieBanner]
+include_css = 1
+hard_reload = 0
+update_partial = "gdpr"
+update_selector = "#gdpr-reload"
+cookie_manager_page = "cookies"
+==
+{% component 'cookieBanner' %}
+```
 
 #### Properties
 
