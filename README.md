@@ -13,6 +13,9 @@ This plugin is available on the October Marketplace: https://octobercms.com/plug
 
 This plugin provides two simple components to make your October installation GDPR compliant.
 
+![cookie-manager](https://user-images.githubusercontent.com/8600029/41364223-5c58a548-6f36-11e8-9279-2e04217fe645.gif)
+
+
 ### Quick start
 
 1. Define your cookie groups and cookies via the backend settings page.
