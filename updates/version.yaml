@@ -12,3 +12,5 @@
     - 'Added new cookie manager component'
     - create_offline_gdpr_cookie_groups.php
     - create_offline_gdpr_cookies.php
+1.0.7:
+    - Optimized default CSS of the new cookieManager component
