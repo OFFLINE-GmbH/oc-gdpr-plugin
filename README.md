@@ -33,7 +33,8 @@ cookie_manager_page = "cookies"
 {% component 'cookieBanner' %}
 ```
 
-1. Create a new `gdpr.htm` partial. Include the partial in your layouts as shown below.
+1. Create a new `gdpr.htm` partial. Include the partial in your layouts as shown below. Note the `#gdpr-reload` 
+wrapper.
 
 ```twig
 <div id="gdpr-reload">
