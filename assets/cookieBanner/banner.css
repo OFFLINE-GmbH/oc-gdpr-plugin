@@ -30,6 +30,9 @@
 .gdpr-banner__column {
     align-items: center;
 }
+.gdpr-banner__row + .gdpr-banner__row {
+    margin-top: .5rem;
+}
 .gdpr-banner__column--1 {
     flex: 1;
 }
@@ -44,6 +47,7 @@
 }
 .gdpr-banner__message {
     flex: 1;
+    line-height: 1.3;
 }
 .gdpr-banner__settings {
     margin: 0 2rem;
@@ -62,7 +66,7 @@
 }
 .gdpr-banner__button {
     box-shadow: 0 2px 1px rgba(0, 0, 0, .1);
-    padding: .3em 1em;
+    padding: .5em 1em;
     cursor: pointer;
     border-radius: 2px;
     border: none;
