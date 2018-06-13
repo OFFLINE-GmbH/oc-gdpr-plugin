@@ -14,3 +14,5 @@
     - create_offline_gdpr_cookies.php
 1.0.7:
     - Optimized default CSS of the new cookieManager component
+1.0.8:
+    - Fixed cookie group management permission name
