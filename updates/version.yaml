@@ -16,3 +16,5 @@
     - Optimized default CSS of the new cookieManager component
 1.0.8:
     - Fixed cookie group management permission name
+1.0.9:
+    - Changed default cookie banner wording
