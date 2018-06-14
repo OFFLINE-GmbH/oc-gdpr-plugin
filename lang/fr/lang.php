@@ -3,6 +3,45 @@
         'name' => 'GDPR',
         'description' => 'Rendez votre site conforme au RGPD',
     ],
+    'common' => [
+        'enabled' => 'Activé',
+        'disabled' => 'Désactive',
+        'sorted' => 'Ordre mis à jour avec succès',
+    ],
+    'cookie_banner' => [
+        'description' => 'Affiche une bannière pour les cookies',
+        'include_css' => [
+            'title' => 'Inclure le CSS',
+            'description' => 'Inclure les styles par défaut pour ce composant',
+        ],
+        'hard_reload' => [
+            'title' => 'Rechargement forcé après acceptation',
+            'description' => 'Effectuer un rechargement forcé après la décision de l\'utilisateur pour rafraîchir toutes les dépendances.',
+        ],
+        'update_partial' => [
+            'title' => 'Modèle de partiel pour rechargement progressif.',
+            'description' => 'Ce partiel sera rechargé lorsque l\'utilisateur acceptera.',
+        ],
+        'update_selector' => [
+            'title' => 'Sélecteur CSS pour rechargement progressif.',
+            'description' => 'Le partiel sera chargé dans cet élément.',
+        ],
+        'cookie_manager_page' => [
+            'title' => 'Page pour les paramètres avancés',
+            'description' => 'Placez le composant cookieManager sur cette page.',
+            'empty' => 'Sans paramètres avancés',
+        ],
+        'ignore_behaviour' => [
+            'title' => 'Ignorance de l\'avertissent',
+            'description' => 'Utilisez cette action si l\'utilisateur ignore la bannière et ne prend aucune décision.',
+            'nothing' => 'Montrer à nouveau la bannière',
+            'opt-in' => 'Opt-in (activer les cookies par défaut)',
+            'opt-out' => 'Opt-out (ne pas activer les cookies)',
+        ],
+    ],
+    'cookie_manager' => [
+        'description' => 'Affiche une vue d\'ensemble et la possibilité de modifier tous les cookies que vous avez définis dans les paramètres du backend.',
+    ],
     'consent_manager' => [
         'description' => 'Comprend le gestionnaire de consentement Klaro!',
         'include_assets' => [
@@ -15,6 +54,10 @@
         ],
     ],
     'settings' => [
+        'cookies' => [
+            'label' => 'Cookies',
+            'description' => 'Gestion des cookies',
+        ],
         'cookie_consent' => [
             'label' => 'Cookie de consentement',
             'description' => 'Réglages pour Klaro! Manager',
@@ -110,8 +153,31 @@
             ],
         ],
     ],
+    'cookie_group' => [
+        'fields' => [
+            'name' => 'Nom du groupe',
+            'initial_status' => 'État initial',
+            'initial_status_comment' => 'Ce groupe de cookies est activé par défaut.',
+            'required' => 'Requis',
+            'required_comment' => 'Les cookies de ce groupe sont nécessaires au bon fonctionnement du site et ne peuvent donc pas être désactivés par l\'utilisateur.',
+            'slug' => 'Slug',
+            'default_level' => 'Ce niveau est présélectionné pour l\'utilisateur.',
+        ],
+        'tabs' => [
+            'description' => 'Description',
+            'cookies' => 'Cookies',
+        ],
+    ],
+    'cookie' => [
+        'fields' => [
+            'code' => 'Code',
+            'intial_status' => 'Ce cookie est activé par défaut',
+            'levels' => 'Niveaux de cookie',
+        ],
+    ],
     'permissions' => [
         'manage_cookie_consent' => 'Peut gérer les paramètres des cookies de consentement',
         'manage_data_retention' => 'Peut gérer les politiques de conservation des données',
+        'manage_cookie_groups' => 'Peut gérer des groupes de cookies',
     ],
 ];
