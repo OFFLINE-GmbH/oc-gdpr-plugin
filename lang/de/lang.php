@@ -4,12 +4,17 @@
         'description' => 'Mache deine Website GDPR konform',
     ],
     'common'          => [
-        'enabled'  => 'Aktiviert',
-        'disabled' => 'Deaktiviert',
-        'sorted'   => 'Reihenfolge aktualisiert',
+        'enabled'       => 'Aktiviert',
+        'disabled'      => 'Deaktiviert',
+        'sorted'        => 'Reihenfolge aktualisiert',
+        'save_settings' => 'Einstellungen speichern',
     ],
     'cookie_banner'   => [
         'description'         => 'Zeigt ein Cookie-Banner an',
+        'message'             => 'Wir verwenden Cookies um Inhalte zu personalisieren und unsere Besucherstatistik zu führen. Bitte wählen Sie aus, welche Art von Cookies Sie akzeptieren möchten.',
+        'advanced_settings'   => 'Erweiterte Einstellungen',
+        'decline'             => 'Ablehnen',
+        'accept'              => 'Cookies akzeptieren',
         'include_css'         => [
             'title'       => 'Standard CSS einbinden',
             'description' => 'Lädt die mitgelieferte CSS-Datei',
