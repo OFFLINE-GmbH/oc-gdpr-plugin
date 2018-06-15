@@ -72,7 +72,7 @@ class ConsentCookie
     public function isAllowed($cookieCode, $level = 0)
     {
         $consent = $this->get();
-        if (count($consent) < 1) {
+        if ($consent !== null && count($consent) < 1) {
             return false;
         }
 

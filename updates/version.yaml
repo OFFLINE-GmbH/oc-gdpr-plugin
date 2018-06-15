@@ -24,3 +24,5 @@
     - Updated french translations (thanks to damsfx)
 1.0.12:
     - Optimized default cookieBanner styles
+1.0.13:
+    - Optimized PHP 7.2 compatibility
