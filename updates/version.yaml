@@ -22,3 +22,5 @@
     - Added `ignore_behaviour` property to `cookieBanner`. You can now decide what happens if the user ignores the banner (show banner again, opt-in, opt-out).
 1.0.11:
     - Updated french translations (thanks to damsfx)
+1.0.12:
+    - Optimized default cookieBanner styles

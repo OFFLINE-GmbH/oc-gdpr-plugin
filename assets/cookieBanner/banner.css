@@ -38,10 +38,12 @@
 }
 .gdpr-banner__column--2 {
     display: flex;
+    margin-left: 2rem;
 }
 @media screen and (max-width: 900px) {
     .gdpr-banner__column--2 {
         margin-top: 2rem;
+        margin-left: 0;
         justify-content: center;
     }
 }
