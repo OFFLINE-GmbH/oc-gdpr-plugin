@@ -30,3 +30,5 @@
     - Various bug fixes and extended support for old Laravel 5.1 installations
 1.0.15:
     - Optimized responsive display of cookie banner on mobile devices
+1.0.16:
+    - Updated french translations (thanks to damsfx)
