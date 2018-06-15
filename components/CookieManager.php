@@ -38,12 +38,11 @@ class CookieManager extends ComponentBase
     {
         $this->consentCookie = new ConsentCookie();
 
-        $cookies = post('cookies');
-        if ( ! $cookies) {
+        if ( ! post('_gdpr_submit')) {
             return;
         }
 
-        $enabled = collect($cookies)->filter(function ($item) {
+        $enabled = collect(post('cookies'))->filter(function ($item) {
             return $item['enabled'] ?? false;
         })->map(function ($item) {
             return (int)($item['level'] ?? 0);
