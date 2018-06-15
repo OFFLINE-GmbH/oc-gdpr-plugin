@@ -5,10 +5,10 @@ namespace OFFLINE\GDPR\Classes\Cookies;
 use Illuminate\Support\Facades\Cookie;
 use OFFLINE\GDPR\Models\CookieGroup;
 use Session;
-use Symfony\Component\HttpFoundation\Cookie as CookieFoundation;
 
 class ConsentCookie
 {
+    const SAME_SITE = 'strict';
     const MINUTES_PER_YEAR = 24 * 60 * 365;
 
     public function set($value)
@@ -24,13 +24,13 @@ class ConsentCookie
         return Cookie::queue(
             'gdpr_cookie_consent',
             $value,
-            self::MINUTES_PER_YEAR,           // expire
-            '/',                              // path
-            null,                             // domain
-            $this->isHttps(),                 // secure
-            true,                             // httpOnly
-            false,                            // raw
-            CookieFoundation::SAMESITE_STRICT // sameSite
+            self::MINUTES_PER_YEAR, // expire
+            '/',                    // path
+            null,                   // domain
+            $this->isHttps(),       // secure
+            true,                   // httpOnly
+            false,                  // raw
+            self::SAME_SITE         // sameSite
         );
     }
 
@@ -91,12 +91,17 @@ class ConsentCookie
 
     protected function appendRequiredCookies($value)
     {
-        return CookieGroup::with('cookies')
-                          ->where('required', true)
-                          ->get()
-                          ->map->cookies
-                          ->flatten()
-                          ->pluck('default_level', 'code')
-                          ->merge($value);
+        // Wrap the collection again using the helper to extend support
+        // for old Laravel 5.1 installations where the collection methods
+        // behave differently (especially when using ->merge())
+        $cookies = collect(CookieGroup::with('cookies')
+                                      ->where('required', true)
+                                      ->get()
+                                      ->flatMap(function ($item) {
+                                          return $item->cookies;
+                                      }));
+
+        return $cookies->pluck('default_level', 'code')
+                       ->merge($value);
     }
 }
