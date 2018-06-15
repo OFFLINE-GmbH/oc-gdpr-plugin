@@ -11,7 +11,7 @@
     ],
     'cookie_banner'   => [
         'description'         => 'Zeigt ein Cookie-Banner an',
-        'message'             => 'Wir verwenden Cookies um Inhalte zu personalisieren und unsere Besucherstatistik zu führen. Bitte wählen Sie aus, welche Art von Cookies Sie akzeptieren möchten.',
+        'message'             => 'Wir verwenden Cookies um Inhalte zu personalisieren und unsere Besucherstatistik zu führen. Bitte entscheiden Sie sich, ob Sie unsere Cookies akzeptieren möchten.',
         'advanced_settings'   => 'Erweiterte Einstellungen',
         'decline'             => 'Ablehnen',
         'accept'              => 'Cookies akzeptieren',

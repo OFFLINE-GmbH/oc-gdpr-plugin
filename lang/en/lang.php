@@ -11,7 +11,7 @@
     ],
     'cookie_banner'   => [
         'description'         => 'Displays a cookie banner',
-        'message'             => 'We use cookies to personalize content and to analyze our traffic. Please decide what type of cookies you are willing to accept.',
+        'message'             => 'We use cookies to personalize content and to analyze our traffic. Please decide if you are willing to accept cookies from our website.',
         'advanced_settings'   => 'Advanced Settings',
         'decline'             => 'Decline',
         'accept'              => 'Accept Cookies',
