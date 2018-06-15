@@ -45,13 +45,13 @@ class CookieBanner extends ComponentBase
             'update_partial'      => [
                 'title'       => trans('offline.gdpr::lang.cookie_banner.update_partial.title'),
                 'description' => trans('offline.gdpr::lang.cookie_banner.update_partial.description'),
-                'type'        => 'text',
+                'type'        => 'string',
             ],
             'update_selector'     => [
                 'title'       => trans('offline.gdpr::lang.cookie_banner.update_selector.title'),
                 'description' => trans('offline.gdpr::lang.cookie_banner.update_selector.description'),
                 'default'     => '#gdpr-reload',
-                'type'        => 'text',
+                'type'        => 'string',
             ],
             'cookie_manager_page' => [
                 'title'       => trans('offline.gdpr::lang.cookie_banner.cookie_manager_page.title'),
