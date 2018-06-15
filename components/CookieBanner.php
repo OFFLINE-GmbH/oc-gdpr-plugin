@@ -116,7 +116,9 @@ class CookieBanner extends ComponentBase
         $accepted = post('cookie', []);
         $groups   = CookieGroup::with('cookies')->whereIn('id', $accepted)->get();
 
-        $cookies = $groups->map->cookies->flatten()->filter(function ($item) {
+        $cookies = $groups->flatMap(function ($group) {
+            return $group->cookies;
+        })->filter(function ($item) {
             return $item->initial_status;
         })->pluck('max_level', 'code')->toArray();
 
@@ -142,7 +144,9 @@ class CookieBanner extends ComponentBase
 
     protected function setDefaultConsent()
     {
-        $cookies = $this->getCookieGroups()->map->cookies->flatten()->filter(function ($item) {
+        $cookies = $this->getCookieGroups()->flatMap(function ($group) {
+            return $group->cookies;
+        })->filter(function ($item) {
             return $item->initial_status;
         })->pluck('max_level', 'code')->toArray();
 
