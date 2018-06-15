@@ -1,21 +1,18 @@
 .gdpr-banner {
     position: fixed;
-    font-weight: normal;
-    bottom: 0;
-    z-index: 10000;
     width: 100%;
     padding: 1rem;
-    background-color: #333;
+    font-size: .9rem;
+    font-weight: normal;
     color: #fff;
+    background-color: #333;
+    bottom: 0;
+    z-index: 10000;
 }
 @media screen and (max-width: 900px) {
     .gdpr-banner {
         text-align: center;
     }
-}
-.gdpr-banner,
-.gdpr-banner .gdpr-banner__label {
-    font-size: .9rem;
 }
 .gdpr-banner__wrapper {
     max-width: 1200px;
@@ -99,10 +96,11 @@
     opacity: .8;
 }
 .gdpr-banner__cookie-group .gdpr-banner__label {
-    font-weight: normal;
     cursor: pointer;
     line-height: 1;
     margin-bottom: 0;
+    font-size: inherit;
+    font-weight: normal;
 }
 .gdpr-banner__cookie-group .gdpr-banner__checkbox {
     font-weight: normal;
