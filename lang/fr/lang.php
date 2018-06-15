@@ -1,92 +1,97 @@
 <?php return [
-    'plugin' => [
-        'name' => 'GDPR',
+    'plugin'          => [
+        'name'        => 'GDPR',
         'description' => 'Rendez votre site conforme au RGPD',
     ],
-    'common' => [
-        'enabled' => 'Activé',
-        'disabled' => 'Désactive',
-        'sorted' => 'Ordre mis à jour avec succès',
+    'common'          => [
+        'enabled'       => 'Activé',
+        'disabled'      => 'Désactive',
+        'sorted'        => 'Ordre mis à jour avec succès',
+        'save_settings' => 'Enregistrer',
     ],
-    'cookie_banner' => [
-        'description' => 'Affiche une bannière pour les cookies',
-        'include_css' => [
-            'title' => 'Inclure le CSS',
+    'cookie_banner'   => [
+        'description'         => 'Affiche une bannière pour les cookies',
+        'message'             => 'Nous utilisons les cookies pour personnaliser le contenu et analyser notre trafic. Veuillez décider quel type de cookies vous êtes prêt à accepter.',
+        'advanced_settings' => 'Paramètres avancés',
+        'decline'             => 'Décliner',
+        'accept'              => 'Accepter les cookies',
+        'include_css'         => [
+            'title'       => 'Inclure le CSS',
             'description' => 'Inclure les styles par défaut pour ce composant',
         ],
-        'hard_reload' => [
-            'title' => 'Rechargement forcé après acceptation',
+        'hard_reload'         => [
+            'title'       => 'Rechargement forcé après acceptation',
             'description' => 'Effectuer un rechargement forcé après la décision de l\'utilisateur pour rafraîchir toutes les dépendances.',
         ],
-        'update_partial' => [
-            'title' => 'Modèle de partiel pour rechargement progressif.',
+        'update_partial'      => [
+            'title'       => 'Modèle de partiel pour rechargement progressif.',
             'description' => 'Ce partiel sera rechargé lorsque l\'utilisateur acceptera.',
         ],
-        'update_selector' => [
-            'title' => 'Sélecteur CSS pour rechargement progressif.',
+        'update_selector'     => [
+            'title'       => 'Sélecteur CSS pour rechargement progressif.',
             'description' => 'Le partiel sera chargé dans cet élément.',
         ],
         'cookie_manager_page' => [
-            'title' => 'Page pour les paramètres avancés',
+            'title'       => 'Page pour les paramètres avancés',
             'description' => 'Placez le composant cookieManager sur cette page.',
-            'empty' => 'Sans paramètres avancés',
+            'empty'       => 'Sans paramètres avancés',
         ],
-        'ignore_behaviour' => [
-            'title' => 'Ignorance de l\'avertissent',
+        'ignore_behaviour'    => [
+            'title'       => 'Ignorance de l\'avertissent',
             'description' => 'Utilisez cette action si l\'utilisateur ignore la bannière et ne prend aucune décision.',
-            'nothing' => 'Montrer à nouveau la bannière',
-            'opt-in' => 'Opt-in (activer les cookies par défaut)',
-            'opt-out' => 'Opt-out (ne pas activer les cookies)',
+            'nothing'     => 'Montrer à nouveau la bannière',
+            'opt-in'      => 'Opt-in (activer les cookies par défaut)',
+            'opt-out'     => 'Opt-out (ne pas activer les cookies)',
         ],
     ],
-    'cookie_manager' => [
+    'cookie_manager'  => [
         'description' => 'Affiche une vue d\'ensemble et la possibilité de modifier tous les cookies que vous avez définis dans les paramètres du backend.',
     ],
     'consent_manager' => [
-        'description' => 'Comprend le gestionnaire de consentement Klaro!',
+        'description'    => 'Comprend le gestionnaire de consentement Klaro!',
         'include_assets' => [
-            'title' => 'Inclure les assets',
+            'title'       => 'Inclure les assets',
             'description' => 'Inclut automatiquement tous les fichiers JS nécessaires.',
         ],
-        'style_prefix' => [
-            'title' => 'Prefixe CSS',
+        'style_prefix'   => [
+            'title'       => 'Prefixe CSS',
             'description' => 'Utilisez cette classe css dans le balisage HTML Klaro! (supprime les styles par défaut).',
         ],
     ],
-    'settings' => [
-        'cookies' => [
+    'settings'        => [
+        'cookies'        => [
             'label' => 'Cookies',
             'description' => 'Gestion des cookies',
         ],
         'cookie_consent' => [
-            'label' => 'Cookie de consentement',
-            'description' => 'Réglages pour Klaro! Manager',
+            'label'                     => 'Cookie de consentement',
+            'description'               => 'Réglages pour Klaro! Manager',
             'cookie_expires_after_days' => [
-                'label' => 'Durée de vie des cookies en jours',
+                'label'   => 'Durée de vie des cookies en jours',
                 'comment' => 'Les réglages de l\'utilisateur sont conservés pendant ce nombre de jours.',
             ],
-            'privacy_policy' => [
-                'label' => 'Politique de confidentialité',
+            'privacy_policy'            => [
+                'label'   => 'Politique de confidentialité',
                 'comment' => 'Lien relatif ou absolu avec votre politique de confidentialité.',
             ],
             'default_application_state' => [
-                'label' => 'État par défaut de l\'application',
+                'label'   => 'État par défaut de l\'application',
                 'comment' => 'Activer par défaut le consentement pour toutes les applications.',
             ],
-            'must_consent' => [
-                'label' => 'Afficher le gestionnaire',
+            'must_consent'              => [
+                'label'   => 'Afficher le gestionnaire',
                 'comment' => 'Afficher le gestionnaire de consentement directement à la première vue de la page pour forcer l\'utilisateur à prendre une décision.',
             ],
-            'lang' => [
-                'label' => 'Code de langage',
+            'lang'                      => [
+                'label'   => 'Code de langage',
                 'comment' => 'Vous trouverez tous les codes disponibles dans la documentation de Klaro!.',
             ],
-            'tabs' => [
+            'tabs'                      => [
                 'translations' => 'Traductions',
-                'apps' => 'Applications',
-                'general' => 'Général',
+                'apps'         => 'Applications',
+                'general'      => 'Général',
             ],
-            'translations' => [
+            'translations'              => [
                 'repeater' => [
                     'code' => [
                         'label' => 'Code de langage',
@@ -96,56 +101,56 @@
                     ],
                 ],
             ],
-            'apps' => [
+            'apps'                      => [
                 'repeater' => [
-                    'name' => [
-                        'label' => 'Nom',
+                    'name'              => [
+                        'label'   => 'Nom',
                         'comment' => 'Un nom simple et court pour cette application (ex. google-analytics).',
                     ],
                     'application_state' => [
-                        'label' => 'Activé par défaut',
+                        'label'   => 'Activé par défaut',
                         'comment' => 'Activez cette application par défaut. Ceci écrase le réglage global.',
                     ],
-                    'required' => [
-                        'label' => 'Consentement obligatoire',
+                    'required'          => [
+                        'label'   => 'Consentement obligatoire',
                         'comment' => 'Cette application ne peut pas être désactivée.',
                     ],
-                    'opt_out' => [
-                        'label' => 'Opt-out',
+                    'opt_out'           => [
+                        'label'   => 'Opt-out',
                         'comment' => 'Les scripts de cette application sont chargés à la première vue de la page sans le consentement du visiteur (consentement implicite).',
                     ],
-                    'only_once' => [
-                        'label' => 'Charger le script une seule fois',
+                    'only_once'         => [
+                        'label'   => 'Charger le script une seule fois',
                         'comment' => 'Les scripts de cette application ne sont chargés qu\'une seule fois, même si le visiteur le réactive plusieurs fois.',
                     ],
-                    'title' => [
-                        'label' => 'Titre',
+                    'title'             => [
+                        'label'   => 'Titre',
                         'comment' => 'Nom d\'affichage (ex. Google Analytics).',
                     ],
-                    'purposes' => [
-                        'label' => 'Objectifs',
+                    'purposes'          => [
+                        'label'   => 'Objectifs',
                         'comment' => 'Ces objectifs doivent être traduits dans la section des traductions (ex. analytics, suivi de l\'utilisateur).',
                     ],
-                    'cookies' => [
-                        'label' => 'Cookies de cette application',
+                    'cookies'           => [
+                        'label'   => 'Cookies de cette application',
                         'comment' => 'Chaîne ou RegEx de noms de cookies. Ces cookies sont automatiquement supprimés si l\'utilisateur désactive cette application. (ex. /^_ga_.*$/ ou custom_tracker_cookie)',
                     ],
-                    'callback' => [
-                        'label' => 'Fonction de retour',
+                    'callback'          => [
+                        'label'   => 'Fonction de retour',
                         'comment' => 'Cette fonction JavaScript est appelée chaque fois qu\'un utilisateur active cette application.<br /><pre><small>function (consent, app) { // ... }</small></pre>',
                     ],
                 ],
             ],
         ],
         'data_retention' => [
-            'label' => 'Conservation des données',
+            'label'       => 'Conservation des données',
             'description' => 'Configurez vos politiques de conservation des données.',
-            'enabled' => [
-                'label' => 'Nettoyage actif',
+            'enabled'     => [
+                'label'   => 'Nettoyage actif',
                 'comment' => 'Supprimer automatiquement les anciennes données après leur expiration.',
             ],
             'default_keep_days' => [
-                'label' => 'Suppression des données après x jours',
+                'label'   => 'Suppression des données après x jours',
                 'comment' => 'Valable pour tous les plugins enregistrés si rien d\'autre n\'est spécifié ci-dessous.',
             ],
             'keep_days' => [
@@ -153,31 +158,31 @@
             ],
         ],
     ],
-    'cookie_group' => [
+    'cookie_group'    => [
         'fields' => [
-            'name' => 'Nom du groupe',
-            'initial_status' => 'État initial',
+            'name'                   => 'Nom du groupe',
+            'initial_status'         => 'État initial',
             'initial_status_comment' => 'Ce groupe de cookies est activé par défaut.',
-            'required' => 'Requis',
-            'required_comment' => 'Les cookies de ce groupe sont nécessaires au bon fonctionnement du site et ne peuvent donc pas être désactivés par l\'utilisateur.',
-            'slug' => 'Slug',
-            'default_level' => 'Ce niveau est présélectionné pour l\'utilisateur.',
+            'required'               => 'Requis',
+            'required_comment'       => 'Les cookies de ce groupe sont nécessaires au bon fonctionnement du site et ne peuvent donc pas être désactivés par l\'utilisateur.',
+            'slug'                   => 'Slug',
+            'default_level'          => 'Ce niveau est présélectionné pour l\'utilisateur.',
         ],
-        'tabs' => [
+        'tabs'   => [
             'description' => 'Description',
-            'cookies' => 'Cookies',
+            'cookies'     => 'Cookies',
         ],
     ],
-    'cookie' => [
+    'cookie'          => [
         'fields' => [
-            'code' => 'Code',
+            'code'          => 'Code',
             'intial_status' => 'Ce cookie est activé par défaut',
-            'levels' => 'Niveaux de cookie',
+            'levels'        => 'Niveaux de cookie',
         ],
     ],
-    'permissions' => [
+    'permissions'     => [
         'manage_cookie_consent' => 'Peut gérer les paramètres des cookies de consentement',
         'manage_data_retention' => 'Peut gérer les politiques de conservation des données',
-        'manage_cookie_groups' => 'Peut gérer des groupes de cookies',
+        'manage_cookie_groups'  => 'Peut gérer des groupes de cookies',
     ],
 ];
