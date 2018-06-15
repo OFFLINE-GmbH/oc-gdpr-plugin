@@ -28,3 +28,5 @@
     - Optimized PHP 7.2 compatibility
 1.0.14:
     - Various bug fixes and extended support for old Laravel 5.1 installations
+1.0.15:
+    - Optimized responsive display of cookie banner on mobile devices
