@@ -26,3 +26,5 @@
     - Optimized default cookieBanner styles
 1.0.13:
     - Optimized PHP 7.2 compatibility
+1.0.14:
+    - Various bug fixes and extended support for old Laravel 5.1 installations
