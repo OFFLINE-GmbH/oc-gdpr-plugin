@@ -19,6 +19,10 @@
     padding: 0;
 }
 
+.gdpr-cookie-manager .gdpr-cookie-manager__group-list a {
+    text-decoration: none;
+}
+
 .gdpr-cookie-manager__group-list li {
     margin: 0;
     padding: 0;
@@ -35,7 +39,6 @@
     border-left: 1px solid #e3e3e3;
     position: relative;
     color: inherit;
-    text-decoration: none;
 }
 
 .gdpr-cookie-manager__group-list-entry--active {
@@ -57,6 +60,7 @@
     .gdpr-cookie-manager__group-list-entry--active {
         border-right: 1px solid #e3e3e3;
     }
+
     .gdpr-cookie-manager__group-list-entry--active:after {
         display: none;
     }
