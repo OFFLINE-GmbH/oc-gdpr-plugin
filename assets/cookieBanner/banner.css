@@ -100,7 +100,7 @@
     line-height: 1;
     margin-bottom: 0;
     font-size: inherit;
-    font-weight: normal;
+    font-weight: inherit;
 }
 .gdpr-banner__cookie-group .gdpr-banner__checkbox {
     font-weight: normal;
