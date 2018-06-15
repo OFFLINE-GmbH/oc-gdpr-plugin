@@ -61,11 +61,11 @@
     'settings'        => [
         'cookies'        => [
             'label' => 'Cookies',
-            'description' => 'Gestion des cookies',
+            'description' => 'Configurer les cookies utilisés par le site et leur contrôle.',
         ],
         'cookie_consent' => [
-            'label'                     => 'Cookie de consentement',
-            'description'               => 'Réglages pour Klaro! Manager',
+            'label'                     => 'Composant Klaro!',
+            'description'               => 'Réglages gestionnaire de consentement Klaro!',
             'cookie_expires_after_days' => [
                 'label'   => 'Durée de vie des cookies en jours',
                 'comment' => 'Les réglages de l\'utilisateur sont conservés pendant ce nombre de jours.',
