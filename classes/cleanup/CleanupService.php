@@ -123,7 +123,7 @@ class CleanupService
     public function getKeepDays()
     {
         return [
-            'label' => trans('offline.gdpr::lang.settings.data_retention.keep_days.label'),
+            'label' => 'offline.gdpr::lang.settings.data_retention.keep_days.label',
             'span'  => 'auto',
             'type'  => 'number',
             'tab'   => 'Plugins',
