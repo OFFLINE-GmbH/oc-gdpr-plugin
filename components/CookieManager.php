@@ -18,7 +18,7 @@ class CookieManager extends ComponentBase
     {
         return [
             'name'        => 'Cookie Manager',
-            'description' => trans('offline.gdpr::lang.cookie_manager.description'),
+            'description' => 'offline.gdpr::lang.cookie_manager.description',
         ];
     }
 
@@ -26,8 +26,8 @@ class CookieManager extends ComponentBase
     {
         return [
             'include_css' => [
-                'title'       => trans('offline.gdpr::lang.cookie_banner.include_css.title'),
-                'description' => trans('offline.gdpr::lang.cookie_banner.include_css.description'),
+                'title'       => 'offline.gdpr::lang.cookie_banner.include_css.title',
+                'description' => 'offline.gdpr::lang.cookie_banner.include_css.description',
                 'default'     => 1,
                 'type'        => 'checkbox',
             ],

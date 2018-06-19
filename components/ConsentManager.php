@@ -20,7 +20,7 @@ class ConsentManager extends ComponentBase
     {
         return [
             'name'        => 'Klaro! Consent Manager',
-            'description' => trans('offline.gdpr::lang.consent_manager.description'),
+            'description' => 'offline.gdpr::lang.consent_manager.description',
         ];
     }
 
@@ -28,14 +28,14 @@ class ConsentManager extends ComponentBase
     {
         return [
             'include_assets' => [
-                'title'       => trans('offline.gdpr::lang.consent_manager.include_assets.title'),
-                'description' => trans('offline.gdpr::lang.consent_manager.include_assets.description'),
+                'title'       => 'offline.gdpr::lang.consent_manager.include_assets.title',
+                'description' => 'offline.gdpr::lang.consent_manager.include_assets.description',
                 'default'     => 1,
                 'type'        => 'checkbox',
             ],
             'style_prefix' => [
-                'title'       => trans('offline.gdpr::lang.consent_manager.style_prefix.title'),
-                'description' => trans('offline.gdpr::lang.consent_manager.style_prefix.description'),
+                'title'       => 'offline.gdpr::lang.consent_manager.style_prefix.title',
+                'description' => 'offline.gdpr::lang.consent_manager.style_prefix.description',
                 'type'        => 'string',
             ],
         ];

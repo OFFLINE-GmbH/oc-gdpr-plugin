@@ -23,7 +23,7 @@ class CookieBanner extends ComponentBase
     {
         return [
             'name'        => 'Cookie Banner',
-            'description' => trans('offline.gdpr::lang.cookie_banner.description'),
+            'description' => 'offline.gdpr::lang.cookie_banner.description',
         ];
     }
 
@@ -31,36 +31,36 @@ class CookieBanner extends ComponentBase
     {
         return [
             'include_css'         => [
-                'title'       => trans('offline.gdpr::lang.cookie_banner.include_css.title'),
-                'description' => trans('offline.gdpr::lang.cookie_banner.include_css.description'),
+                'title'       => 'offline.gdpr::lang.cookie_banner.include_css.title',
+                'description' => 'offline.gdpr::lang.cookie_banner.include_css.description',
                 'default'     => 1,
                 'type'        => 'checkbox',
             ],
             'hard_reload'         => [
-                'title'       => trans('offline.gdpr::lang.cookie_banner.hard_reload.title'),
-                'description' => trans('offline.gdpr::lang.cookie_banner.hard_reload.description'),
+                'title'       => 'offline.gdpr::lang.cookie_banner.hard_reload.title',
+                'description' => 'offline.gdpr::lang.cookie_banner.hard_reload.description',
                 'default'     => 0,
                 'type'        => 'checkbox',
             ],
             'update_partial'      => [
-                'title'       => trans('offline.gdpr::lang.cookie_banner.update_partial.title'),
-                'description' => trans('offline.gdpr::lang.cookie_banner.update_partial.description'),
+                'title'       => 'offline.gdpr::lang.cookie_banner.update_partial.title',
+                'description' => 'offline.gdpr::lang.cookie_banner.update_partial.description',
                 'type'        => 'string',
             ],
             'update_selector'     => [
-                'title'       => trans('offline.gdpr::lang.cookie_banner.update_selector.title'),
-                'description' => trans('offline.gdpr::lang.cookie_banner.update_selector.description'),
+                'title'       => 'offline.gdpr::lang.cookie_banner.update_selector.title',
+                'description' => 'offline.gdpr::lang.cookie_banner.update_selector.description',
                 'default'     => '#gdpr-reload',
                 'type'        => 'string',
             ],
             'cookie_manager_page' => [
-                'title'       => trans('offline.gdpr::lang.cookie_banner.cookie_manager_page.title'),
-                'description' => trans('offline.gdpr::lang.cookie_banner.cookie_manager_page.description'),
+                'title'       => 'offline.gdpr::lang.cookie_banner.cookie_manager_page.title',
+                'description' => 'offline.gdpr::lang.cookie_banner.cookie_manager_page.description',
                 'type'        => 'dropdown',
             ],
             'ignore_behaviour'    => [
-                'title'       => trans('offline.gdpr::lang.cookie_banner.ignore_behaviour.title'),
-                'description' => trans('offline.gdpr::lang.cookie_banner.ignore_behaviour.description'),
+                'title'       => 'offline.gdpr::lang.cookie_banner.ignore_behaviour.title',
+                'description' => 'offline.gdpr::lang.cookie_banner.ignore_behaviour.description',
                 'type'        => 'dropdown',
             ],
         ];
@@ -162,9 +162,9 @@ class CookieBanner extends ComponentBase
     public function getIgnore_behaviourOptions()
     {
         return [
-            'nothing' => trans('offline.gdpr::lang.cookie_banner.ignore_behaviour.nothing'),
-            'opt-in'  => trans('offline.gdpr::lang.cookie_banner.ignore_behaviour.opt-in'),
-            'opt-out' => trans('offline.gdpr::lang.cookie_banner.ignore_behaviour.opt-out'),
+            'nothing' => 'offline.gdpr::lang.cookie_banner.ignore_behaviour.nothing',
+            'opt-in'  => 'offline.gdpr::lang.cookie_banner.ignore_behaviour.opt-in',
+            'opt-out' => 'offline.gdpr::lang.cookie_banner.ignore_behaviour.opt-out',
         ];
     }
 }
