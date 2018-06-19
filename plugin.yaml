@@ -2,7 +2,7 @@ plugin:
     name: 'offline.gdpr::lang.plugin.name'
     description: 'offline.gdpr::lang.plugin.description'
     author: OFFLINE
-    icon: oc-icon-gavel
+    icon: icon-gavel
     homepage: 'https://github.com/OFFLINE-GmbH/oc-gdpr-plugin'
 permissions:
     offline.gdpr.manage_cookie_consent:
