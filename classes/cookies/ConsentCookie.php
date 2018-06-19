@@ -89,7 +89,7 @@ class ConsentCookie
         return array_get($consent, $cookieCode, -1);
     }
 
-    protected function appendRequiredCookies($value)
+    protected function appendRequiredCookies($userSelection)
     {
         // Wrap the collection again using the helper to extend support
         // for old Laravel 5.1 installations where the collection methods
@@ -101,7 +101,8 @@ class ConsentCookie
                                           return $item->cookies;
                                       }));
 
-        return $cookies->pluck('default_level', 'code')
-                       ->merge($value);
+        $required = $cookies->pluck('default_level', 'code');
+
+        return $userSelection === false ? $required : $required->merge($userSelection);
     }
 }
