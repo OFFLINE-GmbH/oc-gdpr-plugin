@@ -191,7 +191,8 @@
             ]
         ],
         'tabs'   => [
-            'contact' => 'Contact information'
+            'contact' => 'Contact information',
+            'levels' => 'Manage levels',
         ],
     ],
     'permissions'     => [

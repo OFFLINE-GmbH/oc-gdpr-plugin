@@ -54,7 +54,7 @@ tabs:
             prompt: 'Add new level'
             span: full
             type: repeater
-            tab: 'offline.gdpr::lang.cookie.fields.levels'
+            tab: 'offline.gdpr::lang.cookie.tabs.levels'
             form:
                 fields:
                     level_name:
