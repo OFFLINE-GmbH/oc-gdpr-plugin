@@ -175,9 +175,35 @@
     ],
     'cookie'          => [
         'fields' => [
+            'name_owner'      => 'Nom/Propriétaire',
             'code'          => 'Code',
             'intial_status' => 'Ce cookie est activé par défaut',
             'levels'        => 'Niveaux de cookie',
+            'purpose'         => 'Objectif',
+            'purpose_comment' => 'Décrire le but de l\'utilisation, du traitement et de toute notification, par exemple, Détermine si la navigation de l\'utilisateur doit être enregistrée dans un registre statistique.',
+            'contact_details_dpo'         => 'Coordonnées du responsable du traitement des données',
+            'contact_details_dpo_comment' => 'En vertu de la loi sur la protection de la vie privée, vous devez donner l\'adresse de contact du responsable de la protection des données du cookie, par exemple Cloudflare, Inc. 101 Townsend St. San Francisco, CA 94107. Attention : Délégué à la protection des données, privacyquestions@cloudflare.com',
+            'contact_links_dpo'         => 'Liens de contact du responsable du traitement des données',
+            'contact_links_dpo_comment' => 'En vertu de la loi sur la protection de la vie privée, vous devez fournir l\'adresse de la page web du responsable de la protection des données du cookie, par exemple Lien vers leurs Conditions d\'utilisation, Politique de confidentialité, Politique de gestion des cookies, etc',
+            'contact_links' => [
+                'name' => 'Libellé',
+                'href' => 'Cible du lien (URL absolue)',
+            ],
+            'cookie_levels' => [
+                'name_comment' => 'Nom commun de ce cookie',
+                'identifier' => 'Identifiant',
+                'identifier_comment' => 'Le code de préfixe du cookie.',
+                'provider' => 'Fournisseur',
+                'provider_comment' => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer le nom de domaine du site Web.',
+                'expiry' => 'Durée/Expiration',
+                'expiry_comment' => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer combien de temps il sera utilisé dans le navigateur de l\'utilisateur.',
+                'type' => 'Type',
+                'type_comment' => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer de quel type de cookie ou de module il s\'agit.',
+            ]
+        ],
+        'tabs'   => [
+            'contact' => 'Coordonnées du contact',
+            'levels' => 'Gérer les niveaux',
         ],
     ],
     'permissions'     => [
