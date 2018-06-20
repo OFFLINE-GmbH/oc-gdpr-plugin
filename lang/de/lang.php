@@ -175,12 +175,23 @@
     ],
     'cookie'          => [
         'fields' => [
-            'name_owner'    => 'Name/Eigentümer',
-            'code'          => 'Code',
-            'intial_status' => 'Dieses Cookie ist standardmässig aktiviert',
-            'levels'        => 'Cookie-Levels',
-            'purpose'         => 'Zweck',
-            'purpose_comment' => 'Beschreibe die Verwendung, die Verarbeitung und allfällige Benachrichtigungen. Beispiel: «Bestimmt ob der Seitenaufruf des Besuchers zu Statistikzwecken aufgezeichnet wird»',
+            'name_owner'                  => 'Name/Eigentümer',
+            'code'                        => 'Code',
+            'intial_status'               => 'Dieses Cookie ist standardmässig aktiviert',
+            'levels'                      => 'Cookie-Levels',
+            'purpose'                     => 'Zweck',
+            'purpose_comment'             => 'Beschreibe die Verwendung, die Verarbeitung und allfällige Benachrichtigungen. Beispiel: «Bestimmt ob der Seitenaufruf des Besuchers zu Statistikzwecken aufgezeichnet wird»',
+            'contact_details_dpo'         => 'Kontaktdaten des «Data Controller»',
+            'contact_details_dpo_comment' => 'Gemäss ePrivacy Recht müssen Kontaktdaten des Data Controller für ein Cookie bekanntgegeben werden. Beispiel: Cloudflare, Inc. 101 Townsend St. San Francisco, CA 94107. Attention: Data Protection Officer, privacyquestions@cloudflare.com',
+            'contact_links_dpo'         => 'Links zum «Data Controller»',
+            'contact_links_dpo_comment' => 'Gemäss ePrivacy Recht müssen Links zur Website des Data Controller für ein Cookie erstellt werden. Beispiel: Link zur Website, AGBs, Datenschutzerklärung, etc.',
+            'contact_links' => [
+                'name' => 'Anzeigetext',
+                'href' => 'Linkziel (absolute URL)',
+            ]
+        ],
+        'tabs'   => [
+            'contact' => 'Kontaktdaten'
         ],
     ],
     'permissions'     => [

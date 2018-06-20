@@ -26,6 +26,30 @@ tabs:
             span: full
             type: richeditor
             tab: 'offline.gdpr::lang.cookie_group.tabs.description'
+        contact_details_dpo:
+            label: 'offline.gdpr::lang.cookie.fields.contact_details_dpo'
+            commentAbove: 'offline.gdpr::lang.cookie.fields.contact_details_dpo_comment'
+            size: large
+            span: auto
+            type: richeditor
+            tab: 'offline.gdpr::lang.cookie.tabs.contact'
+        contact_links_dpo:
+            label: 'offline.gdpr::lang.cookie.fields.contact_links_dpo'
+            commentAbove: 'offline.gdpr::lang.cookie.fields.contact_links_dpo_comment'
+            size: large
+            span: auto
+            type: repeater
+            tab: 'offline.gdpr::lang.cookie.tabs.contact'
+            form:
+                fields:
+                    contact_link_name:
+                        label: 'offline.gdpr::lang.cookie.fields.contact_links.name'
+                        span: auto
+                        type: text
+                    contact_link_href:
+                        label: 'offline.gdpr::lang.cookie.fields.contact_links.href'
+                        span: auto
+                        type: text
         levels:
             prompt: 'Add new level'
             span: full

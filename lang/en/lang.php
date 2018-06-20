@@ -181,6 +181,17 @@
             'levels'          => 'Cookie levels',
             'purpose'         => 'Purpose',
             'purpose_comment' => 'Describe the Purpose of the Use, Processing and any Notifications e.g. Determines if the user\'s navigation should be registered in a certain statistical placeholder',
+            'contact_details_dpo'         => 'Contact Details of Data Controller',
+            'contact_details_dpo_comment' => 'Under ePrivacy Law, you have to give the DPO Contact Address of the cookie e.g. Cloudflare, Inc. 101 Townsend St. San Francisco, CA 94107. Attention: Data Protection Officer, privacyquestions@cloudflare.com',
+            'contact_links_dpo'         => 'Contact Links of Data Controller',
+            'contact_links_dpo_comment' => 'Under ePrivacy Law, you need to give a link directly to the webpage of the DPO of the cookie e.g. Link to their Terms, Privacy, Cookie Privacy page etc.',
+            'contact_links' => [
+                'name' => 'Label',
+                'href' => 'Link target (absolute URL)',
+            ]
+        ],
+        'tabs'   => [
+            'contact' => 'Contact information'
         ],
     ],
     'permissions'     => [

@@ -19,12 +19,15 @@ class Cookie extends Model
     public $rules = [
         'name' => 'required',
         'description' => 'required',
+        'contact_details_dpo' => 'required',
+        'contact_links_dpo' => 'required',
     ];
     public $casts = [
         'initial_status' => 'boolean',
     ];
     public $jsonable = [
         'levels',
+        'contact_links_dpo'
     ];
     public $belongsTo = [
         'group' => [CookieGroup::class, 'key' => 'cookie_group_id'],
