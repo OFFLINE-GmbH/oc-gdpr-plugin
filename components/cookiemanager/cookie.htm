@@ -8,7 +8,7 @@
     <div class="gdpr-cookie-manager__cookie-details">
         <h3 class="gdpr-cookie-manager__cookie-name">{{ cookie.name }}</h3>
         <div class="gdpr-cookie-manager__cookie-description">
-            {{ cookie.description | raw }}
+            {{ html_clean(cookie.description | raw) }}
         </div>
         {% if cookie.levels %}
             {% partial __SELF__ ~ '::levels' cookie=cookie selectedLevel=selectedLevel %}
