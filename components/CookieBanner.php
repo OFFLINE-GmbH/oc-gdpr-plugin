@@ -8,7 +8,6 @@ use OFFLINE\GDPR\Models\CookieGroup;
 class CookieBanner extends ComponentBase
 {
     public $hide = false;
-    public $cookieGroups;
     public $hardReload = false;
     public $updatePartial = '';
     public $updateSelector = '';
@@ -86,8 +85,6 @@ class CookieBanner extends ComponentBase
             $this->addCss('assets/cookieBanner/banner.css');
         }
 
-        $this->cookieGroups = $this->getCookieGroups();
-
         if ($this->ignoreBehaviour !== 'nothing') {
             // To hide the banner on subsequent page views we have
             // to keep track of this first page view (if the
@@ -111,18 +108,9 @@ class CookieBanner extends ComponentBase
         }
     }
 
-    public function onSubmit()
+    public function onAccept()
     {
-        $accepted = post('cookie', []);
-        $groups   = CookieGroup::with('cookies')->whereIn('id', $accepted)->get();
-
-        $cookies = $groups->flatMap(function ($group) {
-            return $group->cookies;
-        })->filter(function ($item) {
-            return $item->initial_status;
-        })->pluck('max_level', 'code')->toArray();
-
-        $this->consentCookie->set($cookies);
+        $this->setDefaultConsent();
     }
 
     public function onDecline()
