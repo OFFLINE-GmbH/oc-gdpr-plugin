@@ -209,12 +209,13 @@
                 'expiry_comment'     => 'Gemäss ePrivacy Recht muss angegeben werden, wie lange das Cookie im Browser gespeichert bleibt. e.g. SESSION, 3 monate, 2 jahre.',
                 'type'               => 'Typ',
                 'type_comment'       => 'Under ePrivacy Law, you need to state what type of cookie or module is, to make things easier we have made a drop-down menu',
-
             ],
         ],
         'tabs'   => [
-            'contact' => 'Kontaktdaten',
-            'levels'  => 'Levels verwalten',
+            'contact'  => 'Kontaktdaten',
+            'levels'   => 'Levels verwalten',
+            'levels2'  => 'Anbieter',
+            'levels3'  => 'Manage Item Details',
         ],
     ],
     'permissions'     => [

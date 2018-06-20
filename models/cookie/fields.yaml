@@ -60,7 +60,7 @@ tabs:
             required: true
             type: text
             commentAbove: 'offline.gdpr::lang.cookie.fields.cookie_levels.provider_comment'
-            tab: 'offline.gdpr::lang.cookie.tabs.levels'
+            tab: 'offline.gdpr::lang.cookie.tabs.levels2'
         section1:
             label: 'offline.gdpr::lang.cookie.fields.cookie_levels.section1_label'
             span: full
@@ -91,13 +91,13 @@ tabs:
             span: full
             type: section
             comment: 'offline.gdpr::lang.cookie.fields.cookie_levels.section2_comment'
-            tab: 'offline.gdpr::lang.cookie.tabs.levels'
+            tab: 'offline.gdpr::lang.cookie.tabs.levels3'
         repeater1:
             label: 'Item Details'
             prompt: 'Add New Item Details'
             span: full
             type: repeater
-            tab: 'offline.gdpr::lang.cookie.tabs.levels'
+            tab: 'offline.gdpr::lang.cookie.tabs.levels3'
             form:
                 fields:
                     level_name:

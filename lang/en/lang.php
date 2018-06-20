@@ -213,7 +213,9 @@
         ],
         'tabs'   => [
             'contact' => 'Contact information',
-            'levels' => 'Manage levels',
+            'levels'  => 'Manage Levels',
+            'levels2' => 'Provider',
+            'levels3' => 'Manage Item Details',
         ],
     ],
     'permissions'     => [

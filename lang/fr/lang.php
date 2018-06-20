@@ -1,7 +1,7 @@
 <?php return [
     'plugin'          => [
-        'name'        => 'GDPR',
-        'description' => 'Rendez votre site conforme au RGPD',
+        'name'        => 'GDPR et ePrivacy',
+        'description' => 'Rendez votre site conforme au RGPD et ePrivacy',
     ],
     'common'          => [
         'enabled'       => 'Activé',
@@ -60,8 +60,8 @@
     ],
     'settings'        => [
         'cookies'        => [
-            'label' => 'Cookies',
-            'description' => 'Configurer les cookies utilisés par le site et leur contrôle.',
+            'label' => 'Cookieset modules',
+            'description' => 'Configurer les cookies et modules utilisés par le site et leur contrôle.',
         ],
         'cookie_consent' => [
             'label'                     => 'Composant Klaro!',
@@ -169,15 +169,53 @@
             'default_level'          => 'Ce niveau est présélectionné pour l\'utilisateur.',
         ],
         'tabs'   => [
-            'description' => 'Description',
+            'description' => 'La description',
             'cookies'     => 'Cookies',
         ],
     ],
     'cookie'          => [
         'fields' => [
-            'code'          => 'Code',
-            'intial_status' => 'Ce cookie est activé par défaut',
-            'levels'        => 'Niveaux de cookie',
+            'name_owner'                  => 'Owner',
+            'name_owner_comment'          => 'Owner Name of the Service e.g. Google Analytics',
+            'code'                        => 'Code',
+            'code_comment'                => 'This is generated for the plugin to work (you dont need to touch this)',
+            'intial_status'               => 'This cookie is enabled by default',
+            'levels'                      => 'Cookie levels',
+            'purpose'                     => 'Purpose',
+            'purpose_comment'             => 'Under ePrivacy Law (Article 4, para 11 and article 13, para 1, C and para 2, F), you need to Describe the Purpose of the Use, Processing and any Notifications e.g. \'These cookies are used from AddThis social sharing widget in order to make sure you see the updated count when you share a page\'.',
+            'contact_details_dpo'         => 'Contact Details of Data Controller',
+            'contact_details_dpo_comment' => 'Under ePrivacy Law (Article 13, Para 1, A and Recital 42), you have to give the DPO Contact Address e.g. Cloudflare, Inc. 101 Townsend St. San Francisco, CA 94107. Attention: Data Protection Officer, privacyquestions@cloudflare.com (please note the email address is optional)',
+            'contact_links_dpo'           => 'Contact Links of Data Controller',
+            'contact_links_dpo_comment'   => 'Under ePrivacy Law (Article 13, para 2, B, C and D), you need to give links for \'rights to complain to Supervisory authority and to access correct data policy\' this means linking to their Privacy Policy, Terms and Conditions, Cookie Privacy and Opt-Out Pages if they have them.',
+            'contact_links_dpo_prompt'    => 'Add new link',            
+            'contact_links' => [
+                'name' => 'Anchor Text',
+                'href' => 'Link Target (absolute URL)',
+            ],
+            'cookie_levels' => [
+                'purpose_prompt'     => 'Add Granular Purpose Levels',
+                'purpose_label'      => 'Granular Purpose Levels',
+                'section1_label'     => 'Helpful Tip for Granular Purpose Levels',
+                'section1_comment'   => 'Under ePrivacy Law (Recital 32 and Article 29 working party guidance nov 2017), Granular Opt-In for several Processes. This means having an off setting, the having a basic setting, then having a more advanced setting and so on up to a full setting. An example of this could be Google Analytics where we have an Off Setting, then a basic Tracking Setting, then a basic Tracking Setting plus Plugins, then finally a full setting with everything. The number of levels depends on what you are adding.',
+                'section2_label'     => 'Helpful Tip for Item Details',
+                'section2_comment'   => 'You can list as many item details as you want, if this is for a cookie make sure you list all the Cookie Identification Names, for example Google Analytics can have 8 or more different ones different ones. Also make sure you have equal number of Name (Cookie Identification), Duration/Expiry and Type fields. To find the list of Website Cookies in Google Chrome go to Dev Tools > Application > Cookies. You can also use the website: https://cookiepedia.co.uk/ to look-up Cookies.',
+                'name'               => 'Name (Cookie Identification)',
+                'name_comment'       => 'The Name of the of the Cookie Prefix code e.g. \'_ga\'',
+                'provider'           => 'Provider',
+                'provider_comment'   => 'Under ePrivacy Law, you need to state the website domain name. (please exclude the https://, www and / at the end)',
+                'purpose'            => 'Purpose',
+                'purpose_comment'    => 'Describe the Purpose of the Use at each granular level, Article 5 requires that consent is requested in a granular manner for \'specified, explicit\' purposes. (please write a SINGLE Paragraph)',                
+                'expiry'             => 'Duration/Expiry',
+                'expiry_comment'     => 'Under ePrivacy Law, you need to state how long it will be used in the user browser e.g. SESSION, 3 months, 2 years.',
+                'type'               => 'Type',
+                'type_comment'       => 'Under ePrivacy Law, you need to state what type of cookie or module is, to make things easier we have made a drop-down menu',
+            ]
+        ],
+        'tabs'   => [
+            'contact' => 'Informations de contact',
+            'levels'  => 'Gérer les niveaux',
+            'levels2' => 'Fournisseur',
+            'levels3' => 'Gérer les détails des articles',
         ],
     ],
     'permissions'     => [
