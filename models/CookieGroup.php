@@ -20,9 +20,7 @@ class CookieGroup extends Model
     ];
     public $rules = [
         'name' => 'required',
-    ];
-    public $casts = [
-        'initial_status' => 'boolean',
+        'description' => 'required',
     ];
     public $hasMany = [
         'cookies' => [

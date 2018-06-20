@@ -3,6 +3,18 @@ fields:
         label: 'offline.gdpr::lang.cookie_group.fields.name'
         span: auto
         type: text
+    required:
+        label: 'offline.gdpr::lang.cookie_group.fields.required'
+        span: auto
+        type: switch
+        default: 0
+        comment: 'offline.gdpr::lang.cookie_group.fields.required_comment'
+    description:
+        label: 'offline.gdpr::lang.cookie.fields.purpose'
+        commentAbove: 'offline.gdpr::lang.cookie.fields.purpose_comment'
+        size: large
+        span: auto
+        type: richeditor
 tabs:
     fields:
         cookies:
@@ -11,16 +23,3 @@ tabs:
             path: cookies
             tab: 'offline.gdpr::lang.settings.cookies.label'
             context: update
-        description:
-            label: 'offline.gdpr::lang.cookie_group.tabs.description'
-            size: large
-            span: left
-            type: richeditor
-            tab: 'offline.gdpr::lang.cookie_group.tabs.description'
-        required:
-            label: 'offline.gdpr::lang.cookie_group.fields.required'
-            span: right
-            type: switch
-            default: 0
-            comment: 'offline.gdpr::lang.cookie_group.fields.required_comment'
-            tab: 'offline.gdpr::lang.cookie_group.tabs.description'

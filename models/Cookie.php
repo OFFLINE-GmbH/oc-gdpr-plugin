@@ -18,6 +18,7 @@ class Cookie extends Model
     ];
     public $rules = [
         'name' => 'required',
+        'description' => 'required',
     ];
     public $casts = [
         'initial_status' => 'boolean',

@@ -179,6 +179,8 @@
             'code'          => 'Code',
             'intial_status' => 'Dieses Cookie ist standardmässig aktiviert',
             'levels'        => 'Cookie-Levels',
+            'purpose'         => 'Zweck',
+            'purpose_comment' => 'Beschreibe die Verwendung, die Verarbeitung und allfällige Benachrichtigungen. Beispiel: «Bestimmt ob der Seitenaufruf des Besuchers zu Statistikzwecken aufgezeichnet wird»',
         ],
     ],
     'permissions'     => [

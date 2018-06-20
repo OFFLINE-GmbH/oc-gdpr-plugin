@@ -175,10 +175,12 @@
     ],
     'cookie'          => [
         'fields' => [
-            'name_owner'    => 'Name/Owner',
-            'code'          => 'Code',
-            'intial_status' => 'This cookie is enabled by default',
-            'levels'        => 'Cookie levels',
+            'name_owner'      => 'Name/Owner',
+            'code'            => 'Code',
+            'intial_status'   => 'This cookie is enabled by default',
+            'levels'          => 'Cookie levels',
+            'purpose'         => 'Purpose',
+            'purpose_comment' => 'Describe the Purpose of the Use, Processing and any Notifications e.g. Determines if the user\'s navigation should be registered in a certain statistical placeholder',
         ],
     ],
     'permissions'     => [

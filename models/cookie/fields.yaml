@@ -20,8 +20,9 @@ tabs:
             comment: 'offline.gdpr::lang.cookie.fields.intial_status'
             tab: 'offline.gdpr::lang.cookie_group.tabs.description'
         description:
-            label: 'offline.gdpr::lang.cookie_group.tabs.description'
-            size: large
+            label: 'offline.gdpr::lang.cookie.fields.purpose'
+            commentAbove: 'offline.gdpr::lang.cookie.fields.purpose_comment'
+            size: huge
             span: full
             type: richeditor
             tab: 'offline.gdpr::lang.cookie_group.tabs.description'
