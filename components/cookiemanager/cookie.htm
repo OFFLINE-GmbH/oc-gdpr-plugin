@@ -1,5 +1,5 @@
 {% set consent = __SELF__.consent %}
-{% set isChecked = consent ? (cookie.code in consent | keys) : cookie.initial_status %}
+{% set isChecked = consent ? (cookie.code in consent | keys) : cookie.group.required %}
 {% set selectedLevel = consent[cookie.code] | default(cookie.default_level | default(0)) %}
 <div class="gdpr-cookie-manager__cookie {{ not isChecked ? 'gdpr-cookie-manager__cookie--disabled' : '' }}">
     <div class="gdpr-cookie-manager__cookie-toggle">
