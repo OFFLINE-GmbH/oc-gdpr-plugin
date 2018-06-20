@@ -102,13 +102,14 @@ tabs:
                 fields:
                     level_name:
                         label: 'offline.gdpr::lang.cookie.fields.cookie_levels.name'
+                        placeholder: '_ga'
                         span: full
                         type: text
                         commentAbove: 'offline.gdpr::lang.cookie.fields.cookie_levels.name_comment'
                     level_expiry:
                         label: 'offline.gdpr::lang.cookie.fields.cookie_levels.expiry'
                         commentAbove: 'offline.gdpr::lang.cookie.fields.cookie_levels.expiry_comment'
-                        placeholder: 'Session, 3 months, 2 years'
+                        placeholder: '3 months'
                         span: full
                         type: text
                     level_type:
