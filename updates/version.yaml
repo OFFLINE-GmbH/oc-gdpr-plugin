@@ -34,3 +34,6 @@
     - Updated french translations (thanks to damsfx)
 1.0.17:
     - Load the correct cookie state when visiting the cookieManager after a user has declined
+1.1.1:
+    - !!! Removed cookie groups from banner component since they aren't in line with GDPR regulations
+    - remove_group_initial_status.php
