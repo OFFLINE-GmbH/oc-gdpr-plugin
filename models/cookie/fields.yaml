@@ -1,6 +1,6 @@
 fields:
     name:
-        label: 'offline.gdpr::lang.settings.cookie_consent.apps.repeater.name.label'
+        label: 'offline.gdpr::lang.cookie.fields.name_owner'
         span: auto
         type: text
     code:

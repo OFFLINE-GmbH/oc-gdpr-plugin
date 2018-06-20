@@ -175,6 +175,7 @@
     ],
     'cookie'          => [
         'fields' => [
+            'name_owner'    => 'Name/Owner',
             'code'          => 'Code',
             'intial_status' => 'This cookie is enabled by default',
             'levels'        => 'Cookie levels',
