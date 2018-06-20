@@ -188,6 +188,17 @@
             'contact_links' => [
                 'name' => 'Label',
                 'href' => 'Link target (absolute URL)',
+            ],
+            'cookie_levels' => [
+                'name_comment' => 'Human readable name of this cookie',
+                'identifier' => 'Identifier',
+                'identifier_comment' => 'The name of the of the Cookie Prefix code',
+                'provider' => 'Provider',
+                'provider_comment' => 'Under ePrivacy Law, you need to state the website domain name',
+                'expiry' => 'Duration/Expiry',
+                'expiry_comment' => 'Under ePrivacy Law, you need to state how long it will be used in the user browser',
+                'type' => 'Type',
+                'type_comment' => 'Under ePrivacy Law, you need to state what type of cookie or module this is',
             ]
         ],
         'tabs'   => [

@@ -183,16 +183,28 @@
             'purpose_comment'             => 'Beschreibe die Verwendung, die Verarbeitung und allfällige Benachrichtigungen. Beispiel: «Bestimmt ob der Seitenaufruf des Besuchers zu Statistikzwecken aufgezeichnet wird»',
             'contact_details_dpo'         => 'Kontaktdaten des «Data Controller»',
             'contact_details_dpo_comment' => 'Gemäss ePrivacy Recht müssen Kontaktdaten des Data Controller für ein Cookie bekanntgegeben werden. Beispiel: Cloudflare, Inc. 101 Townsend St. San Francisco, CA 94107. Attention: Data Protection Officer, privacyquestions@cloudflare.com',
-            'contact_links_dpo'         => 'Links zum «Data Controller»',
-            'contact_links_dpo_comment' => 'Gemäss ePrivacy Recht müssen Links zur Website des Data Controller für ein Cookie erstellt werden. Beispiel: Link zur Website, AGBs, Datenschutzerklärung, etc.',
-            'contact_links' => [
+            'contact_links_dpo'           => 'Links zum «Data Controller»',
+            'contact_links_dpo_comment'   => 'Gemäss ePrivacy Recht müssen Links zur Website des Data Controller für ein Cookie erstellt werden. Beispiel: Link zur Website, AGBs, Datenschutzerklärung, etc.',
+            'contact_links'               => [
                 'name' => 'Anzeigetext',
                 'href' => 'Linkziel (absolute URL)',
-            ]
+            ],
+            'cookie_levels'               => [
+                'name_comment'       => 'Anzeigename',
+                'identifier'         => 'Identifikation',
+                'identifier_comment' => 'Die ID des Cookies wie es im Browser gespeichert wird',
+                'provider'           => 'Anbieter',
+                'provider_comment'   => 'Gemäss ePrivacy Recht muss die Website oder Domain des Cookies angegebenw erden',
+                'expiry'             => 'Ablauf/Lebensdauer',
+                'expiry_comment'     => 'Gemäss ePrivacy Recht muss angegeben werden, wie lange das Cookie im Browser gespeichert bleibt',
+                'type'               => 'Typ',
+                'type_comment'       => 'Gemäss ePrivacy Recht muss der Typ dieses Cookies angegeben werden',
+
+            ],
         ],
         'tabs'   => [
             'contact' => 'Kontaktdaten',
-            'levels' => 'Levels verwalten',
+            'levels'  => 'Levels verwalten',
         ],
     ],
     'permissions'     => [
