@@ -216,8 +216,8 @@
         'tabs'   => [
             'contact' => 'Coordonnées du contact',
             'levels'  => 'Gérer les niveaux',
-            'levels2' => 'Fournisseur',
-            'levels3' => 'Gérer les détails des articles',
+            'provider' => 'Fournisseur',
+            'item_details' => 'Gérer les détails des articles',
         ],
     ],
     'permissions'     => [
