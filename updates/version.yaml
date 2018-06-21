@@ -35,8 +35,10 @@
 1.0.17:
     - Load the correct cookie state when visiting the cookieManager after a user has declined
 1.1.1:
-    - !!! Removed cookie groups from banner component since they aren't in line with GDPR regulations. Also added new
+    - !!! Removed cookie groups from banner component since they arent in line with GDPR regulations. Also added new
      fields to optimize ePrivacy conformity. (*Very big thank you* to ayumihamsaki for giving a lot of feedback via our
       GitHub page!)
     - remove_group_initial_status.php
     - add_new_cookie_fields.php
+1.2.1:
+    - Finished off the Cookie Backend and did a general tidy up

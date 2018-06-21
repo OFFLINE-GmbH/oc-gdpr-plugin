@@ -1,7 +1,7 @@
 <?php return [
     'plugin'          => [
-        'name'        => 'GDPR',
-        'description' => 'Rendez votre site conforme au RGPD',
+        'name'        => 'GDPR et ePrivacy',
+        'description' => 'Rendez votre site conforme au RGPD et ePrivacy',
     ],
     'common'          => [
         'enabled'       => 'Activé',
@@ -12,7 +12,7 @@
     'cookie_banner'   => [
         'description'         => 'Affiche une bannière pour les cookies',
         'message'             => 'Nous utilisons les cookies pour personnaliser le contenu et analyser notre trafic. Veuillez décider quel type de cookies vous êtes prêt à accepter.',
-        'advanced_settings' => 'Paramètres avancés',
+        'advanced_settings'   => 'Paramètres avancés',
         'decline'             => 'Décliner',
         'accept'              => 'Accepter les cookies',
         'include_css'         => [
@@ -60,8 +60,8 @@
     ],
     'settings'        => [
         'cookies'        => [
-            'label' => 'Cookies',
-            'description' => 'Configurer les cookies utilisés par le site et leur contrôle.',
+            'label'       => 'Cookieset modules',
+            'description' => 'Configurer les cookies et modules utilisés par le site et leur contrôle.',
         ],
         'cookie_consent' => [
             'label'                     => 'Composant Klaro!',
@@ -143,9 +143,9 @@
             ],
         ],
         'data_retention' => [
-            'label'       => 'Conservation des données',
-            'description' => 'Configurez vos politiques de conservation des données.',
-            'enabled'     => [
+            'label'             => 'Conservation des données',
+            'description'       => 'Configurez vos politiques de conservation des données.',
+            'enabled'           => [
                 'label'   => 'Nettoyage actif',
                 'comment' => 'Supprimer automatiquement les anciennes données après leur expiration.',
             ],
@@ -153,7 +153,7 @@
                 'label'   => 'Suppression des données après x jours',
                 'comment' => 'Valable pour tous les plugins enregistrés si rien d\'autre n\'est spécifié ci-dessous.',
             ],
-            'keep_days' => [
+            'keep_days'         => [
                 'label' => 'Effacer les données après x jours',
             ],
         ],
@@ -175,35 +175,49 @@
     ],
     'cookie'          => [
         'fields' => [
-            'name_owner'      => 'Nom/Propriétaire',
-            'code'          => 'Code',
-            'intial_status' => 'Ce cookie est activé par défaut',
-            'levels'        => 'Niveaux de cookie',
-            'purpose'         => 'Objectif',
-            'purpose_comment' => 'Décrire le but de l\'utilisation, du traitement et de toute notification, par exemple, Détermine si la navigation de l\'utilisateur doit être enregistrée dans un registre statistique.',
+            'name_owner'                  => 'Nom/Propriétaire',
+            'name_owner_comment'          => 'Owner Name of the Service e.g. Google Analytics',
+            'code'                        => 'Code',
+            'code_comment'                => 'This is generated for the plugin to work (you dont need to touch this)',
+            'intial_status'               => 'Ce cookie est activé par défaut',
+            'levels'                      => 'Niveaux de cookie',
+            'purpose'                     => 'Objectif',
+            'purpose_comment'             => 'Décrire le but de l\'utilisation, du traitement et de toute notification, par exemple, Détermine si la navigation de l\'utilisateur doit être enregistrée dans un registre statistique.',
             'contact_details_dpo'         => 'Coordonnées du responsable du traitement des données',
             'contact_details_dpo_comment' => 'En vertu de la loi sur la protection de la vie privée, vous devez donner l\'adresse de contact du responsable de la protection des données du cookie, par exemple Cloudflare, Inc. 101 Townsend St. San Francisco, CA 94107. Attention : Délégué à la protection des données, privacyquestions@cloudflare.com',
-            'contact_links_dpo'         => 'Liens de contact du responsable du traitement des données',
-            'contact_links_dpo_comment' => 'En vertu de la loi sur la protection de la vie privée, vous devez fournir l\'adresse de la page web du responsable de la protection des données du cookie, par exemple Lien vers leurs Conditions d\'utilisation, Politique de confidentialité, Politique de gestion des cookies, etc',
-            'contact_links' => [
+            'contact_links_dpo'           => 'Liens de contact du responsable du traitement des données',
+            'contact_links_dpo_comment'   => 'En vertu de la loi sur la protection de la vie privée, vous devez fournir l\'adresse de la page web du responsable de la protection des données du cookie, par exemple Lien vers leurs Conditions d\'utilisation, Politique de confidentialité, Politique de gestion des cookies, etc',
+            'contact_links_dpo_prompt'    => 'Add new link',
+            'contact_links'               => [
                 'name' => 'Libellé',
                 'href' => 'Cible du lien (URL absolue)',
             ],
-            'cookie_levels' => [
-                'name_comment' => 'Nom commun de ce cookie',
-                'identifier' => 'Identifiant',
+            'cookie_levels'               => [
+                'purpose_prompt'     => 'Add Granular Purpose Levels',
+                'purpose_label'      => 'Granular Purpose Levels',
+                'section1_label'     => 'Helpful Tip for Granular Purpose Levels',
+                'section1_comment'   => 'Under ePrivacy Law (Recital 32 and Article 29 working party guidance nov 2017), Granular Opt-In for several Processes. This means having an off setting, the having a basic setting, then having a more advanced setting and so on up to a full setting. An example of this could be Google Analytics where we have an Off Setting, then a basic Tracking Setting, then a basic Tracking Setting plus Plugins, then finally a full setting with everything. The number of levels depends on what you are adding.',
+                'section2_label'     => 'Helpful Tip for Item Details',
+                'section2_comment'   => 'You can list as many item details as you want, if this is for a cookie make sure you list all the Cookie Identification Names, for example Google Analytics can have 8 or more different ones different ones. Also make sure you have equal number of Name (Cookie Identification), Duration/Expiry and Type fields. To find the list of Website Cookies in Google Chrome go to Dev Tools > Application > Cookies. You can also use the website: https://cookiepedia.co.uk/ to look-up Cookies.',
+                'name'               => 'Name (Cookie Identification)',
+                'name_comment'       => 'Nom commun de ce cookie',
+                'identifier'         => 'Identifiant',
                 'identifier_comment' => 'Le code de préfixe du cookie.',
-                'provider' => 'Fournisseur',
-                'provider_comment' => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer le nom de domaine du site Web.',
-                'expiry' => 'Durée/Expiration',
-                'expiry_comment' => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer combien de temps il sera utilisé dans le navigateur de l\'utilisateur.',
-                'type' => 'Type',
-                'type_comment' => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer de quel type de cookie ou de module il s\'agit.',
-            ]
+                'provider'           => 'Fournisseur',
+                'provider_comment'   => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer le nom de domaine du site Web.',
+                'purpose'            => 'Purpose',
+                'purpose_comment'    => 'Describe the Purpose of the Use at each granular level, Article 5 requires that consent is requested in a granular manner for \'specified, explicit\' purposes. (please write a SINGLE Paragraph)',
+                'expiry'             => 'Durée/Expiration',
+                'expiry_comment'     => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer combien de temps il sera utilisé dans le navigateur de l\'utilisateur.',
+                'type'               => 'Type',
+                'type_comment'       => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer de quel type de cookie ou de module il s\'agit.',
+            ],
         ],
         'tabs'   => [
             'contact' => 'Coordonnées du contact',
-            'levels' => 'Gérer les niveaux',
+            'levels'  => 'Gérer les niveaux',
+            'levels2' => 'Fournisseur',
+            'levels3' => 'Gérer les détails des articles',
         ],
     ],
     'permissions'     => [

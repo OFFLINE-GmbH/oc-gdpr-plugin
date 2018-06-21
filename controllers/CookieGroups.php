@@ -33,6 +33,7 @@ class CookieGroups extends Controller
         parent::__construct();
         BackendMenu::setContext('October.System', 'system', 'settings');
         SettingsManager::setContext('OFFLINE.GDPR', 'gdpr_cookies');
+        $this->addCss('/plugins/offline/gdpr/assets/backend/styles.css');
         $this->addJs('/plugins/offline/gdpr/assets/backend/sortable.js');
         $this->addJs('/plugins/offline/gdpr/assets/backend/backend.js');
     }
