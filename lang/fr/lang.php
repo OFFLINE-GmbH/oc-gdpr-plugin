@@ -1,7 +1,7 @@
 <?php return [
     'plugin'          => [
-        'name'        => 'GDPR et ePrivacy',
-        'description' => 'Rendez votre site conforme au RGPD et ePrivacy',
+        'name'        => 'RGPD et vie privée',
+        'description' => 'Rendez votre site conforme au RGPD et lois pour la protection de la vie privée',
     ],
     'common'          => [
         'enabled'       => 'Activé',
@@ -60,7 +60,7 @@
     ],
     'settings'        => [
         'cookies'        => [
-            'label'       => 'Cookieset modules',
+            'label'       => 'Cookies et modules',
             'description' => 'Configurer les cookies et modules utilisés par le site et leur contrôle.',
         ],
         'cookie_consent' => [
@@ -176,9 +176,9 @@
     'cookie'          => [
         'fields' => [
             'name_owner'                  => 'Nom/Propriétaire',
-            'name_owner_comment'          => 'Owner Name of the Service e.g. Google Analytics',
+            'name_owner_comment'          => 'Nom du propriétaire du service, ex. Google Analytics',
             'code'                        => 'Code',
-            'code_comment'                => 'This is generated for the plugin to work (you dont need to touch this)',
+            'code_comment'                => 'Ceci est généré pour que le plugin fonctionne (vous n\'avez pas besoin d\'y toucher).',
             'intial_status'               => 'Ce cookie est activé par défaut',
             'levels'                      => 'Niveaux de cookie',
             'purpose'                     => 'Objectif',
@@ -187,30 +187,28 @@
             'contact_details_dpo_comment' => 'En vertu de la loi sur la protection de la vie privée, vous devez donner l\'adresse de contact du responsable de la protection des données du cookie, par exemple Cloudflare, Inc. 101 Townsend St. San Francisco, CA 94107. Attention : Délégué à la protection des données, privacyquestions@cloudflare.com',
             'contact_links_dpo'           => 'Liens de contact du responsable du traitement des données',
             'contact_links_dpo_comment'   => 'En vertu de la loi sur la protection de la vie privée, vous devez fournir l\'adresse de la page web du responsable de la protection des données du cookie, par exemple Lien vers leurs Conditions d\'utilisation, Politique de confidentialité, Politique de gestion des cookies, etc',
-            'contact_links_dpo_prompt'    => 'Add new link',
+            'contact_links_dpo_prompt'    => 'Ajouter un nouveau lien',
             'contact_links'               => [
                 'name' => 'Libellé',
                 'href' => 'Cible du lien (URL absolue)',
             ],
             'cookie_levels'               => [
-                'purpose_prompt'     => 'Add Granular Purpose Levels',
-                'purpose_label'      => 'Granular Purpose Levels',
-                'section1_label'     => 'Helpful Tip for Granular Purpose Levels',
-                'section1_comment'   => 'Under ePrivacy Law (Recital 32 and Article 29 working party guidance nov 2017), Granular Opt-In for several Processes. This means having an off setting, the having a basic setting, then having a more advanced setting and so on up to a full setting. An example of this could be Google Analytics where we have an Off Setting, then a basic Tracking Setting, then a basic Tracking Setting plus Plugins, then finally a full setting with everything. The number of levels depends on what you are adding.',
-                'section2_label'     => 'Helpful Tip for Item Details',
-                'section2_comment'   => 'You can list as many item details as you want, if this is for a cookie make sure you list all the Cookie Identification Names, for example Google Analytics can have 8 or more different ones different ones. Also make sure you have equal number of Name (Cookie Identification), Duration/Expiry and Type fields. To find the list of Website Cookies in Google Chrome go to Dev Tools > Application > Cookies. You can also use the website: https://cookiepedia.co.uk/ to look-up Cookies.',
-                'name'               => 'Name (Cookie Identification)',
-                'name_comment'       => 'Nom commun de ce cookie',
-                'identifier'         => 'Identifiant',
-                'identifier_comment' => 'Le code de préfixe du cookie.',
+                'purpose_prompt'     => 'Ajouter des niveaux d\'utilisation granulaires',
+                'purpose_label'      => 'Niveaux d\'utilisation granulaires',
+                'section1_label'     => 'Conseil utile pour les niveaux d\'utilisation granulaires',
+                'section1_comment'   => 'En vertu de la loi sur la protection de la vie privée, utilisez un processus de consentement granulaire avec notre fonction de gestion des niveaux. ',
+                'section2_label'     => 'Conseil utile pour le détail des éléments',
+                'section2_comment'   => 'Vous pouvez lister autant de détails que vous le souhaitez, si c\'est pour un cookie, assurez-vous de lister tous les noms d\'identification des cookies du service. Par exemple Google Analytics peut en avoir 8 différents ou plus. Assurez-vous également d\'avoir le même nombre de champs Nom (Identification du cookie), Durée/Expiration et Type. Pour trouver la liste des cookies du site Web dans Google Chrome, allez dans Outils de développement > Application > Application > Cookies. Vous pouvez également utiliser le site Web : https://cookiepedia.co.uk/ pour rechercher des cookies.',
+                'name'               => 'Nom (Identification du cookie)',
+                'name_comment'       => 'Le nom du code de préfixe du cookie, par exemple \'_ga\'',
                 'provider'           => 'Fournisseur',
-                'provider_comment'   => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer le nom de domaine du site Web.',
-                'purpose'            => 'Purpose',
-                'purpose_comment'    => 'Describe the Purpose of the Use at each granular level, Article 5 requires that consent is requested in a granular manner for \'specified, explicit\' purposes. (please write a SINGLE Paragraph)',
+                'provider_comment'   => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer le nom de domaine du site Web.  (exclure https://, www et / de l\'adresse)',
+                'purpose'            => 'Objectif',
+                'purpose_comment'    => 'Décrire le but de l\'utilisation à chaque niveau granulaire dans un seul paragraphe. L\'article 5 exige que le consentement soit demandé de manière granulaire à des fins \'spécifiées et explicites\'.',
                 'expiry'             => 'Durée/Expiration',
-                'expiry_comment'     => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer combien de temps il sera utilisé dans le navigateur de l\'utilisateur.',
+                'expiry_comment'     => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer combien de temps il sera utilisé dans le navigateur de l\'utilisateur. ex: SESSION, 3 mois, 2 ans.',
                 'type'               => 'Type',
-                'type_comment'       => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer de quel type de cookie ou de module il s\'agit.',
+                'type_comment'       => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer le type de cookie ou de module, pour faciliter les choses, nous avons créé un menu déroulant.',
             ],
         ],
         'tabs'   => [
