@@ -1,0 +1,9 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    cookiesmodulesuserguide:
+        type: partial
+        path: $/offline/gdpr/partials/_cookies_modules_userguide.htm
+        span: full	

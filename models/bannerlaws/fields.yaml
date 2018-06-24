@@ -1,0 +1,9 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    bannerlaws:
+        type: partial
+        path: $/offline/gdpr/partials/_banner_laws.htm
+        span: full	
