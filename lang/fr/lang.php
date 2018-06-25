@@ -193,6 +193,7 @@
             'code_comment'                => 'Ceci est généré pour que le plugin fonctionne (vous n\'avez pas besoin d\'y toucher).',
             'intial_status'               => 'Ce cookie est activé par défaut',
             'levels'                      => 'Niveaux de cookie',
+            'item_details'                => 'Détails des articles',
             'purpose'                     => 'Objectif',
             'purpose_comment'             => 'Décrire le but de l\'utilisation, du traitement et de toute notification, par exemple, Détermine si la navigation de l\'utilisateur doit être enregistrée dans un registre statistique.',
             'contact_details_dpo'         => 'Coordonnées du responsable du traitement des données',

@@ -93,7 +93,7 @@ tabs:
             comment: 'offline.gdpr::lang.cookie.fields.cookie_levels.section2_comment'
             tab: 'offline.gdpr::lang.cookie.tabs.item_details'
         item_details:
-            label: 'Item Details'
+            label: 'offline.gdpr::lang.cookie.fields.item_details'
             prompt: 'Add New Item Details'
             span: full
             type: repeater
