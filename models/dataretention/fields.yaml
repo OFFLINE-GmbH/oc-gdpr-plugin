@@ -1,0 +1,9 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    dataretention:
+        type: partial
+        path: $/offline/gdpr/partials/_data_retention.htm
+        span: full	

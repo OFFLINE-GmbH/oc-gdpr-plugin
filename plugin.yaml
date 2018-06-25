@@ -14,4 +14,6 @@ permissions:
     offline.gdpr.manage_cookie_groups:
         tab: 'offline.gdpr::lang.plugin.name'
         label: 'offline.gdpr::lang.permissions.manage_cookie_groups'
-
+    offline.gdpr.manage_cookie_info:
+        tab: 'offline.gdpr::lang.plugin.name'
+        label: 'offline.gdpr::lang.permissions.manage_cookie_info'

@@ -27,7 +27,8 @@ class Cookie extends Model
     ];
     public $jsonable = [
         'levels',
-        'contact_links_dpo'
+        'contact_links_dpo',
+        'item_details'
     ];
     public $belongsTo = [
         'group' => [CookieGroup::class, 'key' => 'cookie_group_id'],

@@ -1,4 +1,6 @@
 .gdpr-cookie-manager {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     min-height: 500px;
 }
@@ -10,7 +12,9 @@
 }
 
 .gdpr-cookie-manager__groups {
-    flex: 0 0 300px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 300px;
+            flex: 0 0 300px;
 }
 
 .gdpr-cookie-manager__group-list {
@@ -80,7 +84,9 @@
 }
 
 .gdpr-cookie-manager__content {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     padding: 1em 2em;
     border: 1px solid #e3e3e3;
 }
@@ -99,6 +105,8 @@
 
 .gdpr-cookie-manager__cookie {
     margin-bottom: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -120,12 +128,16 @@
 }
 
 .gdpr-cookie-manager__cookie-toggle {
-    flex: 0 0 100px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100px;
+            flex: 0 0 100px;
     margin-top: .5rem;
 }
 
 .gdpr-cookie-manager__cookie-details {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
 }
 
 .gdpr-cookie-manager__cookie-levels {
@@ -176,7 +188,8 @@
  * @see https://codepen.io/mallendeo/pen/eLIiG
  */
 .tgl, .tgl:after, .tgl:before, .tgl *, .tgl *:after, .tgl *:before, .tgl + .tgl-btn {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .tgl::-moz-selection, .tgl:after::-moz-selection, .tgl:before::-moz-selection, .tgl *::-moz-selection, .tgl *:after::-moz-selection, .tgl *:before::-moz-selection, .tgl + .tgl-btn::-moz-selection {
@@ -201,6 +214,8 @@
     background: #e0e0e0;
     border-radius: 2em;
     padding: 2px;
+    -webkit-transition: all .4s ease;
+    -o-transition: all .4s ease;
     transition: all .4s ease;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -220,6 +235,8 @@
     left: 0;
     border-radius: 50%;
     background: #fff;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
     transition: all .2s ease;
 }
 

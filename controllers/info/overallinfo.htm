@@ -1,0 +1,21 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+	<li><a href="<?= Backend::url('offline/gdpr/info') ?>"><?= trans('offline.gdpr::lang.settings.info.label') ?></a></li>
+        <li><?= trans('offline.gdpr::lang.settings.info.overallinfo_title') ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <?= Form::open() ?>
+
+        <div class="layout-row">             
+           <?= $overallinfo->render() ?>
+        </div>
+
+    <?= Form::close() ?>
+
+<?php else: ?>
+    <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
+    <p><a href="<?= Backend::url('offline/gdpr/info') ?>" class="btn btn-default"><?= e(trans('backend::lang.form.return_to_list')) ?></a></p>
+<?php endif ?>

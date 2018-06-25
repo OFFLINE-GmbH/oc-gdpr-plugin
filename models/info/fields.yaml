@@ -1,0 +1,9 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    info:
+        type: partial
+        path: $/offline/gdpr/partials/_info_welcome.htm
+        span: full	

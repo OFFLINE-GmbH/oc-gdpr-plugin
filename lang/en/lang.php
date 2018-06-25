@@ -143,7 +143,7 @@
             ],
         ],
         'data_retention' => [
-            'label'             => 'Data retention',
+            'label'             => 'Data Retention',
             'description'       => 'Configure your data retention policies',
             'enabled'           => [
                 'label'   => 'Cleanup enabled',
@@ -157,6 +157,18 @@
                 'label' => 'Delete data after days',
             ],
         ],
+        'info'        => [
+            'label'       => 'Info and Help',
+            'description' => 'Information and Help to Setup',
+			'bannerlaws_title' => 'Banner Laws Relating to each Country Location',
+			'cookieconsent_title' => 'Cookie Consent User Guide',
+			'cookiesmodulessetup_title' => 'Cookies and Modules Setup Example',
+			'cookiesmodulesuserguide_title' => 'Cookies and Modules User Guide',
+			'dataretention_title' => 'Data Retention User Guide',
+			'dpolinks_title' => 'Contact Links for DPO of Most Common Cookies',
+			'overallinfo_title' => 'Information about GDPR and ePrivacy',
+			'index_title' => 'Welcome to OctoberCMS Offical GDPR and ePrivacy Plugin',
+        ],		
     ],
     'cookie_group'    => [
         'fields' => [
