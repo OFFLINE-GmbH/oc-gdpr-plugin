@@ -167,7 +167,7 @@
 			'dataretention_title' => 'Data Retention User Guide',
 			'dpolinks_title' => 'Contact Links for DPO of Most Common Cookies',
 			'overallinfo_title' => 'Information about GDPR and ePrivacy',
-			'index_title' => 'Welcome to OctoberCMS Offical GDPR and ePrivacy Plugin',
+			'index_title' => 'Welcome to OctoberCMS GDPR and ePrivacy Plugin',
         ],		
     ],
     'cookie_group'    => [
