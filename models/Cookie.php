@@ -13,7 +13,7 @@ class Cookie extends Model
     use TranslatableRelation;
 
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
-    public $translatable = ['name', 'description', 'levels'];
+    public $translatable = ['name', 'description', 'levels', 'contact_links_dpo', 'item_details'];
     public $table = 'offline_gdpr_cookies';
     public $slugs = [
         'code' => 'name',
