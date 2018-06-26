@@ -44,3 +44,6 @@
     - Finished off the Cookie Backend and did a general tidy up
 1.3.1:
     - Added the Info and Help Section
+1.3.2:
+    - General cleanup and extension of plugin
+    - add_further_new_cookie_fields.php

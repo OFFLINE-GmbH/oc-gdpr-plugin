@@ -53,7 +53,7 @@ tabs:
                         label: 'offline.gdpr::lang.cookie.fields.contact_links.name'
                         span: right
                         type: text
-        level_provider:
+        provider:
             label: 'offline.gdpr::lang.cookie.fields.cookie_levels.provider'
             span: full
             placeholder: analytics.google.com
