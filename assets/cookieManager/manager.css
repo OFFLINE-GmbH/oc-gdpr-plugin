@@ -2,7 +2,6 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    min-height: 500px;
 }
 
 @media screen and (max-width: 1100px) {
