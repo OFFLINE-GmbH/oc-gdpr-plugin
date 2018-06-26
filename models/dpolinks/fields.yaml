@@ -1,9 +1,0 @@
-# ===================================
-#  Form Field Definitions
-# ===================================
-
-fields:
-    dpolinks:
-        type: partial
-        path: $/offline/gdpr/partials/_dpo_links.htm
-        span: full	

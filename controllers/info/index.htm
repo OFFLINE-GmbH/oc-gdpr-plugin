@@ -5,17 +5,52 @@
     </ul>
 <?php Block::endPut() ?>
 
-<?php if (!$this->fatalError): ?>
 
-    <?= Form::open() ?>
 
-        <div class="layout-row">             
-           <?= $info->render() ?>
-        </div>
+<div class="info-dashboard">
 
-    <?= Form::close() ?>
+    <!-- Google Translator - Start -->
+    <div id="google_translate_element"></div>
 
-<?php else: ?>
-    <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
-    <p><a href="<?= Backend::url('offline/gdpr/info') ?>" class="btn btn-default"><?= e(trans('backend::lang.form.return_to_list')) ?></a></p>
-<?php endif ?>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- Google Translator - End -->
+
+
+    <!-- English Section -->
+    <section>
+
+        <h1>Welcome to the GDPR and ePrivacy Management Plugin</h1>
+
+        <p>
+            <figure><img role="img" style="max-width: 940px;" src="../../../../../../plugins/offline/gdpr/assets/images/info-banner.png" alt="GDPR and ePrivacy Management Plugin" width="940" height="165"></figure>
+        </p>
+
+        <h2>Introduction</h2>
+
+        <p>This plugin has been made to allow the Webmaster to fullfill the Requirements for the Data Protection Law, The EU Cookie Law, GDPR and ePrivacy Laws. That may sound like quite a lot, but this plugin contains easy to understand information about the Laws and an easy method to setup and install all of the requirements set out in the following laws. Please note that the ePrivacy Law is still not totally finished and still changing. This plugin over time will change and update to address any changes in the Law(s) to make sure you are fully compliant.</p>
+
+        <p>GDPR and ePrivacy are about looking after people's &quot;<strong>Personal Data</strong>&quot; this data can be found in Cookies but also in many areas such as Social Shares, Forum Data, Comment Data, Email Data, Third-Party Plugins and many other things. This is the reason why this plugin has a Cookies and Modules Section that allows you to have complete control over everything and give full access to User's to Control their Personal Data at every level while using your website. Being able to do this is the main Requirement of GDPR and ePrivacy and the real reason why 99% of GDPR Cookie plugins out there won't pass GDPR and ePrivacy Laws.</p>
+
+        <p>Please use the following Guides and Infomation to setup your website. Any issues or questions please check out our Github Page Found here: <a role="link" rel="nofollow external noopener noreferrer" href="https://github.com/OFFLINE-GmbH/oc-gdpr-plugin" target="_blank">oc-gdpr-plugin</a>.</p>
+
+        <h2>Table of Contents:</h2>
+
+        <ol>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/overallinfo') ?>">Information about GDPR and ePrivacy</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/dataretention') ?>">Data Retention User Guide</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/cookiesmodulesuserguide') ?>">Cookies and Modules User Guide</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/cookiesmodulessetup') ?>">Cookies and Modules Setup Example</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/cookieconsent') ?>">Cookie Consent User Guide</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/dpolinks') ?>">Contact Links for DPO of Most Common Cookies</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/bannerlaws') ?>">Banner Laws Relating to each Country Location</a></p></li>
+        </ol>
+
+    </section>
+
+</div>

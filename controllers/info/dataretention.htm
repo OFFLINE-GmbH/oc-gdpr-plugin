@@ -5,17 +5,163 @@
     </ul>
 <?php Block::endPut() ?>
 
-<?php if (!$this->fatalError): ?>
+<div class="info-dashboard">
 
-    <?= Form::open() ?>
+    <!-- Google Translator - Start -->
+    <div id="google_translate_element"></div>
 
-        <div class="layout-row">             
-           <?= $dataretention->render() ?>
-        </div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
 
-    <?= Form::close() ?>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- Google Translator - End -->
 
-<?php else: ?>
-    <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
-    <p><a href="<?= Backend::url('offline/gdpr/info') ?>" class="btn btn-default"><?= e(trans('backend::lang.form.return_to_list')) ?></a></p>
-<?php endif ?>
+
+    <!-- English Section -->
+    <section>
+
+        <h1>Data Retention User Guide</h1>
+
+        <p>
+            <figure><img role="img" style="max-width: 940px;" src="../../../../../../plugins/offline/gdpr/assets/images/data-retention.jpg" alt="Data Retention" width="940" height="165"></figure>
+        </p>
+
+
+        <h2>Introduction</h2>
+
+        <p>The data retention functionality enables you to delete old plugin data after a specified amount of days.</p>
+
+        <p>You can specify the data retention policy for each plugin via October's backend settings.</p>
+
+        <blockquote>
+            <p><strong>Important</strong>: To automatically delete old data <a role="link" rel="nofollow external noopener noreferrer" href="http://octobercms.com/docs/setup/installation#crontab-setup" target="_blank">make sure you have set up the Task Scheduler</a> correctly.</p></blockquote>
+
+        <h2>Table of Contents:</h2>
+
+        <ol>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/dataretention') ?>#register-your-plugin">Register your plugin</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/dataretention') ?>#user-content-cleanup-method">Cleanup method</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/dataretention') ?>#user-content-cleanup-command">Cleanup command</a></p></li>
+        </ol>
+
+
+        <h3 id="register-your-plugin">Register your plugin</h3>
+
+        <p>To register your plugin you have to listen for the <mark>offline.gdpr::cleanup.register</mark> event in your Plugin's boot method.</p>
+
+        <pre><code class="language-php"><p>public function boot()<br>
+{<br>
+&nbsp;&nbsp;\Event::listen('offline.gdpr::cleanup.register', function () {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'id'     =&gt; 'your-contact-form-plugin',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'label'  =&gt; 'Custom Contact Form Plugin',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'models' =&gt; [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'label'   =&gt; 'Contact form messages',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'comment' =&gt; 'Delete logged contact form messages',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'class'   =&gt; MessageLog::class,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'label'   =&gt; 'SPAM-Messages',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'comment' =&gt; 'Delete blocked SPAM messages',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'closure' =&gt; function (Carbon $deadline, int $keepDays) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Delete your old data here<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;];<br>
+&nbsp;&nbsp;});<br>
+}</p></code></pre>
+
+        <p>You have to specify the following data:</p>
+
+        <table class="container">
+            <thead>
+            <tr>
+                <th>Key</th>
+                <th>Information</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>id</strong></td>
+                <td>A unique identifier of your plugin.</td>
+            </tr>
+            <tr>
+                <td><strong>label</strong></td>
+                <td>A human readable label for your plugin.</td>
+            </tr>
+            <tr>
+                <td><strong>models</strong></td>
+                <td>An array of all your data collecting models.</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <p>As <mark>models</mark> you have to specify an array with the following data:</p>
+
+        <table class="container">
+            <thead>
+            <tr>
+                <th>Key</th>
+                <th>Information</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>label</strong></td>
+                <td>A human readable label for the backend switch form widget.</td>
+            </tr>
+            <tr>
+                <td><strong>comment</strong></td>
+                <td>A human readable comment for the backend switch form widget.</td>
+            </tr>
+            <tr>
+                <td><strong>closure</strong></td>
+                <td>A closure that is called when the cleanup job is run.</td>
+            </tr>
+            <tr>
+                <td><strong>class</strong></td>
+                <td>A model class that defines a gdprCleanup method.</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <p>You have to specify either a <mark>closure</mark> or a <mark>class</mark> value. If both are specified the closure value will be used.</p>
+
+
+        <h3 id="user-content-cleanup-method">Cleanup method</h3>
+
+        <p>You can either specify a <mark>closure</mark> or a model class that defines a <mark>gdprCleanup</mark> method. Both have the same signature:</p>
+
+        <pre><code class="language-php"><p>public function gdprCleanup(Carbon $deadline, int $keepDays)<br>
+{<br>
+&nbsp;&nbsp;self::where('created_at', '&lt;', $deadline)-&gt;each(function (self $item) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$item-&gt;delete();<br>
+&nbsp;&nbsp;});<br>
+<br>
+&nbsp;&nbsp;// or<br>
+&nbsp;&nbsp;// self::where('created_at', '&lt;', $deadline)-&gt;delete();<br>
+}</p></code></pre>
+
+        <p>This method is called whenever the cleanup job is run. <mark>$deadline</mark> contains a <mark>Carbon</mark> instance. All data older than this date has to be deleted. <mark>$keepDays</mark> contains the number of days that <mark>$deadline</mark> is in the past.</p>
+
+        <p>Make sure to use an <mark>each/delete</mark> loop if your model makes use of <mark>deleting/deleted</mark> model events.</p>
+
+
+        <h3 id="user-content-cleanup-command">Cleanup command</h3>
+
+        <p>You can trigger the cleanup on demand via</p>
+
+        <pre><code class="language-php"><p>php artisan gdpr:cleanup</p></code></pre>
+
+    </section>
+
+</div>
