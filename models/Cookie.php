@@ -3,12 +3,14 @@
 use Model;
 use October\Rain\Database\Traits\Sluggable;
 use October\Rain\Database\Traits\Sortable;
+use OFFLINE\GDPR\Classes\Traits\TranslatableRelation;
 
 class Cookie extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use Sortable;
     use Sluggable;
+    use TranslatableRelation;
 
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
     public $translatable = ['name', 'description', 'levels'];
