@@ -1,5 +1,6 @@
 {% if not __SELF__.hide %}
     <div class="gdpr-banner">
+            {% partial __SELF__ ~ '::dismiss' %}       
         <div class="gdpr-banner__wrapper">
             {% partial __SELF__ ~ '::inner' %}
         </div>
