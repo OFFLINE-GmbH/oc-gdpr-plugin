@@ -82,7 +82,7 @@ class CookieBanner extends ComponentBase
         }
 
         if ($this->property('include_css')) {
-            $this->addCss('assets/cookieBanner/banner.min.css');
+            $this->addCss('assets/cookieBanner/banner.css');
         }
 
         if ($this->ignoreBehaviour !== 'nothing') {
