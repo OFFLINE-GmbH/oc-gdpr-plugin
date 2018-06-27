@@ -115,7 +115,9 @@
 
 .gdpr-banner__dismiss {
     width: 20px;
+    height: 20px;
     margin-left: 20px;
+    z-index: 1000;
 }
 
 @media screen and (min-width: 1400px) {
