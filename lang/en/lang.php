@@ -14,7 +14,7 @@
         'message'             => 'We use cookies to personalize content and to analyze our traffic. Please decide if you are willing to accept cookies from our website.',
         'advanced_settings'   => 'Advanced Settings',
         'decline'             => 'Decline',
-        'accept'              => 'Accept Cookies',
+        'accept'              => 'Accept',
         'include_css'         => [
             'title'       => 'Include CSS',
             'description' => 'Include default styles for this component',

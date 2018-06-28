@@ -14,7 +14,7 @@
         'message'             => 'Wir verwenden Cookies um Inhalte zu personalisieren und unsere Besucherstatistik zu führen. Bitte entscheiden Sie sich, ob Sie unsere Cookies akzeptieren möchten.',
         'advanced_settings'   => 'Erweiterte Einstellungen',
         'decline'             => 'Ablehnen',
-        'accept'              => 'Cookies akzeptieren',
+        'accept'              => 'Akzeptieren',
         'include_css'         => [
             'title'       => 'Standard CSS einbinden',
             'description' => 'Lädt die mitgelieferte CSS-Datei',

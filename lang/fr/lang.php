@@ -14,7 +14,7 @@
         'message'             => 'Nous utilisons les cookies pour personnaliser le contenu et analyser notre trafic. Veuillez décider quel type de cookies vous êtes prêt à accepter.',
         'advanced_settings'   => 'Paramètres avancés',
         'decline'             => 'Décliner',
-        'accept'              => 'Accepter les cookies',
+        'accept'              => 'Accepter',
         'include_css'         => [
             'title'       => 'Inclure le CSS',
             'description' => 'Inclure les styles par défaut pour ce composant',

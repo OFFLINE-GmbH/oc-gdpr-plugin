@@ -55,7 +55,7 @@ class CookieBanner extends ComponentBase
                 'title'       => 'offline.gdpr::lang.cookie_banner.cookie_manager_page.title',
                 'description' => 'offline.gdpr::lang.cookie_banner.cookie_manager_page.description',
                 'type'        => 'dropdown',
-            ]
+            ],
         ];
     }
 
@@ -70,6 +70,11 @@ class CookieBanner extends ComponentBase
 
     public function onRun()
     {
+        if ($this->consentCookie->isDecided()) {
+            $this->hide = true;
+            return;
+        }
+
         if ($this->property('include_css')) {
             $this->addCss('assets/cookieBanner/banner.css');
         }
