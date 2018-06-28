@@ -36,13 +36,6 @@
             'description' => 'Auf dieser Seite muss die cookieManager Komponente platziert werden',
             'empty'       => 'Ohne erweiterte Einstellungen',
         ],
-        'ignore_behaviour'    => [
-            'title'       => 'Ignoierverhalten',
-            'description' => 'Diese Aktion wird ausgeführt, wenn der Benutzer das Banner ignoriert',
-            'nothing'     => 'Banner erneut anzeigen',
-            'opt-in'      => 'Opt-in (Standardcookies werden aktiviert)',
-            'opt-out'     => 'Opt-out (Keine Cookies werden aktiviert)',
-        ],
     ],
     'cookie_manager'  => [
         'description' => 'Zeigt eine Übersicht aller Cookies mit Bearbeitungsmöglichkeit an',

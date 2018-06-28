@@ -36,13 +36,6 @@
             'description' => 'Placez le composant cookieManager sur cette page.',
             'empty'       => 'Sans paramètres avancés',
         ],
-        'ignore_behaviour'    => [
-            'title'       => 'Ignorance de l\'avertissent',
-            'description' => 'Utilisez cette action si l\'utilisateur ignore la bannière et ne prend aucune décision.',
-            'nothing'     => 'Montrer à nouveau la bannière',
-            'opt-in'      => 'Opt-in (activer les cookies par défaut)',
-            'opt-out'     => 'Opt-out (ne pas activer les cookies)',
-        ],
     ],
     'cookie_manager'  => [
         'description' => 'Affiche une vue d\'ensemble et la possibilité de modifier tous les cookies que vous avez définis dans les paramètres du backend.',

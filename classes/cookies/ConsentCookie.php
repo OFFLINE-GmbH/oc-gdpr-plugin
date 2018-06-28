@@ -59,16 +59,6 @@ class ConsentCookie
         return request()->isSecure();
     }
 
-    public function registerPageView()
-    {
-        Session::put('gdpr_first_page_view', time());
-    }
-
-    public function isFirstPageView(): bool
-    {
-        return Session::get('gdpr_first_page_view') === null && Cookie::get('gdpr_cookie_consent') === null;
-    }
-
     public function isAllowed($cookieCode, $level = 0)
     {
         $consent = $this->get();

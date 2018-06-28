@@ -36,13 +36,6 @@
             'description' => 'Place the cookieManager component on this page',
             'empty'       => 'Without advanced settings',
         ],
-        'ignore_behaviour'    => [
-            'title'       => 'Ignore behaviour',
-            'description' => 'Use this action if the user ignores the banner and makes no decision',
-            'nothing'     => 'Show banner again',
-            'opt-in'      => 'Opt-in (enable default cookies)',
-            'opt-out'     => 'Opt-out (don\'t enable any cookies)',
-        ],
     ],
     'cookie_manager'  => [
         'description' => 'Displays an overview and edit form for all the cookies you have defined in the backend settings',
