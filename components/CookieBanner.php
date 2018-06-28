@@ -85,11 +85,6 @@ class CookieBanner extends ComponentBase
         $this->consentCookie->set(false);
     }
 
-    public function onDismiss()
-    {
-        $this->consentCookie->set(false);
-    }
-
     public function onRefresh()
     {
         return [
