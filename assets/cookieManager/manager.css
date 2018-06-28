@@ -12,8 +12,8 @@
 
 .gdpr-cookie-manager__groups {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 300px;
-            flex: 0 0 300px;
+    -ms-flex: 0 0 300px;
+    flex: 0 0 300px;
 }
 
 .gdpr-cookie-manager__group-list {
@@ -84,8 +84,8 @@
 
 .gdpr-cookie-manager__content {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     padding: 1em 2em;
     border: 1px solid #e3e3e3;
 }
@@ -113,10 +113,6 @@
     margin-bottom: 0;
 }
 
-.gdpr-cookie-manager__cookie--disabled {
-    opacity: .6;
-}
-
 .gdpr-cookie-manager__cookie-name {
     margin: 0;
     font-size: 1rem;
@@ -128,15 +124,15 @@
 
 .gdpr-cookie-manager__cookie-toggle {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 100px;
-            flex: 0 0 100px;
+    -ms-flex: 0 0 100px;
+    flex: 0 0 100px;
     margin-top: .5rem;
 }
 
 .gdpr-cookie-manager__cookie-details {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 
 .gdpr-cookie-manager__cookie-levels {
@@ -182,13 +178,73 @@
     font-weight: bold;
 }
 
+.gdpr-cookie-manager__cookie-item-details {
+    margin-top: 2rem;
+}
+
+.gdpr-cookie-manager__table-wrapper {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.gdpr-cookie-manager__item-details-table {
+    width: 100%;
+    min-width: 720px;
+    font-size: inherit;
+    border-collapse: collapse;
+}
+
+.gdpr-cookie-manager__item-details-table td,
+.gdpr-cookie-manager__item-details-table th {
+    padding: .2em;
+}
+
+.gdpr-cookie-manager__item-details-table th {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.gdpr-cookie-manager__details-table td {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.gdpr-cookie-manager__contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.gdpr-cookie-manager__contact-details div {
+    flex: 0 0 50%;
+}
+
+@media screen and (max-width: 980px) {
+    .gdpr-cookie-manager__contact-details div {
+        flex: 0 0 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+.gdpr-cookie-manager__contact-details-heading {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.gdpr-cookie-manager__contact-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 /**
  * @credits to Mauricio Allende
  * @see https://codepen.io/mallendeo/pen/eLIiG
  */
 .tgl, .tgl:after, .tgl:before, .tgl *, .tgl *:after, .tgl *:before, .tgl + .tgl-btn {
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .tgl::-moz-selection, .tgl:after::-moz-selection, .tgl:before::-moz-selection, .tgl *::-moz-selection, .tgl *:after::-moz-selection, .tgl *:before::-moz-selection, .tgl + .tgl-btn::-moz-selection {

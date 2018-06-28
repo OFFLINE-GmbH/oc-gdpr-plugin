@@ -13,5 +13,54 @@
         {% if cookie.levels %}
             {% partial __SELF__ ~ '::levels' cookie=cookie selectedLevel=selectedLevel %}
         {% endif %}
+
+        <div class="gdpr-cookie-manager__cookie-item-details">
+            {% if cookie.item_details | length > 0 %}
+                <div class="gdpr-cookie-manager__table-wrapper">
+                    <table class="gdpr-cookie-manager__item-details-table">
+                        <thead>
+                        <tr>
+                            <th>Identification</th>
+                            <th>Provider</th>
+                            <th>Duration/Expiry</th>
+                            <th>Type</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for entry in cookie.item_details %}
+                            <tr>
+                                <td>{{ entry.detail_name }}</td>
+                                <td>{{ loop.first ? cookie.provider : '' }}</td>
+                                <td>{{ entry.detail_expiry }}</td>
+                                <td>{{ entry.detail_type }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+            <div class="gdpr-cookie-manager__contact-details">
+                <div>
+                    <h4 class="gdpr-cookie-manager__contact-details-heading">Contact Details of Data Controller</h4>
+                    <p>
+                        {{ html_clean(cookie.contact_details_dpo | raw) }}
+                    </p>
+                </div>
+                <div>
+                    {% if cookie.contact_links_dpo | length > 0 %}
+                        <h4 class="gdpr-cookie-manager__contact-details-heading">Contact DPO</h4>
+                        <ul class="gdpr-cookie-manager__contact-list">
+                            {% for link in cookie.contact_links_dpo %}
+                                <li>
+                                    <a href="{{ link.contact_link_href }}" rel="noopener nofollow" target="_blank">
+                                        {{ link.contact_link_name }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
     </div>
 </div>

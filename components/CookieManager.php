@@ -54,7 +54,7 @@ class CookieManager extends ComponentBase
     public function onRun()
     {
         if ($this->property('include_css')) {
-            $this->addCss('assets/cookieManager/manager.min.css');
+            $this->addCss('assets/cookieManager/manager.css');
         }
         $this->cookieGroups = $this->getCookieGroups();
         $this->consent      = $this->consentCookie->get();

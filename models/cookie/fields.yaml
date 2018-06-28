@@ -100,58 +100,20 @@ tabs:
             tab: 'offline.gdpr::lang.cookie.tabs.item_details'
             form:
                 fields:
-                    level_name:
+                    detail_name:
                         label: 'offline.gdpr::lang.cookie.fields.cookie_levels.name'
                         placeholder: '_ga'
                         span: full
                         type: text
                         commentAbove: 'offline.gdpr::lang.cookie.fields.cookie_levels.name_comment'
-                    level_expiry:
+                    detail_expiry:
                         label: 'offline.gdpr::lang.cookie.fields.cookie_levels.expiry'
                         commentAbove: 'offline.gdpr::lang.cookie.fields.cookie_levels.expiry_comment'
                         placeholder: '3 months'
                         span: full
                         type: text
-                    level_type:
+                    detail_type:
                         label: 'offline.gdpr::lang.cookie.fields.cookie_levels.type'
-                        options:
-                            1: API
-                            2: 'Authentication Cookie'
-                            3: 'Browser Sniffing'
-                            4: 'Canvas Fingerprinting'
-                            5: 'Content Sniffing'
-                            6: 'Device Fingerprint'
-                            7: 'Email Web Beacon'
-                            8: 'Embeded Content'
-                            9: Evercookie
-                            10: 'Facebook Beacon'
-                            11: 'Hidden Form Field'
-                            12: 'HTTP Authentication'
-                            13: 'HTTP Cookie'
-                            14: 'Identifier for Advertisers'
-                            15: Iframes
-                            16: 'Indexed Database API (IndexedDB)'
-                            17: 'IP Address'
-                            18: 'JSON Web Token (JWT)'
-                            19: 'Local Shared Objects (Flash Cookie)'
-                            20: localStorage
-                            21: 'Persistent Cookie'
-                            22: 'Push Notification'
-                            23: 'Session Cookie'
-                            24: sessionStorage
-                            25: 'Social Bookmarking'
-                            26: 'Social Share'
-                            27: Supercookie
-                            28: 'Third-party cookie'
-                            29: Timeline
-                            30: 'Tracking Cookie'
-                            31: 'URL (Query String)'
-                            32: 'Web Annotation'
-                            33: 'Web Beacon (Tracking Pixel)'
-                            34: 'Web SQL Database'
-                            35: 'Web Storage (DOM storage)'
-                            36: Widget
-                            37: 'Zombie Cookie'
                         span: full
                         placeholder: ''
                         type: dropdown
