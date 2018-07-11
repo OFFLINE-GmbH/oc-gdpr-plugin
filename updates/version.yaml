@@ -34,3 +34,5 @@
     - Updated french translations (thanks to damsfx)
 1.0.17:
     - Load the correct cookie state when visiting the cookieManager after a user has declined
+1.0.18:
+    - Fixed bug with data retention closures (thanks to Alex360hd)
