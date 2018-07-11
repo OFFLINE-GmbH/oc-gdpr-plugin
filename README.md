@@ -194,6 +194,7 @@ To register your plugin you have to listen for the `offline.gdpr::cleanup.regist
                         'class'   => MessageLog::class,
                     ],
                     [
+                        'id'      => 'vendor-plugin-spam-messages',  // The ID is required if you specify a closure. This should be unique to your plugin.
                         'label'   => 'SPAM-Messages',
                         'comment' => 'Delete blocked SPAM messages',
                         'closure' => function (Carbon $deadline, int $keepDays) {
@@ -218,9 +219,10 @@ As `models` you have to specify an array with the following data:
 
 |  key | information  |   
 |---|---|
+| id  | A unique string to identify this model. Use only `_-a-z0-9`. Only required if you specify a closure. (ex. `offline-gdpr-spam-messages`) |
 | label  | A human readable label for the backend switch form widget |
 | comment  | A human readable comment for the backend switch form widget   |
-| closure  | A closure that is called when the cleanup job is run  |
+| closure  | A closure that is called when the cleanup job is run. Make sure to also define an `id`.  |
 | class  | A model class that defines a `gdprCleanup` method |
 
 

@@ -33,7 +33,16 @@ class DataRetentionSettings extends Model
             // Section
             $config->tabs['fields'][$plugin['id'] . '_section'] = $service->getSection($plugin);
             foreach ($plugin['models'] as $key => $model) {
-                $class = str_replace('\\', '-', $model['class']);
+                if ( ! array_key_exists('class', $model) && ! array_key_exists('id', $model)) {
+                    throw new \LogicException(
+                        sprintf(
+                            '[OFFLINE.GDPR] Please set at least a class or id attribute for your cleanup model or closure (Plugin ID %s)',
+                            $plugin['id'] ?? 'missing id')
+                    );
+                }
+
+                $class = isset($model['class']) ? $model['class'] : $model['id'];
+                $class = str_replace('\\', '-', $class);
                 // Switch
                 $config->tabs['fields'][$class . '_enabled'] = $service->getSwitch($model);
                 // Number
