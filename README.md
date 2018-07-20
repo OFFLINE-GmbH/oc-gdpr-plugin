@@ -146,7 +146,7 @@ value of `0` or higher means the cookie is allowed with the returned level value
 {% endif %}
 ```
 
-##### `gdprIsUndecied()`
+##### `gdprIsUndecided()`
 
 Check if the user has made a decision about the cookies yet. This will return `true` on the second page view if the 
 user did not interact with the `cookieBanner` (silent opt-in).
