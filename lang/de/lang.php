@@ -43,13 +43,13 @@
     ],
     'cookie_manager'  => [
         'description' => 'Zeigt eine Übersicht aller Cookies mit Bearbeitungsmöglichkeit an',
-        'expiry' => [
-            3 => 'In 3 Monaten erneut nachfragen',
-            6 => 'In 6 Monaten erneut nachfragen',
+        'expiry'      => [
+            3  => 'In 3 Monaten erneut nachfragen',
+            6  => 'In 6 Monaten erneut nachfragen',
             12 => 'In 1 Jahr erneut nachfragen',
             24 => 'In 2 Jahren erneut nachfragen',
             36 => 'In 3 Jahren erneut nachfragen',
-        ]
+        ],
     ],
     'consent_manager' => [
         'description'    => 'Bindet den Klaro! Constent Manager ein',
@@ -60,7 +60,7 @@
         'style_prefix'   => [
             'title'       => 'CSS-Prefix',
             'description' => 'Verwende diese CSS-Klasse im Klaro! HTML-Markup (entfernt Standardstyles)',
-        ]
+        ],
     ],
     'settings'        => [
         'cookies'        => [
@@ -210,22 +210,23 @@
                 'href' => 'Linkziel (absolute URL)',
             ],
             'cookie_levels'               => [
-                'purpose_prompt'   => 'Abstufung hinzufügen',
-                'purpose_label'    => 'Abstufungen',
-                'section1_label'   => 'Tipps zu den Abstufungen',
-                'section1_comment' => 'Gemäss ePrivacy Recht (Präambel 32 und Artikel 29) muss ein granularer Opt-In angeboten werden. Dies bedeutet, dass einzelne Abstufungen für das Tracking mit einem Cookie angeboten werden müssen. Zum Beispiel kann für Google Analytics "kein Tracking" angeboten werden, "einfaches Tracking" bei dem wenige Details gesammelt werden oder "vollständies Tracking" bei dem personenbezogene Daten und alle Details erfasst werden. Die Anzahl definierter Levels hängt vom verwendeten Service ab.',
-                'section2_label'   => 'Tipps zu den Detailangaben',
-                'section2_comment' => 'Du kannst so viele Detailangaben machen wie du willst. Im Falle eines Cookies musst du alle Cookie Identifikationen eintragen. Für Google Analytics handelt es sich beispielsweise um bis zu acht oder mehr einzelne mögliche Cookie Identifikationen. Für jedes Cookie muss zudem die Lebensdauer sowie ein Typ angegeben werden. Die Liste von Cookies, die deine Website verwendest findest du in den Entwicklertools deines Browsers oder auf einer Website wie cookiepedia.co.uk.',
-                'name'             => 'Name (Cookie Identifikation)',
-                'name_comment'     => 'Name des Cookies wie es im Browser abgelegt wird z. B. \'_ga\'',
-                'provider'         => 'Anbieter',
-                'provider_comment' => 'Gemäss ePrivacy Recht muss die Website oder Domain des Cookies angegeben werden. (Angabe ohne https:// und abschliessendem /)',
-                'purpose'          => 'Zweck',
-                'purpose_comment'  => 'Beschreibe den Zweck dieses Levels in einem einzelnen Paragraphen. Artikel 5 verlangt, dass eine granulare Zustimmung des Besuchers verlangt wird.',
-                'expiry'           => 'Ablauf/Lebensdauer',
-                'expiry_comment'   => 'Gemäss ePrivacy Recht muss angegeben werden, wie lange das Cookie im Browser gespeichert bleibt. e.g. Sitzung, 3 Monate, 2 Jahre.',
-                'type'             => 'Typ',
-                'type_comment'     => 'Gemäss ePrivacy Recht, muss definiert werden, um was für eine Art Cookie oder Modul es sich hierbei handelt.',
+                'purpose_prompt'         => 'Abstufung hinzufügen',
+                'purpose_label'          => 'Abstufungen',
+                'section1_label'         => 'Tipps zu den Abstufungen',
+                'section1_comment'       => 'Gemäss ePrivacy Recht (Präambel 32 und Artikel 29) muss ein granularer Opt-In angeboten werden. Dies bedeutet, dass einzelne Abstufungen für das Tracking mit einem Cookie angeboten werden müssen. Zum Beispiel kann für Google Analytics "kein Tracking" angeboten werden, "einfaches Tracking" bei dem wenige Details gesammelt werden oder "vollständies Tracking" bei dem personenbezogene Daten und alle Details erfasst werden. Die Anzahl definierter Levels hängt vom verwendeten Service ab.',
+                'section2_label'         => 'Tipps zu den Detailangaben',
+                'section2_comment'       => 'Du kannst so viele Detailangaben machen wie du willst. Im Falle eines Cookies musst du alle Cookie Identifikationen eintragen. Für Google Analytics handelt es sich beispielsweise um bis zu acht oder mehr einzelne mögliche Cookie Identifikationen. Für jedes Cookie muss zudem die Lebensdauer sowie ein Typ angegeben werden. Die Liste von Cookies, die deine Website verwendest findest du in den Entwicklertools deines Browsers oder auf einer Website wie cookiepedia.co.uk.',
+                'name'                   => 'Bezeichnung',
+                'identification'         => 'Name (Cookie Identifikation)',
+                'identification_comment' => 'Name des Cookies wie es im Browser abgelegt wird z. B. \'_ga\'',
+                'provider'               => 'Anbieter',
+                'provider_comment'       => 'Gemäss ePrivacy Recht muss die Website oder Domain des Cookies angegeben werden. (Angabe ohne https:// und abschliessendem /)',
+                'purpose'                => 'Zweck',
+                'purpose_comment'        => 'Beschreibe den Zweck dieses Levels in einem einzelnen Paragraphen. Artikel 5 verlangt, dass eine granulare Zustimmung des Besuchers verlangt wird.',
+                'expiry'                 => 'Ablauf/Lebensdauer',
+                'expiry_comment'         => 'Gemäss ePrivacy Recht muss angegeben werden, wie lange das Cookie im Browser gespeichert bleibt. e.g. Sitzung, 3 Monate, 2 Jahre.',
+                'type'                   => 'Typ',
+                'type_comment'           => 'Gemäss ePrivacy Recht, muss definiert werden, um was für eine Art Cookie oder Modul es sich hierbei handelt.',
             ],
         ],
         'tabs'   => [

@@ -75,12 +75,15 @@ tabs:
             tab: 'offline.gdpr::lang.cookie.tabs.levels'
             form:
                 fields:
+                    level_name:
+                        label: 'offline.gdpr::lang.cookie.fields.cookie_levels.name'
+                        span: full
+                        type: text
                     level_description:
                         label: 'offline.gdpr::lang.cookie.fields.cookie_levels.purpose'
                         size: small
                         span: full
-                        required: 0
-                        type: textarea
+                        type: richeditor
                         commentAbove: 'offline.gdpr::lang.cookie.fields.cookie_levels.purpose_comment'
                     is_default_level:
                         label: 'offline.gdpr::lang.cookie_group.fields.default_level'
@@ -101,11 +104,11 @@ tabs:
             form:
                 fields:
                     detail_name:
-                        label: 'offline.gdpr::lang.cookie.fields.cookie_levels.name'
+                        label: 'offline.gdpr::lang.cookie.fields.cookie_levels.identification'
                         placeholder: '_ga'
                         span: full
                         type: text
-                        commentAbove: 'offline.gdpr::lang.cookie.fields.cookie_levels.name_comment'
+                        commentAbove: 'offline.gdpr::lang.cookie.fields.cookie_levels.identification_comment'
                     detail_expiry:
                         label: 'offline.gdpr::lang.cookie.fields.cookie_levels.expiry'
                         commentAbove: 'offline.gdpr::lang.cookie.fields.cookie_levels.expiry_comment'
