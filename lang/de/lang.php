@@ -43,6 +43,13 @@
     ],
     'cookie_manager'  => [
         'description' => 'Zeigt eine Übersicht aller Cookies mit Bearbeitungsmöglichkeit an',
+        'expiry' => [
+            3 => 'In 3 Monaten erneut nachfragen',
+            6 => 'In 6 Monaten erneut nachfragen',
+            12 => 'In 1 Jahr erneut nachfragen',
+            24 => 'In 2 Jahren erneut nachfragen',
+            36 => 'In 3 Jahren erneut nachfragen',
+        ]
     ],
     'consent_manager' => [
         'description'    => 'Bindet den Klaro! Constent Manager ein',
@@ -53,7 +60,7 @@
         'style_prefix'   => [
             'title'       => 'CSS-Prefix',
             'description' => 'Verwende diese CSS-Klasse im Klaro! HTML-Markup (entfernt Standardstyles)',
-        ],
+        ]
     ],
     'settings'        => [
         'cookies'        => [

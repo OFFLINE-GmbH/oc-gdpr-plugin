@@ -19,7 +19,7 @@
             'title'       => 'Include CSS',
             'description' => 'Include default styles for this component',
         ],
-        'include_js'         => [
+        'include_js'          => [
             'title'       => 'Include JS',
             'description' => 'Include default scripts for this component',
         ],
@@ -43,6 +43,13 @@
     ],
     'cookie_manager'  => [
         'description' => 'Displays an overview and edit form for all the cookies you have defined in the backend settings',
+        'expiry'      => [
+            3  => 'Ask again in 3 months',
+            6  => 'Ask again in 6 months',
+            12 => 'Ask again in 1 year',
+            24 => 'Ask again in 2 years',
+            36 => 'Ask again in 3 years',
+        ],
     ],
     'consent_manager' => [
         'description'    => 'Includes the Klaro! Consent Manager',

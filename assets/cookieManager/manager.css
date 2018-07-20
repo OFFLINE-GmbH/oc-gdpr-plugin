@@ -22,6 +22,13 @@
     padding: 0;
 }
 
+.gdpr-cookie-manager__consent_expiry {
+    display: block;
+    width: 100%;
+    padding: .15em .5em;
+    font-size: .9rem;
+}
+
 .gdpr-cookie-manager .gdpr-cookie-manager__group-list a {
     text-decoration: none;
 }

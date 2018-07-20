@@ -1,6 +1,7 @@
 <?php namespace OFFLINE\GDPR\Components;
 
 use Cms\Classes\ComponentBase;
+use Illuminate\Support\Facades\Session;
 use OFFLINE\GDPR\Classes\Cookies\ConsentCookie;
 use OFFLINE\GDPR\Models\CookieGroup;
 
@@ -10,6 +11,7 @@ class CookieManager extends ComponentBase
     public $consentCookie;
     public $consent;
     public $includeJs;
+    public $consentExpiry;
 
     public function componentDetails()
     {
@@ -28,7 +30,7 @@ class CookieManager extends ComponentBase
                 'default'     => 1,
                 'type'        => 'checkbox',
             ],
-            'include_js' => [
+            'include_js'  => [
                 'title'       => 'offline.gdpr::lang.cookie_banner.include_js.title',
                 'description' => 'offline.gdpr::lang.cookie_banner.include_js.description',
                 'default'     => 1,
@@ -51,7 +53,7 @@ class CookieManager extends ComponentBase
             return (int)($item['level'] ?? 0);
         })->toArray();
 
-        $this->consentCookie->set($enabled);
+        $this->consentCookie->withExpiry(post('consent_expiry', 12))->set($enabled);
     }
 
     public function onRun()
@@ -61,8 +63,9 @@ class CookieManager extends ComponentBase
             $this->addCss('assets/cookieManager/manager.css');
         }
 
-        $this->cookieGroups = $this->getCookieGroups();
-        $this->consent      = $this->consentCookie->get();
+        $this->consentExpiry = Session::get('gdpr_session_expiry', 12);
+        $this->cookieGroups  = $this->getCookieGroups();
+        $this->consent       = $this->consentCookie->get();
     }
 
     protected function getCookieGroups()

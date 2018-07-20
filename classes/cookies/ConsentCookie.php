@@ -10,6 +10,9 @@ class ConsentCookie
 {
     const SAME_SITE = 'strict';
     const MINUTES_PER_YEAR = 24 * 60 * 365;
+    const MINUTES_PER_MONTH = 24 * 60 * 30;
+
+    public $expiry = self::MINUTES_PER_YEAR;
 
     public function set($value)
     {
@@ -24,7 +27,7 @@ class ConsentCookie
         return Cookie::queue(
             'gdpr_cookie_consent',
             $value,
-            self::MINUTES_PER_YEAR, // expire
+            $this->expiry,          // expire
             '/',                    // path
             null,                   // domain
             $this->isHttps(),       // secure
@@ -37,6 +40,15 @@ class ConsentCookie
     public function get()
     {
         return Session::get('gdpr_cookie_consent', Cookie::get('gdpr_cookie_consent'));
+    }
+
+    public function withExpiry($expiry)
+    {
+        $this->expiry = $expiry * self::MINUTES_PER_MONTH;
+
+        Session::put('gdpr_session_expiry', $expiry);
+
+        return $this;
     }
 
     public function hasDeclined()
