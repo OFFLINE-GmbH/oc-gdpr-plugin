@@ -45,7 +45,7 @@ class Plugin extends PluginBase
                 'gdprAllowedCookieLevel' => function ($code) {
                     return (new ConsentCookie())->allowedCookieLevel($code);
                 },
-                'gdprIsUndecided'        => function () {
+                'gdprIsUndecided' => function () {
                     return (new ConsentCookie())->isUndecided();
                 },
             ],
