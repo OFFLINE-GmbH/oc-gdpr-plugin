@@ -21,8 +21,6 @@ class Cookie extends Model
     public $rules = [
         'name'                => 'required',
         'description'         => 'required',
-        'contact_details_dpo' => 'required',
-        'contact_links_dpo'   => 'required',
     ];
     public $casts = [
         'initial_status' => 'boolean',
