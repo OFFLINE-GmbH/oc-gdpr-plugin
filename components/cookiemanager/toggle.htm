@@ -3,7 +3,7 @@
        class="tgl js-cookie-toggle"
        id="toggle-{{ cookie.id }}"
        type="checkbox"
-        {{ isChecked ? 'checked' : '' }}
+        {{ isChecked or group.required ? 'checked' : '' }}
         {{ group.required ? 'disabled' : '' }}
 />
 <label class="tgl-btn" for="toggle-{{ cookie.id }}"></label>

@@ -19,6 +19,10 @@
             'title'       => 'Standard CSS einbinden',
             'description' => 'Lädt die mitgelieferte CSS-Datei',
         ],
+        'include_js'          => [
+            'title'       => 'Standard JS einbinden',
+            'description' => 'Lädt die mitgelieferte JS-Datei',
+        ],
         'hard_reload'         => [
             'title'       => 'Hard-Reload nach Akzeptieren',
             'description' => 'Seite nach Akzeptieren komplett neu laden um alle JS-Scripts korrekt einzubinden',

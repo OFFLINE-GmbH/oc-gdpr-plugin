@@ -19,6 +19,10 @@
             'title'       => 'Include CSS',
             'description' => 'Include default styles for this component',
         ],
+        'include_js'         => [
+            'title'       => 'Include JS',
+            'description' => 'Include default scripts for this component',
+        ],
         'hard_reload'         => [
             'title'       => 'Hard reload after the user accepted',
             'description' => 'Do a hard reload after the user made a decision to refresh all your dependencies files',

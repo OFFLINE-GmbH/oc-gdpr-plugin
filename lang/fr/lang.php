@@ -19,6 +19,10 @@
             'title'       => 'Inclure le CSS',
             'description' => 'Inclure les styles par défaut pour ce composant',
         ],
+        'include_js'         => [
+            'title'       => 'Inclure le JS',
+            'description' => 'Inclure les scripts par défaut pour ce composant',
+        ],
         'hard_reload'         => [
             'title'       => 'Rechargement forcé après acceptation',
             'description' => 'Effectuer un rechargement forcé après la décision de l\'utilisateur pour rafraîchir toutes les dépendances.',

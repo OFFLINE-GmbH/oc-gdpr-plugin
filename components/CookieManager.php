@@ -1,18 +1,15 @@
 <?php namespace OFFLINE\GDPR\Components;
 
 use Cms\Classes\ComponentBase;
-use Cms\Classes\Page;
-use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Facades\Session;
 use OFFLINE\GDPR\Classes\Cookies\ConsentCookie;
 use OFFLINE\GDPR\Models\CookieGroup;
-use Symfony\Component\HttpFoundation\Cookie as CookieFoundation;
 
 class CookieManager extends ComponentBase
 {
     public $cookieGroups;
     public $consentCookie;
     public $consent;
+    public $includeJs;
 
     public function componentDetails()
     {
@@ -28,6 +25,12 @@ class CookieManager extends ComponentBase
             'include_css' => [
                 'title'       => 'offline.gdpr::lang.cookie_banner.include_css.title',
                 'description' => 'offline.gdpr::lang.cookie_banner.include_css.description',
+                'default'     => 1,
+                'type'        => 'checkbox',
+            ],
+            'include_js' => [
+                'title'       => 'offline.gdpr::lang.cookie_banner.include_js.title',
+                'description' => 'offline.gdpr::lang.cookie_banner.include_js.description',
                 'default'     => 1,
                 'type'        => 'checkbox',
             ],
@@ -53,9 +56,11 @@ class CookieManager extends ComponentBase
 
     public function onRun()
     {
+        $this->includeJs = $this->property('include_js', true);
         if ($this->property('include_css')) {
             $this->addCss('assets/cookieManager/manager.css');
         }
+
         $this->cookieGroups = $this->getCookieGroups();
         $this->consent      = $this->consentCookie->get();
     }
