@@ -1,0 +1,13 @@
+{
+    "name": "offline/oc-gdpr-plugin",
+    "description": "October CMS plugin to make websites GDPR and ePrivacy compliant",
+    "type": "plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tobias Kündig",
+            "email": "tobias@offline.swiss"
+        }
+    ],
+    "require": {}
+}

@@ -45,7 +45,7 @@ class Plugin extends PluginBase
                 'gdprAllowedCookieLevel' => function ($code) {
                     return (new ConsentCookie())->allowedCookieLevel($code);
                 },
-                'gdprIsUndecided' => function () {
+                'gdprIsUndecided'        => function () {
                     return (new ConsentCookie())->isUndecided();
                 },
             ],
@@ -55,15 +55,15 @@ class Plugin extends PluginBase
     public function registerSettings()
     {
         return [
-            'gdpr_cookie_consent' => [
-                'label'       => trans('offline.gdpr::lang.settings.cookie_consent.label'),
-                'description' => trans('offline.gdpr::lang.settings.cookie_consent.description'),
+            'gdpr_info'           => [
+                'label'       => trans('offline.gdpr::lang.settings.info.label'),
+                'description' => trans('offline.gdpr::lang.settings.info.description'),
                 'category'    => 'GDPR and ePrivacy',
-                'icon'        => 'oc-icon-check-square',
-                'class'       => CookieConsentSettings::class,
+                'icon'        => 'icon-info-circle',
+                'url'         => Backend::url('offline/gdpr/info'),
                 'order'       => 200,
                 'keywords'    => 'gdpr',
-                'permissions' => ['offline.gdpr.manage_cookie_consent'],
+                'permissions' => ['offline.gdpr.manage_cookie_info'],
             ],
             'gdpr_cookies'        => [
                 'label'       => trans('offline.gdpr::lang.settings.cookies.label'),
@@ -85,16 +85,16 @@ class Plugin extends PluginBase
                 'keywords'    => 'gdpr',
                 'permissions' => ['offline.gdpr.manage_data_retention'],
             ],
-            'gdpr_info'        => [
-                'label'       => trans('offline.gdpr::lang.settings.info.label'),
-                'description' => trans('offline.gdpr::lang.settings.info.description'),
+            'gdpr_cookie_consent' => [
+                'label'       => trans('offline.gdpr::lang.settings.cookie_consent.label'),
+                'description' => trans('offline.gdpr::lang.settings.cookie_consent.description'),
                 'category'    => 'GDPR and ePrivacy',
-                'icon'        => 'icon-info-circle',
-                'url'         => Backend::url('offline/gdpr/info'),
-                'order'       => 230,
+                'icon'        => 'oc-icon-check-square',
+                'class'       => CookieConsentSettings::class,
+                'order'       => 200,
                 'keywords'    => 'gdpr',
-                'permissions' => ['offline.gdpr.manage_cookie_info'],
-            ],			
+                'permissions' => ['offline.gdpr.manage_cookie_consent'],
+            ],
         ];
     }
 
