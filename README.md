@@ -50,6 +50,23 @@ wrapper.
 {% endif %}
 ```
 
+### Cookie manager
+
+The `cookieManager` component gives a visitor more control over the cookies your site is using. 
+
+This component can simply be placed on a page and needs no further configuration.  
+
+```twig
+title = "Cookies"
+url = "/cookies"
+layout = "default"
+is_hidden = 0
+
+[cookieManager]
+==
+{% component 'cookieManager' %}
+```
+
 ### cookieBanner
 
 ![image](https://user-images.githubusercontent.com/8600029/41365745-803f0ce6-6f3a-11e8-93ff-7dc0f683e241.png)
@@ -148,23 +165,6 @@ value of `0` or higher means the cookie is allowed with the returned level value
 
 Check if the user has made a decision about the cookies yet. This will return `true` on the second page view if the 
 user did not interact with the `cookieBanner` (silent opt-in).
-
-### Cookie manager
-
-The `cookieManager` component gives a visitor more control over the cookies your site is using. 
-
-This component can simply be placed on a page and needs no further configuration.  
-
-```twig
-title = "Cookies"
-url = "/cookies"
-layout = "default"
-is_hidden = 0
-
-[cookieManager]
-==
-{% component 'cookieManager' %}
-```
 
 ## Data retention
 
