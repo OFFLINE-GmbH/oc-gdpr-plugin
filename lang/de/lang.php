@@ -151,7 +151,7 @@
             'description'       => 'Einstellungen zur Datenaufbewahrung',
             'enabled'           => [
                 'label'   => 'Automatische Datenlöschung aktiv',
-                'comment' => 'Lösche Daten autoamtisch nachdem sie abgelaufen sind',
+                'comment' => 'Lösche Daten automatisch nachdem sie abgelaufen sind',
             ],
             'default_keep_days' => [
                 'label'   => 'Automatische Datenlöschung nach Anzahl Tagen',
