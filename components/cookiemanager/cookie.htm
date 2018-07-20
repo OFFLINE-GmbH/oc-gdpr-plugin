@@ -1,11 +1,13 @@
 {% set consent = __SELF__.consent %}
 {% set isChecked = consent ? (cookie.code in consent | keys) : cookie.group.required %}
 {% set selectedLevel = consent[cookie.code] | default(cookie.default_level | default(0)) %}
+
 <div class="gdpr-cookie-manager__cookie {{ not isChecked ? 'gdpr-cookie-manager__cookie--disabled' : '' }}">
     <div class="gdpr-cookie-manager__cookie-toggle">
         {% partial __SELF__ ~ '::toggle' cookie=cookie isChecked=isChecked isRequired=group.required %}
     </div>
     <div class="gdpr-cookie-manager__cookie-details">
+
         <h3 class="gdpr-cookie-manager__cookie-name">{{ cookie.name }}</h3>
         <div class="gdpr-cookie-manager__cookie-description">
             {{ html_clean(cookie.description | raw) }}
@@ -15,59 +17,6 @@
             {% partial __SELF__ ~ '::levels' cookie=cookie selectedLevel=selectedLevel %}
         {% endif %}
 
-        <div class="gdpr-cookie-manager__cookie-item-details">
-            {% if cookie.item_details | length > 0 %}
-                <div class="gdpr-cookie-manager__table-wrapper">
-                    <table class="gdpr-cookie-manager__item-details-table">
-                        <thead>
-                        <tr>
-                            <th>{{ 'offline.gdpr::lang.cookie.fields.cookie_levels.name' | trans }}</th>
-                            <th>{{ 'offline.gdpr::lang.cookie.fields.cookie_levels.provider' | trans }}</th>
-                            <th>{{ 'offline.gdpr::lang.cookie.fields.cookie_levels.expiry' | trans }}</th>
-                            <th>{{ 'offline.gdpr::lang.cookie.fields.cookie_levels.type' | trans }}</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for entry in cookie.item_details %}
-                            <tr>
-                                <td>{{ entry.detail_name }}</td>
-                                <td>{{ loop.first ? cookie.provider : '' }}</td>
-                                <td>{{ entry.detail_expiry }}</td>
-                                <td>{{ entry.detail_type }}</td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            {% endif %}
-            <div class="gdpr-cookie-manager__contact-details">
-                {% if cookie.contact_details_dpo %}
-                    <div>
-                        <h4 class="gdpr-cookie-manager__contact-details-heading">
-                            {{ 'offline.gdpr::lang.cookie.fields.contact_details_dpo' | trans }}
-                        </h4>
-                        <p>
-                            {{ html_clean(cookie.contact_details_dpo | raw) }}
-                        </p>
-                    </div>
-                {% endif %}
-                <div>
-                    {% if cookie.contact_links_dpo | length > 0 %}
-                        <h4 class="gdpr-cookie-manager__contact-details-heading">
-                            {{ 'offline.gdpr::lang.cookie.fields.contact_links_dpo' | trans }}
-                        </h4>
-                        <ul class="gdpr-cookie-manager__contact-list">
-                            {% for link in cookie.contact_links_dpo %}
-                                <li>
-                                    <a href="{{ link.contact_link_href }}" rel="noopener nofollow" target="_blank">
-                                        {{ link.contact_link_name }}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
+        {% partial __SELF__ ~ '::details' cookie=cookie %}
     </div>
 </div>
