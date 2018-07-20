@@ -7,8 +7,10 @@
         </div>
     </div>
 </form>
-{% put scripts %}
-    <script>
-        {% partial __SELF__ ~ '::scripts.js' %}
-    </script>
-{% endput %}
+{% if __SELF__.includeJs %}
+    {% put scripts %}
+        <script>
+            {% partial __SELF__ ~ '::scripts.js' %}
+        </script>
+    {% endput %}
+{% endif %}

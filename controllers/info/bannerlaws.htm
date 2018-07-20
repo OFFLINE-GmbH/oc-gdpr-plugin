@@ -1,0 +1,719 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+	<li><a href="<?= Backend::url('offline/gdpr/info') ?>"><?= trans('offline.gdpr::lang.settings.info.label') ?></a></li>
+        <li><?= trans('offline.gdpr::lang.settings.info.bannerlaws_title') ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+
+<div class="info-dashboard">
+
+    <!-- Google Translator - Start -->
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- Google Translator - End -->
+
+
+    <!-- English Section -->
+    <section>
+
+        <h1>Banner Laws Relating to each Country Location</h1>
+
+        <p>
+            <figure><img role="img" style="max-width: 940px;" src="../../../../../../plugins/offline/gdpr/assets/images/banner-laws.jpg" alt="Banner Laws" width="940" height="165"></figure>
+        </p>
+
+
+        <h2>Introduction</h2>
+
+        <p>Below is a list of countries in The EU with their Banner Cookie Laws, at the bottom is also a list of contact websites for each country with The EU.</p>
+
+        <h2>Table of Contents:</h2>
+
+        <ol>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#austria">Austria</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#belgium">Belgium</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#bulgaria">Bulgaria</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#croatia">Croatia</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#cyprus">Cyprus</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#czech">Czech Republic</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#denmark">Denmark</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#estonia">Estonia</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#finland">Finland</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#france">France</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#germany">Germany</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#greece">Greece</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#hungary">Hungary</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#ireland">Ireland</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#italy">Italy</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#latvia">Latvia</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#lithuania">Lithuania</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#luxembourg">Luxembourg</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#malta">Malta</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#netherlands">Netherlands</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#norway">Norway</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#poland">Poland</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#portugal">Portugal</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#romania">Romania</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#slovakia">Slovakia</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#slovenia">Slovenia</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#spain">Spain</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#sweden">Sweden</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#switzerland">Switzerland</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#uk">United Kingdom</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#outside">Outside The EU</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/banner-laws') ?>#authority">Who is my data protection authority?</a></p></li>
+        </ol>
+
+
+        <h3 id="austria">Austria</h3>
+
+        <h4>Guidance</h4>
+
+        <p>No guidance exists for the practical implementation of Austria's cookie law. However, a lot can be learned from the narrow implementation of the law.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>In Austria, consent only has to be given for the storing or access to personal data on user's devices. Compared to the implementation in other Member States and to the ePrivacy Directive, this significantly narrows the scope of the provision. In Austrian data protection law, pseudonymous data are not considered as personal data.</p>
+
+        <p>If one is not sure whether the data one is processing is considered personal data in Austria or not, the safest option is to make use of cookie banners which link to a detailed cookie page, using the further browsing model of providing consent. It needs to mention what cookies are being used for, and that continuing to browse the website indicates consent. The processing of information is only permissible upon receiving consent, so cookies need to be dropped only after the user has decided to browse further.</p>
+
+        <p>On the comprehensive information page, detailed technical details must be given about the cookies used, such as the length of time they remain on computers, and an option to opt-out must be given.</p>
+
+
+        <h3 id="belgium">Belgium</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The CPP published recommendations on the use of cookies on February 2015 (Dutch/French). For the online advertising industry, the following relevant topics are covered in the recommendations:</p>
+
+        <ul>
+            <li><p>How to get consent as a website publisher: paragraphs 47, 48, 212-215.</p></li>
+
+            <li><p>Recommendations for advertisers to ensure consent is given: paragraph 61.</p></li>
+            <li><p>The role of advertising networks and independent advertisers under Belgian law: paragraph 186-192.</p></li>
+        </ul>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>Under the Belgian implementation of the Data Protection Directive, consent has to be given through a positive action indicating the user's wishes either explicitly or implicitly. In practice, this can be done through various methods, the least intrusive being the use of a cookie banner.</p>
+
+        <p>A cookie banner is a banner which appears at the top or bottom of the webpage, which informs users that cookies are in use, with a link to a more detailed information page about the website's cookie policy. The amount of information that needs to be included in the banner varies per Member State.</p>
+
+        <p>In Belgium, the banner has to meet 3 critieria: (1) the banner has to be sufficiently visible, in a way that cannot be missed by the user, (2) the banner has to state clearly that continuing to browse the website by clicking on a link on the page will be considered consent, and lastly (3) the banner has to remain visible until the user has chosen to browse further.</p>
+
+        <p>Under the Belgian implementation, cookies may only be used after the user has given consent; cookies cannot be dropped until after the user has browsed further. This means in practice that the user has made the choice to browse further on a website after being presented with a banner, by clicking on an image or link on the page. At that point the user has consented to the use of cookies.</p>
+
+
+        <h3 id="bulgaria">Bulgaria</h3>
+
+        <h4>Guidance</h4>
+
+        <p>Unfortunately, neither of these authorities have published any official guidance documents which provide a clearer idea of how to get consent from users. As such, only the law itself and common practice determines how to get consent for the use of cookies.</p>
+
+        <h4>Compliance Method: Opt-Out</h4>
+
+        <p>In Bulgarian law, there is no prior consent requirement for the storing of or access to information stored on end-user devices. But there is an obligation to inform users about the use of cookies, particularly the purposes they are used for. Users also have to be given the option to refuse. Compliance then relies mainly on informing users adequately about cookie use.</p>
+
+        <p>The simplest way to achieve this is to have a cookie policy page on the website which describes in detail the types of cookies used, what they are used for, and what the information collected by cookies is used for. On a cookie policy page, an opt-out mechanism has to be included to fulfill the requirements of the law.</p>
+
+        <p>To be completely safe, a cookie banner could be added to this. As there is no opt-in requirement, it follows that cookies can be stored unless the user opts out of their use. Therefore, the banner will serve merely as a notice to users stating that cookies are being used and for what purposes. A link to the cookie policy page should be included in the banner, ensuring that users are able to refuse the storage of cookies. This means that users no longer need to see the banner as well, as this gives them the opportunity. Once a user has foregone the opportunity to refuse storage, they no longer need to be informed under Bulgarian law.</p>
+
+
+        <h3 id="croatia">Croatia</h3>
+
+        <h4>Guidance</h4>
+
+        <p>Neither authority has issued guidance on how to get consent in practice, or even explaining the obligations under the cookie provision. The Article 29 Working Party is the EU-level congregation of national data protection authorities, and it has published some guidance on applying the cookie directive.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>No narrower interpretation or guidance exists of the Article, so it would make sense to consider the opinions and working papers of the Article 29 Working Party for a more detailed understanding of how to apply the provision. This is especially the case as the implementing legislation follows the wording of the original article so closely.</p>
+
+        <p>In the Article 29 Working Party guidance, specific methods of gaining consent are not named or described, rather several conditions for valid consent are given. The Working Party provides four requirements to be met for consent to be considered valid:</p>
+
+        <ul>
+            <li><p>Specific information.</p></li>
+            <li><p>Prior consent.</p></li>
+            <li><p>Active choice by the user.</p></li>
+            <li><p>Freely given.</p></li>
+        </ul>
+
+        <p>What these mean in practice is that, first of all, information has to be specific and appropriate to the question of consent. The user has to be told what they are consenting to, meaning the exact purpose of using cookies has to be explained to them. In terms of prior consent, it simply means storing or access can only take place after consent is given. The active choice by the user refers to the fact that the user has to take an action to consent – it cannot be derived from inactivity or silence. They have to make an action after being informed. Lastly, the consent has to be given freely, which can be rephrased as providing the user a real choice; non-consent cannot have significant negative consequences.</p>
+
+        <p>The active behaviour is the most crucial point in this; in the working document the Working Party states that a positive action can include the clicking of a link, image, or other content on the entry webpage, as it allows website publishers to see that the user has taken an action after being informed. In principle any other action is capable of conveying consent, including the scrolling down on a website.</p>
+
+        <p>Therefore, the use of a cookie banner, under the guidance of this Working Document is sufficient for gaining valid consent, as long as the banner can be seen by all first time visitors, and cookies are not dropped until after the user has made the decision to browse further.</p>
+
+
+        <h3 id="cyprus">Cyprus</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The CPDP has published a webpage with some basic information about the cookie provision's implementation. In terms of guidance, it only provides that website publishers must ensure that consent is given before the placing of cookies, and the CPDP provides links to the Article 29 Working Party's documents as guidance. The Article 29 Working Party consists of representatives from each EU data protection authority.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>In the Article 29 Working Party guidance, specific methods of gaining consent are not named or described, rather several conditions for valid consent are given. The Working Party provides four requirements to be met for consent to be considered valid:</p>
+
+        <ul>
+            <li><p>Specific information.</p></li>
+            <li><p>Prior consent.</p></li>
+            <li><p>Active choice by the user.</p></li>
+            <li><p>Freely given.</p></li>
+        </ul>
+
+        <p>What these mean in practice is that, first of all, information has to be specific and appropriate to the question of consent. The user has to be told what they are consenting to, meaning the exact purpose of using cookies has to be explained to them. In terms of prior consent, it simply means storing or access can only take place after consent is given. The active choice by the user refers to the fact that the user has to take an action to consent – it cannot be derived from inactivity or silence. They have to make an action after being informed. Lastly, the consent has to be given freely, which can be rephrased as providing the user a real choice; non-consent cannot have significant negative consequences.</p>
+
+        <p>The active behaviour is the most crucial point in this; in the working document the Working Party states that a positive action can include the clicking of a link, image, or other content on the entry webpage, as it allows website publishers to see that the user has taken an action after being informed. In principle any other action is capable of conveying consent, including the scrolling down on a website.</p>
+
+        <p>Therefore, the use of a cookie banner, under the guidance of this Working Document is sufficient for gaining valid consent, as long as the banner can be seen by all first time visitors, and cookies are not dropped until after the user has made the decision to browse further.</p>
+
+
+        <h3 id="czech">Czech Republic</h3>
+
+        <h4>Guidance</h4>
+
+        <p>There is a page on the UOOU website with an explanation of the cookie provision and what parts of it mean, particularly clarifying that it must be read as an opt-in. Further, the Czech Data Protection Act requires that valid informed consent be granted prior to the start of processing of personal data, which requires that information is provided before a user can consent.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>The law in the Czech Republic states that a user needs to give prior consent for the use of cookies. It refers to the Article 29 Working Party's Opinion 2/2010 on Online Behavioural Advertising (WP 171) rather than providing its own description or recommendations on how to get consent. Despite it not being explicitly mentioned by the UOOU, one could also consider the Article 29 Working Party's Working Document 02/2013 Providing Guidance on Obtaining Consent for Cookies.</p>
+
+        <p>In the Article 29 Working Party guidance, specific methods of gaining consent are not named or described, rather several conditions for valid consent are given. The Working Party provides four requirements to be met for consent to be considered valid:</p>
+
+        <ul>
+            <li><p>Specific information.</p></li>
+            <li><p>Prior consent.</p></li>
+            <li><p>Active choice by the user.</p></li>
+            <li><p>Freely given.</p></li>
+        </ul>
+
+        <p>What these mean in practice is that, first of all, information has to be specific and appropriate to the question of consent. The user has to be told what they are consenting to, meaning the exact purpose of using cookies has to be explained to them. In terms of prior consent, it simply means storing or access can only take place after consent is given. The active choice by the user refers to the fact that the user has to take an action to consent – it cannot be derived from inactivity or silence. They have to make an action after being informed. Lastly, the consent has to be given freely, which can be rephrased as providing the user a real choice; non-consent cannot have significant negative consequences.</p>
+
+        <p>The active behaviour is the most crucial point in this; in the working document the Working Party states that a positive action can include the clicking of a link, image, or other content on the entry webpage, as it allows website publishers to see that the user has taken an action after being informed. Other actions not explicitly mentioned may be the scrolling of a website.</p>
+
+        <p>Therefore, the use of a cookie banner, under the guidance of this Working Document should be sufficient for gaining valid consent, as long as the banner can be seen by all first time visitors.</p>
+
+
+        <h3 id="denmark">Denmark</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The Danish Business Authority published, in English and Danish, extensive guidelines on the executive order issued to implement the cookie provision into Danish law, which is known as the "Cookie Order".</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>There are four elements that are crucial to getting valid consent for the placing of cookies. These elements require that consent is: freely given, specific, informed, and given through an indication of the user's wishes. With regard to freely given consent, the Guidelines state that privately owned websites may make access to the website conditional on the acceptance of cookies. Consent given in relation to the overall purposes of storing or accessing cookies is also considered specific enough.</p>
+
+        <p>In terms of consent being informed enough, the website publisher has to comply with the information requirements imposed by Section 3 (2) of the Cookie Order, however this information may be ‘layered', meaning that on a banner on the homepage the publisher only has to inform the user about the purpose of cookies as well as a link to a page which fully explains all the information required. As to the indication of user's wishes, this can be expressed through ‘active use of a service after being informed'. The key factor here is that an action of the user can be identified by the publisher, which would allow consent to be conveyed by clicking a link or scrolling through a website.</p>
+
+        <p>The use of a cookie banner which informs users on a general level about the use of cookies and their purpose, and includes a link to a detailed Cookie Policy meets all the requirements of this. Consent is given the moment the user has browsed further on the website without going to the detailed page.</p>
+
+
+        <h3 id="estonia">Estonia</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The Inspectorate has not published any guidance documents.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>Estonia did not transpose Article 5 (3) of the ePrivacy Directive into national law. There is thus no special law regulating the use of cookies. However, cookies may still be subject to general data protection law if the cookie in question contains personal data.</p>
+
+        <p>Under the Estonian Personal Data Protection Act, personal data may only be processed with the consent of the data subject. Consent must be based on the free will of the data subject. It also has to be given with full knowledge of which data is being processed, for which purposes data is processed, the conditions for disclosure of data to third persons, and the rights of the data subject concerning further processing of personal data. Consent cannot be given through silence or inactivity. Estonian law does not have a legitimate interest legal basis for the processing of personal data.</p>
+
+        <p>To be on the safe side when unsure whether personal data is processed, a cookie banner which links to a detailed cookie policy page could be used as a method to give consent. As silence or inactivity cannot indicate consent, there has to be a detectable action from the user, such as scrolling down or clicking further on the page. In that case the user has to be informed that detailed information is available, and that scrolling or browsing further indicates consent. Users also must have the possibility to be withdraw consent, which means that the cookie policy page must make available an opt-out.</p>
+
+
+        <h3 id="finland">Finland</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The FICORA has published on their website some basic guidance on the use of cookies, available in English, Finnish and Swedish. The guidance is rather limited, however, and only discusses on a high level what cookies are, which cookies require consent, and which cookies fall under the information obligation.</p>
+
+        <h4>Compliance Method: Browser Settings, Opt-Out</h4>
+
+        <p>The FICORA states in its short guidance page that it has interpreted the rules to include the use of browser settings as a method of consent, and it does so without the caveat ‘where technically possible and effective'. What this means is that it doesn't set a high standard for browser settings as a consent method. The information requirement still remains, so users need to be ale to find detailed information on the website about which cookies are being used and given the opportunity to refuse after the fact. It is presumed that if the user has not set their browser to reject cookies by default, they are consenting to their use. Cookie banners are therefore not really required, but they are starting to be used on Finnish websites.</p>
+
+
+        <h3 id="france">France</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The National Commission for Data Protection (Commission Nationale de l'Informatique et des Libertés, or CNIL) is the French Data Protection Authority. As of February 2014, the Chair of the CNIL has been the Chair of the Article 29 Working Party, which is the EU board of Data Protection Authorities, the CNIL has published on their website detailed guidance on various topics. All links are in French.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>The CNIL has recommended, among other methods, the use of banners for getting consent, but these banners must contain comprehensive information and a link to a detailed cookie policy page. When using a banner, CNIL provides that users must: (1) be informed of the purposes of the cookies (such as providing targeted advertising), (2) be given a link to a page with more detailed information on cookies and a way to withdraw consent to their use, and lastly (3) be informed that continuing to browse constitutes an indication of consent.</p>
+
+        <p>When it comes to the detailed cookie policy page, the CNIL recommends asking for each type of cookie – related to their purposes – whether the user accepts or rejects cookies of that type. As an example it suggests using the form of questions, asking plainly: &quot;Do you accept the filing and reading of cookies so that we and our partners can analyse your interests to offer you targeted advertisements?&quot; with a Yes/No tick box.</p>
+
+        <p>For online advertising the CNIL has published a separate page on its website explaining the different consent requirements for contextual versus targeted advertising (the former doesn't require consent whereas the latter does). It also explains how publishers making use of Google advertising can comply, through the use of a script which disables tracking until consent is given.</p>
+
+
+        <h3 id="germany">Germany</h3>
+
+        <h4>Guidance</h4>
+
+        <p>None of the State DPAs has published any detailed guidance on how to gain consent for the use of cookies, because the prevalent mode of compliance is adherence to an opt-out regime.</p>
+
+        <h4>Compliance Method: Pseudonymisation, Transparency, and Opt-out</h4>
+
+        <p>In Germany, users do not always need to consent to the use of cookies. A user must consent to cookies containing non-pseudonymised personal data. However, a user's consent is not needed for processing cookies containing pseudonymised data, as it significantly reduces privacy risks. In such cases a special opt-out regime applies. Therefore, a banner or cookie wall is not normally necessary in Germany.</p>
+
+        <p>Instead, users simply have to be given the ability to opt-out, or refuse cookies, and websites need to have a detailed cookie policy page available to fulfill the obligation to inform users. This is only the case where the data collected by cookies undergoes pseudonymisation. If the data collected is non-pseudonymised personal data, the user has to give his or her consent.</p>
+
+
+        <h3 id="greece">Greece</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The HDPA has published short guidance on their website about the requirements of consent, as well as clarifying their position that cookies used for online advertising do not fall under the exceptions provided in the implementing legislation.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>The guidance provided by the HDPA is quite short and doesn't give much concrete information, however it does indicate to an extent the requirements of consent and information. The law includes the use of browser settings as a method of consent, however the HDPA clarifies that this only applies where the web browser rejects cookies by default and presents users with an active choice on a cookie-by-cookie basis. If, by default, a web browser accepts all cookies, this is not valid. Using browser settings which block cookies from certain websites (through blacklisting) also does not provide adequate consent as it will accept cookies from any other sites. Another separate page exists on the HDPA guidance section about the appropriate way to inform users or subscribers. Here, the HDPA states that a terms and conditions or a privacy policy page is not enough, information must be displayed prominently on the site.</p>
+
+        <p>For this reason, a cookie banner is a good way to get consent under Greek law. A banner is considered a prominent way of informing users about the use of cookies, as it will appear on the user's first visit to the site. It is important to make sure that the banner states that continuing to browse the website is considered consent to the use of cookies, as the user must have acted affirmatively. Cookies may only be dropped after the user has given consent, so cookies cannot be deployed immediately on first visit. To fulfill the information requirement, it is helpful to explain to users in the banner what purposes cookies are used for, and to include a link to a more general privacy or cookie policy.</p>
+
+
+        <h3 id="hungary">Hungary</h3>
+
+        <h4>Guidance</h4>
+
+        <p>There is no guidance or case law available from Hungary on the proper implementation of the cookie provision. In the absence of better guidance from the national DPA it makes sense to consider European level guidance, as published by the Article 29 Working Party. The Article 29 Working Party is composed of all national DPAs of EU Member States.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>Hungarian law merely states that consent has to be given before storing or access to information occurs, but does not specify conditions for consent. In a case where there is no narrow definition or guidance, we have to rely on European level guidance from the Article 29 Working Party. The Working Party provides four requirements to be met for consent to be considered valid:</p>
+
+        <ul>
+            <li><p>Specific information.</p></li>
+            <li><p>Prior consent.</p></li>
+            <li><p>Active choice by the user.</p></li>
+            <li><p>Freely given.</p></li>
+        </ul>
+
+        <p>What these mean in practice is that, first of all, information has to be specific and appropriate to the question of consent. The user has to be told what they are consenting to, meaning the exact purpose of using cookies has to be explained to them. In terms of prior consent, it simply means storing or access can only take place after consent is given. The active choice by the user refers to the fact that the user has to take an action to consent – it cannot simply be assumed automatically. They have to make an action after being informed. Lastly, the consent has to be given freely, which can be rephrased as providing the user a real choice; non-consent cannot have significant negative consequences.</p>
+
+        <p>The active behaviour is the most crucial point in this; in the working document the Working Party states that a positive action can include the clicking of a link, image, or other content on the entry webpage, as it allows website publishers to see that the user has taken an action after being informed.</p>
+
+        <p>Therefore, the use of a cookie banner, under the guidance of this Working Document is sufficient for gaining valid consent, as long as the banner can be seen by all first time visitors, and cookies are not dropped until after the user has made the decision to browse further. This is because the law states storing is allowed only after receiving consent from the user.</p>
+
+
+        <h3 id="ireland">Ireland</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The DPC has published on their website a Guidance Note on Data Protection in the electronic communications sector, where section 6 explains the law on cookies and how to get consent. In that section the DPC provides a list of information that must be included on a cookie policy page, as well as the above examples of minimum requirements for cookie banners or opt-in banners.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>In Ireland, consent for cookies can be implied through the use of a cookie banner. The information required on a banner is not that extensive; in fact, using the banner to gain consent only comes with the requirement that the user is told about browsing further being considered an indication of consent. There is no requirement that consent is given prior to storing cookies.</p>
+
+        <p>While the DPC does not mention it with regard to ticking a box, websites must still comply with the obligation to inform users about cookies in a more detailed manner. This is done on a separate cookie policy page which must explain how the website makes use of cookies, and what types of cookies are used.</p>
+
+
+        <h3 id="italy">Italy</h3>
+
+        <h4>Guidance</h4>
+
+        <p>Simplified Arrangements to Provide Information and Obtain Consent Regarding Cookies, 8 May 2014.</p>
+
+        <p>In point 4 of these simplified arrangements, the exact details of information required on a cookie banner are detailed (4.1), as well as  an explanation of the information that is required on extended information page for cookies (4.2).</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>The Italian DPA recommends using what it calls a two-step approach to getting consent and informing users about cookies and similar technologies. The first step of this approach is a banner which informs users that by continuing to use the website, by clicking on a link or accessing a different part, they signify their consent to the use of cookies. The law provides that consent is to be given after informing users. The banner must always include a link to a more detailed cookie policy page which both informs users of the features and purposes of all cookies, and also provides users with an opportunity to withdraw consent. An important feature of such a cookie policy page is that third party cookies must be disclosed explicitly, and an explanation has to be provided on how to use browser settings to signify consent.</p>
+
+        <p>In any case the short information (the banner presented to users upon first visit) has to contain at least the following information:</p>
+
+        <p>Where applicable, that profiling cookies for the purposes of targeted advertising are being used, or that the website allows the sending of third-party cookies.
+            A link to an extended information page including tools to select which cookies are permitted, as well as a way to opt-out of cookies. Lastly, an explanation that continuing to browse indicates the user's consent.</p>
+
+
+        <h3 id="latvia">Latvia</h3>
+
+        <h4>Guidance</h4>
+
+        <p>No guidance has been published by the DVI. In the absence of Member State DPA guidance, we can instead consider guidance from the Article 29 Working Party, which is the European level congregation of Member State DPAs. The Working Party has published an Opinion and a Working Paper on the cookie provision.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>In the Article 29 Working Party guidance, specific methods of gaining consent are not named or described, rather several conditions for valid consent are given. The Working Party provides four requirements to be met for consent to be considered valid:</p>
+
+        <ul>
+            <li><p>Specific information.</p></li>
+            <li><p>Prior consent.</p></li>
+            <li><p>Active choice by the user.</p></li>
+            <li><p>Freely given.</p></li>
+        </ul>
+
+        <p>What these mean in practice is that, first of all, information has to be specific and appropriate to the question of consent. The user has to be told what they are consenting to, meaning the exact purpose of using cookies has to be explained to them. In terms of prior consent, it simply means storing or access can only take place after consent is given. The active choice by the user refers to the fact that the user has to take an action to consent – it cannot simply be assumed automatically. They have to make an action after being informed. Lastly, the consent has to be given freely, which can be rephrased as providing the user a real choice; non-consent cannot have significant negative consequences.</p>
+
+        <p>The active behaviour is the most crucial point in this; in the working document the Working Party states that a positive action can include the clicking of a link, image, or other content on the entry webpage, as it allows website publishers to see that the user has taken an action after being informed.</p>
+
+        <p>Therefore, the use of a cookie banner, under the guidance of this Working Document is sufficient for gaining valid consent, as long as the banner can be seen by all first time visitors, and cookies are not dropped until after the user has made the decision to browse further.</p>
+
+
+        <h3 id="lithuania">Lithuania</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The VDAI has published two guidance documents, one for data controllers and one for data subjects in Lithuanian.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>In its guidance for controllers, the VDAI recommends several methods of gaining consent, among which are the use of cookie banners. Important to note is that the VDAI specifically mentions that browser settings, with the current state of browsers, cannot provide meaningful consent. Also, consent has to be given prior to placing cookies.</p>
+
+        <p>The guidance covers exactly what information must be made available to the data subjects, such as inter alia who will receive data collected from cookies, what types of cookies are used, and the right of the subject to withdraw their consent. Consent has to be expressed through a positive action, which could be the act of browsing further after reading a banner with a link to more information.</p>
+
+        <p>Therefore, using a banner which has brief information about the use of cookies on the website and their purposes, with a link to a more detailed information page, is a valid way of getting consent. The consent is given the moment the user has clicked on a link or image on the first page they visit, and cookies may only be stored after that action has taken place.</p>
+
+        <p>Under the Lithuanian implementation, analytic cookies which collect data about site usage are not exempted from the requirement of informed consent.</p>
+
+
+        <h3 id="luxembourg">Luxembourg</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The CNDP's website (French/German) has a ‘thematic dossier' on the specific provisions of the implementing legislation, including a short section on cookies. It only really serves to clarify why cookies are used and that fairness and transparency are required when using them. The Article 29 Working Party is the European level meeting of national DPAs and it has provided an Opinion and Working Document on the issue of consent.</p>
+
+        <h4>Compliance Method: Browser Settings or Cookie Banners</h4>
+
+        <p>Luxembourg has included in its transposition the ability to express consent through the appropriate settings of a web browser. This paves the way for presuming consent from browser settings; however, this is risky, as this is prefaced with ‘if technically possible and effective' in the law. Until the CNDP clarifies the extent to which browser settings can be used to express consent, there exists a risk that it finds browsers in their current state unfit to provide consent. This is a view shared by other DPAs as browser settings only allow blanket acceptance or rejection of cookies, thus it does not meet the specificity requirements set for consent.</p>
+
+        <p>The safer option is to make use of a cookie banner. Without narrower guidance from the CNDP, we have to turn instead to the guidance provided at European level by the Article 29 Working Party.</p>
+
+        <p>The Working Party provides four requirements to be met for consent to be considered valid:</p>
+
+        <ul>
+            <li><p>Specific information.</p></li>
+            <li><p>Prior consent.</p></li>
+            <li><p>Active choice by the user.</p></li>
+            <li><p>Freely given.</p></li>
+        </ul>
+
+        <p>What these mean in practice is that, first of all, information has to be specific and appropriate to the question of consent. The user has to be told what they are consenting to, meaning the exact purpose of using cookies has to be explained to them. In terms of prior consent, it simply means storing or access can only take place after consent is given. The active choice by the user refers to the fact that the user has to take an action to consent – it cannot simply be assumed automatically. They have to make an action after being informed. Lastly, the consent has to be given freely, which can be rephrased as providing the user a real choice; non-consent cannot have significant negative consequences.</p>
+
+        <p>The active behaviour is the most crucial point in this; in the working document the Working Party states that a positive action can include the clicking of a link, image, or other content on the entry webpage, as it allows website publishers to see that the user has taken an action after being informed.</p>
+
+        <p>Therefore, the use of a cookie banner, under the guidance of this Working Document is sufficient for gaining valid consent, as long as the banner can be seen by all first time visitors, and cookies are not dropped until after the user has made the decision to browse further.</p>
+
+
+        <h3 id="malta">Malta</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The IDPC has not published any official guidance on the topic of cookie consent. In the absence of national guidance, it can be helpful to consider the work of the Article 29 Working Party. The Article 29 Working Party consists of representatives from each EU data protection authority.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>In the Article 29 Working Party guidance, specific methods of gaining consent are not named or described, rather several conditions for valid consent are given. The Working Party provides four requirements to be met for consent to be considered valid:</p>
+
+        <ul>
+            <li><p>Specific information.</p></li>
+            <li><p>Prior consent.</p></li>
+            <li><p>Active choice by the user.</p></li>
+            <li><p>Freely given.</p></li>
+        </ul>
+
+        <p>What these mean in practice is that, first of all, information has to be specific and appropriate to the question of consent. The user has to be told what they are consenting to, meaning the exact purpose of using cookies has to be explained to them. In terms of prior consent, it simply means that cookies can only be dropped after consent is given. The active choice by the user refers to the fact that the user has to take an action to consent – it cannot simply be assumed automatically. They have to make an action after being informed. Lastly, the consent has to be given freely, which can be rephrased as providing the user a real choice; non-consent cannot have significant negative consequences.</p>
+
+        <p>The active behaviour is the most crucial point in this; in the working document the Working Party states that a positive action can include the clicking of a link, image, or other content on the entry webpage, as it allows website publishers to see that the user has taken an action after being informed.</p>
+
+        <p>Therefore, the use of a cookie banner, under the guidance of this Working Document is sufficient for gaining valid consent, as long as the banner can be seen by all first time visitors, and cookies are not dropped until after the user has made the decision to browse further.</p>
+
+
+        <h3 id="netherlands">Netherlands</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The ACM has published an extensive FAQ document (Dutch) in July 2015, which is up to date with the latest amendment in the Dutch implementation of the cookie provision. It answers questions about which questions are covered by the most recent amendment, the status of a ‘do-not-track' signal, and which party is responsible for getting consent, among many others.</p>
+
+        <p>The AP also has an FAQ page for both users and organisations (Dutch). This page talks in particular about tracking cookies – which types of tracking cookies require consent, and how to set up Google Analytics in a privacy friendly manner.</p>
+
+        <h4>Compliance Method: Explicit Consent (Opt-in)</h4>
+
+        <p>In the Netherlands, a cookie banner is, on its own, not sufficient for gaining consent when it comes to tracking cookies. In the words of the AP, users must be presented with a clear choice to either accept or refuse cookies. While this choice can be given on a banner, it effectively negates the lighter regime of further browsing as an indication of consent – a banner has to remain in place until the user has actively clicked on the &quot;accept&quot; button, or determined their choices through a link in the information banner. This also means cookies cannot be set until after the user has given their consent through this method.</p>
+
+        <p>Due to the fact that privately owned websites are allowed to make access to the website conditional upon the acceptance of certain cookies, consent may be obtained by &quot;walling-off&quot; a website until cookies are accepted. Some publishers even use a separate landing page for first-time visitors, so that they cannot visit the website until consenting to the use of cookies or specifying their preferences.</p>
+
+        <p>Even where very detailed cookie banners or pop-ups are used to get consent, further information has to be given on a cookie policy page, as well as information on how to withdraw consent. The AP considers this type of consent as ‘unambiguous' but in practice it appears closer to explicit consent.</p>
+
+        <p>In the explanatory memorandum accompanying the amendment in the legislation in 2015, the Government explains that ‘implicit consent' is sufficient for gaining consent for cookies. However, this applies only to cookies which do not fall under the field of ‘tracking'. As soon as a cookie or similar technology is able to track a user's activity across multiple websites, the stricter rules of the data protection law apply.</p>
+
+        <p>For cookies or other technologies which have as their purpose assessing the quality or effectiveness of the service rendered to the user (which includes checking whether ads are displayed or not), there is no requirement for consent or informing of users.</p>
+
+
+        <h3 id="norway">Norway</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The DPA has published an information page on their website in Norwegian. While it is quite brief, it explains exactly how consent can be expressed and how to meet the information requirement.</p>
+
+        <h4>Compliance Method: Browser Settings, Opt-Out</h4>
+
+        <p>Under Norway's telecommunication Act, consent must be given for the use of cookies. However, the DPA states that as long as the information requirement is met, browser settings can be used to indicate consent. The information to be provided is as follows:</p>
+
+        <ul>
+            <li><p>The type(s) of cookie used.</p></li>
+            <li><p>The data collected by cookies.</p></li>
+            <li><p>The purpose(s) of cookie use.</p></li>
+            <li><p>Who receives the data collected.</p></li>
+        </ul>
+
+        <p>The user does not have to make a particular action to indicate consent, but the information must simply be available to them. Setting a browser to accept all third-party cookies can be seen as consent to their use.</p>
+
+        <p>While Norway is not a Member State of the European Union, as a member of the European Economic Area (EEA) it still has to implement all rules that have or may have an effect on the functioning of the internal market. As the ePrivacy Directive was created with the purpose of enhancing the functioning of the internal market, Norway has implemented it.</p>
+
+
+        <h3 id="poland">Poland</h3>
+
+        <h4>Guidance</h4>
+
+        <p>Neither the UKE nor the GIODO have published guidance, prompting industry to take action instead. IAB Poland launched a website titled &quot;All About Cookies&quot;, which has an FAQ page. However, the website serves mainly to inform the user about cookies, and does not explain how to obtain consent but only that websites have to get consent from users. It is used by websites as a tool as an aid in informing users about cookies.</p>
+
+        <h4>Compliance Method: Browser Settings and Cookie Banners</h4>
+
+        <p>The Polish implementation allows users to express consent through the use of ‘software installed on the telecommunications equipment', so browser settings. This possibility is also not limited to cases where it is ‘technically possible or effective' meaning that so far neither the UKE or GIODO have raised objections to using default browser settings which either accept all or reject all or certain kinds of cookies.</p>
+
+        <p>The information requirements on the other hand are quite stringent. The law details that users must be directly informed about the purpose of cookies, and the possibility to define the conditions of consenting to cookies through browser settings. Therefore, a cookie banner has to be used – but not as a method for the user to consent. It serves to inform users directly for what purpose cookies are used and that they are consenting through the use of browser settings. These banners have to persist until they are closed by users, or until they have clicked on the link bringing them to more information on the cookie policy.</p>
+
+
+
+        <h3 id="portugal">Portugal</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The CNPD has not published any guidance on how to get consent for cookies in practice. In such a case we can also consider the Opinions and Working Papers of the Article 29 Working Party. The Article 29 Working Party consists of representatives from each EU data protection authority.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>In the Article 29 Working Party guidance, specific methods of gaining consent are not named or described, rather several conditions for valid consent are given. The Working Party provides four requirements to be met for consent to be considered valid:</p>
+
+        <ul>
+            <li><p>Specific information.</p></li>
+            <li><p>Prior consent.</p></li>
+            <li><p>Active choice by the user.</p></li>
+            <li><p>Freely given.</p></li>
+        </ul>
+
+        <p>What these mean in practice is that, first of all, information has to be specific and appropriate to the question of consent. The user has to be told what they are consenting to, meaning the exact purpose of using cookies has to be explained to them. In terms of prior consent, it simply means storing or access can only take place after consent is given. The active choice by the user refers to the fact that the user has to take an action to consent – it cannot simply be assumed automatically. They have to make an action after being informed. Lastly, the consent has to be given freely, which can be rephrased as providing the user a real choice; non-consent cannot have significant negative consequences.</p>
+
+        <p>The active behaviour is the most crucial point in this; in the working document the Working Party states that a positive action can include the clicking of a link, image, or other content on the entry webpage, as it allows website publishers to see that the user has taken an action after being informed.</p>
+
+        <p>Therefore, the use of a cookie banner, under the guidance of this Working Document is sufficient for gaining valid consent, as long as the banner can be seen by all first time visitors, and cookies are not dropped until after the user has made the decision to browse further.</p>
+
+
+        <h3 id="romania">Romania</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The ANSPDCP has not issued guidance on the matter, but IAB Romania has made recommendations on the use of cookies. On this page, you can download a detailed guide on how to inform users about cookies. The page itself also contains some basic information on how cookie consent must be obtained.</p>
+
+        <h4>Compliance Method: Browser Settings and Opt-Out</h4>
+
+        <p>IAB Romania's guidance page explains exactly what information has to be relayed to the user. The user has to be informed about:</p>
+
+        <ul>
+            <li><p>The fact that cookies are used by the website.</p></li>
+            <li><p>What cookies are.</p></li>
+            <li><p>What the purpose of cookies used on the website is.</p></li>
+            <li><p>Why third parties might use cookies (if applicable).</p></li>
+            <li><p>What data is collected by cookies.</p></li>
+            <li><p>How cookies impact security and the confidentiality of personal data.</p></li>
+            <li><p>How to manage cookies through browser settings.</p></li>
+            <li><p>Why cookies are important, and how to uninstall them.</p></li>
+            <li><p>The effects of refusing to store cookies.</p></li>
+        </ul>
+
+        <p>The guidance recommends that the information is to be provided on a cookie policy page, a link to which is presented through a banner on the first page, or a ‘sticky ribbon', or through a widget which is visibly made prominent. Any of these methods fall within the definition of a cookie banner – on first visit the user is confronted with short-form information about cookies being used and a link to a more detailed page. As browser settings are written into the implementation as a method to provide consent, it can be assumed that users who do not consent will set up their browser accordingly. Thus, cookies need not be withheld until the user consents, as their browser settings will already reject or accept cookies. The banner in this situation then serves to notify the user, and to also inform users of their ability to opt out.</p>
+
+        <p>If one wishes to be completely safe and comply with the notion of prior consent, cookies would need to be withheld until the moment the user has taken a detectable action after reading the banner. This usually means clicking on a link to browse further on the website, but could also mean scrolling down or highlighting text on the webpage.</p>
+
+
+        <h3 id="slovakia">Slovakia</h3>
+
+        <h4>Guidance</h4>
+
+        <p>No guidance is available from either authority. As such we have to rely on the work of the Article 29 Working Party for narrower guidance. The Article 29 Working Party is composed of all the Member State DPAs and produces opinions and working papers.</p>
+
+        <h4>Compliance Method: Browser Settings or Cookie Banners</h4>
+
+        <p>Where national recommendations are missing, we have to look closely at the implementing legislation itself, and can make use of the guidance of the Article 29 Working Party to further clarify certain concepts.</p>
+
+        <p>In the Article 29 Working Party guidance, specific methods of gaining consent are not named or described. Instead, several conditions for valid consent are given. The Working Party provides four requirements to be met for consent to be considered valid:</p>
+
+        <ul>
+            <li><p>Specific information.</p></li>
+            <li><p>Prior consent.</p></li>
+            <li><p>Active choice by the user.</p></li>
+            <li><p>Freely given.</p></li>
+        </ul>
+
+        <p>What these mean in practice is that, first of all, information has to be specific and appropriate to the question of consent. The user has to be told what they are consenting to, meaning the exact purpose of using cookies has to be explained to them. In terms of prior consent, in Slovakian law this is not written into the law. As such, prior consent is not strictly necessary and cookies do not have to be withheld until the user has consented. The active choice by the user refers to the fact that the user has to take an action to consent – it cannot simply be assumed automatically. They have to make an action after being informed. As the Slovakian implementation equates to consent to the relevant settings of a web browser, this implies that a user can make this active choice by setting their browser to accept or reject cookies. Lastly, the consent has to be given freely, which can be rephrased as providing the user a real choice; non-consent cannot have significant negative consequences.</p>
+
+        <p>This leaves publishers with two options regarding the dropping of cookies. In either case, a banner should still be used to inform users about the use and purposes of cookies, as well as providing a link to the cookie policy page. But if one wishes to be safe, cookies should be withheld until after the user has made a detectable action on the website which can indicate consent. If consent is presumed through the user's browser settings, then they have already given their consent, and thus cookies may be dropped straight away.</p>
+
+
+        <h3 id="slovenia">Slovenia</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The IP-RS has published a detailed guidance document on how to comply with the cookie law. Additionally it has also published a Code of Conduct on data processing. and has also published guidelines on the creation of a Privacy Notice for websites.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>In Slovenia, cookie banners are sufficient as a consent mechanism. Consent under Slovenian law must contain three elements: a voluntary statement of will, processing for a specific purpose, and an informed decision. In the guidance document issued by the IP-RS, the use of pop-ups, consent bars or similar techniques are recommended. It is also stressed that merely having the information available on part of the website is not enough; users have to be confronted with the information in a visible area.</p>
+
+        <p>The IP-RS guidance stresses that cookies may only be stored after getting the consent from users, so it has a strict opt-in approach in that sense. It specifically states that on the initial visit to the website, no cookies which require consent may be set at all. The information also has to be displayed very prominently, so that a user would be unable to miss it.</p>
+
+        <p>Therefore, a cookie banner is the ideal way to comply with the cookie provision in Slovenia. The act of further browsing can be considered a voluntary statement of will, the user gets informed about the specific purposes of the processing by cookies through the banner, and therefore they are able to make an informed decision. As always, more information has to be provided on a cookie policy page, which can be linked to in the cookie banner.</p>
+
+        <p>While browser settings are codified in the law, it is phrased as being a method to provide consent &quot;where technically feasible, effective&quot; and in accordance with general data protection law. This precludes the possibility of being able to presume consent through default browser settings.</p>
+
+
+        <h3 id="spain">Spain</h3>
+
+        <h4>Data Protection Authority</h4>
+
+        <p>Data Protection Agency of Spain (Agencia Española de Proteccion de Datos, AGPD) has a Guidance document of the AGPD, made in collaboration with industry representatives including IAB Spain.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>The AGPD mentions six methods through which consent can be given for the use of cookies by users. Among those are the acceptance of terms and conditions and a privacy policy, consent via a menu asking the user which cookies they accept, and asking consent at the moment a cookie is required for a certain service.</p>
+
+        <p>By far the most commonly used approach and one which is user friendly is the use of a cookie banner. The AGPD considers that consent to cookies can be implied when a user has been informed about the use of cookies and the ability to delete them, and they have to be given a method of opting-out of cookies. To achieve this, it recommends using a ‘layered' approach – in the first layer users are told that the site uses cookies, and the AGPD accepts either scrolling down or clicking on a link on the page as an affirmative action indicating consent. It recommends that the banner is placed at the top of the page to draw more attention.</p>
+
+        <p>Consent is thus assumed to be given at the moment a user has been presented with the banner, and decides to scroll down or clicks on a link on the page.</p>
+
+        <p>When the AGPD speaks of a layered approach it implies that there is a second layer, including more detailed and technical explanations of which cookies or similar technologies are employed by the website. The fact that users have to be given, through the banner, a way to get more information and a way to withdraw consent means that the link must include a link to this more detailed page.</p>
+
+
+        <h3 id="sweden">Sweden</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The PTS has published an FAQ page on their website, with questions addressing specifically what an organisation must do to comply with the cookie law.</p>
+
+        <p>In addition, the Swedish tech industry has set up a website called ‘Mina Cookies‘ which is administered by IAB Sweden. On this website, there is information about cookies in general, how to opt-out of cookies, and recommendations from IAB Sweden on the use of cookies, available in Swedish and English.</p>
+
+        <h4>Compliance Method: Cookie Banners/Browser Settings/Icon</h4>
+
+        <p>In Sweden, consent can be communicated through the appropriate use of browser settings, as long as the browser is able to adjust the setting for certain types of cookies. If a user accesses a website and their browser has been set up to accept cookies, this is considered consent. However, the information requirement still exists so website publishers still have to communicate the fact that cookies are being used, which can be done through a banner.</p>
+
+        <p>An alternative to using a banner to inform users of cookies being used is presented by the Mina Cookies, namely using an icon which states ‘We use cookies'. It also provides an alternative to having detailed cookie information on each website, and states that the more detailed information on cookies can be given on an industry-created website, such as Mina Cookies.</p>
+
+        <p>Consent itself is thus expressed through browser settings, however the user can be informed either through the use of the Icon or through the use of a banner. The informing of the user is the key to ensuring consent through browser settings is valid.</p>
+
+
+        <h3 id="switzerland">Switzerland</h3>
+
+        <h4>Guidance</h4>
+
+        <p>No guidance is available, for reasons explained below.</p>
+
+        <h4>Compliance Method: Information and Opt-Out</h4>
+
+        <p>Under Swiss law, no specific rules exist for the storing of or access to information on user's devices. As such it is a matter which falls under general data protection law, which the Swiss did align with EU legislation. Therefore the matter falls under more general data protection law. In 2010, the FDPIC wrote about the review of the ePrivacy Directive in its annual reports, and also had an entry about cookies. While the FDPIC showed an interest in the new opt-in requirement and voiced concerns about the privacy impact of certain types of tracking cookies, the cookie provision has not been adopted into Swiss law.</p>
+
+        <p>Under general data protection law there is an obligation to carry out personal data processing only for indicated purposes. Both the collection of data as well as the purpose of the collection must be made evident to data subjects.</p>
+
+
+        <h3 id="uk">United Kingdom</h3>
+
+        <h4>Guidance</h4>
+
+        <p>An FAQs page for organisations on cookies by the ICO.</p>
+
+        <p>Detailed Guidance Document from the ICO on cookies. For the use of cookie banners, page 19 and 20 are particularly relevant, but the document sets out a lot of information about all facets of the cookie provision and is a very insightful read.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>The ICO itself recommends cookie banners, which either outright ask for consent or indicate that continuing to browse indicates consent. This banner must also contain a link to a more detailed cookie policy page (for the exact information required, see page 17 of the Guidance Document). The ICO even warns publishers that using a method which explicitly asks users for consent can hamper the user experience if not implemented properly, but does state that it is a good way to ensure cookies are not installed before users have consented.</p>
+
+        <p>On the topic of prior consent, the ICO states that in principle cookies should not be dropped before consent is given. It concedes, however, that in reality it is difficult for a website publisher to ensure users are adequately informed for dropping cookies.</p>
+
+        <p>&quot;Wherever possible the setting of cookies should be delayed until users have had the opportunity to understand what cookies are being used and make their choice. Where this is not possible at present websites should be able to demonstrate that they are doing as much as possible to reduce the amount of time before the user receives information about cookies and is provided with options.&quot;</p>
+
+        <p>With regard to the possibility of using browser settings to provide consent, the ICO explains on it's FAQ page that currently browsers do not give users the opportunity to accept or refuse cookies by type, and thus the consent given through a browser cannot be specific enough to be meaningful. The ICO states that perhaps in the future it will be possible to use web browser settings to determine consent, but for now it doesn't consider it possible to use it for consent.</p>
+
+
+        <h3 id="outside">Outside The EU</h3>
+
+        <h4>Guidance</h4>
+
+        <p>The GDPR imposes restrictions on the transfer of personal data outside the European Union, to third countries or international organisations. These restrictions are in place to ensure that the level of protection of individuals afforded by the GDPR is not undermined.</p>
+
+        <p>When can personal data be transferred outside the European Union? Personal data may only be transferred outside of the EU in compliance with the conditions for transfer set out in Chapter V of the GDPR.</p>
+
+        <p>What about transfers on the basis of a Commission decision? Transfers may be made where the Commission has decided that a third country, a territory or one or more specific sectors in the third country, or an international organisation ensures an adequate level of protection.</p>
+
+        <p>The regulation will affect firms both inside and outside of the EU. In fact, any company dealing with EU businesses, residents, or citizens data will have to comply with the GDPR.</p>
+
+        <h4>Compliance Method: Cookie Banners</h4>
+
+        <p>The best method for websites hosted outside The EU is to use a Cookie Banner Notice, however the old Cookie Banner will not pass the new GDPR Laws where users only have a single option of clicking accept to all the Terms. Under the new Law Website owners outside The EU will also need to add:</p>
+
+        <ul>
+            <li><p><strong>consent:</strong> The user should be given ability to optin or out, a solo accept button is equivalent to a pre-ticked box (which is non-compliant),</p></li>
+            <li><p><strong>storage:</strong> You are required to keep an up-to-date record of users preference status and be able to demonstrate that record upon request (local storage in this instance), and</p></li>
+            <li><p><strong>optout:</strong> The user should be able to change their mind with as much ease as they opted in, preferably using the same mechanism (DP by design).</p></li>
+        </ul>
+
+        <h3 id="authority">Who is my data protection authority?</h3>
+
+        <p>Every European Union and the EFTA member assigns a national organization/commission/agency/bureau/authority that is in responsible for GDPR enforcement inside each country's border by providing information and support, but also auditing and issuing sanctions and fines. Their status was formalized by the Data Protection Directive. Here you find the list of all the websites for each and every National Authority in EU:</p>
+
+        <ul>
+            <li><p>Andorra: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.apda.ad/" target="_blank">apda.ad</a></p></li>
+            <li><p>Austria: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.dsb.gv.at/" target="_blank">dsb.gv.at</a></p></li>
+            <li><p>Belgium: <a role="link" rel="nofollow external noopener noreferrer" href="http://www.privacycommission.be/" target="_blank">privacycommission.be</a></p></li>
+            <li><p>Bulgaria: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.cpdp.bg/" target="_blank">cpdp.bg</a></p></li>
+            <li><p>Croatia: <a role="link" rel="nofollow external noopener noreferrer" href="http://azop.hr/" target="_blank">azop.hr</a></p></li>
+            <li><p>Cyprus: <a role="link" rel="nofollow external noopener noreferrer" href="http://www.dataprotection.gov.cy/" target="_blank">dataprotection.gov.cy</a></p></li>
+            <li><p>Czech: Republic <a role="link" rel="nofollow external noopener noreferrer" href="https://www.uoou.cz/" target="_blank">uoou.cz</a></p></li>
+            <li><p>Denmark: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.datatilsynet.dk/" target="_blank">datatilsynet.dk</a></p></li>
+            <li><p>Estonia: <a role="link" rel="nofollow external noopener noreferrer" href="http://www.aki.ee/en" target="_blank">aki.ee</a></p></li>
+            <li><p>Finland: <a role="link" rel="nofollow external noopener noreferrer" href="http://www.tietosuoja.fi/en/" target="_blank">tietosuoja.fi</a></p></li>
+            <li><p>France: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.cnil.fr/en/home" target="_blank">cnil.fr</a></p></li>
+            <li><p>Germany: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.bfdi.bund.de/" target="_blank">bfdi.bund.de</a></p></li>
+            <li><p>Greece: <a role="link" rel="nofollow external noopener noreferrer" href="http://www.dpa.gr/" target="_blank">dpa.gr</a></p></li>
+            <li><p>Hungary: <a role="link" rel="nofollow external noopener noreferrer" href="https://naih.hu/" target="_blank">naih.hu</a></p></li>
+            <li><p>Iceland: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.personuvernd.is/" target="_blank">personuvernd.is</a></p></li>
+            <li><p>Ireland: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.dataprotection.ie/" target="_blank">dataprotection.ie</a></p></li>
+            <li><p>Italy: <a role="link" rel="nofollow external noopener noreferrer" href="http://www.gpdp.it/" target="_blank">gpdp.it</a></p></li>
+            <li><p>Latvia: <a role="link" rel="nofollow external noopener noreferrer" href="http://www.dvi.gov.lv/en/" target="_blank">dvi.gov.lv</a></p></li>
+            <li><p>Liechtenstein: <a role="link" rel="nofollow external noopener noreferrer" href="http://www.dss.llv.li/" target="_blank">dss.llv.li</a></p></li>
+            <li><p>Lithuania: <a role="link" rel="nofollow external noopener noreferrer" href="http://www.dvi.gov.lv/en/" target="_blank">dvi.gov.lv</a></p></li>
+            <li><p>Luxembourg: <a role="link" rel="nofollow external noopener noreferrer" href="https://cnpd.public.lu/" target="_blank">cnpd.public.lu</a></p></li>
+            <li><p>Macedonia: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.dzlp.mk/" target="_blank">dzlp.mk</a></p></li>
+            <li><p>Malta: <a role="link" rel="nofollow external noopener noreferrer" href="https://idpc.org.mt/" target="_blank">idpc.org.mt</a></p></li>
+            <li><p>Monaco: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.ccin.mc/" target="_blank">ccin.mc</a></p></li>
+            <li><p>The Netherlands: <a role="link" rel="nofollow external noopener noreferrer" href="https://autoriteitpersoonsgegevens.nl/" target="_blank">autoriteitpersoonsgegevens.nl</a></p></li>
+            <li><p>Norway: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.datatilsynet.no/" target="_blank">datatilsynet.no</a></p></li>
+            <li><p>Poland: <a role="link" rel="nofollow external noopener noreferrer" href="http://www.giodo.gov.pl/" target="_blank">giodo.gov.pl</a></p></li>
+            <li><p>Portugal: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.cnpd.pt/" target="_blank">cnpd.pt</a></p></li>
+            <li><p>Romania: <a role="link" rel="nofollow external noopener noreferrer" href="http://www.dataprotection.ro/" target="_blank">dataprotection.ro</a></p></li>
+            <li><p>Russia: <a role="link" rel="nofollow external noopener noreferrer" href="http://eng.rkn.gov.ru/" target="_blank">rkn.gov.ru</a></p></li>
+            <li><p>Serbia: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.poverenik.rs/sr/" target="_blank">poverenik.rs</a></p></li>
+            <li><p>Slovakia: <a role="link" rel="nofollow external noopener noreferrer" href="https://dataprotection.gov.sk/" target="_blank">dataprotection.gov.sk</a></p></li>
+            <li><p>Slovenia: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.ip-rs.si/" target="_blank">ip-rs.si</a></p></li>
+            <li><p>Spain: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.agpd.es/" target="_blank">agpd.es</a></p></li>
+            <li><p>Sweden: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.datainspektionen.se/" target="_blank">datainspektionen.se</a></p></li>
+            <li><p>Switzerland: <a role="link" rel="nofollow external noopener noreferrer" href="https://www.edoeb.admin.ch/" target="_blank">edoeb.admin.ch</a></p></li>
+            <li><p>United Kingdom: <a role="link" rel="nofollow external noopener noreferrer" href="https://ico.org.uk/" target="_blank">ico.org.uk</a></p></li>
+        </ul>
+
+    </section>
+
+</div>

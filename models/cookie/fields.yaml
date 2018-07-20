@@ -1,47 +1,123 @@
 fields:
     name:
-        label: 'offline.gdpr::lang.settings.cookie_consent.apps.repeater.name.label'
-        span: auto
+        label: 'offline.gdpr::lang.cookie.fields.name_owner'
+        commentAbove: 'offline.gdpr::lang.cookie.fields.name_owner_comment'
+        span: left
         type: text
     code:
         label: 'offline.gdpr::lang.cookie.fields.code'
-        span: auto
+        commentAbove: 'offline.gdpr::lang.cookie.fields.code_comment'
+        span: right
         preset:
             field: name
             type: slug
         type: text
+    initial_status:
+        label: 'offline.gdpr::lang.cookie_group.fields.initial_status'
+        span: full
+        type: switch
+        default: 1
+        comment: 'offline.gdpr::lang.cookie.fields.intial_status'
+        tab: 'offline.gdpr::lang.cookie_group.tabs.description'
 tabs:
     fields:
-        initial_status:
-            label: 'offline.gdpr::lang.cookie_group.fields.initial_status'
-            span: full
-            type: switch
-            default: 1
-            comment: 'offline.gdpr::lang.cookie.fields.intial_status'
-            tab: 'offline.gdpr::lang.cookie_group.tabs.description'
         description:
-            label: 'offline.gdpr::lang.cookie_group.tabs.description'
-            size: large
+            label: 'offline.gdpr::lang.cookie.fields.purpose'
+            commentAbove: 'offline.gdpr::lang.cookie.fields.purpose_comment'
+            size: huge
             span: full
             type: richeditor
             tab: 'offline.gdpr::lang.cookie_group.tabs.description'
-        levels:
-            prompt: 'Add new level'
+        contact_details_dpo:
+            label: 'offline.gdpr::lang.cookie.fields.contact_details_dpo'
+            commentAbove: 'offline.gdpr::lang.cookie.fields.contact_details_dpo_comment'
+            size: large
+            span: full
+            type: richeditor
+            tab: 'offline.gdpr::lang.cookie.tabs.contact'
+        contact_links_dpo:
+            label: 'offline.gdpr::lang.cookie.fields.contact_links_dpo'
+            commentAbove: 'offline.gdpr::lang.cookie.fields.contact_links_dpo_comment'
+            prompt: 'offline.gdpr::lang.cookie.fields.contact_links_dpo_prompt'
+            size: large
             span: full
             type: repeater
-            tab: 'offline.gdpr::lang.cookie.fields.levels'
+            tab: 'offline.gdpr::lang.cookie.tabs.contact'
+            form:
+                fields:
+                    contact_link_href:
+                        label: 'offline.gdpr::lang.cookie.fields.contact_links.href'
+                        span: left
+                        type: text
+                    contact_link_name:
+                        label: 'offline.gdpr::lang.cookie.fields.contact_links.name'
+                        span: right
+                        type: text
+        provider:
+            label: 'offline.gdpr::lang.cookie.fields.cookie_levels.provider'
+            span: full
+            placeholder: analytics.google.com
+            required: true
+            type: text
+            commentAbove: 'offline.gdpr::lang.cookie.fields.cookie_levels.provider_comment'
+            tab: 'offline.gdpr::lang.cookie.tabs.provider'
+        section1:
+            label: 'offline.gdpr::lang.cookie.fields.cookie_levels.section1_label'
+            span: full
+            type: section
+            comment: 'offline.gdpr::lang.cookie.fields.cookie_levels.section1_comment'
+            tab: 'offline.gdpr::lang.cookie.tabs.levels'
+        levels:
+            prompt: 'offline.gdpr::lang.cookie.fields.cookie_levels.purpose_prompt'
+            span: full
+            label: 'offline.gdpr::lang.cookie.fields.cookie_levels.purpose_label'
+            type: repeater
+            tab: 'offline.gdpr::lang.cookie.tabs.levels'
             form:
                 fields:
                     level_name:
-                        label: 'offline.gdpr::lang.settings.cookie_consent.apps.repeater.name.label'
+                        label: 'offline.gdpr::lang.cookie.fields.cookie_levels.name'
                         span: full
                         type: text
                     level_description:
-                        label: 'offline.gdpr::lang.cookie_group.tabs.description'
+                        label: 'offline.gdpr::lang.cookie.fields.cookie_levels.purpose'
                         size: small
                         span: full
                         type: richeditor
+                        commentAbove: 'offline.gdpr::lang.cookie.fields.cookie_levels.purpose_comment'
                     is_default_level:
                         label: 'offline.gdpr::lang.cookie_group.fields.default_level'
-                        span: full
+                        span: left
                         type: checkbox
+        section2:
+            label: 'offline.gdpr::lang.cookie.fields.cookie_levels.section2_label'
+            span: full
+            type: section
+            comment: 'offline.gdpr::lang.cookie.fields.cookie_levels.section2_comment'
+            tab: 'offline.gdpr::lang.cookie.tabs.item_details'
+        item_details:
+            label: 'offline.gdpr::lang.cookie.fields.item_details'
+            prompt: 'Add New Item Details'
+            span: full
+            type: repeater
+            tab: 'offline.gdpr::lang.cookie.tabs.item_details'
+            form:
+                fields:
+                    detail_name:
+                        label: 'offline.gdpr::lang.cookie.fields.cookie_levels.identification'
+                        placeholder: '_ga'
+                        span: full
+                        type: text
+                        commentAbove: 'offline.gdpr::lang.cookie.fields.cookie_levels.identification_comment'
+                    detail_expiry:
+                        label: 'offline.gdpr::lang.cookie.fields.cookie_levels.expiry'
+                        commentAbove: 'offline.gdpr::lang.cookie.fields.cookie_levels.expiry_comment'
+                        placeholder: '3 months'
+                        span: full
+                        type: text
+                    detail_type:
+                        label: 'offline.gdpr::lang.cookie.fields.cookie_levels.type'
+                        span: full
+                        placeholder: ''
+                        type: dropdown
+                        commentAbove: 'offline.gdpr::lang.cookie.fields.cookie_levels.type_comment'

@@ -15,7 +15,7 @@
                 {{ level.level_name }}
             </h4>
             <div class="gdpr-cookie-manager__cookie-level-description">
-                {{ level.level_description | raw }}
+                {{ html_clean(level.level_description | raw) }}
             </div>
         </div>
     {% endfor %}

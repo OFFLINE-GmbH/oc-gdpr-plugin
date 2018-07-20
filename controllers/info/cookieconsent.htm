@@ -1,0 +1,133 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+	<li><a href="<?= Backend::url('offline/gdpr/info') ?>"><?= trans('offline.gdpr::lang.settings.info.label') ?></a></li>
+        <li><?= trans('offline.gdpr::lang.settings.info.cookieconsent_title') ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+
+<div class="info-dashboard">
+
+    <!-- Google Translator - Start -->
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- Google Translator - End -->
+
+
+    <!-- English Section -->
+    <section>
+
+        <h1>Klaro! Consent Manager</h1>
+
+        <p>
+            <figure><img role="img" style="max-width: 940px;" src="../../../../../../plugins/offline/gdpr/assets/images/cookie-consent.jpg" alt="Consent Manager" width="940" height="165"></figure>
+        </p>
+
+
+        <h2>Introduction</h2>
+
+        <p>This plugin provides an easy integration of <a role="link" rel="nofollow external noopener noreferrer" href="https://github.com/KIProtect/klaro" target="_blank">Klaro! A Simple Consent Manager</a>. Information on how to use Klaro! can be found on the official website.</p>
+
+        <h2>Table of Contents:</h2>
+
+        <ol>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/dataretention') ?>#user-content-configuration">Configuration</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/dataretention') ?>#user-content-translations">Translations</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/dataretention') ?>#user-content-consentmanager-component">consentManager component</a></p></li>
+            <li><p><a role="link" href="<?= Backend::url('offline/gdpr/info/dataretention') ?>#user-content-properties-1">Properties</a></p>
+                <ol>
+                    <li><a role="link" href="<?= Backend::url('offline/gdpr/info/dataretention') ?>#user-content-include_assets">include_assets</a></li>
+                    <li><a role="link" href="<?= Backend::url('offline/gdpr/info/dataretention') ?>#user-content-style_prefix">style_prefix</a></li>
+                </ol>
+            </li>
+
+        </ol>
+
+        <p>The Klaro! Consent Manager displays a GDPR compliant cookie message and allows the customization of the usage of third-party applications by a website visitor.</p>
+
+        <figure><p><img role="img" style="max-width: 649px;" src="https://camo.githubusercontent.com/c7ab7d0b05914a47c5be956ce46914f9e8c5f020/68747470733a2f2f692e696d6775722e636f6d2f6e3734794132302e706e67" alt="Klaro PopUp" width="649" height="340"></p></figure>
+
+        <p style="text-align: center;"><em>All Klaro! settings can be managed via October's backend.</em></p>
+
+
+        <h3 id="user-content-configuration">Configuration</h3>
+
+        <p>You can configure all Klaro! settings via the October CMS backend settings.</p>
+
+        <p>If you are more of a code person you can overwrite the <mark>config.js</mark> partial via your theme and use your own configuration file instead.</p>
+
+        <p>If you only want to define your applications manually you can overwrite the <mark>apps.js</mark> partial via your theme.</p>
+
+        <p>A configuration example is availabe at <a role="link" rel="nofollow external noopener noreferrer" href="https://klaro.kiprotect.com/config.js" target="_blank">https://klaro.kiprotect.com/config.js</a>. You can find all possible translation keys in Klaro's example config file.</p>
+
+
+        <h3 id="user-content-translations">Translations</h3>
+
+        <p>You can add custom translation strings via the backend settings page. Create a new translation, give it a 2-char language code (ex. <mark>de</mark>, <mark>en</mark>) and paste and modify the following json code into the code editor:</p>
+
+        <pre><code class="language-javascript"><p>{<br>
+&nbsp;&nbsp;consentModal: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;description: 'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln. Einträge die als "Beispiel" gekennzeichnet sind dienen lediglich zu Demonstrationszwecken und werden nicht wirklich verwendet.',<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;inlineTracker: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;description: 'Beispiel für ein Inline-Tracking Skript',<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;externalTracker: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;description: 'Beispiel für ein externes Tracking Skript',<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;adsense: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;description: 'Anzeigen von Werbeanzeigen (Beispiel)',<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;matomo: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;description: 'Sammeln von Besucherstatistiken',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;camera: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;description: 'Eine Ãœberwachungskamera (nur ein Beispiel zu IMG-Tags)',<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;cloudflare: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;description: 'Schutz gegen DDoS-Angriffe',<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;intercom: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;description: 'Chat Widget &amp; Sammeln von Besucherstatistiken (nur ein Beispiel)',<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;mouseflow: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;description: 'Echtzeit-Benutzeranalyse (nur ein Beispiel)',<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;purposes: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;analytics: 'Besucher-Statistiken',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;security: 'Sicherheit',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;livechat: 'Live Chat',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;advertising: 'Anzeigen von Werbung',<br>
+&nbsp;&nbsp;}<br>
+}</p></code></pre>
+
+
+        <h3 id="user-content-consentmanager-component">consentManager component</h3>
+
+        <p>Place this component on your layout, page or partial to display the Klaro! Consent Manager.</p>
+
+
+        <pre><code class="language-php"><p>{% component 'consentManager' %}</p></code></pre>
+
+
+        <h3 id="user-content-properties-1">Properties</h3>
+
+        <h4 id="user-content-include_assets">include_assets</h4>
+
+        <p>Enable this option to automatically include the <mark>klaro.js</mark> file. You can disable this option if you want to take full control over how the script is included.</p>
+
+
+        <h4 id="user-content-style_prefix">style_prefix</h4>
+
+        <p>Define a custom css class to be used in the Klaro! HTML markup. If this option is set all default styles will be removed completely.</p>
+
+    </section>
+
+</div>

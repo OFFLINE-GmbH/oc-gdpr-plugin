@@ -1,17 +1,7 @@
 {% if not __SELF__.hide %}
     <div class="gdpr-banner">
-        <form class="gdpr-banner__wrapper"
-              data-request="onSubmit"
-              data-request-success="{{
-                __SELF__.hardReload
-                    ? 'document.location.reload()'
-                    : '$(\'.gdpr-banner\').remove();'
-              }}"
-              {% if not __SELF__.hardReload %}
-                data-request-update="'{{ __SELF__.updatePartial }}' : '{{ __SELF__.updateSelector }}'"
-              {% endif %}
-        >
+        <div class="gdpr-banner__wrapper">
             {% partial __SELF__ ~ '::inner' %}
-        </form>
+        </div>
     </div>
 {% endif %}

@@ -26,7 +26,6 @@ This plugin provides two simple components to make your October installation GDP
 [cookieBanner]
 include_css = 1
 hard_reload = 0
-ignore_behaviour = "nothing"
 update_partial = "gdpr"
 update_selector = "#gdpr-reload"
 cookie_manager_page = "cookies"
@@ -70,7 +69,6 @@ you can check for the user's consent and optionally include your resources.
 [cookieBanner]
 include_css = 1
 hard_reload = 0
-ignore_behaviour = "nothing"
 update_partial = "gdpr"
 update_selector = "#gdpr-reload"
 cookie_manager_page = "cookies"
@@ -102,7 +100,6 @@ If the user accepts some cookies you have two options to proceed:
  [cookieBanner]
 include_css = 1
 hard_reload = 0
-ignore_behaviour = "nothing"
 update_selector = "#gdpr-reload"
 update_partial = "gdpr"
 ==
@@ -118,17 +115,6 @@ And in your `gdpr` partial you can use:
     <!-- Include Analytics Code here -->
 {% endif %}
 ```
-
-##### Ignore behaviour
-
-There are three options available to be used as `ignore_behaviour`:
-
-|  Value | Behaviour |
-|---|---|
-| nothing | (Default) Do nothing. Show the banner again on subsequent page views.   |
-| opt-in  | Hide the banner on the second page view and enable all default cookies.   |
-| opt-out  | Hide the banner on the second page view. Don't enable any cookies. |
-
 
 #### Twig Helpers
 
@@ -158,7 +144,7 @@ value of `0` or higher means the cookie is allowed with the returned level value
 {% endif %}
 ```
 
-##### `gdprIsUndecied()`
+##### `gdprIsUndecided()`
 
 Check if the user has made a decision about the cookies yet. This will return `true` on the second page view if the 
 user did not interact with the `cookieBanner` (silent opt-in).

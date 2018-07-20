@@ -1,6 +1,6 @@
 {% if __SELF__.cookieManagerPage %}
     <div class="gdpr-banner__settings">
-        <a href="{{ __SELF__.cookieManagerPage | page }}"
+        <a role="link" rel="privacy" href="{{ __SELF__.cookieManagerPage | page }}"
            data-request="onDecline"
            data-request-success="document.location.href = '{{ __SELF__.cookieManagerPage | page }}'"
         >

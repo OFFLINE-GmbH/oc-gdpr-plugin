@@ -9,7 +9,7 @@ columns:
         label: 'offline.gdpr::lang.cookie_group.tabs.description'
         type: text
         invisible: true
-    initial_status:
-        label: 'offline.gdpr::lang.cookie_group.fields.initial_status'
+    required:
+        label: 'offline.gdpr::lang.cookie_group.fields.required'
         type: partial
         path: $/offline/gdpr/models/cookie/_initial_status.htm

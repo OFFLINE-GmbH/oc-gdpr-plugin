@@ -1,7 +1,7 @@
 <?php return [
     'plugin'          => [
-        'name'        => 'GDPR',
-        'description' => 'Rendez votre site conforme au RGPD',
+        'name'        => 'RGPD et vie privée',
+        'description' => 'Rendez votre site conforme au RGPD et lois pour la protection de la vie privée',
     ],
     'common'          => [
         'enabled'       => 'Activé',
@@ -12,12 +12,16 @@
     'cookie_banner'   => [
         'description'         => 'Affiche une bannière pour les cookies',
         'message'             => 'Nous utilisons les cookies pour personnaliser le contenu et analyser notre trafic. Veuillez décider quel type de cookies vous êtes prêt à accepter.',
-        'advanced_settings' => 'Paramètres avancés',
+        'advanced_settings'   => 'Paramètres avancés',
         'decline'             => 'Décliner',
-        'accept'              => 'Accepter les cookies',
+        'accept'              => 'Accepter',
         'include_css'         => [
             'title'       => 'Inclure le CSS',
             'description' => 'Inclure les styles par défaut pour ce composant',
+        ],
+        'include_js'          => [
+            'title'       => 'Inclure le JS',
+            'description' => 'Inclure les scripts par défaut pour ce composant',
         ],
         'hard_reload'         => [
             'title'       => 'Rechargement forcé après acceptation',
@@ -36,13 +40,6 @@
             'description' => 'Placez le composant cookieManager sur cette page.',
             'empty'       => 'Sans paramètres avancés',
         ],
-        'ignore_behaviour'    => [
-            'title'       => 'Ignorance de l\'avertissent',
-            'description' => 'Utilisez cette action si l\'utilisateur ignore la bannière et ne prend aucune décision.',
-            'nothing'     => 'Montrer à nouveau la bannière',
-            'opt-in'      => 'Opt-in (activer les cookies par défaut)',
-            'opt-out'     => 'Opt-out (ne pas activer les cookies)',
-        ],
     ],
     'cookie_manager'  => [
         'description' => 'Affiche une vue d\'ensemble et la possibilité de modifier tous les cookies que vous avez définis dans les paramètres du backend.',
@@ -60,8 +57,8 @@
     ],
     'settings'        => [
         'cookies'        => [
-            'label' => 'Cookies',
-            'description' => 'Configurer les cookies utilisés par le site et leur contrôle.',
+            'label'       => 'Cookies et modules',
+            'description' => 'Configurer les cookies et modules utilisés par le site et leur contrôle.',
         ],
         'cookie_consent' => [
             'label'                     => 'Composant Klaro!',
@@ -143,9 +140,9 @@
             ],
         ],
         'data_retention' => [
-            'label'       => 'Conservation des données',
-            'description' => 'Configurez vos politiques de conservation des données.',
-            'enabled'     => [
+            'label'             => 'Conservation des données',
+            'description'       => 'Configurez vos politiques de conservation des données.',
+            'enabled'           => [
                 'label'   => 'Nettoyage actif',
                 'comment' => 'Supprimer automatiquement les anciennes données après leur expiration.',
             ],
@@ -153,9 +150,21 @@
                 'label'   => 'Suppression des données après x jours',
                 'comment' => 'Valable pour tous les plugins enregistrés si rien d\'autre n\'est spécifié ci-dessous.',
             ],
-            'keep_days' => [
+            'keep_days'         => [
                 'label' => 'Effacer les données après x jours',
             ],
+        ],
+        'info'           => [
+            'label'                         => 'Infos et Aide',
+            'description'                   => 'Informations et aide pour la configuration',
+            'bannerlaws_title'              => 'Lois sur les bannières relatives à chaque pays ',
+            'cookieconsent_title'           => 'Guide de l\'utilisateur du Cookie de consentement',
+            'cookiesmodulessetup_title'     => 'Exemple de configuration des cookies et des modules',
+            'cookiesmodulesuserguide_title' => 'Guide de l\'utilisateur des cookies et des modules',
+            'dataretention_title'           => 'Guide de l\'utilisateur sur la conservation des données',
+            'dpolinks_title'                => 'Liens de contact des DPO, des cookies les plus courants',
+            'overallinfo_title'             => 'Informations sur le RGPD et la vie privée en ligne',
+            'index_title'                   => 'Bienvenue sur le plugin RGPD et vie privée en ligne d\'OctoberCMS.',
         ],
     ],
     'cookie_group'    => [
@@ -175,9 +184,48 @@
     ],
     'cookie'          => [
         'fields' => [
-            'code'          => 'Code',
-            'intial_status' => 'Ce cookie est activé par défaut',
-            'levels'        => 'Niveaux de cookie',
+            'name_owner'                  => 'Nom/Propriétaire',
+            'name_owner_comment'          => 'Nom du propriétaire du service, ex. Google Analytics',
+            'code'                        => 'Code',
+            'code_comment'                => 'Ceci est généré pour que le plugin fonctionne (vous n\'avez pas besoin d\'y toucher).',
+            'intial_status'               => 'Ce cookie est activé par défaut',
+            'levels'                      => 'Niveaux de cookie',
+            'item_details'                => 'Détails des articles',
+            'purpose'                     => 'Objectif',
+            'purpose_comment'             => 'Décrire le but de l\'utilisation, du traitement et de toute notification, par exemple, Détermine si la navigation de l\'utilisateur doit être enregistrée dans un registre statistique.',
+            'contact_details_dpo'         => 'Coordonnées du responsable du traitement des données',
+            'contact_details_dpo_comment' => 'En vertu de la loi sur la protection de la vie privée, vous devez donner l\'adresse de contact du responsable de la protection des données du cookie, par exemple Cloudflare, Inc. 101 Townsend St. San Francisco, CA 94107. Attention : Délégué à la protection des données, privacyquestions@cloudflare.com',
+            'contact_links_dpo'           => 'Liens de contact du responsable du traitement des données',
+            'contact_links_dpo_comment'   => 'En vertu de la loi sur la protection de la vie privée, vous devez fournir l\'adresse de la page web du responsable de la protection des données du cookie, par exemple Lien vers leurs Conditions d\'utilisation, Politique de confidentialité, Politique de gestion des cookies, etc',
+            'contact_links_dpo_prompt'    => 'Ajouter un nouveau lien',
+            'contact_links'               => [
+                'name' => 'Libellé',
+                'href' => 'Cible du lien (URL absolue)',
+            ],
+            'cookie_levels'               => [
+                'purpose_prompt'         => 'Ajouter des niveaux d\'utilisation granulaires',
+                'purpose_label'          => 'Niveaux d\'utilisation granulaires',
+                'section1_label'         => 'Conseil utile pour les niveaux d\'utilisation granulaires',
+                'section1_comment'       => 'En vertu de la loi sur la protection de la vie privée, utilisez un processus de consentement granulaire avec notre fonction de gestion des niveaux. ',
+                'section2_label'         => 'Conseil utile pour le détail des éléments',
+                'section2_comment'       => 'Vous pouvez lister autant de détails que vous le souhaitez, si c\'est pour un cookie, assurez-vous de lister tous les noms d\'identification des cookies du service. Par exemple Google Analytics peut en avoir 8 différents ou plus. Assurez-vous également d\'avoir le même nombre de champs Nom (Identification du cookie), Durée/Expiration et Type. Pour trouver la liste des cookies du site Web dans Google Chrome, allez dans Outils de développement > Application > Application > Cookies. Vous pouvez également utiliser le site Web : https://cookiepedia.co.uk/ pour rechercher des cookies.',
+                'identification'         => 'Nom (Identification du cookie)',
+                'identification_comment' => 'Le nom du code de préfixe du cookie, par exemple \'_ga\'',
+                'provider'               => 'Fournisseur',
+                'provider_comment'       => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer le nom de domaine du site Web.  (exclure https://, www et / de l\'adresse)',
+                'purpose'                => 'Objectif',
+                'purpose_comment'        => 'Décrire le but de l\'utilisation à chaque niveau granulaire dans un seul paragraphe. L\'article 5 exige que le consentement soit demandé de manière granulaire à des fins \'spécifiées et explicites\'.',
+                'expiry'                 => 'Durée/Expiration',
+                'expiry_comment'         => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer combien de temps il sera utilisé dans le navigateur de l\'utilisateur. ex: SESSION, 3 mois, 2 ans.',
+                'type'                   => 'Type',
+                'type_comment'           => 'En vertu de la loi sur la protection de la vie privée, vous devez indiquer le type de cookie ou de module, pour faciliter les choses, nous avons créé un menu déroulant.',
+            ],
+        ],
+        'tabs'   => [
+            'contact'      => 'Coordonnées du contact',
+            'levels'       => 'Gérer les niveaux',
+            'provider'     => 'Fournisseur',
+            'item_details' => 'Gérer les détails des articles',
         ],
     ],
     'permissions'     => [

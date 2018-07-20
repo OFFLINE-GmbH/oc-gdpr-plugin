@@ -10,11 +10,21 @@
                         {{ group.name }}
                     </div>
                     <div class="gdpr-cookie-manager__group-list-description">
-                        {{ group.description | raw }}
+                        {{ html_clean(group.description | raw) }}
                     </div>
                 </a>
             </li>
         {% endfor %}
+        <li>
+            <select class="gdpr-cookie-manager__consent_expiry" name="consent_expiry" id="gdpr">
+                {% for i in [3, 6, 12, 24, 36] %}
+                    {% set selected = __SELF__.consentExpiry | default(12) %}
+                    <option value="{{ i }}" {{ selected == i ? 'selected' }}>
+                        {{ ('offline.gdpr::lang.cookie_manager.expiry.' ~ i) | trans }}
+                    </option>
+                {% endfor %}
+            </select>
+        </li>
         <li>
             {% partial __SELF__ ~ '::submitbutton' %}
         </li>
