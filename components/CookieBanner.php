@@ -8,7 +8,6 @@ use OFFLINE\GDPR\Models\CookieGroup;
 class CookieBanner extends ComponentBase
 {
     public $hide = false;
-    public $hardReload = false;
     public $updatePartial = '';
     public $updateSelector = '';
     public $cookieManagerPage;
