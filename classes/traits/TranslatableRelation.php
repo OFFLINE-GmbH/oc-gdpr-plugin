@@ -16,7 +16,7 @@ trait TranslatableRelation
      */
     protected function setTranslatableFields()
     {
-        if ( ! post('RLTranslate')) {
+        if ( ! post('RLTranslate') || !$this->model) {
             return;
         }
 

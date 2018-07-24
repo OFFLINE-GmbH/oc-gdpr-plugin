@@ -51,3 +51,5 @@
     - add_further_new_cookie_fields.php
 2.0.0:
     - !!! Big update to make this plugin more GDPR and ePrivacy compliant. Users of the 1.x version will have to manually update their Cookie Levels after the update. All your other settings remain compatible. Check out the new Help and Info section to find out more on how to make your Website GDPR and ePrivacy compliant.
+2.0.1:
+    - Minor cleanup and bugfixes

@@ -25,7 +25,6 @@ This plugin provides two simple components to make your October installation GDP
 ```ini
 [cookieBanner]
 include_css = 1
-hard_reload = 0
 update_partial = "gdpr"
 update_selector = "#gdpr-reload"
 cookie_manager_page = "cookies"
@@ -50,6 +49,23 @@ wrapper.
 {% endif %}
 ```
 
+### Cookie manager
+
+The `cookieManager` component gives a visitor more control over the cookies your site is using. 
+
+This component can simply be placed on a page and needs no further configuration.  
+
+```twig
+title = "Cookies"
+url = "/cookies"
+layout = "default"
+is_hidden = 0
+
+[cookieManager]
+==
+{% component 'cookieManager' %}
+```
+
 ### cookieBanner
 
 ![image](https://user-images.githubusercontent.com/8600029/41365745-803f0ce6-6f3a-11e8-93ff-7dc0f683e241.png)
@@ -68,7 +84,6 @@ you can check for the user's consent and optionally include your resources.
 ```
 [cookieBanner]
 include_css = 1
-hard_reload = 0
 update_partial = "gdpr"
 update_selector = "#gdpr-reload"
 cookie_manager_page = "cookies"
@@ -87,34 +102,6 @@ Set the property `cookie_manager_page` to the page that contains the `cookieMana
 A `Advanced Settings` link will be placed on the `cookieBar` that links to this page. This enables the user to 
 further define what cookies are allowed.
 
-##### Hard vs. soft reload
-
-If the user accepts some cookies you have two options to proceed:
-
-1. Enable the option `hard_reload` to fully refresh the page. This is the easiest way to load your dependencies after
- the user made his decision.
- 1. Disable the option `hard_reload` and provide a `update_partial` and `update_selector`. If the user makes a 
- decision your partial will be loaded into the element defined by your selector.
- 
- ```
- [cookieBanner]
-include_css = 1
-hard_reload = 0
-update_selector = "#gdpr-reload"
-update_partial = "gdpr"
-==
-<div id="gdpr-reload">
-    {% partial 'gdpr' %}
-</div>    
-```
-
-And in your `gdpr` partial you can use:
-
-```twig
-{% if gdprCookieAllowed('google-analytics') %}
-    <!-- Include Analytics Code here -->
-{% endif %}
-```
 
 #### Twig Helpers
 
@@ -148,23 +135,6 @@ value of `0` or higher means the cookie is allowed with the returned level value
 
 Check if the user has made a decision about the cookies yet. This will return `true` on the second page view if the 
 user did not interact with the `cookieBanner` (silent opt-in).
-
-### Cookie manager
-
-The `cookieManager` component gives a visitor more control over the cookies your site is using. 
-
-This component can simply be placed on a page and needs no further configuration.  
-
-```twig
-title = "Cookies"
-url = "/cookies"
-layout = "default"
-is_hidden = 0
-
-[cookieManager]
-==
-{% component 'cookieManager' %}
-```
 
 ## Data retention
 
