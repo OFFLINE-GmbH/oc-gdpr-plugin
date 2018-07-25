@@ -14,7 +14,11 @@
         </div>
 
         {% if cookie.levels %}
-            {% partial __SELF__ ~ '::levels' cookie=cookie selectedLevel=selectedLevel %}
+            {% partial __SELF__ ~ '::levels'
+                cookie=cookie
+                selectedLevel=selectedLevel
+                isChecked=isChecked
+                isRequired=group.required %}
         {% endif %}
 
         {% partial __SELF__ ~ '::details' cookie=cookie %}

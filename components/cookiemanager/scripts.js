@@ -43,11 +43,14 @@ var manager = {
     addToggleEvents: function () {
         var self = this
         this._eachElement('.js-cookie-toggle', function (toggle) {
+            var levels = toggle.parentNode.parentNode.querySelector('.gdpr-cookie-manager__cookie-levels')
             toggle.addEventListener('change', function (e) {
                 e.preventDefault()
                 if (toggle.checked) {
+                    levels.style.display = 'block'
                     toggle.parentNode.parentNode.classList.remove(self.classes.disabled)
                 } else {
+                    levels.style.display = 'none'
                     toggle.parentNode.parentNode.classList.add(self.classes.disabled)
                 }
             })
