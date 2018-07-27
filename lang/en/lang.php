@@ -4,10 +4,12 @@
         'description' => 'Make your website GDPR and ePrivacy compliant',
     ],
     'common'          => [
-        'enabled'       => 'Enabled',
-        'disabled'      => 'Disabled',
-        'sorted'        => 'Order updated successfully',
-        'save_settings' => 'Save settings',
+        'enabled'         => 'Enabled',
+        'disabled'        => 'Disabled',
+        'sorted'          => 'Order updated successfully',
+        'save_settings'   => 'Save settings',
+        'contact_details' => 'Contact details',
+        'links'           => 'Links',
     ],
     'cookie_banner'   => [
         'description'         => 'Displays a cookie banner',

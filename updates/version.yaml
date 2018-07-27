@@ -55,3 +55,5 @@
     - Minor cleanup and bugfixes
 2.0.2:
     - Hide Levels selector if a cookie is disabled
+2.0.3:
+    - Minor wording changes in the cookieManager component
