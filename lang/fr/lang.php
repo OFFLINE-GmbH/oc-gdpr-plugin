@@ -4,10 +4,12 @@
         'description' => 'Rendez votre site conforme au RGPD et lois pour la protection de la vie privée',
     ],
     'common'          => [
-        'enabled'       => 'Activé',
-        'disabled'      => 'Désactive',
-        'sorted'        => 'Ordre mis à jour avec succès',
-        'save_settings' => 'Enregistrer',
+        'enabled'         => 'Activé',
+        'disabled'        => 'Désactive',
+        'sorted'          => 'Ordre mis à jour avec succès',
+        'save_settings'   => 'Enregistrer',
+        'contact_details' => 'Détails contact', 
+        'links'           => 'Liens', 
     ],
     'cookie_banner'   => [
         'description'         => 'Affiche une bannière pour les cookies',
@@ -43,6 +45,13 @@
     ],
     'cookie_manager'  => [
         'description' => 'Affiche une vue d\'ensemble et la possibilité de modifier tous les cookies que vous avez définis dans les paramètres du backend.',
+        'expiry'      => [
+            3  => 'Demander à nouveau dans 3 mois',
+            6  => 'Demander à nouveau dans 6 mois',
+            12 => 'Demander à nouveau dans 1 année',
+            24 => 'Demander à nouveau dans 2 années',
+            36 => 'Demander à nouveau dans 3 années',
+        ],
     ],
     'consent_manager' => [
         'description'    => 'Comprend le gestionnaire de consentement Klaro!',
@@ -209,6 +218,7 @@
                 'section1_comment'       => 'En vertu de la loi sur la protection de la vie privée, utilisez un processus de consentement granulaire avec notre fonction de gestion des niveaux. ',
                 'section2_label'         => 'Conseil utile pour le détail des éléments',
                 'section2_comment'       => 'Vous pouvez lister autant de détails que vous le souhaitez, si c\'est pour un cookie, assurez-vous de lister tous les noms d\'identification des cookies du service. Par exemple Google Analytics peut en avoir 8 différents ou plus. Assurez-vous également d\'avoir le même nombre de champs Nom (Identification du cookie), Durée/Expiration et Type. Pour trouver la liste des cookies du site Web dans Google Chrome, allez dans Outils de développement > Application > Application > Cookies. Vous pouvez également utiliser le site Web : https://cookiepedia.co.uk/ pour rechercher des cookies.',
+                'name'                   => 'Nom',
                 'identification'         => 'Nom (Identification du cookie)',
                 'identification_comment' => 'Le nom du code de préfixe du cookie, par exemple \'_ga\'',
                 'provider'               => 'Fournisseur',
