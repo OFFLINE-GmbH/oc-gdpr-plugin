@@ -57,3 +57,5 @@
     - Hide Levels selector if a cookie is disabled
 2.0.3:
     - Minor wording changes in the cookieManager component
+2.0.4:
+    - Updated french translation (thank to damsfx)
