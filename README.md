@@ -68,7 +68,8 @@ is_hidden = 0
 
 ### cookieBanner
 
-![image](https://user-images.githubusercontent.com/8600029/41365745-803f0ce6-6f3a-11e8-93ff-7dc0f683e241.png)
+![image](https://user-images.githubusercontent.com/8600029/44200030-e913bb80-a145-11e8-83fc-272bb577c4fc.png)
+
 
 The `cookieBanner` component displays a cookie banner on the first page view. There the user has the possibility to 
 enable and disable cookies that your website uses (defined via October's backend settings).
