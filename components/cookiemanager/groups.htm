@@ -20,7 +20,7 @@
                 {% for i in [3, 6, 12, 24, 36] %}
                     {% set selected = __SELF__.consentExpiry | default(12) %}
                     <option value="{{ i }}" {{ selected == i ? 'selected' }}>
-                        {{ ('offline.gdpr::lang.cookie_manager.expiry.' ~ i) | trans }}
+                        {{ ('offline.gdpr::frontend.cookie_manager.expiry.' ~ i) | trans }}
                     </option>
                 {% endfor %}
             </select>
