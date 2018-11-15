@@ -25,10 +25,6 @@
             'title'       => 'Standard JS einbinden',
             'description' => 'Lädt die mitgelieferte JS-Datei',
         ],
-        'hard_reload'         => [
-            'title'       => 'Hard-Reload nach Akzeptieren',
-            'description' => 'Seite nach Akzeptieren komplett neu laden um alle JS-Scripts korrekt einzubinden',
-        ],
         'update_partial'      => [
             'title'       => 'Partial für Soft-Reload',
             'description' => 'Dieses Partial wird nach dem Akzeptieren automatisch neu geladen.',

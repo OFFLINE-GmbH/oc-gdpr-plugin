@@ -33,12 +33,6 @@ class CookieBanner extends ComponentBase
                 'default'     => 1,
                 'type'        => 'checkbox',
             ],
-            'hard_reload'         => [
-                'title'       => 'offline.gdpr::lang.cookie_banner.hard_reload.title',
-                'description' => 'offline.gdpr::lang.cookie_banner.hard_reload.description',
-                'default'     => 0,
-                'type'        => 'checkbox',
-            ],
             'update_partial'      => [
                 'title'       => 'offline.gdpr::lang.cookie_banner.update_partial.title',
                 'description' => 'offline.gdpr::lang.cookie_banner.update_partial.description',
@@ -61,7 +55,6 @@ class CookieBanner extends ComponentBase
     public function init()
     {
         $this->consentCookie     = new ConsentCookie();
-        $this->hardReload        = $this->property('hard_reload', false);
         $this->updatePartial     = $this->property('update_partial', '');
         $this->updateSelector    = $this->property('update_selector', '#gdpr-reload');
         $this->cookieManagerPage = $this->property('cookie_manager_page');

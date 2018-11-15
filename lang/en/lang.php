@@ -25,10 +25,6 @@
             'title'       => 'Include JS',
             'description' => 'Include default scripts for this component',
         ],
-        'hard_reload'         => [
-            'title'       => 'Hard reload after the user accepted',
-            'description' => 'Do a hard reload after the user made a decision to refresh all your dependencies files',
-        ],
         'update_partial'      => [
             'title'       => 'Partial for soft reload',
             'description' => 'This partial will be loaded when the user accepts.',

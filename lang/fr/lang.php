@@ -25,10 +25,6 @@
             'title'       => 'Inclure le JS',
             'description' => 'Inclure les scripts par défaut pour ce composant',
         ],
-        'hard_reload'         => [
-            'title'       => 'Rechargement forcé après acceptation',
-            'description' => 'Effectuer un rechargement forcé après la décision de l\'utilisateur pour rafraîchir toutes les dépendances.',
-        ],
         'update_partial'      => [
             'title'       => 'Modèle de partiel pour rechargement progressif.',
             'description' => 'Ce partiel sera rechargé lorsque l\'utilisateur acceptera.',
