@@ -25,10 +25,6 @@
             'title'       => 'Zahrnúť JS',
             'description' => 'Zahrnúť predvolené skripty pre tento komponent',
         ],
-        'hard_reload'         => [
-            'title'       => 'Úplný reload po tom ako užívateľ súhlasí',
-            'description' => 'Urobí úplný reloaad po tom ako sa užívateľ rozhodol obnoviť všetky vaše súbory závislostí',
-        ],
         'update_partial'      => [
             'title'       => 'Čiastková šablóna pre soft reload',
             'description' => 'Táto čiastková šablóna bude nahratá v prípade, že užívateľ súhlasí.',
