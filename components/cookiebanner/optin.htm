@@ -4,14 +4,9 @@
             aria-pressed="false"
             class="gdpr-banner__button gdpr-banner__button--opt-in"
             data-request="onAccept"
-            data-request-success="{{
-                __SELF__.hardReload
-                ? 'document.location.reload()'
-                : '$(\'.gdpr-banner\').remove();'
-            }}"
-            {% if not __SELF__.hardReload %}
-                data-request-update="'{{ __SELF__.updatePartial }}' : '{{ __SELF__.updateSelector }}'"
-            {% endif %}>
+            data-request-success="$('.gdpr-banner').remove()"
+            data-request-update="'{{ __SELF__.updatePartial }}' : '{{ __SELF__.updateSelector }}'"
+    >
         {{ 'offline.gdpr::lang.cookie_banner.accept' | trans }}
     </button>
 </div>
