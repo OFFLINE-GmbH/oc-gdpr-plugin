@@ -15,6 +15,13 @@ class CookieGroup extends Model
     public $table = 'offline_gdpr_cookie_groups';
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
     public $translatable = ['name', 'description'];
+    public $fillable = [
+        'sort_order',
+        'slug',
+        'name',
+        'description',
+        'required',
+    ];
     public $slugs = [
         'slug' => 'name',
     ];
