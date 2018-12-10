@@ -19,8 +19,8 @@ class Cookie extends Model
         'code' => 'name',
     ];
     public $rules = [
-        'name'                => 'required',
-        'description'         => 'required',
+        'name'        => 'required',
+        'description' => 'required',
     ];
     public $casts = [
         'initial_status' => 'boolean',
@@ -29,6 +29,20 @@ class Cookie extends Model
         'levels',
         'contact_links_dpo',
         'item_details',
+    ];
+    public $fillable = [
+        'code',
+        'name',
+        'description',
+        'initial_status',
+        'levels',
+        'default_level',
+        'cookie_group_id',
+        'contact_details_pdo',
+        'contact_links_pdo',
+        'provider',
+        'item_details',
+        'sort_order',
     ];
     public $belongsTo = [
         'group' => [CookieGroup::class, 'key' => 'cookie_group_id'],
