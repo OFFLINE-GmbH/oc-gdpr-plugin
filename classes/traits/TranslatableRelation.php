@@ -16,7 +16,7 @@ trait TranslatableRelation
      */
     protected function setTranslatableFields()
     {
-        if ( ! post('RLTranslate') || !$this->model) {
+        if ( ! post('RLTranslate')) {
             return;
         }
 
@@ -26,20 +26,21 @@ trait TranslatableRelation
             $obj = DB::table('rainlab_translate_attributes')
                      ->where('locale', $key)
                      ->where('model_id', $this->id)
-                     ->where('model_type', get_class($this->model));
+                     ->where('model_type', get_class($this));
 
             if ($obj->count() > 0) {
-                return $obj->update(['attribute_data' => $data->toJson()]);
+                $obj->update(['attribute_data' => $data->toJson()]);
+                continue;
             }
 
-            return DB::table('rainlab_translate_attributes')
-                     ->insert([
-                             'locale'         => $key,
-                             'model_id'       => $this->id,
-                             'model_type'     => get_class($this->model),
-                             'attribute_data' => $data->toJson(),
-                         ]
-                     );
+            DB::table('rainlab_translate_attributes')
+              ->insert([
+                      'locale'         => $key,
+                      'model_id'       => $this->id,
+                      'model_type'     => get_class($this),
+                      'attribute_data' => $data->toJson(),
+                  ]
+              );
         }
     }
 
