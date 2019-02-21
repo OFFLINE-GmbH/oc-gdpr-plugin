@@ -65,3 +65,5 @@
     - Fixed installation via composer (thanks to angelcoding)
 2.0.7:
     - Marked Cookie and CookieGroup fields as fillable
+2.0.8:
+    - Fixed saving of translated cookie data
