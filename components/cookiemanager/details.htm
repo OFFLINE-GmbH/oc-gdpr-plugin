@@ -1,27 +1,29 @@
 <div class="gdpr-cookie-manager__cookie-item-details">
 
     {% if cookie.item_details | length > 0 %}
-        <div class="gdpr-cookie-manager__table-wrapper">
-            <table class="gdpr-cookie-manager__item-details-table">
-                <thead>
-                <tr>
-                    <th>{{ 'offline.gdpr::lang.cookie.fields.cookie_levels.name' | trans }}</th>
-                    <th>{{ 'offline.gdpr::lang.cookie.fields.cookie_levels.provider' | trans }}</th>
-                    <th>{{ 'offline.gdpr::lang.cookie.fields.cookie_levels.expiry' | trans }}</th>
-                    <th>{{ 'offline.gdpr::lang.cookie.fields.cookie_levels.type' | trans }}</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for entry in cookie.item_details %}
-                    <tr>
-                        <td>{{ entry.detail_name }}</td>
-                        <td>{{ loop.first ? cookie.provider : '' }}</td>
-                        <td>{{ entry.detail_expiry }}</td>
-                        <td>{{ entry.detail_type }}</td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+        <div class="gdpr-cookie-manager__cookie-items">
+            {% for entry in cookie.item_details %}
+                <div class="gdpr-cookie-manager__cookie-item">
+                    <p>
+                        <strong>{{ 'offline.gdpr::lang.cookie.fields.cookie_levels.name' | trans }}:</strong>
+                        {{ entry.detail_name }}
+                    </p>
+                    {% if loop.first %}
+                    <p>
+                        <strong>{{ 'offline.gdpr::lang.cookie.fields.cookie_levels.provider' | trans }}:</strong>
+                        {{ cookie.provider }}
+                    </p>
+                    {% endif %}
+                    <p>
+                        <strong>{{ 'offline.gdpr::lang.cookie.fields.cookie_levels.expiry' | trans }}:</strong>
+                        {{ entry.detail_expiry }}
+                    </p>
+                    <p>
+                        <strong>{{ 'offline.gdpr::lang.cookie.fields.cookie_levels.type' | trans }}:</strong>
+                        {{ entry.detail_type }}
+                    </p>
+                </div>
+            {% endfor %}
         </div>
     {% endif %}
 

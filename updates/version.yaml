@@ -67,3 +67,5 @@
     - Marked Cookie and CookieGroup fields as fillable
 2.0.8:
     - Fixed saving of translated cookie data
+2.0.9:
+    - Implemented responsiv design for cookie-items in cookieManager component

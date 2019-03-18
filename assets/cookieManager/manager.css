@@ -116,6 +116,12 @@
     display: flex;
 }
 
+@media screen and (max-width: 980px) {
+    .gdpr-cookie-manager__cookie {
+        flex-direction: column;
+    }
+}
+
 .gdpr-cookie-manager__cookie:last-child {
     margin-bottom: 0;
 }
@@ -134,6 +140,14 @@
     -ms-flex: 0 0 100px;
     flex: 0 0 100px;
     margin-top: .5rem;
+}
+
+@media screen and (max-width: 980px) {
+    .gdpr-cookie-manager__cookie-toggle {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 60px;
+        flex: 0 0 60px;
+    }
 }
 
 .gdpr-cookie-manager__cookie-details {
@@ -189,34 +203,58 @@
     margin-top: 2rem;
 }
 
-.gdpr-cookie-manager__table-wrapper {
+.gdpr-cookie-manager__cookie-items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gdpr-cookie-manager__cookie-item {
+    position: relative;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    padding-right: 2rem;
+}
+
+.gdpr-cookie-manager__cookie-item:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    bottom: 0;
+    width: 1px;
     display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+    background: #e3e3e3;
 }
 
-.gdpr-cookie-manager__item-details-table {
-    width: 100%;
-    min-width: 720px;
-    font-size: inherit;
-    border-collapse: collapse;
+.gdpr-cookie-manager__cookie-item:nth-child(2n):after {
+    content: none;
 }
 
-.gdpr-cookie-manager__item-details-table td,
-.gdpr-cookie-manager__item-details-table th {
-    padding: .2em;
+.gdpr-cookie-manager__cookie-item:nth-child(1n + 3):before {
+    content: "";
+    display: block;
+    height: 1px;
+    margin 1rem 0;
+    background: #e3e3e3;
 }
 
-.gdpr-cookie-manager__item-details-table th {
-    border-bottom: 1px solid #e0e0e0;
+@media screen and (max-width: 980px) {
+    .gdpr-cookie-manager__cookie-item {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #e3e3e3;
+    }
+    .gdpr-cookie-manager__cookie-item:last-child {
+        border-bottom: none;
+    }
+    .gdpr-cookie-manager__cookie-item:before, .gdpr-cookie-manager__cookie-item:after {
+        content: none !important;
+    }
 }
-
-.gdpr-cookie-manager__details-table td {
-    border-bottom: 1px solid #f0f0f0;
-}
-
 .gdpr-cookie-manager__contact-details {
     display: flex;
     flex-wrap: wrap;
