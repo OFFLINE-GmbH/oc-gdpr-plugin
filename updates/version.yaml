@@ -68,4 +68,4 @@
 2.0.8:
     - Fixed saving of translated cookie data
 2.0.9:
-    - Implemented responsiv design for cookie-items in cookieManager component
+    - "!!! Implemented responsive design for cookieManager component. The markup of the cookieManager component changed slightly. Make sure to check for display errors if you've made manual changes to this component's markup after this update."
