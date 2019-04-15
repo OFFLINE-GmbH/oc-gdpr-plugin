@@ -65,3 +65,11 @@
     - Fixed installation via composer (thanks to angelcoding)
 2.0.7:
     - Marked Cookie and CookieGroup fields as fillable
+2.0.8:
+    - Fixed saving of translated cookie data
+2.0.9:
+    - "!!! Implemented responsive design for cookieManager component. The markup of the cookieManager component changed slightly. Make sure to check for display errors if you've made manual changes to this component's markup after this update."
+2.0.10:
+    - Fixed style bug for cookieManager component.
+2.0.11:
+    - Fixed default cookie manager markup bug
