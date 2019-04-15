@@ -33,9 +33,9 @@
                 <h4 class="gdpr-cookie-manager__contact-details-heading">
                     {{ 'offline.gdpr::lang.common.contact_details' | trans }}
                 </h4>
-                <p>
+                <div>
                     {{ html_clean(cookie.contact_details_dpo | raw) }}
-                </p>
+                </div>
             </div>
         {% endif %}
 
