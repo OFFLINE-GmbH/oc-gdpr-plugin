@@ -7,7 +7,6 @@ This plugin is available on the October Marketplace: https://octobercms.com/plug
 
 * [Cookie Consent Manager](#cookie-consent-manager)
 * [Data retention](#data-retention)
-* [Klaro! Consent Manager](#klaro-consent-manager)
 
 ## Cookie Consent Manager
 
@@ -226,7 +225,9 @@ You can trigger the cleanup on demand via
 > php artisan gdpr:cleanup
 
 
-## Klaro! Consent Manager
+## Klaro! Consent Manager (Deprecated)
+
+> Use the `cookieBanner Component` instead!
 
 This plugin provides an easy integration of [Klaro! A Simple Consent Manager](https://github.com/KIProtect/klaro). 
 

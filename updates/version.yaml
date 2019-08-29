@@ -73,3 +73,5 @@
     - Fixed style bug for cookieManager component.
 2.0.11:
     - Fixed default cookie manager markup bug
+2.0.12:
+    - Fixed minor bug in cookie manager JS

@@ -44,6 +44,9 @@ var manager = {
         var self = this
         this._eachElement('.js-cookie-toggle', function (toggle) {
             var levels = toggle.parentNode.parentNode.querySelector('.gdpr-cookie-manager__cookie-levels')
+            if (!levels) {
+                return
+            }
             toggle.addEventListener('change', function (e) {
                 e.preventDefault()
                 if (toggle.checked) {
@@ -59,9 +62,11 @@ var manager = {
     resetState: function (cls, base) {
         if (! base) base = document
         var visible = base.querySelectorAll('.' + cls)
-        Array.prototype.forEach.call(visible, function (element) {
-            element.classList.remove(cls)
-        });
+        if (visible) {
+            Array.prototype.forEach.call(visible, function (element) {
+                element.classList.remove(cls)
+            });
+        }
     },
     _eachElement: function (selector, callback) {
         var elements = document.querySelectorAll(selector)
