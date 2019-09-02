@@ -75,3 +75,5 @@
     - Fixed default cookie manager markup bug
 2.0.12:
     - Fixed minor bug in cookie manager JS
+2.0.13:
+    - Added polish translations (thanks to @Magiczne)
