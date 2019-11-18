@@ -1,8 +1,8 @@
 <?php namespace OFFLINE\GDPR;
 
 use Backend\Facades\Backend;
-use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Console\OutputStyle;
+use OFFLINE\GDPR\Classes\Cleanup\CleanupService;
 use OFFLINE\GDPR\Classes\Cookies\ConsentCookie;
 use OFFLINE\GDPR\Components\ConsentManager;
 use OFFLINE\GDPR\Components\CookieBanner;
@@ -10,6 +10,8 @@ use OFFLINE\GDPR\Components\CookieManager;
 use OFFLINE\GDPR\Console\CleanUp;
 use OFFLINE\GDPR\Models\CookieConsentSettings;
 use OFFLINE\GDPR\Models\DataRetentionSettings;
+use Symfony\Component\Console\Input\StringInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
@@ -23,7 +25,16 @@ class Plugin extends PluginBase
 
     public function registerSchedule($schedule)
     {
-        $schedule->call('gdpr:cleanup')->daily();
+        // @see https://github.com/octobercms/october/issues/4771
+        // $schedule->call('gdpr:cleanup')->everyMinute();
+
+        $schedule->call(function () {
+            $service = new CleanupService(
+                new OutputStyle(new StringInput(''), new ConsoleOutput())
+            );
+
+            return $service->run();
+        })->everyMinute();
     }
 
     public function registerComponents()

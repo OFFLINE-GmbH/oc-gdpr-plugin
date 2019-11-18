@@ -140,7 +140,7 @@ class CleanupService
             DataRetentionSettings::where('item', 'offline_gdpr_data_retention_settings')->first()
         )->value;
 
-        $base   = array_merge(DataRetentionSettings::$defaults, $settings);
+        $base   = array_merge(DataRetentionSettings::$defaults, array_wrap($settings));
         $return = [];
         foreach ($base as $key => $value) {
             if (in_array($key, ['enabled', 'default_keep_days'])) {

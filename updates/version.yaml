@@ -77,3 +77,5 @@
     - Fixed minor bug in cookie manager JS
 2.0.13:
     - Added polish translations (thanks to @Magiczne)
+2.0.14:
+    - Added workaround to a October schedule bug for cleanup command (https://github.com/octobercms/october/issues/4771)
