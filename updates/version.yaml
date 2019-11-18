@@ -81,3 +81,5 @@
     - Added workaround to a October schedule bug for cleanup command (https://github.com/octobercms/october/issues/4771)
 2.0.15:
     - Bugfix release
+2.0.16:
+    - Another Bugfix release
