@@ -21,7 +21,7 @@ class Plugin extends PluginBase
 
     public function registerSchedule($schedule)
     {
-        $schedule->command('gdpr:cleanup')->everyMinute();
+        $schedule->command('gdpr:cleanup')->daily();
     }
 
     public function registerComponents()
