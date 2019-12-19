@@ -39,7 +39,11 @@ class ConsentCookie
 
     public function get()
     {
-        return Session::get('gdpr_cookie_consent', Cookie::get('gdpr_cookie_consent'));
+        $value = Session::get('gdpr_cookie_consent', Cookie::get('gdpr_cookie_consent'));
+        if (is_string($value)) {
+            $value = @json_decode($value, true);
+        }
+        return collect($value);
     }
 
     public function withExpiry($expiry)
