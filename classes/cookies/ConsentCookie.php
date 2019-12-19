@@ -39,7 +39,11 @@ class ConsentCookie
 
     public function get()
     {
-        return Session::get('gdpr_cookie_consent', Cookie::get('gdpr_cookie_consent'));
+        $value = Session::get('gdpr_cookie_consent', Cookie::get('gdpr_cookie_consent'));
+        if (is_string($value)) {
+            $value = @json_decode($value, true);
+        }
+        return collect($value);
     }
 
     public function withExpiry($expiry)
@@ -74,7 +78,7 @@ class ConsentCookie
     public function isAllowed($cookieCode, $level = 0)
     {
         $consent = $this->get();
-        if ($consent !== null && count($consent) < 1) {
+        if (is_countable($consent) && count($consent) < 1) {
             return false;
         }
 
@@ -84,7 +88,7 @@ class ConsentCookie
     public function allowedCookieLevel($cookieCode, $level = 0)
     {
         $consent = $this->get();
-        if (count($consent) < 1) {
+        if (is_countable($consent) && count($consent) < 1) {
             return -1;
         }
 
