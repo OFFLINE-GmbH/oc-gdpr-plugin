@@ -42,11 +42,11 @@
     'cookie_manager'  => [
         'description' => 'Zeigt eine Übersicht aller Cookies mit Bearbeitungsmöglichkeit an',
         'expiry'      => [
-            3  => 'In 3 Monaten erneut nachfragen',
-            6  => 'In 6 Monaten erneut nachfragen',
-            12 => 'In 1 Jahr erneut nachfragen',
-            24 => 'In 2 Jahren erneut nachfragen',
-            36 => 'In 3 Jahren erneut nachfragen',
+            '3'  => 'In 3 Monaten erneut nachfragen',
+            '6'  => 'In 6 Monaten erneut nachfragen',
+            '12' => 'In 1 Jahr erneut nachfragen',
+            '24' => 'In 2 Jahren erneut nachfragen',
+            '36' => 'In 3 Jahren erneut nachfragen',
         ],
     ],
     'consent_manager' => [

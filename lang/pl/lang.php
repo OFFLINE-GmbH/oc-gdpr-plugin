@@ -44,11 +44,11 @@ return [
     'cookie_manager' => [
         'description' => 'Wyświetla formularz przeglądu i edycji wszystkich ciasteczek zdefiniowanych w backendzie.',
         'expiry' => [
-            3 => 'Zapytaj ponownie za 3 miesiące',
-            6 => 'Zapytaj ponownie za 6 miesięcy',
-            12 => 'Zapytaj ponownie za rok',
-            24 => 'Zapytaj ponownie za 2 lata',
-            36 => 'Zapytaj ponownie za 3 lata',
+            '3' => 'Zapytaj ponownie za 3 miesiące',
+            '6' => 'Zapytaj ponownie za 6 miesięcy',
+            '12' => 'Zapytaj ponownie za rok',
+            '24' => 'Zapytaj ponownie za 2 lata',
+            '36' => 'Zapytaj ponownie za 3 lata',
         ]
     ],
     'consent_manager' => [

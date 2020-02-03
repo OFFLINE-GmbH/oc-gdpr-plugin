@@ -42,11 +42,11 @@
     'cookie_manager'  => [
         'description' => 'Zobrazí prehľad a formulár pre úpravy pre všetky cookies, ktoré ste definovali v administrácií',
         'expiry'      => [
-            3  => 'Spýtať sa znova o 3 mesiace',
-            6  => 'Spýtať sa znova o 6 mesiacov',
-            12 => 'Spýtať sa znova o 1 rok',
-            24 => 'Spýtať sa znova o 2 roky',
-            36 => 'Spýtať sa znova o 3 roky',
+            '3'  => 'Spýtať sa znova o 3 mesiace',
+            '6'  => 'Spýtať sa znova o 6 mesiacov',
+            '12' => 'Spýtať sa znova o 1 rok',
+            '24' => 'Spýtať sa znova o 2 roky',
+            '36' => 'Spýtať sa znova o 3 roky',
         ],
     ],
     'consent_manager' => [

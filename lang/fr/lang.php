@@ -42,11 +42,11 @@
     'cookie_manager'  => [
         'description' => 'Affiche une vue d\'ensemble et la possibilité de modifier tous les cookies que vous avez définis dans les paramètres du backend.',
         'expiry'      => [
-            3  => 'Demander à nouveau dans 3 mois',
-            6  => 'Demander à nouveau dans 6 mois',
-            12 => 'Demander à nouveau dans 1 année',
-            24 => 'Demander à nouveau dans 2 années',
-            36 => 'Demander à nouveau dans 3 années',
+            '3'  => 'Demander à nouveau dans 3 mois',
+            '6'  => 'Demander à nouveau dans 6 mois',
+            '12' => 'Demander à nouveau dans 1 année',
+            '24' => 'Demander à nouveau dans 2 années',
+            '36' => 'Demander à nouveau dans 3 années',
         ],
     ],
     'consent_manager' => [
