@@ -26,7 +26,7 @@ class ConsentCookie
 
         return Cookie::queue(
             'gdpr_cookie_consent',
-            $value,
+            $value->toJson(),
             $this->expiry,          // expire
             '/',                    // path
             null,                   // domain
