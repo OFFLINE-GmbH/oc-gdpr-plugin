@@ -85,3 +85,5 @@
     - Another Bugfix release
 2.0.17:
     - Fixed compatibilty problems with October Build 460
+2.0.18:
+    - Added italian translations (thanks to @inalto)
