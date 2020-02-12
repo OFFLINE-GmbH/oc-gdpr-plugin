@@ -18,6 +18,7 @@ This plugin provides two simple components to make your October installation GDP
 ### Quick start
 
 1. Define your cookie groups and cookies via the backend settings page.
+You can also import a example preset by running `php artisan gdpr:import`
 1. Place the `cookieManager` component on a `cookies.htm` page
 1. Place the `cookieBanner` component on all of your layouts. Use the configuration listed below.
 
@@ -64,6 +65,27 @@ is_hidden = 0
 ==
 {% component 'cookieManager' %}
 ```
+
+#### Cookie presets
+
+It is possible to define your cookie groups and cookies in a `yaml` file and import them using the `gdpr:import` console command.
+This allows you to define cookies once and re-use them between installations.
+
+You can find example definitions in the [`assets/preset`](./assets/preset) directory of this plugin.
+
+You can change the path where presets are loaded from by changing the `offline.gdpr::config.presets_path` config entry.
+To do this, create the file `config/offline/gdpr/config.php` and return your custom path:
+
+```php
+<?php
+return [
+    'presets_path' => '/path/to/your/presets',
+];
+``` 
+
+To import a preset simply run `php artisan gdpr:import`. You can optionally use the `--replace` flag to
+remove all existing cookie data and replace it with your preset.
+
 
 ### cookieBanner
 
@@ -135,6 +157,7 @@ value of `0` or higher means the cookie is allowed with the returned level value
 
 Check if the user has made a decision about the cookies yet. This will return `true` on the second page view if the 
 user did not interact with the `cookieBanner` (silent opt-in).
+
 
 ## Data retention
 
