@@ -71,7 +71,7 @@ is_hidden = 0
 It is possible to define your cookie groups and cookies in a `yaml` file and import them using the `gdpr:import` console command.
 This allows you to define cookies once and re-use them between installations.
 
-You can find example definitions in the [`assets/preset`](./assets/preset) directory of this plugin.
+You can find example definitions in the [`assets/presets`](./assets/presets) directory of this plugin.
 
 You can change the path where presets are loaded from by changing the `offline.gdpr::config.presets_path` config entry.
 To do this, create the file `config/offline/gdpr/config.php` and return your custom path:
