@@ -4,7 +4,7 @@ groups:
     required: 0
     sort_order: 1
     description: |
-        <p>Die Besucherstatistik dient dazu herauszufinden, wie gut unsere Website den Kundenbedürfnisen entspricht.</p>
+        <p>Die Besucherstatistik dient dazu herauszufinden, wie gut unsere Website den Kundenbedürfnissen entspricht.</p>
     cookies:
     -   name: Google Analytics
         initial_status: 1
