@@ -24,11 +24,57 @@ class ImportPresets extends Command
             DB::table('offline_gdpr_cookies')->truncate();
         }
 
+        if ($path = $this->option('path')) {
+            if (!file_exists($path)) {
+                $this->error(sprintf('Specified path is not a file: %s', $path));
+                return 1;
+            }
+            $data = collect((new Yaml())->parseFile($path));
+        } else {
+            $data = $this->getImportData();
+            if ($data === false) {
+                return 1;
+            }
+        }
+
+        $this->runImport($data);
+
+        $this->output->success('Import successful!');
+
+        return 0;
+    }
+
+    protected function getOptions()
+    {
+        return [
+            ['replace', null, InputOption::VALUE_NONE, 'Replace all existing cookies with the imported data', null],
+            ['path', null, InputOption::VALUE_OPTIONAL, 'Path to a specific YAML file with cookie presets', null],
+        ];
+    }
+
+    protected function runImport($data): void
+    {
+        collect($data->get('groups'))->each(function ($entry) {
+            $group = new CookieGroup();
+            $group->forceFill(array_except($entry, 'cookies'));
+            $group->save();
+
+            foreach ($entry['cookies'] as $cookieData) {
+                $cookie = new Cookie();
+                $cookie->forceFill($cookieData);
+                $cookie->cookie_group_id = $group->id;
+                $cookie->save();
+            }
+        });
+    }
+
+    protected function getImportData()
+    {
         $path = config('offline.gdpr::config.presets_path');
         if ( ! is_dir($path)) {
             $this->error(sprintf('Configured path is not a directory: %s', $path));
 
-            return 1;
+            return false;
         }
 
         $pattern = sprintf('%s/%s', rtrim($path, '/'), '*.{yml,yaml}');
@@ -37,7 +83,7 @@ class ImportPresets extends Command
         if (count($presets) < 1) {
             $this->error(sprintf('No presets found in path: %s', $path));
 
-            return 1;
+            return false;
         }
 
         $parsed = new Collection();
@@ -51,30 +97,6 @@ class ImportPresets extends Command
             $import = $this->choice('Which preset do you want to import?', $parsed->keys()->toArray());
         }
 
-        $data = $parsed->get($import);
-
-        collect($data->get('groups'))->each(function($entry) {
-           $group = new CookieGroup();
-           $group->forceFill(array_except($entry, 'cookies'));
-           $group->save();
-
-           foreach($entry['cookies'] as $cookieData) {
-               $cookie = new Cookie();
-               $cookie->forceFill($cookieData);
-               $cookie->cookie_group_id = $group->id;
-               $cookie->save();
-           }
-        });
-
-        $this->output->success('Import successful!');
-
-        return 0;
-    }
-
-    protected function getOptions()
-    {
-        return [
-            ['replace', null, InputOption::VALUE_NONE, 'Replace all existing cookies with the imported data', null],
-        ];
+        return $parsed->get($import);
     }
 }
