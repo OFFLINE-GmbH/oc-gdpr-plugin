@@ -6,6 +6,7 @@ use OFFLINE\GDPR\Components\ConsentManager;
 use OFFLINE\GDPR\Components\CookieBanner;
 use OFFLINE\GDPR\Components\CookieManager;
 use OFFLINE\GDPR\Console\CleanUp;
+use OFFLINE\GDPR\Console\ImportPresets;
 use OFFLINE\GDPR\Models\CookieConsentSettings;
 use OFFLINE\GDPR\Models\DataRetentionSettings;
 use System\Classes\PluginBase;
@@ -17,6 +18,7 @@ class Plugin extends PluginBase
     public function register()
     {
         $this->registerConsoleCommand('gdpr.cleanup', CleanUp::class);
+        $this->registerConsoleCommand('gdpr.import', ImportPresets::class);
     }
 
     public function registerSchedule($schedule)
@@ -83,16 +85,19 @@ class Plugin extends PluginBase
                 'keywords'    => 'gdpr',
                 'permissions' => ['offline.gdpr.manage_data_retention'],
             ],
-            'gdpr_cookie_consent' => [
-                'label'       => trans('offline.gdpr::lang.settings.cookie_consent.label'),
-                'description' => trans('offline.gdpr::lang.settings.cookie_consent.description'),
-                'category'    => 'GDPR and ePrivacy',
-                'icon'        => 'oc-icon-check-square',
-                'class'       => CookieConsentSettings::class,
-                'order'       => 200,
-                'keywords'    => 'gdpr',
-                'permissions' => ['offline.gdpr.manage_cookie_consent'],
-            ],
+            /**
+             *  @deprecated since version 2.1. Add this menu item back using the backend.menu.extendItems event.
+             */   
+            // 'gdpr_cookie_consent' => [
+            //     'label'       => trans('offline.gdpr::lang.settings.cookie_consent.label'),
+            //     'description' => trans('offline.gdpr::lang.settings.cookie_consent.description'),
+            //     'category'    => 'GDPR and ePrivacy',
+            //     'icon'        => 'oc-icon-check-square',
+            //     'class'       => CookieConsentSettings::class,
+            //     'order'       => 200,
+            //     'keywords'    => 'gdpr',
+            //     'permissions' => ['offline.gdpr.manage_cookie_consent'],
+            // ],
         ];
     }
 

@@ -87,3 +87,5 @@
     - Fixed compatibilty problems with October Build 460
 2.0.18:
     - Added italian translations (thanks to @inalto)
+2.1.0:
+    - Removed support for Klaro! consent manager. Added ability to import cookies from yaml presets. Check the README for instructions on how to use this feature.
