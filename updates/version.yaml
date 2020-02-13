@@ -91,3 +91,5 @@
     - Removed support for Klaro! consent manager. Added ability to import cookies from yaml presets. Check the README for instructions on how to use this feature.
 2.1.1:
     - Added `--path` option to new `gdpr:import` command
+2.2.0:
+    - "Added cookie banner log: You can now opt-in via the backend settings to keep a log of all cookie requests and the decision the user made"
