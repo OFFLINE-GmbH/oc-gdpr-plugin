@@ -118,6 +118,12 @@ cookie_manager_page = "cookies"
 {% component 'cookieBanner' %}
 ```
 
+#### Log
+
+You can enable a log via the backend settings so every cookie banner request gets logged. This is useful to get an idea of the number of users that do not accept a cookie request and therefore never end up in your analytics data.
+
+The log only contains the user's session id and their decision.
+
 #### Properties
 
 If you don't want to include the default css use `include_css = 0` when including your component.
