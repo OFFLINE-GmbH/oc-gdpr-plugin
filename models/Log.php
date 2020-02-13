@@ -1,5 +1,6 @@
 <?php namespace OFFLINE\GDPR\Models;
 
+use Carbon\Carbon;
 use Model;
 
 class Log extends Model
@@ -18,4 +19,9 @@ class Log extends Model
     ];
 
     public $fillable = ['decision', 'session_id'];
+
+    public function gdprCleanup(Carbon $deadline, int $keepDays)
+    {
+        self::where('created_at', '<', $deadline)->delete();
+    }
 }
