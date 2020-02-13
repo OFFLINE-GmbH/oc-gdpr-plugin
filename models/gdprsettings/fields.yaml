@@ -1,0 +1,7 @@
+fields:
+    log_enabled:
+        label: 'offline.gdpr::lang.settings.general.log_enabled.label'
+        span: auto
+        default: 0
+        type: switch
+        comment: 'offline.gdpr::lang.settings.general.log_enabled.comment'

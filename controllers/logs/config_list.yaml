@@ -1,0 +1,14 @@
+title: Logs
+modelClass: OFFLINE\GDPR\Models\Log
+list: $/offline/gdpr/models/log/columns.yaml
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+defaultSort:
+    column: created_at
+    direction: desc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

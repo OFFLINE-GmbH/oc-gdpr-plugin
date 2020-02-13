@@ -9,6 +9,8 @@ use OFFLINE\GDPR\Console\CleanUp;
 use OFFLINE\GDPR\Console\ImportPresets;
 use OFFLINE\GDPR\Models\CookieConsentSettings;
 use OFFLINE\GDPR\Models\DataRetentionSettings;
+use OFFLINE\GDPR\Models\GDPRSettings;
+use OFFLINE\GDPR\Models\Log;
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
@@ -52,6 +54,28 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function boot()
+    {
+        \Event::listen('backend.menu.extendItems', function ($manager) {
+            if ( ! GDPRSettings::get('log_enabled')) {
+                $manager->removeMainMenuItem('OFFLINE.GDPR', 'main-menu-item');
+            }
+        });
+        \Event::listen('offline.gdpr::cleanup.register', function () {
+            return [
+                'id'     => 'offline-gdpr-logs',
+                'label'  => trans('offline.gdpr::lang.plugin.name'),
+                'models' => [
+                    [
+                        'label'   => trans('offline.gdpr::lang.log.log'),
+                        'comment' => trans('offline.gdpr::lang.log.log_comment'),
+                        'class'   => Log::class,
+                    ],
+                ],
+            ];
+        });
+    }
+
     public function registerSettings()
     {
         return [
@@ -74,6 +98,16 @@ class Plugin extends PluginBase
                 'order'       => 210,
                 'keywords'    => 'gdpr',
                 'permissions' => ['offline.gdpr.manage_cookie_groups'],
+            ],
+            'gdpr_settings' => [
+                'label' => trans('offline.gdpr::lang.settings.general.label'),
+                'description' => trans('offline.gdpr::lang.settings.general.description'),
+                'category' => 'GDPR and ePrivacy',
+                'icon' => 'oc-icon-gear',
+                'class' => GDPRSettings::class,
+                'order' => 210,
+                'keywords' => 'gdpr',
+                'permissions' => ['offline.gdpr.manage_logs'],
             ],
             'gdpr_data_retention' => [
                 'label'       => trans('offline.gdpr::lang.settings.data_retention.label'),

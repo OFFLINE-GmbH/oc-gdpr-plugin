@@ -1,0 +1,13 @@
+
+
+<?php
+$colors = [
+    'declined' => 'danger',
+    'accepted' => 'success',
+    'undecided' => 'muted',
+];
+?>
+
+<span class="oc-icon-circle text-<?= $colors[$value] ?? 'muted' ?>">
+    <?= e(trans('offline.gdpr::lang.log.' . $value)); ?>
+</span>

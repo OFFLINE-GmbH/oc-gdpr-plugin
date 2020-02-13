@@ -4,6 +4,8 @@ namespace OFFLINE\GDPR\Classes\Cookies;
 
 use Illuminate\Support\Facades\Cookie;
 use OFFLINE\GDPR\Models\CookieGroup;
+use OFFLINE\GDPR\Models\GDPRSettings;
+use OFFLINE\GDPR\Models\Log;
 use Session;
 
 class ConsentCookie
@@ -16,6 +18,14 @@ class ConsentCookie
 
     public function set($value)
     {
+        // Log the user's decision.
+        if (GDPRSettings::get('log_enabled')) {
+            Log::updateOrCreate(
+                ['session_id' => Session::getId()],
+                ['decision' => $value === false ? Log::DECLINED : Log::ACCEPTED]
+            );
+        }
+
         // Required cookies cannot be disabled and are therefore always added
         // to the consent cookie by default.
         $value = $this->appendRequiredCookies($value);
@@ -43,6 +53,7 @@ class ConsentCookie
         if (is_string($value)) {
             $value = @json_decode($value, true);
         }
+
         return collect($value);
     }
 
