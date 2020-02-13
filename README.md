@@ -236,7 +236,7 @@ You can either specify a `closure` or a model class that defines a `gdprCleanup`
 signature:
 
 ```php
-    public function gdprCleanup(Carbon $deadline, int $keepDays)
+    public function gdprCleanup(\Carbon\Carbon $deadline, int $keepDays)
     {
         self::where('created_at', '<', $deadline)->each(function (self $item) {
             $item->delete();
