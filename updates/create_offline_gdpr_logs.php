@@ -7,6 +7,10 @@ class CreateOfflineGdprLogs extends Migration
 {
     public function up()
     {
+        if (Schema::hasTable('offline_gdpr_logs')) {
+            return;
+        }
+
         Schema::create('offline_gdpr_logs', function($table)
         {
             $table->engine = 'InnoDB';
