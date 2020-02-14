@@ -10,5 +10,20 @@ class GDPRSettings extends Model
 
     public static $defaults = [
         'enabled' => false,
+        'ignore_useragents' => [
+            ['useragent' => '/Bot/i'],
+            ['useragent' => '/Googlebot/i'],
+            ['useragent' => '/Baidu/i'],
+            ['useragent' => '/Bing/i'],
+            ['useragent' => '/Yandex/i'],
+            ['useragent' => '/1pilot/i'],
+            ['useragent' => '/crawler/i'],
+            ['useragent' => '/curl/i'],
+        ]
     ];
+
+    public function initSettingsData()
+    {
+        $this->fill(self::$defaults);
+    }
 }

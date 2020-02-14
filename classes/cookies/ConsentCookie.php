@@ -3,6 +3,7 @@
 namespace OFFLINE\GDPR\Classes\Cookies;
 
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Request;
 use OFFLINE\GDPR\Models\CookieGroup;
 use OFFLINE\GDPR\Models\GDPRSettings;
 use OFFLINE\GDPR\Models\Log;
@@ -22,7 +23,7 @@ class ConsentCookie
         if (GDPRSettings::get('log_enabled')) {
             Log::updateOrCreate(
                 ['session_id' => Session::getId()],
-                ['decision' => $value === false ? Log::DECLINED : Log::ACCEPTED]
+                ['decision' => $value === false ? Log::DECLINED : Log::ACCEPTED, 'useragent' => Request::userAgent()]
             );
         }
 

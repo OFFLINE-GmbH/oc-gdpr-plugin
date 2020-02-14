@@ -72,9 +72,9 @@
                 'label' => 'Log cookie requests',
                 'comment' => 'Cookie requests to users and their decisions are logged',
             ],
-            'log_keep_days' => [
-                'label' => 'Clean up after days',
-                'comment' => 'Remove all logged requests after this number of days',
+            'ignore_useragents' => [
+                'label' => 'Ignore User agents',
+                'comment' => 'Don\'t log requests of these user agents',
             ],
         ],
         'cookie_consent' => [

@@ -2,6 +2,7 @@
 
 use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 use OFFLINE\GDPR\Classes\Cookies\ConsentCookie;
 use OFFLINE\GDPR\Models\CookieGroup;
@@ -72,7 +73,10 @@ class CookieBanner extends ComponentBase
         }
 
         if (GDPRSettings::get('log_enabled')) {
-            Log::updateOrCreate(['session_id' => Session::getId()], ['decision' => Log::UNDECIDED]);
+            Log::updateOrCreate(
+                ['session_id' => Session::getId()],
+                ['decision' => Log::UNDECIDED, 'useragent' => Request::userAgent()]
+            );
         }
 
         if ($this->property('include_css')) {

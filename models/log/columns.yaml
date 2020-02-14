@@ -10,6 +10,9 @@ columns:
         label: 'offline.gdpr::lang.log.decision'
         type: partial
         path: $/offline/gdpr/models/log/_decision.htm
+    useragent:
+        label: Useragent
+        type: text
     created_at:
         label: 'offline.gdpr::lang.log.visited'
         type: datetime

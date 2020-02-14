@@ -96,3 +96,6 @@
 2.2.1:
     - Fixed cookie log migration
     - create_offline_gdpr_logs.php
+2.2.2:
+    - Added option to ignore specific user agents from cookie request log
+    - add_useragent_to_logs_table.php

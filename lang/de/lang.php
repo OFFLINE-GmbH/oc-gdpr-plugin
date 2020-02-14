@@ -72,9 +72,9 @@
                 'label' => 'Zeichne Cookie-Anfragen auf',
                 'comment' => 'Die Cookie-Anfragen an alle Besucher werden aufgezeichnet',
             ],
-            'log_keep_days' => [
-                'label' => 'Lösche Daten nach Tagen',
-                'comment' => 'Aufgezeichnete Anfragen werden automatisch nach dieser Anzahl von Tagen gelöscht',
+            'ignore_useragents' => [
+                'label' => 'Ignorierte User-Agents',
+                'comment' => 'Zeichne Anfragen folgender User-Agents nicht auf',
             ],
         ],
         'cookie_consent' => [
