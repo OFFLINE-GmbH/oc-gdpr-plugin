@@ -57,7 +57,7 @@ class Plugin extends PluginBase
     public function boot()
     {
         \Event::listen('backend.menu.extendItems', function ($manager) {
-            if ( ! GDPRSettings::get('log_enabled')) {
+            if ((bool)GDPRSettings::get('log_enabled') !== true) {
                 $manager->removeMainMenuItem('OFFLINE.GDPR', 'main-menu-item');
             }
         });

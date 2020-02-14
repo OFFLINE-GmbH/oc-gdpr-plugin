@@ -18,7 +18,27 @@ class Log extends Model
         'decision' => 'required',
     ];
 
-    public $fillable = ['decision', 'session_id'];
+    public $fillable = ['decision', 'session_id', 'useragent'];
+
+    public function beforeCreate()
+    {
+        $regs = GDPRSettings::get('ignore_useragents', GDPRSettings::$defaults['ignore_useragents']);
+        foreach ($regs as $regex) {
+            try {
+                if (!isset($regex['useragent'])) {
+                    continue;
+                }
+                if (preg_match($regex['useragent'], $this->useragent)) {
+                    return false;
+                }
+            } catch (\Throwable $e) {
+                logger()->error(
+                    '[OFFLINE.GDPR] preg_match on user agent failed.',
+                    ['regex' => $regex, 'ua' => $this->useragent, 'e' => $e]
+                );
+            }
+        }
+    }
 
     public function gdprCleanup(Carbon $deadline, int $keepDays)
     {
