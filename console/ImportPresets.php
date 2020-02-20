@@ -92,7 +92,10 @@ class ImportPresets extends Command
             $parsed->put($yaml['title'] ?? 'Untitled', collect($yaml));
         }
 
-        $import = array_key_first($parsed->toArray());
+        $values = $parsed->toArray();
+        reset($values);
+        $import = key($values);
+
         if (count($presets) > 1) {
             $import = $this->choice('Which preset do you want to import?', $parsed->keys()->toArray());
         }

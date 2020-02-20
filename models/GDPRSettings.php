@@ -19,6 +19,7 @@ class GDPRSettings extends Model
             ['useragent' => '/1pilot/i'],
             ['useragent' => '/crawler/i'],
             ['useragent' => '/curl/i'],
+            ['useragent' => '/facebook/i'],
         ]
     ];
 

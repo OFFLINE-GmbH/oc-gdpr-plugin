@@ -99,3 +99,5 @@
 2.2.2:
     - Added option to ignore specific user agents from cookie request log
     - add_useragent_to_logs_table.php
+2.2.3:
+    - Optimized PHP 7.2 support
