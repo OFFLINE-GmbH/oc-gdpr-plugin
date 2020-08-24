@@ -101,3 +101,5 @@
     - add_useragent_to_logs_table.php
 2.2.3:
     - Optimized PHP 7.2 support
+2.2.4:
+    - Run cookiemanager/script.js in DOMContentLoaded event.
