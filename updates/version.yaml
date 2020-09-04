@@ -37,9 +37,7 @@
 1.0.18:
     - Fixed bug with data retention closures (thanks to Alex360hd)
 1.1.1:
-    - !!! Removed cookie groups from banner component since they arent in line with GDPR regulations. Also added new
-     fields to optimize ePrivacy conformity. (*Very big thank you* to ayumihamsaki for giving a lot of feedback via our
-      GitHub page!)
+    - !!! Removed cookie groups from banner component since they arent in line with GDPR regulations. Also added new fields to optimize ePrivacy conformity. (*Very big thank you* to ayumihamsaki for giving a lot of feedback via our GitHub page!)
     - remove_group_initial_status.php
     - add_new_cookie_fields.php
 1.2.1:
