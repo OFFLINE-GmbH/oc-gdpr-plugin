@@ -101,3 +101,5 @@
     - Optimized PHP 7.2 support
 2.2.4:
     - Run cookiemanager/script.js in DOMContentLoaded event.
+2.2.5:
+    - Fixed bug in update message
