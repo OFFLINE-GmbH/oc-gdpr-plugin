@@ -103,3 +103,5 @@
     - Run cookiemanager/script.js in DOMContentLoaded event.
 2.2.5:
     - Fixed bug in update message
+2.2.6:
+    - Fixed October 469 compatibility issue (The scripts.js partial was renamed to scripts.htm, make sure to update your code if you did override this partial)
