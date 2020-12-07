@@ -41,19 +41,7 @@ class CookieManager extends ComponentBase
 
     public function init()
     {
-        $this->consentCookie = new ConsentCookie();
-
-        if ( ! post('_gdpr_submit')) {
-            return;
-        }
-
-        $enabled = collect(post('cookies'))->filter(function ($item) {
-            return $item['enabled'] ?? false;
-        })->map(function ($item) {
-            return (int)($item['level'] ?? 0);
-        })->toArray();
-
-        $this->consentCookie->withExpiry(post('consent_expiry', 12))->set($enabled);
+        $this->setPreferences();
     }
 
     public function onRun()
@@ -68,8 +56,30 @@ class CookieManager extends ComponentBase
         $this->consent       = $this->consentCookie->get();
     }
 
+    public function onUpdate()
+    {
+        $this->setPreferences();
+    }
+
     protected function getCookieGroups()
     {
         return CookieGroup::with('cookies')->orderBy('sort_order', 'ASC')->get();
+    }
+
+    protected function setPreferences()
+    {
+        $this->consentCookie = new ConsentCookie();
+
+        if ( ! post('_gdpr_submit')) {
+            return;
+        }
+
+        $enabled = collect(post('cookies'))->filter(function ($item) {
+            return $item['enabled'] ?? false;
+        })->map(function ($item) {
+            return (int)($item['level'] ?? 0);
+        })->toArray();
+
+        $this->consentCookie->withExpiry(post('consent_expiry', 12))->set($enabled);
     }
 }
