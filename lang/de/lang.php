@@ -38,6 +38,10 @@
             'description' => 'Auf dieser Seite muss die cookieManager Komponente platziert werden',
             'empty' => 'Ohne erweiterte Einstellungen',
         ],
+        'deferred' => [
+            'title' => 'Verzögert laden',
+            'description' => 'Der Manager wird erst geladen, wenn die onRenderCookieManager Methode aufgerufen wird',
+        ],
     ],
     'cookie_manager' => [
         'description' => 'Zeigt eine Übersicht aller Cookies mit Bearbeitungsmöglichkeit an',
