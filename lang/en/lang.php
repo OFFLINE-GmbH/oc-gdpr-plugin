@@ -38,6 +38,10 @@
             'description' => 'Place the cookieManager component on this page',
             'empty' => 'Without advanced settings',
         ],
+        'deferred' => [
+            'title' => 'Deferred',
+            'description' => 'The manager is only loaded if the onRenderCookieManager method is called explicitly',
+        ],
     ],
     'cookie_manager' => [
         'description' => 'Displays an overview and edit form for all the cookies you have defined in the backend settings',
