@@ -107,3 +107,5 @@
     - Fixed October 469 compatibility issue (The scripts.js partial was renamed to scripts.htm, make sure to update your code if you did override this partial)
 2.2.7:
     - Added onRenderCookieManager method to the CookieManager component to render the markup dynamically. This is useful to render the manager dynamically inside a popup via a AJAX request.
+2.2.8:
+    - The onAccept component method now returns the rendered GDPR partial
