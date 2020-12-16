@@ -87,6 +87,16 @@ class CookieBanner extends ComponentBase
     public function onAccept()
     {
         $this->setDefaultConsent();
+
+        if ($this->updateSelector && $this->updatePartial) {
+            
+            $content = $this->renderPartial($this->updatePartial);
+
+            return [
+                $this->updateSelector => $content,
+                'content' => $content
+            ];
+        }
     }
 
     public function onDecline()
