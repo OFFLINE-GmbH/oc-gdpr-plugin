@@ -1,6 +1,7 @@
 <?php namespace OFFLINE\GDPR\Components;
 
 use Cms\Classes\ComponentBase;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use OFFLINE\GDPR\Classes\Cookies\ConsentCookie;
 use OFFLINE\GDPR\Models\CookieGroup;
@@ -78,6 +79,12 @@ class CookieManager extends ComponentBase
 
     public function onRun()
     {
+        // The CookieManager form has been submitted. Return a proper redirect
+        // here so the user receives the newly set cookie for further requests.
+        if (post('_gdpr_submit')) {
+            return Redirect::back();
+        }
+
         // Defer the setup of the cookie manager until later. This comes in
         // handy if you want to display the cookie manager in a popup via
         // the onRenderCookieManager method.

@@ -109,3 +109,5 @@
     - Added onRenderCookieManager method to the CookieManager component to render the markup dynamically. This is useful to render the manager dynamically inside a popup via a AJAX request.
 2.2.8:
     - The onAccept component method now returns the rendered GDPR partial
+2.2.9:
+    - Return a proper Redirect::back() after the CookieManager form was submitted. This makes sure the newly set GDPR consent cookie will be available immediately.
