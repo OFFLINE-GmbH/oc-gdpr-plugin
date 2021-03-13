@@ -12,8 +12,8 @@
         'links' => 'Links',
     ],
     'cookie_banner' => [
-        'description' => 'Mostra um banner de coolies',
-        'message' => 'O website utiçiza cookies para personalizar conteúdo e para analizar o tráfego no website. Por favor escolha se quer aceitar as cookies do nosso website.',
+        'description' => 'Mostra um banner de cookies',
+        'message' => 'O website utiliza cookies para personalizar conteúdo e para analizar o tráfego no website. Por favor escolha se quer aceitar as cookies do nosso website.',
         'advanced_settings' => 'Definições Avançadas',
         'decline' => 'Rejeitar',
         'accept' => 'Aceitar',
