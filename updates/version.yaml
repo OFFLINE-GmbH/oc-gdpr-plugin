@@ -115,3 +115,5 @@
     - "Added portuguese translations (thanks to @tospe)"
 2.2.11:
     - "Optimized compatibility with Winter CMS (thanks to @damsfx)"
+2.2.12:
+    - "Fixed bug introduced in previous release"

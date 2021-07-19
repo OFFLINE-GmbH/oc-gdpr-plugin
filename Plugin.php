@@ -75,15 +75,17 @@ class Plugin extends PluginBase
                 ],
             ];
         });
-        Attribute::extend(function ($model) {
-            $model->addFillable([
-                'locale',
-                'model_id',
-                'model_type',
-                'attribute_data',
-            ]);
-            $model->timestamps = false;
-        });
+        if (class_exists(RainLab\Translate\Models\Attribute::class)) {
+            Attribute::extend(function ($model) {
+                $model->addFillable([
+                    'locale',
+                    'model_id',
+                    'model_type',
+                    'attribute_data',
+                ]);
+                $model->timestamps = false;
+            });
+        }
     }
 
     public function registerSettings()
