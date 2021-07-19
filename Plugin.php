@@ -12,6 +12,7 @@ use OFFLINE\GDPR\Models\DataRetentionSettings;
 use OFFLINE\GDPR\Models\GDPRSettings;
 use OFFLINE\GDPR\Models\Log;
 use System\Classes\PluginBase;
+use RainLab\Translate\Models\Attribute;
 
 class Plugin extends PluginBase
 {
@@ -74,6 +75,15 @@ class Plugin extends PluginBase
                 ],
             ];
         });
+        Attribute::extend(function ($model) {
+            $model->addFillable([
+                'locale',
+                'model_id',
+                'model_type',
+                'attribute_data',
+            ]);
+            $model->timestamps = false;
+        });
     }
 
     public function registerSettings()
@@ -121,7 +131,7 @@ class Plugin extends PluginBase
             ],
             /**
              *  @deprecated since version 2.1. Add this menu item back using the backend.menu.extendItems event.
-             */   
+             */
             // 'gdpr_cookie_consent' => [
             //     'label'       => trans('offline.gdpr::lang.settings.cookie_consent.label'),
             //     'description' => trans('offline.gdpr::lang.settings.cookie_consent.description'),
@@ -134,5 +144,4 @@ class Plugin extends PluginBase
             // ],
         ];
     }
-
 }
