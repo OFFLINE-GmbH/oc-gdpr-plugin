@@ -37,7 +37,7 @@
 1.0.18:
     - Fixed bug with data retention closures (thanks to Alex360hd)
 1.1.1:
-    - !!! Removed cookie groups from banner component since they arent in line with GDPR regulations. Also added new fields to optimize ePrivacy conformity. (*Very big thank you* to ayumihamsaki for giving a lot of feedback via our GitHub page!)
+    - "!!! Removed cookie groups from banner component since they arent in line with GDPR regulations. Also added new fields to optimize ePrivacy conformity. (*Very big thank you* to ayumihamsaki for giving a lot of feedback via our GitHub page!)"
     - remove_group_initial_status.php
     - add_new_cookie_fields.php
 1.2.1:
@@ -48,7 +48,7 @@
     - General cleanup and extension of plugin
     - add_further_new_cookie_fields.php
 2.0.0:
-    - !!! Big update to make this plugin more GDPR and ePrivacy compliant. Users of the 1.x version will have to manually update their Cookie Levels after the update. All your other settings remain compatible. Check out the new Help and Info section to find out more on how to make your Website GDPR and ePrivacy compliant.
+    - "!!! Big update to make this plugin more GDPR and ePrivacy compliant. Users of the 1.x version will have to manually update their Cookie Levels after the update. All your other settings remain compatible. Check out the new Help and Info section to find out more on how to make your Website GDPR and ePrivacy compliant."
 2.0.1:
     - Minor cleanup and bugfixes
 2.0.2:
@@ -117,3 +117,5 @@
     - "Optimized compatibility with Winter CMS (thanks to @damsfx)"
 2.2.12:
     - "Fixed bug introduced in previous release"
+2.2.13:
+    - "Fixed yaml syntax in changelog"

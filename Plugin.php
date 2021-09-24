@@ -75,7 +75,7 @@ class Plugin extends PluginBase
                 ],
             ];
         });
-        if (class_exists(RainLab\Translate\Models\Attribute::class)) {
+        if (class_exists(\RainLab\Translate\Models\Attribute::class)) {
             Attribute::extend(function ($model) {
                 $model->addFillable([
                     'locale',
