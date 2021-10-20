@@ -13,8 +13,8 @@
     ],
     'cookie_banner' => [
         'description' => 'Näytä evästebanneri',
-        'message' => 'Käytämme sivustolla evästeitä, joiden avulla personoimme ja analysoimme liikennettä. Haluatko hyväksyä evästeet sivustoltamme?',
-        'advanced_settings' => 'Edistyneet asetukset',
+        'message' => 'Käytämme sivustolla evästeitä, joiden avulla kehitämme sivustoa ja analysoimme liikennettä. Haluatko hyväksyä evästeet sivustoltamme?',
+        'advanced_settings' => 'Muokkaa asetuksia',
         'decline' => 'Hylkää',
         'accept' => 'Hyväksy',
         'include_css' => [
@@ -238,7 +238,7 @@
                 'purpose' => 'Tarkoitus',
                 'purpose_comment' => 'Kuvaa käyttötarkoitus yleisellä tasolla yhdessä kappaleessa. Pykälä 5 vaatii, että hyväksyntää pyydetään yleisellä tavalla kuvauttuun eksplisiittiseen tarkoitukseen.',
                 'expiry' => 'Kesto/Vanheneminen',
-                'expiry_comment' => 'ePrivacy lain mukaan, sinun on kerrottava, kuinka kauan tietoja käytetään käyttäjän selaimesta esim. SESSIO, 3 kk, 2 vuotta.',
+                'expiry_comment' => 'ePrivacy lain mukaan, sinun on kerrottava, kuinka kauan tietoja käytetään käyttäjän selaimesta esim. Instuntokohtainen, 3 kk, 2 vuotta.',
                 'type' => 'Tyyppi',
                 'type_comment' => 'ePrivacy-laista johtuen, sinun on kerrottava, millainen keksi tai moduuli on, helpottaaksemme olemme luoneet pudotusvalikon',
             ],
@@ -256,7 +256,7 @@
         'manage_cookie_groups' => 'Voi hallita evästeryhmiä',
     ],
     'log' => [
-        'session_id' => 'Session ID',
+        'session_id' => 'Istunnon ID',
         'visited' => 'Vierailtu',
         'decided' => 'Päätöksiä',
         'decision' => 'Päätös',

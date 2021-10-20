@@ -4,7 +4,7 @@ groups:
     required: 0
     sort_order: 1
     description: |
-        <p>Käytämme evästeitä mittaamiseen ja sivustomme kehittämiseen.</p>
+        Käytämme evästeitä mittaamiseen ja sivustomme kehittämiseen.
     cookies:
     -   name: Google Analytics
         initial_status: 1
@@ -13,13 +13,13 @@ groups:
         default_level: 0
         provider: analytics.google.com
         description: |
-            <p>Google Analytics seuraa mm. mitä sivuja selaat ja kuinka usein.</p>
+            Google Analytics seuraa mm. mitä sivuja selaat ja kuinka usein.
         contact_details_dpo: |
-            <p>Google Inc. <br>
-               1600 Amphitheatre Parkway<br>
-               Mountain View, CA 94043<br>
-               United States
-            </p>
+            Google Inc.,
+            1600 Amphitheatre Parkway,
+            Mountain View, CA 94043,
+            United States
+
         contact_links_dpo:
         -   contact_link_href: https://policies.google.com/privacy?hl=fi
             contact_link_name: Tietosuojakäytäntö
@@ -36,10 +36,10 @@ groups:
     required: 1
     sort_order: 2
     description: |
-        <p>Seuraavat evästeet ovat pakollisia sivuston toiminnan takaamiseksi.</p>
+        Seuraavat evästeet ovat pakollisia sivuston toiminnan takaamiseksi juuri nyt.
     cookies:
-    -   name: Sessio-eväste
+    -   name: Istuntoeväste
         initial_status: 1
         sort_order: 1
         description: |
-            <p>Sessio-evästettä käytetään tunnistamaan juuri sinun tekemäsi sivuston lataukset.</p>
+            Istuntoevästettä käytetään tunnistamaan juuri sinun tekemäsi sivuston lataukset.
