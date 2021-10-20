@@ -1,0 +1,45 @@
+title: "Example preset (DE)"
+groups:
+-   name: Besucherstatistik
+    required: 0
+    sort_order: 1
+    description: |
+        <p>Die Besucherstatistik dient dazu herauszufinden, wie gut unsere Website den Kundenbedürfnissen entspricht.</p>
+    cookies:
+    -   name: Google Analytics
+        initial_status: 1
+        sort_order: 1
+        levels: []
+        default_level: 0
+        provider: analytics.google.com
+        description: |
+            <p>Mit Google Analytics wird aufgezeichnet, wie Besucher unsere Website verwenden.</p>
+        contact_details_dpo: |
+            <p>Google Inc. <br>
+               1600 Amphitheatre Parkway<br>
+               Mountain View, CA 94043<br>
+               United States
+            </p>
+        contact_links_dpo:
+        -   contact_link_href: https://policies.google.com/privacy?hl=de
+            contact_link_name: Datenschutzerklärung und Nutzungsbedingungen
+        item_details:
+        -   detail_name: _ga
+            detail_expiry: 2 Jahre
+            detail_type: Identifier for Advertisers
+        -   detail_name: _gid
+            detail_expiry: 2 Jahre
+            detail_type: Identifier for Advertisers
+
+
+-   name: Benötigte Cookies
+    required: 1
+    sort_order: 2
+    description: |
+        <p>Diese Cookies werden zum Betreiben der Website zwingend benötigt.</p>
+    cookies:
+    -   name: Session cookie
+        initial_status: 1
+        sort_order: 1
+        description: |
+            <p>Mit Hilfe des Session Cookies können wir Sie gegenüber des Webservers identifizieren. Somit können wir Ihnen bei jeden Seitenaufruf Ihr persönliches Profil anzeigen.</p>

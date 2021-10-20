@@ -1,0 +1,27 @@
+<div class="scoreboard scoreboard--fix-until-toolbar-buttons-are-added">
+    <div data-control="toolbar">
+
+        <div class="scoreboard-item title-value">
+            <h4><?= e(trans('offline.gdpr::lang.log.total')) ?></h4>
+            <p><?= e($stats->get('total')) ?></p>
+            <p class="description"><?= e(trans('offline.gdpr::lang.log.total_logged')) ?></p>
+        </div>
+
+        <div class="scoreboard-item control-chart" data-control="chart-pie">
+            <ul>
+                <?php
+                $colors = [
+                    'undecided' => '#989ea5',
+                    'declined' => '#cc3300',
+                    'accepted' => '#95b753',
+                ];
+                foreach($stats->get('byState') as $state): ?>
+                <li data-color="<?= e($colors[$state->label] ?? '#000') ?>">
+                    <?= e(trans('offline.gdpr::lang.log.' . $state->label)) ?>
+                    <span><?= e($state->value)?></span>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+</div>

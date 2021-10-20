@@ -1,0 +1,20 @@
+fields:
+    log_enabled:
+        label: 'offline.gdpr::lang.settings.general.log_enabled.label'
+        span: auto
+        default: 0
+        type: switch
+        comment: 'offline.gdpr::lang.settings.general.log_enabled.comment'
+
+    ignore_useragents:
+        label: 'offline.gdpr::lang.settings.general.ignore_useragents.label'
+        span: auto
+        default: 0
+        type: repeater
+        commentAbove: 'offline.gdpr::lang.settings.general.ignore_useragents.comment'
+        form:
+            fields:
+                useragent:
+                    type: text
+                    label: Useragent (Regex)
+                    span: full

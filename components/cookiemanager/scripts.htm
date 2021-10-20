@@ -75,4 +75,7 @@ var manager = {
         }
     }
 }
-manager.init();
+
+document.addEventListener('DOMContentLoaded', function() {
+    manager.init();
+});

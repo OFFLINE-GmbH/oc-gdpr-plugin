@@ -37,9 +37,7 @@
 1.0.18:
     - Fixed bug with data retention closures (thanks to Alex360hd)
 1.1.1:
-    - !!! Removed cookie groups from banner component since they arent in line with GDPR regulations. Also added new
-     fields to optimize ePrivacy conformity. (*Very big thank you* to ayumihamsaki for giving a lot of feedback via our
-      GitHub page!)
+    - "!!! Removed cookie groups from banner component since they arent in line with GDPR regulations. Also added new fields to optimize ePrivacy conformity. (*Very big thank you* to ayumihamsaki for giving a lot of feedback via our GitHub page!)"
     - remove_group_initial_status.php
     - add_new_cookie_fields.php
 1.2.1:
@@ -50,7 +48,7 @@
     - General cleanup and extension of plugin
     - add_further_new_cookie_fields.php
 2.0.0:
-    - !!! Big update to make this plugin more GDPR and ePrivacy compliant. Users of the 1.x version will have to manually update their Cookie Levels after the update. All your other settings remain compatible. Check out the new Help and Info section to find out more on how to make your Website GDPR and ePrivacy compliant.
+    - "!!! Big update to make this plugin more GDPR and ePrivacy compliant. Users of the 1.x version will have to manually update their Cookie Levels after the update. All your other settings remain compatible. Check out the new Help and Info section to find out more on how to make your Website GDPR and ePrivacy compliant."
 2.0.1:
     - Minor cleanup and bugfixes
 2.0.2:
@@ -77,3 +75,47 @@
     - Fixed minor bug in cookie manager JS
 2.0.13:
     - Added polish translations (thanks to @Magiczne)
+2.0.14:
+    - Added workaround to a October schedule bug for cleanup command (https://github.com/octobercms/october/issues/4771)
+2.0.15:
+    - Bugfix release
+2.0.16:
+    - Another Bugfix release
+2.0.17:
+    - Fixed compatibilty problems with October Build 460
+2.0.18:
+    - Added italian translations (thanks to @inalto)
+2.1.0:
+    - Removed support for Klaro! consent manager. Added ability to import cookies from yaml presets. Check the README for instructions on how to use this feature.
+2.1.1:
+    - Added `--path` option to new `gdpr:import` command
+2.2.0:
+    - "Added cookie banner log: You can now opt-in via the backend settings to keep a log of all cookie requests and the decision the user made"
+2.2.1:
+    - Fixed cookie log migration
+    - create_offline_gdpr_logs.php
+2.2.2:
+    - Added option to ignore specific user agents from cookie request log
+    - add_useragent_to_logs_table.php
+2.2.3:
+    - Optimized PHP 7.2 support
+2.2.4:
+    - Run cookiemanager/script.js in DOMContentLoaded event.
+2.2.5:
+    - Fixed bug in update message
+2.2.6:
+    - Fixed October 469 compatibility issue (The scripts.js partial was renamed to scripts.htm, make sure to update your code if you did override this partial)
+2.2.7:
+    - Added onRenderCookieManager method to the CookieManager component to render the markup dynamically. This is useful to render the manager dynamically inside a popup via a AJAX request.
+2.2.8:
+    - The onAccept component method now returns the rendered GDPR partial
+2.2.9:
+    - "Return a proper Redirect::back() after the CookieManager form was submitted. This makes sure the newly set GDPR consent cookie will be available immediately."
+2.2.10:
+    - "Added portuguese translations (thanks to @tospe)"
+2.2.11:
+    - "Optimized compatibility with Winter CMS (thanks to @damsfx)"
+2.2.12:
+    - "Fixed bug introduced in previous release"
+2.2.13:
+    - "Fixed yaml syntax in changelog"

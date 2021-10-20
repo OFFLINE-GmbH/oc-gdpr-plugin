@@ -17,3 +17,13 @@ permissions:
     offline.gdpr.manage_cookie_info:
         tab: 'offline.gdpr::lang.plugin.name'
         label: 'offline.gdpr::lang.permissions.manage_cookie_info'
+    offline.gdpr.manage_logs:
+        tab: 'offline.gdpr::lang.plugin.name'
+        label: 'offline.gdpr::lang.permissions.manage_logs'
+navigation:
+    main-menu-item:
+        label: Cookies
+        url: offline/gdpr/logs
+        icon: icon-question
+        permissions:
+            - offline.gdpr.manage_logs

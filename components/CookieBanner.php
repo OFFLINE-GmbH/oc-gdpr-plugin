@@ -2,8 +2,12 @@
 
 use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Session;
 use OFFLINE\GDPR\Classes\Cookies\ConsentCookie;
 use OFFLINE\GDPR\Models\CookieGroup;
+use OFFLINE\GDPR\Models\GDPRSettings;
+use OFFLINE\GDPR\Models\Log;
 
 class CookieBanner extends ComponentBase
 {
@@ -64,7 +68,15 @@ class CookieBanner extends ComponentBase
     {
         if ($this->consentCookie->isDecided()) {
             $this->hide = true;
+
             return;
+        }
+
+        if (GDPRSettings::get('log_enabled')) {
+            Log::updateOrCreate(
+                ['session_id' => Session::getId()],
+                ['decision' => Log::UNDECIDED, 'useragent' => Request::userAgent()]
+            );
         }
 
         if ($this->property('include_css')) {
@@ -75,6 +87,16 @@ class CookieBanner extends ComponentBase
     public function onAccept()
     {
         $this->setDefaultConsent();
+
+        if ($this->updateSelector && $this->updatePartial) {
+            
+            $content = $this->renderPartial($this->updatePartial);
+
+            return [
+                $this->updateSelector => $content,
+                'content' => $content
+            ];
+        }
     }
 
     public function onDecline()

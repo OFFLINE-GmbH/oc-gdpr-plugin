@@ -3,7 +3,10 @@
 namespace OFFLINE\GDPR\Classes\Cookies;
 
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Request;
 use OFFLINE\GDPR\Models\CookieGroup;
+use OFFLINE\GDPR\Models\GDPRSettings;
+use OFFLINE\GDPR\Models\Log;
 use Session;
 
 class ConsentCookie
@@ -16,6 +19,14 @@ class ConsentCookie
 
     public function set($value)
     {
+        // Log the user's decision.
+        if (GDPRSettings::get('log_enabled')) {
+            Log::updateOrCreate(
+                ['session_id' => Session::getId()],
+                ['decision' => $value === false ? Log::DECLINED : Log::ACCEPTED, 'useragent' => Request::userAgent()]
+            );
+        }
+
         // Required cookies cannot be disabled and are therefore always added
         // to the consent cookie by default.
         $value = $this->appendRequiredCookies($value);
@@ -26,7 +37,7 @@ class ConsentCookie
 
         return Cookie::queue(
             'gdpr_cookie_consent',
-            $value,
+            $value->toJson(),
             $this->expiry,          // expire
             '/',                    // path
             null,                   // domain
@@ -39,7 +50,12 @@ class ConsentCookie
 
     public function get()
     {
-        return Session::get('gdpr_cookie_consent', Cookie::get('gdpr_cookie_consent'));
+        $value = Session::get('gdpr_cookie_consent', Cookie::get('gdpr_cookie_consent'));
+        if (is_string($value)) {
+            $value = @json_decode($value, true);
+        }
+
+        return collect($value);
     }
 
     public function withExpiry($expiry)
@@ -74,7 +90,7 @@ class ConsentCookie
     public function isAllowed($cookieCode, $level = 0)
     {
         $consent = $this->get();
-        if ($consent !== null && count($consent) < 1) {
+        if (is_countable($consent) && count($consent) < 1) {
             return false;
         }
 
@@ -84,7 +100,7 @@ class ConsentCookie
     public function allowedCookieLevel($cookieCode, $level = 0)
     {
         $consent = $this->get();
-        if (count($consent) < 1) {
+        if (is_countable($consent) && count($consent) < 1) {
             return -1;
         }
 
