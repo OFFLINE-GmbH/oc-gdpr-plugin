@@ -1,4 +1,4 @@
-<form action="{{ this.page.url | app }}" method="post">
+{{ form_open({'method':'post' }) }}
     <input type="hidden" name="_gdpr_submit" value="1">
     <div class="gdpr-cookie-manager">
         {% partial __SELF__ ~ '::groups' groups=__SELF__.cookieGroups %}
@@ -6,7 +6,8 @@
             {% partial __SELF__ ~ '::cookies' groups=__SELF__.cookieGroups %}
         </div>
     </div>
-</form>
+{{ form_close() }}
+
 {% if __SELF__.includeJs %}
     {% put scripts %}
         <script>

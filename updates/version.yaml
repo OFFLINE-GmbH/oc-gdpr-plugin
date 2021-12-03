@@ -119,3 +119,5 @@
     - "Fixed bug introduced in previous release"
 2.2.13:
     - "Fixed yaml syntax in changelog"
+2.2.14:
+    - "Added CSRF token to cookie manager component"
