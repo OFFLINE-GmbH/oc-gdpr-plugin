@@ -1,0 +1,45 @@
+title: "Esimerkkipohja (FI)"
+groups:
+-   name: Analytiikka
+    required: 0
+    sort_order: 1
+    description: |
+        Käytämme evästeitä mittaamiseen ja sivustomme kehittämiseen.
+    cookies:
+    -   name: Google Analytics
+        initial_status: 1
+        sort_order: 1
+        levels: []
+        default_level: 0
+        provider: analytics.google.com
+        description: |
+            Google Analytics seuraa mm. mitä sivuja selaat ja kuinka usein.
+        contact_details_dpo: |
+            Google Inc.,
+            1600 Amphitheatre Parkway,
+            Mountain View, CA 94043,
+            United States
+
+        contact_links_dpo:
+        -   contact_link_href: https://policies.google.com/privacy?hl=fi
+            contact_link_name: Tietosuojakäytäntö
+        item_details:
+        -   detail_name: _ga
+            detail_expiry: 2 vuotta
+            detail_type: Yksilöivä tunniste mainostajia varten
+        -   detail_name: _gid
+            detail_expiry: 2 vuotta
+            detail_type: Yksilöivä tunniste mainostajia varten
+
+
+-   name: Pakolliset evästeet
+    required: 1
+    sort_order: 2
+    description: |
+        Seuraavat evästeet ovat pakollisia sivuston toiminnan takaamiseksi juuri nyt.
+    cookies:
+    -   name: Istuntoeväste
+        initial_status: 1
+        sort_order: 1
+        description: |
+            Istuntoevästettä käytetään tunnistamaan juuri sinun tekemäsi sivuston lataukset.

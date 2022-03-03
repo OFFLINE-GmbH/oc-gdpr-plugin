@@ -121,3 +121,5 @@
     - "Fixed yaml syntax in changelog"
 2.2.14:
     - "Added CSRF token to cookie manager component"
+2.2.15:
+    - "Added finnish translations (thanks to @mediaclinic)"
