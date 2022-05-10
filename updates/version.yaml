@@ -123,3 +123,6 @@
     - "Added CSRF token to cookie manager component"
 2.2.15:
     - "Added finnish translations (thanks to @mediaclinic)"
+2.2.16:
+    - "Fixed useragent field type to allow for very long user agent strings"
+    - change_useragent_field_type.php
