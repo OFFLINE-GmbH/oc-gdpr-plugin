@@ -11,7 +11,7 @@ use Session;
 
 class ConsentCookie
 {
-    const SAME_SITE = 'strict';
+    const SAME_SITE = 'lax';
     const MINUTES_PER_YEAR = 24 * 60 * 365;
     const MINUTES_PER_MONTH = 24 * 60 * 30;
 
