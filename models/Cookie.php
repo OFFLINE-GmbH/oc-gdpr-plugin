@@ -71,7 +71,7 @@ class Cookie extends Model
 
                 return $level;
             }
-            if ($level['is_default_level']) {
+            if (is_array($level['is_default_level']) && $level['is_default_level']) {
                 $hasDefault = true;
             }
 
