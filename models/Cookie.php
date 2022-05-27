@@ -66,12 +66,15 @@ class Cookie extends Model
         $hasDefault = false;
 
         return collect($this->levels)->reverse()->map(function ($level) use (&$hasDefault) {
+            $level = array_wrap($level);
+
             if ($hasDefault) {
                 $level['is_default_level'] = false;
 
                 return $level;
             }
-            if ($level['is_default_level']) {
+
+            if (isset($level['is_default_level']) && $level['is_default_level']) {
                 $hasDefault = true;
             }
 
