@@ -8,8 +8,8 @@
         'disabled'        => 'Désactive',
         'sorted'          => 'Ordre mis à jour avec succès',
         'save_settings'   => 'Enregistrer',
-        'contact_details' => 'Détails contact', 
-        'links'           => 'Liens', 
+        'contact_details' => 'Détails contact',
+        'links'           => 'Liens',
     ],
     'cookie_banner'   => [
         'description'         => 'Affiche une bannière pour les cookies',
@@ -38,6 +38,10 @@
             'description' => 'Placez le composant cookieManager sur cette page.',
             'empty'       => 'Sans paramètres avancés',
         ],
+        'deferred' => [
+            'title' => 'Reporté',
+            'description' => 'Le gestionnaire n\'est chargé que si la méthode onRenderCookieManager est appelée explicitement.',
+        ],
     ],
     'cookie_manager'  => [
         'description' => 'Affiche une vue d\'ensemble et la possibilité de modifier tous les cookies que vous avez définis dans les paramètres du backend.',
@@ -64,6 +68,18 @@
         'cookies'        => [
             'label'       => 'Cookies et modules',
             'description' => 'Configurer les cookies et modules utilisés par le site et leur contrôle.',
+        ],
+        'general' => [
+            'label' => 'Paramètres généraux',
+            'description' => 'Configurer le plugin GDPR',
+            'log_enabled' => [
+                'label' => 'Journaliser les demandes de cookies',
+                'comment' => 'Les demandes de cookies aux utilisateurs et leurs décisions sont consignées dans le journal.',
+            ],
+            'ignore_useragents' => [
+                'label' => 'Ignorer les agents utilisateurs',
+                'comment' => 'Ne pas enregistrer les requêtes de ces agents utilisateurs.',
+            ],
         ],
         'cookie_consent' => [
             'label'                     => 'Composant Klaro!',
@@ -238,5 +254,19 @@
         'manage_cookie_consent' => 'Peut gérer les paramètres des cookies de consentement',
         'manage_data_retention' => 'Peut gérer les politiques de conservation des données',
         'manage_cookie_groups'  => 'Peut gérer des groupes de cookies',
+        'manage_logs' => 'Peut voir le journal des décisions',
+    ],
+    'log' => [
+        'session_id' => 'Session ID',
+        'visited' => 'Visité',
+        'decided' => 'Décidé',
+        'decision' => 'Décision',
+        'undecided' => 'Indécis',
+        'accepted' => 'Accepté',
+        'declined' => 'Refusé',
+        'total' => 'Total',
+        'total_logged' => 'Demandes logées',
+        'log' => 'Journal des cookies',
+        'log_comment' => 'Supprimer les anciennes entrées du journal',
     ],
 ];

@@ -128,3 +128,5 @@
     - change_useragent_field_type.php
 2.2.17:
     - "Optimized PHP 8 compatibility"
+2.2.18:
+    - "gdpr:import command now updates imported data on re-runs (thanks to @damsfx)"
