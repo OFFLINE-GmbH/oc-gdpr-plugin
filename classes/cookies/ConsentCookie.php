@@ -58,6 +58,17 @@ class ConsentCookie
         return collect($value);
     }
 
+    public function getAll()
+    {
+        $values = [];
+
+        foreach (CookieGroup::all() as $group) {
+            $values[$group->code] = $this->isAllowed($group->code);
+        }
+
+        return $values;
+    }
+
     public function withExpiry($expiry)
     {
         $this->expiry = $expiry * self::MINUTES_PER_MONTH;
@@ -107,17 +118,38 @@ class ConsentCookie
         return array_get($consent, $cookieCode, -1);
     }
 
+    public function hasAnyOptional()
+    {
+        $consent = $this->get();
+        $cookies = collect(CookieGroup::with('cookies')
+            ->where('required', false)
+            ->get()
+            ->flatMap(fn ($item) => $item->cookies));
+        $optional = $cookies->pluck('code');
+
+        foreach ($optional as $key) {
+            if (array_get($consent, $key, -1) >= 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    protected function isHttps()
+    {
+        return request()->isSecure();
+    }
+
     protected function appendRequiredCookies($userSelection)
     {
         // Wrap the collection again using the helper to extend support
         // for old Laravel 5.1 installations where the collection methods
         // behave differently (especially when using ->merge())
         $cookies = collect(CookieGroup::with('cookies')
-                                      ->where('required', true)
-                                      ->get()
-                                      ->flatMap(function ($item) {
-                                          return $item->cookies;
-                                      }));
+            ->where('required', true)
+            ->get()
+            ->flatMap(fn ($item) => $item->cookies));
 
         $required = $cookies->pluck('default_level', 'code');
 

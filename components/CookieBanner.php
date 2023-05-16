@@ -11,10 +11,16 @@ use OFFLINE\GDPR\Models\Log;
 
 class CookieBanner extends ComponentBase
 {
+    public $cookieGroups;
+
     public $hide = false;
+
     public $updatePartial = '';
+
     public $updateSelector = '';
+
     public $cookieManagerPage;
+
     /**
      * @var ConsentCookie
      */
@@ -62,6 +68,7 @@ class CookieBanner extends ComponentBase
         $this->updatePartial     = $this->property('update_partial', '');
         $this->updateSelector    = $this->property('update_selector', '#gdpr-reload');
         $this->cookieManagerPage = $this->property('cookie_manager_page');
+        $this->cookieGroups      = CookieGroup::with('cookies')->orderBy('sort_order', 'ASC')->get();
     }
 
     public function onRun()
@@ -89,12 +96,15 @@ class CookieBanner extends ComponentBase
         $this->setDefaultConsent();
 
         if ($this->updateSelector && $this->updatePartial) {
-            
-            $content = $this->renderPartial($this->updatePartial);
+            $content = $this->renderPartial($this->updatePartial, [
+                'cookieGroups' => $this->cookieGroups,
+                'consentCookie' => $this->consentCookie,
+            ]);
 
             return [
                 $this->updateSelector => $content,
-                'content' => $content
+                'content' => $content,
+                'consentCookie' => $this->consentCookie->get(),
             ];
         }
     }
