@@ -130,3 +130,5 @@
     - "Optimized PHP 8 compatibility"
 2.2.18:
     - "gdpr:import command now updates imported data on re-runs (thanks to @damsfx)"
+2.2.19:
+    - "Additional information about the cookie selection is now available in the accept cookie response"
