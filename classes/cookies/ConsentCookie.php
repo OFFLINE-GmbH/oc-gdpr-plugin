@@ -136,11 +136,6 @@ class ConsentCookie
         return false;
     }
 
-    protected function isHttps()
-    {
-        return request()->isSecure();
-    }
-
     protected function appendRequiredCookies($userSelection)
     {
         // Wrap the collection again using the helper to extend support
