@@ -1,6 +1,9 @@
-<?php namespace OFFLINE\GDPR;
+<?php
+
+namespace OFFLINE\GDPR;
 
 use Backend\Facades\Backend;
+use Event;
 use OFFLINE\GDPR\Classes\Cookies\ConsentCookie;
 use OFFLINE\GDPR\Components\ConsentManager;
 use OFFLINE\GDPR\Components\CookieBanner;
