@@ -102,8 +102,12 @@ class CookieManager extends ComponentBase
         return ['manager' => $this->renderPartial($this->alias . '::default')];
     }
 
-    protected function getCookieGroups()
+    public function getCookieGroups()
     {
-        return CookieGroup::with('cookies')->orderBy('sort_order', 'ASC')->get();
+        if ($this->cookieGroups) {
+            return $this->cookieGroups;
+        }
+
+        return $this->cookieGroups = CookieGroup::with('cookies')->orderBy('sort_order', 'ASC')->get();
     }
 }
