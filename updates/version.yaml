@@ -134,3 +134,5 @@
     - "Additional information about the cookie selection is now available in the accept cookie response"
 2.2.20:
     - "Made getCookieGroups method on CookieManager Component public"
+2.2.22:
+    - "Made getCookieGroups method on CookieManager Component public"
