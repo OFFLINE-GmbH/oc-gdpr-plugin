@@ -54,6 +54,9 @@ class Plugin extends PluginBase
                 'gdprIsUndecided' => function () {
                     return (new ConsentCookie())->isUndecided();
                 },
+                'gdprHasAnyOptional' => function () {
+                    return (new ConsentCookie())->hasAnyOptional();
+                },
             ],
         ];
     }
