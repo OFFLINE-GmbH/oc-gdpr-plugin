@@ -136,3 +136,5 @@
     - "Made getCookieGroups method on CookieManager Component public"
 2.2.22:
     - "Made getCookieGroups method on CookieManager Component public"
+2.2.23:
+    - "Added gdprHasAnyOptional Twig helper function"
