@@ -49,20 +49,6 @@ class CookieManager extends ComponentBase
     public function init()
     {
         $this->consentCookie = new ConsentCookie();
-
-        // Handle the form submission of the cookie manage.r If the _gdpr_submit
-        // field is not included in the request, don't do anything here.
-        if ( ! post('_gdpr_submit')) {
-            return;
-        }
-
-        $enabled = collect(post('cookies'))->filter(function ($item) {
-            return $item['enabled'] ?? false;
-        })->map(function ($item) {
-            return (int)($item['level'] ?? 0);
-        })->toArray();
-
-        $this->consentCookie->withExpiry(post('consent_expiry', 12))->set($enabled);
     }
 
     public function setup()
@@ -82,7 +68,15 @@ class CookieManager extends ComponentBase
         // The CookieManager form has been submitted. Return a proper redirect
         // here so the user receives the newly set cookie for further requests.
         if (post('_gdpr_submit')) {
-            return Redirect::back();
+            $enabled = collect(post('cookies'))->filter(function ($item) {
+                return $item['enabled'] ?? false;
+            })->map(function ($item) {
+                return (int)($item['level'] ?? 0);
+            })->toArray();
+
+            $cookie = $this->consentCookie->withExpiry(post('consent_expiry', 12))->set($enabled);
+
+            return Redirect::back()->withCookie($cookie);
         }
 
         // Defer the setup of the cookie manager until later. This comes in

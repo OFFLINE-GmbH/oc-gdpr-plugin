@@ -35,7 +35,7 @@ class ConsentCookie
         // will not be available everywhere until the page is reloaded again.
         Session::flash('gdpr_cookie_consent', $value);
 
-        return Cookie::queue(
+        return Cookie::make(
             'gdpr_cookie_consent',
             $value->toJson(),
             $this->expiry,          // expire

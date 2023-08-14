@@ -138,3 +138,5 @@
     - "Made getCookieGroups method on CookieManager Component public"
 2.2.23:
     - "Added gdprHasAnyOptional Twig helper function"
+2.2.24:
+    - "Optimized support with older October CMS installations"

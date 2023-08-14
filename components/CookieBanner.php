@@ -3,6 +3,7 @@
 use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
 use OFFLINE\GDPR\Classes\Cookies\ConsentCookie;
 use OFFLINE\GDPR\Models\CookieGroup;
@@ -93,7 +94,9 @@ class CookieBanner extends ComponentBase
 
     public function onAccept()
     {
-        $this->setDefaultConsent();
+        $cookie = $this->setDefaultConsent();
+
+        $response = Response::make([]);
 
         if ($this->updateSelector && $this->updatePartial) {
             $content = $this->renderPartial($this->updatePartial, [
@@ -101,17 +104,21 @@ class CookieBanner extends ComponentBase
                 'consentCookie' => $this->consentCookie,
             ]);
 
-            return [
+            $response = Response::make([
                 $this->updateSelector => $content,
                 'content' => $content,
                 'consentCookie' => $this->consentCookie->get(),
-            ];
+            ]);
         }
+
+        return $response->withCookie($cookie);
     }
 
     public function onDecline()
     {
-        $this->consentCookie->set(false);
+        $cookie = $this->consentCookie->set(false);
+
+        return Response::make(['result' => 'declined'])->withCookie($cookie);
     }
 
     public function onRefresh()
