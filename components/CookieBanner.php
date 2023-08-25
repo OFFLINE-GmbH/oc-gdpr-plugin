@@ -128,6 +128,11 @@ class CookieBanner extends ComponentBase
         ];
     }
 
+    public function isAllowed($code)
+    {
+        return $this->consentCookie->isAllowed($code);
+    }
+
     protected function getCookieGroups()
     {
         return CookieGroup::with('cookies')->orderBy('sort_order', 'ASC')->get();
