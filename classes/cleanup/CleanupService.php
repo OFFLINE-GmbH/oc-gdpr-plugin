@@ -73,25 +73,25 @@ class CleanupService
         if ($useClosure && $model['closure'] instanceof \Closure) {
             return $this->cleanup(function () use ($model, $deadline, $keepDays) {
                 return $model['closure']($deadline, $keepDays);
-            }, $model);
+            }, $settingKey);
         }
 
         if (!$useClosure && method_exists($model['class'], 'gdprCleanup')) {
             return $this->cleanup(function () use ($model, $deadline, $keepDays) {
                 $class = new $model['class'];
                 $class->gdprCleanup($deadline, $keepDays);
-            }, $model);
+            }, $settingKey);
         }
 
         $this->log('[ERROR] No valid deletion method found for class ' . $settingKey, 'error');
     }
 
-    protected function cleanup(\Closure $closure, $model)
+    protected function cleanup(\Closure $closure, $settingKey)
     {
         try {
             $closure();
         } catch (\Throwable $e) {
-            $this->log('Failed to cleanup ' . $model['class'], 'error', ['ex' => $e]);
+            $this->log('Failed to cleanup ' . $settingKey, 'error', ['ex' => $e]);
         }
     }
 
