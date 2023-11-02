@@ -48,7 +48,10 @@ class CleanupService
 
     protected function handleModel($model)
     {
-        $config = $this->settings['models'][$model['class']] ?? null;
+        $useClosure = isset($model['closure']);
+        $settingKey = $useClosure ? str_replace('-', '\\', $model['id']) : $model['class'];
+        $config     = $this->settings['models'][$settingKey] ?? null;
+
         if ( ! $config) {
             return $this->log(
                 sprintf('Cannot find configuration for %s, skipping data deletion.', $model['class'])
@@ -57,36 +60,38 @@ class CleanupService
 
         if ( ! $config['enabled']) {
             return $this->log(
-                sprintf('Skipping deletion of %s model data since the feature has been disabled',
-                    $model['class'])
+                sprintf(
+                    'Skipping deletion of %s model data since the feature has been disabled',
+                    $settingKey
+                )
             );
         }
 
         $keepDays = $config['keep_days'] ?? $this->settings['default_keep_days'];
         $deadline = Carbon::now()->subDays($keepDays);
 
-        if (isset($model['closure']) && $model['closure'] instanceof \Closure) {
+        if ($useClosure && $model['closure'] instanceof \Closure) {
             return $this->cleanup(function () use ($model, $deadline, $keepDays) {
                 return $model['closure']($deadline, $keepDays);
-            }, $model);
+            }, $settingKey);
         }
 
-        if (isset($model['class']) && method_exists($model['class'], 'gdprCleanup')) {
+        if (!$useClosure && method_exists($model['class'], 'gdprCleanup')) {
             return $this->cleanup(function () use ($model, $deadline, $keepDays) {
                 $class = new $model['class'];
                 $class->gdprCleanup($deadline, $keepDays);
-            }, $model);
+            }, $settingKey);
         }
 
-        $this->log('[ERROR] No valid deletion method found for class ' . $model['class'], 'error');
+        $this->log('[ERROR] No valid deletion method found for class ' . $settingKey, 'error');
     }
 
-    protected function cleanup(\Closure $closure, $model)
+    protected function cleanup(\Closure $closure, $settingKey)
     {
         try {
             $closure();
         } catch (\Throwable $e) {
-            $this->log('Failed to cleanup ' . $model['class'], 'error', ['ex' => $e]);
+            $this->log('Failed to cleanup ' . $settingKey, 'error', ['ex' => $e]);
         }
     }
 
