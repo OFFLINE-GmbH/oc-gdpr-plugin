@@ -142,3 +142,5 @@
     - "Optimized support with older October CMS installations"
 2.2.25:
     - "Added isAllowed proxy method to CookieBanner component"
+2.2.26:
+    - "Optimized support for closure when using the data retention feature (thanks to @damsfx)"
