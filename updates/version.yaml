@@ -144,3 +144,5 @@
     - "Added isAllowed proxy method to CookieBanner component"
 2.2.26:
     - "Optimized support for closure when using the data retention feature (thanks to @damsfx)"
+2.2.27:
+    - "Removed unnecessary jQuery usage (thanks to @verenaroe)'
