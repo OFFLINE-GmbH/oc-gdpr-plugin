@@ -146,3 +146,5 @@
     - "Optimized support for closure when using the data retention feature (thanks to @damsfx)"
 2.2.28:
     - "Removed unnecessary jQuery usage (thanks to @verenaroe)"
+2.2.29:
+    - "Fixed October 3 compatibility"

@@ -34,7 +34,7 @@
                     {{ 'offline.gdpr::lang.common.contact_details' | trans }}
                 </h4>
                 <div>
-                    {{ html_clean(cookie.contact_details_dpo | raw) }}
+                    {{ cookie.contact_details_dpo | raw }}
                 </div>
             </div>
         {% endif %}

@@ -10,7 +10,7 @@
 
         <h3 class="gdpr-cookie-manager__cookie-name">{{ cookie.name }}</h3>
         <div class="gdpr-cookie-manager__cookie-description">
-            {{ html_clean(cookie.description | raw) }}
+            {{ cookie.description | raw }}
         </div>
 
         {% if cookie.levels %}
