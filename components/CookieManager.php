@@ -74,7 +74,7 @@ class CookieManager extends ComponentBase
                 return (int)($item['level'] ?? 0);
             })->toArray();
 
-            $cookie = $this->consentCookie->withExpiry(post('consent_expiry', 12))->set($enabled);
+            $cookie = $this->consentCookie->withExpiry((int)post('consent_expiry', 12))->set($enabled);
 
             return Redirect::back()->withCookie($cookie);
         }

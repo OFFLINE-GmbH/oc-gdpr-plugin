@@ -148,3 +148,5 @@
     - "Removed unnecessary jQuery usage (thanks to @verenaroe)"
 2.2.29:
     - "Fixed October 3 compatibility"
+2.2.30:
+    - "Optimized PHP 8.4 support"
